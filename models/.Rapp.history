@@ -1,0 +1,5 @@
+load("/Users/dingshuo/Desktop/starter_folder-main/models/first_model.rds")
+load("/Users/dingshuo/Desktop/starter_folder-main/models/model_date_pollster.rds")
+load("/Users/dingshuo/Desktop/starter_folder-main/models/model_date.rds")
+load("/Users/dingshuo/Desktop/starter_folder-main/models/model_date_pollster.rds")
+load("/Users/dingshuo/Desktop/starter_folder-main/models/model_date_pollster.rds")
