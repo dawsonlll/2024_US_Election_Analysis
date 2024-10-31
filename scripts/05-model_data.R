@@ -1,16 +1,23 @@
 #### Preamble ####
-# Purpose: Models... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Create Models for analysis dataset.
+# Author: Dingshuo Li
+# Date: 31 October 2024
+# Contact: dawson.li@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites:
+  # - The `tidyverse` package must be installed and loaded
+  # - 02-clean_data.R must have been run
+  # - 04-exploratory_data_analysis.R must be conducted before
+# Any other information needed? N/A
 
 
 #### Workspace setup ####
 library(tidyverse)
-library(rstanarm)
+library(janitor)
+library(lubridate)
+library(broom)
+library(splines)
+
 
 #### Read data ####
 just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
@@ -36,7 +43,7 @@ ggplot(just_trump_high_quality, aes(x = end_date)) +
   geom_point(aes(y = pct), color = "black") +
   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
   theme_classic() +
-  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pPct ~ End_date")
 
 # Model 2
 ggplot(just_trump_high_quality, aes(x = end_date)) +
@@ -44,9 +51,11 @@ ggplot(just_trump_high_quality, aes(x = end_date)) +
   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
   facet_wrap(vars(pollster)) +
   theme_classic() +
-  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+
+
 
 #### Save model ####
-saveRDS(model_date, file = "/Users/dingshuo/Desktop/starter_folder-main/models/model_date.rds")
-saveRDS(model_date_pollster, file = "/Users/dingshuo/Desktop/starter_folder-main/models/model_date_pollster.rds")
+saveRDS(model_date, file = "models/model_date.rds")
+saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
 

@@ -1,15 +1,14 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Cleans the raw dataset of US president primary polls
+# Author: Dingshuo Li
+# Date: 31 October 2024
+# Contact: dawson.li@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: The raw dataset is in 01-raw_data file
+# Any other information needed? N/A
 
 #### Workspace setup ####
 library(tidyverse)
-install.packages("arrow")
 library(arrow)
 library(janitor)
 library(dplyr)
@@ -20,12 +19,6 @@ data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>
   clean_names()
 
 just_trump_high_quality <- data %>%
-  # Select relevant columns first
-  select(
-    pollster, sponsors, display_name, numeric_grade, pollscore,
-    methodology, transparency_score, state, start_date, end_date,
-    office_type, stage, party, candidate_name, pct, sample_size
-  ) %>%
   # Filter for Donald Trump and high-quality polls
   filter(
     candidate_name == "Donald Trump",
@@ -49,3 +42,4 @@ write_parquet(x = just_trump_high_quality,
               sink = "data/02-analysis_data/analysis_data.parquet")
 
 write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
+

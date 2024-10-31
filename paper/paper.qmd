@@ -15,11 +15,17 @@ bibliography: references.bib
 
 ```{r}
 #| include: false
-#| warning: false
+#| warning: true
 #| message: false
 
 library(tidyverse)
+library(modelsummary)
 library(palmerpenguins)
+library(ggplot2)
+library(arrow)
+library(here)
+library(modelr)
+library(rstanarm)
 ```
 
 
@@ -91,15 +97,33 @@ Use sub-sub-headings for each outcome variable and feel free to combine a few in
 
 
 
+```{r}
+echo=TRUE
+library(rstanarm)
 
+if (file.exists(here::here("models/model_date.rds"))) {
+  message("model_date.rds found.")
+} else {
+  message("model_date.rds not found.")
+}
+
+if (file.exists(here::here("models/model_date_pollster.rds"))) {
+  message("model_date_pollster.rds found.")
+} else {
+  message("model_date_pollster.rds not found.")
+}
+
+```
 
 
 
 # Model
 
+```{r}
+modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
 
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 
+```
 
 ### Model justification
 

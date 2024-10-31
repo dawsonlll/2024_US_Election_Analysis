@@ -1,19 +1,23 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 26 September 2024 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Tests the cleaned dataset of US election primary polls
+# Author: Dingshuo Li
+# Date: 31 October 2024
+# Contact: dawson.li@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: 
+  # - The `tidyverse` package must be installed and loaded
+  # - The `testthat` package must be installed and loaded
+  # - 02-clean_data.R must have been run
+# Any other information needed? N/A
+
+setwd("/Users/dingshuo/Desktop/paper2 draft/2024_US_Election_Analysis/")
 
 
 #### Workspace setup ####
 library(tidyverse)
 library(testthat)
 
-data <- read_csv("/Users/dingshuo/Desktop/starter_folder-main/data/02-analysis_data/analysis_data.csv")
-
+data <- read_csv("data/02-analysis_data/analysis_data.csv")
 
 
 #### Test data ####
@@ -24,7 +28,7 @@ test_that("dataset has expected rows", {
 
 
 test_that("dataset has expected column", {
-  expect_equal(ncol(data), 17)  
+  expect_equal(ncol(data), 52)  
 })
 
 

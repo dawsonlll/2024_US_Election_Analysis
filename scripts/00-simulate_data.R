@@ -1,9 +1,9 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Purpose: Simulates a dataset of US election primary polls, including the 
+  #pollsters, methodologies, candidates and numerical grades of each pollsters.
+# Author: Dingshuo Li
+# Date: 31 October 2024
+# Contact: dawson.li@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: The `tidyverse` package must be installed
 # Any other information needed? Make sure you are in the `starter_folder` rproj
@@ -11,42 +11,30 @@
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
+library(dplyr)
+set.seed(304304)
 
+num_rows <- 1000
+
+
+pollsters <- c("YouGov", "Gallup", "Ipsos", "Pew Research", "SurveyMonkey")
+methodologies <- c("Online Panel", "Telephone", "In-person", "Mixed-mode")
+candidates <- c("Kamala Harris", "Gavin Newsom", "Pete Buttigieg", "Elizabeth Warren", "Bernie Sanders", "Donald Trump")
 
 #### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
-
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
-
-# Create a dataset by randomly assigning states and parties to divisions
-analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
-  ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
-  )
+simulated_data <- data.frame(
+  pollster = sample(pollsters, num_rows, replace = TRUE),
+  numeric_grade = round(runif(num_rows, min = 1, max = 3), 1),
+  pollscore = round(runif(num_rows, min = -2, max = 5), 1),
+  methodology = sample(methodologies, num_rows, replace = TRUE),
+  transparency_score = sample(0:9, num_rows, replace = TRUE),
+  start_date = format(seq(as.Date("2024-01-01"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),
+  end_date = format(seq(as.Date("2024-11-04"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),
+  candidate_name = sample(candidates, num_rows, replace = TRUE),
+  pct = round(runif(num_rows, min = 0, max = 100), 1)
 )
 
 
 #### Save data ####
-write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+write_csv(simulated_data, "data/00-simulated_data/simulated_data.csv")
+
