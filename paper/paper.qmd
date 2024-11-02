@@ -1,11 +1,12 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "2024 US Election Prediction"
+subtitle: "An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
-date: today
+  - Betty Liu
+  - Jingchuan Xu
+  - Dingshuo Li
+thanks: "Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis"
+date: Nov 04, 2024
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
 format: pdf
@@ -25,22 +26,27 @@ library(ggplot2)
 library(arrow)
 library(here)
 library(modelr)
+library(knitr)
 library(rstanarm)
+opts_knit$set(root.dir = here::here())
+
+setwd(here::here())
+trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
+
 ```
 
 
 # Introduction
 
-Overview paragraph
+The 2024 U.S. presidential election is one of the most closely watched events in recent political history. Polling provides a glimpse into the dynamics of the race, offering insights that can shape campaign strategies and public opinion. Among the candidates, former President Donald Trump consistently draws significant attention and debate from the public across different political perspectives. Tracking Trump’s support through the poll reveals his current popularity and potential electoral outcomes. 
+The paper dives into Trump’s polling data, analyzing data from various pollsters to see how his support has changed over time. The study explores whether there is an upward or downward trend using linear modelling in Trump’s polling percentage, while also accounting for differences in his support reported by various pollsters. By investigating these patterns, the analysis aims to estimate Trump’s likely level of support as election day approaches. 
 
-Estimand paragraph
+Estimand: The estimand of this study is the expected level of voter support for Donald Trump in the 2024 U.S. presidential election, based on observed patterns in polling data. This estimated support level provides a snapshot of his projected standing among voters with the adjective by pollster-specific effects.  
 
-Results paragraph
+In this study, we apply statistical models, including a linear model of Trump's percentage over time, to quantify changes in his support level. Additionally, we adjust for pollster variations to provide a more accurate reflection of his support trajectory across different sources. Our findings reveal both temporal trends and variability among pollsters, highlighting the complexities of interpreting polling data in a polarized political environment. These insights contribute to a better understanding of Trump’s standing and the potential outcomes in 2024. 
 
-Why it matters paragraph
-
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
-
+The remainder of the paper is structured as follows: @sec-data outlines the dataset selection and cleaning process to ensure transparency in data preparation. @sec-model introduces the model used, explaining its components with clear notation and connecting modeling decisions to the data section with focusing on linear models and pollster-specific adjustments.  @sec-result presents the results of the analysis, including both temporal and cross-pollster trends in Trump’s support. Finally, @sec-discussion interprets the results, and @sec-limitation addresses study limitations and future research directions.
 
 
 
@@ -50,78 +56,102 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 ## Overview
 
-We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
+The dataset, sourced from @polls, compiles polling data from multiple pollsters who applied various methodologies—such as online panels, live phone surveys, and text-to-web approaches—to gauge voter support for presidential candidates in the 2024 U.S. election. Each entry captures a distinct polling event, with details on the pollster, methodology, sample size, and public support percentages for each candidate, specifically focusing on the public’s stance toward Donald Trump following his declaration to run for president. This dataset provides a snapshot of public opinion across different pollsters, methodologies, and timeframes, offering insights into the shifting landscape of voter sentiment.
 
-Overview text
+All data analysis was conducted using R @citeR, including statistical computing and graphics. And the following R packages were used: tidyverse @tidy, Palmerpenguins @palmerpenguins, ggplot2 @ggplot2, Dplyr @citedplyr, Knitr @citeknitr, modelsummary @modelsummary, arrow @arrow, and here @here. Following  @tellingstories we conducted data simulate, test simulated data, data cleanning, test analysis data, EDA, data modelling. The R code in scripts were adapted from @alexander2023telling
+
+For accuracy and relevance, we filtered the data to include only polls conducted by high-quality pollsters with a numeric grade greater than 2.7. This threshold ensures that the dataset primarily represents credible polls, aligning with industry standards for reliability and transparency. Additionally, we factored in only polls conducted after Trump and Harris' 2024 presidential campaign announcement, allowing a focused analysis of his support trajectory post-announcement. Through these data selection and cleaning criteria, the dataset provides a high-quality, methodologically consistent foundation for examining voter support trends for Trump and Harris in the 2024 election.
+
 
 ## Measurement
-	
-Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
+The measurement approach in this dataset translates real-world polling events into structured data entries, capturing shifts in public opinion on presidential candidates. Each entry represents a specific poll by a polling organization, providing a snapshot of support levels for the 2024 U.S. presidential election. Polls are conducted through varied methodologies—such as online panels and live phone surveys—which can impact reliability. Polls are sponsored by institutions like news organizations, with the pollster and sponsor information recorded for transparency and credibility.
+
+Key columns include poll scores and candidate-specific percentages, translating public sentiment into measurable values that reflect candidates’ standings over time. Sample size and population type  give insight into the scope of each poll, helping to contextualize its representativeness. Temporal data, such as start and end dates, allow us to analyze trends over time, correlating shifts in support with major events.
+
+Together, these components ensure each dataset entry reflects a distinct polling event, with variables like pollster reputation and methodology contributing to an accurate picture of public sentiment. This structured framework enables reliable trend analysis, supporting meaningful insights into polling data for presidential candidates.
+
 
 ## Outcome variables
-
-Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
-
-
-
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
-
+The primary outcome variable in this dataset is the approval rating (pct), which represents the percentage of poll respondents who support Donald Trump as a presidential candidate. This variable provides insight into Trump's popularity over time, helping to reveal changes in public sentiment across states and voting periods. The summary of table for both Trump and Harris can be observed @tbl-pct.
 ```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
+#| label: tbl-pct
+#| tbl-cap: "Preview of Summary Statistics for Trump and Harris"
 #| echo: false
+#| warning: false
+#| message: false
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
+# Calculate summary statistics for Trump
+trump_summary <- trump_analysis_data %>%
+  summarise(
+    Candidate = "Trump",
+    mean_pct = mean(pct, na.rm = TRUE),
+    median_pct = median(pct, na.rm = TRUE),
+    min_pct = min(pct, na.rm = TRUE),
+    max_pct = max(pct, na.rm = TRUE),
+    sd_pct = sd(pct, na.rm = TRUE)
+  )
 
-Talk more about it.
+# Calculate summary statistics for Harris
+harris_summary <- harris_analysis_data %>%
+  summarise(
+    Candidate = "Harris",
+    mean_pct = mean(pct, na.rm = TRUE),
+    median_pct = median(pct, na.rm = TRUE),
+    min_pct = min(pct, na.rm = TRUE),
+    max_pct = max(pct, na.rm = TRUE),
+    sd_pct = sd(pct, na.rm = TRUE)
+  )
 
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
+# Combine the summaries
+combined_summary <- bind_rows(trump_summary, harris_summary)
 
-
-
-Talk way more about it. 
-
-## Predictor variables
-
-Add graphs, tables and text.
-
-Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
-
-
-
-
-```{r}
-echo=TRUE
-library(rstanarm)
-
-if (file.exists(here::here("models/model_date.rds"))) {
-  message("model_date.rds found.")
-} else {
-  message("model_date.rds not found.")
-}
-
-if (file.exists(here::here("models/model_date_pollster.rds"))) {
-  message("model_date_pollster.rds found.")
-} else {
-  message("model_date_pollster.rds not found.")
-}
+# Display the table
+knitr::kable(combined_summary, col.names = c("Candidate", "Mean %", "Median %", "Min %", "Max %", "SD %"))
 
 ```
+To understand the factors that influence this outcome, we include several predictor variables. The pollster variable identifies each polling organization, acknowledging that different pollsters may produce slightly different results due to unique methodologies and respondent demographics. Numerical poll scores provide a quality rating for each poll, with higher scores indicating greater credibility and predictive reliability. These variables ensure that only reliable sources influence our analysis of Trump's approval rating. The methodology and transparency scores reflect the transparency of each poll's survey methodology and reporting, respectively. Different methodologies, such as online panels or telephone surveys, may affect response patterns, while transparency scores indicate reliability, providing further context for accurately interpreting support levels.
+
+Time and region data are also critical in our analysis. The start and end dates provide a timeline of the polling period, allowing us to observe trends in public opinion as it change over time. The state variable captures the geographic focus of each poll, as table @tbl-state-mean-pct shows which help us identify regional differences in Trump’s support. Finally, the candidate name variable specifies Trump as the focal candidate, ensuring that we accurately measure support for his candidacy alone. 
+```{r}
+#| label: tbl-state-mean-pct
+#| tbl-cap: "Preview of States Statistics for Trump and Harris"
+#| echo: false
+#| warning: false
+#| message: false
+
+# Combine Trump and Harris data with an identifying column for each candidate
+combined_data <- trump_analysis_data %>%
+  mutate(Candidate = "Trump") %>%
+  bind_rows(harris_analysis_data %>% mutate(Candidate = "Harris"))
+
+# Calculate mean percentage by state for each candidate, round to 2 decimal places, and display side-by-side
+state_summary <- combined_data %>%
+  group_by(state, Candidate) %>%
+  summarise(mean_pct = round(mean(pct, na.rm = TRUE), 2)) %>%  # Round to 2 decimal places
+  ungroup() %>%
+  pivot_wider(names_from = Candidate, values_from = mean_pct, values_fill = 0) %>%
+  rename("Harris %" = Harris, "Trump %" = Trump) %>%
+  filter(`Harris %` > 0 & `Trump %` > 0)  # Filter rows where both percentages are non-zero
+
+# Display the table with Harris and Trump in separate columns
+knitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"))
+
+
+```
 
 
 
-# Model
+
+
+# Model {#sec-model}
 
 ```{r}
-modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+#modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
 
+#model_date <- 
+  #readRDS(file = here::here("models/model_date.rds"))
+#model_date_pollster <- 
+   #readRDS(file = here::here("models/model_date_pollster.rds"))
 
 ```
 
@@ -132,14 +162,14 @@ We expect a positive relationship between the size of the wings and time spent a
 We can use maths by including latex between dollar signs, for instance $\theta$.
 
 
-# Results
+# Results {#sec-result}
 
 Our results are summarized in 
 
 
 
 
-# Discussion
+# Discussion {#sec-discussion}
 
 ## First discussion point {#sec-first-point}
 
@@ -151,7 +181,7 @@ Please don't use these as sub-heading labels - change them to be what your point
 
 ## Third discussion point
 
-## Weaknesses and next steps
+# Weaknesses and next steps  {#sec-limitation}
 
 Weaknesses and next steps should also be included.
 
