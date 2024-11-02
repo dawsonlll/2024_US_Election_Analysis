@@ -14,12 +14,11 @@ library(janitor)
 library(dplyr)
 library(lubridate)
 
-#### Clean data ####
-data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>
+data <- read_csv("data/01-raw_data/president_polls.csv") |>
   clean_names()
 
+# Filter data for Donald Trump with high-quality polls
 just_trump_high_quality <- data %>%
-  # Filter for Donald Trump and high-quality polls
   filter(
     candidate_name == "Donald Trump",
     numeric_grade >= 2.7
@@ -36,10 +35,30 @@ just_trump_high_quality <- data %>%
     num_trump = round((pct / 100) * sample_size, 0)
   )
 
+# Filter data for Kamala Harris with high-quality polls
+just_harris_high_quality <- data %>%
+  filter(
+    candidate_name == "Kamala Harris",
+    numeric_grade >= 2.7
+  ) %>%
+  # Handle missing states and convert end_date to Date format
+  mutate(
+    state = if_else(is.na(state), "National", state),
+    end_date = mdy(end_date)
+  ) %>%
+  # Filter out rows with end_date before 2024-07-15
+  filter(end_date >= as.Date("2024-07-15")) %>%
+  # Calculate num_harris without dropping NA values
+  mutate(
+    num_harris = round((pct / 100) * sample_size, 0)
+  )
+
 
 #### Save data ####
 write_parquet(x = just_trump_high_quality,
-              sink = "data/02-analysis_data/analysis_data.parquet")
+              sink = "data/02-analysis_data/analysis_trump_data.parquet")
+write_parquet(x = just_harris_high_quality,
+              sink = "data/02-analysis_data/analysis__harris_data.parquet")
 
-write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
-
+write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_trump_data.csv")
+write_csv(just_harris_high_quality, "data/02-analysis_data/analysis_harris_data.csv")
