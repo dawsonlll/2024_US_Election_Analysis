@@ -29,7 +29,7 @@ just_trump_high_quality <- data %>%
     end_date = mdy(end_date)
   ) %>%
   # Filter out rows with end_date before 2022-11-15
-  filter(end_date >= as.Date("2022-11-15")) %>%
+  filter(end_date >= as.Date("2024-07-15")) %>%
   # Calculate num_trump without dropping NA values
   mutate(
     num_trump = round((pct / 100) * sample_size, 0)
@@ -58,7 +58,7 @@ just_harris_high_quality <- data %>%
 write_parquet(x = just_trump_high_quality,
               sink = "data/02-analysis_data/analysis_trump_data.parquet")
 write_parquet(x = just_harris_high_quality,
-              sink = "data/02-analysis_data/analysis__harris_data.parquet")
+              sink = "data/02-analysis_data/analysis_harris_data.parquet")
 
 write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_trump_data.csv")
 write_csv(just_harris_high_quality, "data/02-analysis_data/analysis_harris_data.csv")

@@ -29,22 +29,8 @@ just_harris_high_quality <- read_parquet("data/02-analysis_data/analysis_harris_
 
 #### Starter Trump models ####
 
-# Model: pct as a function of end_date and pollster
+# Linear Model: pct as a function of end_date and pollster
 model_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
-
-# Augment data with model predictions from model_trump_date_pollster
-just_trump_high_quality <- just_trump_high_quality %>%
-  mutate(
-    fitted_date_pollster = predict(model_trump_date_pollster)
-  )
-
-# Plot Model with Predictions
-ggplot(just_trump_high_quality, aes(x = end_date)) +
-  geom_point(aes(y = pct), color = "black") +
-  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
-  facet_wrap(vars(pollster)) +
-  theme_classic() +
-  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
 
 
 # Bayesian Model for Trump
@@ -67,30 +53,6 @@ spline_trump_model <- stan_glm(
   refresh = 0
 )
 
-trump_predictions <- posterior_predict(spline_trump_model)
-
-# Calculate summary statistics for plotting
-# Get mean prediction and 95% credible intervals
-just_trump_high_quality <- just_trump_high_quality %>%
-  mutate(
-    mean_pred = colMeans(trump_predictions),
-    lower_credible = apply(trump_predictions, 2, quantile, probs = 0.025),
-    upper_credible = apply(trump_predictions, 2, quantile, probs = 0.975)
-  )
-
-# Plot with credible intervals
-ggplot(just_trump_high_quality, aes(x = end_date_num, y = pct)) +
-  geom_point(color = "black", alpha = 0.5) +
-  geom_line(aes(y = mean_pred), color = "blue") +
-  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +
-  facet_wrap(vars(state)) +
-  theme_classic() +
-  labs(y = "Trump Percent", x = "Date", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")
-
-
-
-
-
 
 
 #### Starter Harris models ####
@@ -98,18 +60,6 @@ ggplot(just_trump_high_quality, aes(x = end_date_num, y = pct)) +
 # Linear Model: pct as a function of end_date and pollster
 model_harris_date_pollster <- lm(pct ~ end_date + pollster, data = just_harris_high_quality)
 
-# Augment data with model predictions
-just_harris_high_quality <- just_harris_high_quality |>
-  mutate(
-    fitted_date_pollster = predict(model_date_pollster)
-  )
-
-ggplot(just_harris_high_quality, aes(x = end_date)) +
-  geom_point(aes(y = pct), color = "black") +
-  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
-  facet_wrap(vars(pollster)) +
-  theme_classic() +
-  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
 
 # Bayesian Model for Harris
 just_harris_high_quality <- just_harris_high_quality |>
@@ -131,25 +81,6 @@ spline_harris_model <- stan_glm(
   refresh = 0
 )
 
-harris_predictions <- posterior_predict(spline_harris_model)
-
-# Calculate summary statistics for plotting
-# Get mean prediction and 95% credible intervals
-just_harris_high_quality <- just_harris_high_quality %>%
-  mutate(
-    mean_pred = colMeans(harris_predictions),
-    lower_credible = apply(harris_predictions, 2, quantile, probs = 0.025),
-    upper_credible = apply(harris_predictions, 2, quantile, probs = 0.975)
-  )
-
-# Plot with credible intervals
-ggplot(just_harris_high_quality, aes(x = end_date_num, y = pct)) +
-  geom_point(color = "black", alpha = 0.5) +
-  geom_line(aes(y = mean_pred), color = "blue") +
-  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +
-  facet_wrap(vars(state)) +
-  theme_classic() +
-  labs(y = "Harris Percent", x = "Date (numeric)", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")
 
 
 

@@ -10,7 +10,7 @@
   # - 02-clean_data.R must have been run
 # Any other information needed? N/A
 
-setwd("/Users/dingshuo/Desktop/paper2 draft/2024_US_Election_Analysis/")
+setwd(here::here())
 
 
 #### Workspace setup ####
@@ -21,9 +21,9 @@ trump_data <- read_csv("data/02-analysis_data/analysis_trump_data.csv")
 
 
 #### Test trump_data ####
-# Test that the dataset has 1663 rows",
+# Test that the dataset has 782 rows",
 test_that("dataset has expected rows", {
-  expect_equal(nrow(trump_data), 1662)  
+  expect_equal(nrow(trump_data), 782)  
 })
 
 
