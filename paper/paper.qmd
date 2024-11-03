@@ -9,7 +9,11 @@ thanks: "Code and data are available at: https://github.com/dawsonlll/2024_US_El
 date: Nov 04, 2024
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
-format: pdf
+format:
+  pdf:
+    toc: true
+  html:
+    toc: true
 number-sections: true
 bibliography: references.bib
 ---
@@ -28,12 +32,18 @@ library(here)
 library(modelr)
 library(knitr)
 library(rstanarm)
+library(broom)
+library(scales)
+library(splines)
 opts_knit$set(root.dir = here::here())
 
 setwd(here::here())
 trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
 harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
-
+model_date_pollster_harris <- readRDS(file = here::here("models/model_date_pollster_harris.rds"))
+model_date_trump_pollster <- readRDS(file = here::here("models/model_date_trump_pollster.rds"))
+model_trump_bayesian <- readRDS(file = here::here("models/model_trump_bayesian.rds"))
+model_harris_bayesian <- readRDS(file = here::here("models/model_harris_bayesian.rds"))
 ```
 
 
@@ -44,7 +54,7 @@ The paper dives into Trump’s polling data, analyzing data from various pollste
 
 Estimand: The estimand of this study is the expected level of voter support for Donald Trump in the 2024 U.S. presidential election, based on observed patterns in polling data. This estimated support level provides a snapshot of his projected standing among voters with the adjective by pollster-specific effects.  
 
-In this study, we apply statistical models, including a linear model and a Bayesian model for each of Trump's and Harris' of percentages over time, to quantify changes and make comparisons to his support level. Additionally, we adjust for pollster variations to provide a more accurate reflection of his support trajectory across different sources. Our findings reveal both temporal trends and variability among pollsters, highlighting the complexities of interpreting polling data in a polarized political environment. These insights contribute to a better understanding of Trump’s standing and the potential outcomes in 2024. 
+In this study, we apply statistical models, including a linear model of Trump's percentage over time, to quantify changes in his support level. Additionally, we adjust for pollster variations to provide a more accurate reflection of his support trajectory across different sources. Our findings reveal both temporal trends and variability among pollsters, highlighting the complexities of interpreting polling data in a polarized political environment. These insights contribute to a better understanding of Trump’s standing and the potential outcomes in 2024. 
 
 The remainder of the paper is structured as follows: @sec-data outlines the dataset selection and cleaning process to ensure transparency in data preparation. @sec-model introduces the model used, explaining its components with clear notation and connecting modeling decisions to the data section with focusing on linear models and pollster-specific adjustments.  @sec-result presents the results of the analysis, including both temporal and cross-pollster trends in Trump’s support. Finally, @sec-discussion interprets the results, and @sec-limitation addresses study limitations and future research directions.
 
@@ -58,7 +68,7 @@ The remainder of the paper is structured as follows: @sec-data outlines the data
 
 The dataset, sourced from @polls, compiles polling data from multiple pollsters who applied various methodologies—such as online panels, live phone surveys, and text-to-web approaches—to gauge voter support for presidential candidates in the 2024 U.S. election. Each entry captures a distinct polling event, with details on the pollster, methodology, sample size, and public support percentages for each candidate, specifically focusing on the public’s stance toward Donald Trump following his declaration to run for president. This dataset provides a snapshot of public opinion across different pollsters, methodologies, and timeframes, offering insights into the shifting landscape of voter sentiment.
 
-All data analysis was conducted using R @citeR, including statistical computing and graphics. And the following R packages were used: tidyverse @tidy, Palmerpenguins @palmerpenguins, ggplot2 @ggplot2, Dplyr @citedplyr, Knitr @citeknitr, modelsummary @modelsummary, arrow @arrow, and here @here. Following  @tellingstories we conducted data simulate, test simulated data, data cleanning, test analysis data, EDA, data modelling. The R code in scripts were adapted from @alexander2023telling
+All data analysis was conducted using R @citeR, including statistical computing and graphics. And the following R packages were used: tidyverse @tidy, Palmerpenguins @palmerpenguins, ggplot2 @ggplot2, Dplyr @citedplyr, Knitr @citeknitr, modelsummary @modelsummary, arrow @arrow, here @here, rstanarm @rstanarm, sclaes @scales, and splines @splines. Following  @tellingstories we conducted data simulate, test simulated data, data cleanning, test analysis data, EDA, data modelling. The R code in scripts were adapted from @alexander2023telling
 
 For accuracy and relevance, we filtered the data to include only polls conducted by high-quality pollsters with a numeric grade greater than 2.7. This threshold ensures that the dataset primarily represents credible polls, aligning with industry standards for reliability and transparency. Additionally, we factored in only polls conducted after Trump and Harris' 2024 presidential campaign announcement, allowing a focused analysis of his support trajectory post-announcement. Through these data selection and cleaning criteria, the dataset provides a high-quality, methodologically consistent foundation for examining voter support trends for Trump and Harris in the 2024 election.
 
@@ -72,7 +82,7 @@ Together, these components ensure each dataset entry reflects a distinct polling
 
 
 ## Outcome variables
-The primary outcome variable in this dataset is the approval rating (pct), which represents the percentage of poll respondents who support Donald Trump as a presidential candidate. This variable provides insight into Trump's popularity over time, helping to reveal changes in public sentiment across states and voting periods. The summary of table for both Trump and Harris can be observed @tbl-pct.
+The key variable in this dataset is the approval rating, denoted as pct, which reflects the percentage of survey respondents who support each candidate, specifically Donald Trump and Kamala Harris. This variable is fundamental to understanding the popularity of each candidate, as it provides a direct measure of public opinion. Examining the pct variable reveals essential insights into how each candidate is perceived over time and across different regions. The summary statistics for pct, detailed in @tbl-pct, provide an overview of the central tendencies and variability in support for both Trump and Harris.
 ```{r}
 #| label: tbl-pct
 #| tbl-cap: "Preview of Summary Statistics for Trump and Harris"
@@ -109,9 +119,15 @@ combined_summary <- bind_rows(trump_summary, harris_summary)
 knitr::kable(combined_summary, col.names = c("Candidate", "Mean %", "Median %", "Min %", "Max %", "SD %"))
 
 ```
-To understand the factors that influence this outcome, we include several predictor variables. The pollster variable identifies each polling organization, acknowledging that different pollsters may produce slightly different results due to unique methodologies and respondent demographics. Numerical poll scores provide a quality rating for each poll, with higher scores indicating greater credibility and predictive reliability. These variables ensure that only reliable sources influence our analysis of Trump's approval rating. The methodology and transparency scores reflect the transparency of each poll's survey methodology and reporting, respectively. Different methodologies, such as online panels or telephone surveys, may affect response patterns, while transparency scores indicate reliability, providing further context for accurately interpreting support levels.
 
-Time and region data are also critical in our analysis. The start and end dates provide a timeline of the polling period, allowing us to observe trends in public opinion as it change over time. The state variable captures the geographic focus of each poll, as table @tbl-state-mean-pct shows which help us identify regional differences in Trump’s support. Finally, the candidate name variable specifies Trump as the focal candidate, ensuring that we accurately measure support for his candidacy alone. 
+For Donald Trump, the mean approval rating stands at 45.15%, with a median of 46%, indicating that his support levels are generally centered around these values. His minimum recorded support is 19%, while his maximum reaches 70%, showing significant variation depending on the poll context and timing. The standard deviation of 5.09% suggests moderate variability in Trump’s approval ratings across different polls, reflecting fluctuations in his popularity.
+
+In contrast, Kamala Harris’s mean approval rating is slightly higher, at 47.81%, with a median of 48%. Her approval ratings range from a minimum of 25% to a maximum of 65.3%, demonstrating somewhat less variability than Trump. Harris’s standard deviation of 3.70% indicates relatively stable support levels across different polls. These summary statistics in the table underscore the comparative stability of Harris’s approval ratings relative to Trump’s, while also highlighting the slight overall edge in support that Harris has in this dataset. This data serves as a foundational element for analyzing trends in public opinion for each candidate.
+
+
+### Predictor Vairables
+
+The primary predictor variables for understanding trends in the approval ratings-pct are state and pollscore. The state variable captures the geographic location in which each poll was conducted, providing insight into regional differences in candidate support. By analyzing pct across different states, we can uncover essential patterns and regional variations that may influence or reflect broader national trends. As the @tbl-state-mean-pct shows this variable allows us to compare how support for each candidate fluctuates based on location, revealing possible strongholds or areas of low support that could be pivotal in understanding voter behavior. For instance, we may observe higher variability in pct for swing states compared to states with traditionally stable voting patterns, giving context to national versus regional polling outcomes.
 ```{r}
 #| label: tbl-state-mean-pct
 #| tbl-cap: "Preview of States Statistics for Trump and Harris"
@@ -134,8 +150,62 @@ state_summary <- combined_data %>%
   filter(`Harris %` > 0 & `Trump %` > 0)  # Filter rows where both percentages are non-zero
 
 # Display the table with Harris and Trump in separate columns
-knitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"))
+knitr::kable(head(state_summary, 10), col.names = c("State", "Harris %", "Trump %"))
 
+
+```
+
+In addition to state, another critical set of predictor variables includes pollster and its associated pollscore, which collectively assess the reliability and quality of each poll conducted. The pollster variable identifies the organization responsible for the poll, while pollscore provides a standardized rating that reflects each pollster’s methodological rigor as the @tbl-preview-pollscore shows. This combination is essential for accurately interpreting pct, as it enables us to weigh the credibility of different polling sources when analyzing public sentiment. Higher pollscore values are generally associated with more reliable and stable pct values, as they reflect a pollster’s adherence to rigorous sampling and data collection standards. By incorporating both pollster and pollscore as predictors, we can control for poll quality, helping to identify whether polls conducted by high-rated pollsters report different levels of candidate support compared to those with lower ratings.
+
+
+```{r}
+#| label: tbl-preview-pollscore
+#| tbl-cap: "Preview of Pollscore"
+#| echo: false
+#| warning: false
+#| message: false
+combined_data <- bind_rows(trump_analysis_data, harris_analysis_data)
+
+# Create a table with pollster as the first column and separate columns for Trump and Harris poll scores
+pollscore_summary <- combined_data %>%
+  select(candidate_name, pollster, pollscore) %>%
+  distinct() %>%
+  pivot_wider(names_from = candidate_name, values_from = pollscore, values_fill = NA) %>%
+  arrange(pollster)
+
+# Display the summary table
+knitr::kable(head(pollscore_summary, 10), col.names = c("Pollster", "Harris Poll Score", "Trump Poll Score"))
+```
+
+Another crucial predictor variable in this analysis is the date, which represents the timeline of polling data leading up to the election. As the election date approaches, public sentiment often shifts more noticeably, reflecting increased media coverage, campaign efforts, and voter engagement. By examining pct in relation to date, we can track changes in approval ratings over time, highlighting periods of rising or declining support as @fig-of-date This temporal analysis is especially important in the context of an election, as voters’ preferences may become more stable or polarized closer to the election day. Including date as a predictor provides insight into how each candidate's popularity evolves in response to key events or milestones in the campaign season. Visualizations of pct over time, paired with trend lines, help illustrate these dynamics, revealing how both candidates navigate the complex landscape of public opinion in the months, weeks, and days leading up to the election.
+
+```{r}
+#| label: fig-of-date
+#| fig-cap: "figure of PCT Change over Time"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+combined_data <- trump_analysis_data %>%
+  mutate(candidate = "Trump") %>%
+  bind_rows(harris_analysis_data %>% mutate(candidate = "Harris"))
+
+
+harris_declaration_date <- as.Date("2024-07-15")  # Replace with the actual declaration date
+
+# Filter data for dates on or after Harris's declaration date
+filtered_data <- combined_data %>%
+  filter(end_date >= harris_declaration_date)
+
+# Plot pct over time for both candidates from Harris's declaration date
+ggplot(filtered_data, aes(x = end_date, y = pct, color = candidate)) +
+  geom_line(alpha = 0.7) +          # Line plot for pct over time
+  geom_smooth(se = FALSE, linetype = "dashed") + # Add smoothed trend line
+  labs(title = "PCT Time for Harris and Trump",
+       x = "Date",
+       y = "PCT",
+       color = "Candidate") +
+  theme_minimal()
 
 ```
 
@@ -145,26 +215,431 @@ knitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"))
 
 # Model {#sec-model}
 
-```{r}
-#modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+## Overview of Modelling
+To fully analyze the support percentages for Donald Trump and Kamala Harris, we developed linear and Bayesian regression models. The goal was to understand how key predictors, including time (end_date), pollster, geography (state), and quality of polls (pollscore), affect public support for each candidate. By employing a linear model, we captured baseline trends and the direct effects of these predictors. The Bayesian regression spline model provides more flexibility to model nonlinear relationships and provide a probabilistic interpretation. This combination of models ensures a balanced approach that is neither too simple nor too complex, consistent with the characteristics of the data and the goals of the analysis.
 
-#model_date <- 
-  #readRDS(file = here::here("models/model_date.rds"))
-#model_date_pollster <- 
-   #readRDS(file = here::here("models/model_date_pollster.rds"))
+
+## Model Presentation
+### Linear Model
+
+The linear model is defined as:
+```{=tex}
+\[
+\text{pct}_i = \beta_0 + \beta_1 \cdot \text{end\_date}_i + \beta_2 \cdot \text{pollster}_i + \epsilon_i
+\]
+
+\noindent where:
+\begin{flushleft}
+    pct : Approval rating (dependent variable). \\
+    $\beta_0$ : Intercept term. \\
+    $\beta_1$ (end\_date) : Effect of time on pct. \\
+    $\beta_2$ (pollster) : Effect of each pollster. \\
+    $\epsilon$ : Error term, assumed to be normally distributed.
+\end{flushleft}
 
 ```
 
-### Model justification
 
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
+### Bayesian Model
+The Bayesian regression spline model is represented by:
 
-We can use maths by including latex between dollar signs, for instance $\theta$.
+```{=tex}
+\[
+\text{pct} = \beta_0 + f(\text{end\_date\_num}) + \beta_3(\text{state}) + \beta_4(\text{pollscore}) + \beta_5(\text{pollster}) + \epsilon
+\]
+
+where:
+\begin{align*}
+    &f(\text{end\_date\_num}): \text{ Natural spline function on `end\_date\_num` with 5 degrees of freedom.} \\
+    &\beta_3(\text{state}): \text{ Effect of state on `pct`.} \\
+    &\beta_4(\text{pollscore}): \text{ Effect of poll quality.} \\
+    &\beta_5(\text{pollster}): \text{ Effect of pollster.} \\
+    &\text{Priors:} \\
+    &\beta_0 \sim \text{Normal}(50, 10). \\
+    &\beta_i \sim \text{Normal}(0, 5) \text{ for } i = 1, 2, 3, 4, 5. \\
+    &\epsilon: \text{ Normally distributed error term.}
+\end{align*}
+
+
+
+```
+
+
+
+## Model Summary and Justification
+### Linear Model Summary
+The linear model is designed to estimate approval ratings (pct) using key predictors as end_date, pollster. By including end_date, we capture temporal trends in public opinion, which is especially important as election day approaches and public sentiment shifts. A spline function on end_date allows for capturing non-linear trends, enabling the model to reflect fluctuations in approval that may not follow a simple linear trajectory. Including pollsters as a categorical variable controls for systematic differences across pollsters, as different pollsters may use different methods or biases. The summary of linear model for both Trump and Harris is showing at [@appendix-c].
+
+### Bayesian Model Summary
+For the Bayesian models, they were employed to estimate approval ratings (pct) for Trump and Harris, using predictors end_date, pollster, state, and pollscore. Bayesian modeling offers flexibility by allowing the incorporation of prior information, which helps stabilize estimates, especially with limited data or high variability. By assigning priors to model parameters, we incorporate prior knowledge while letting the data adjust these estimates, resulting in a balanced interpretation of effects. The model used a spline function on end_date to capture non-linear trends in approval ratings over time, adapting to fluctuations closer to the election date. Priors for each predictor were set as normally distributed with moderate variance, allowing data-driven estimates while avoiding overfitting. The more detailed summart of Bayesian model is in [@appendix-c].
+
+### Model Justification
+In the linear model, key features were included to capture fundamental aspects of the data, temporal trends, pollster effects, and variations in approval ratings based on poll quality. The variable end_date was incorporated as a continuous predictor to account for temporal changes in approval ratings as the election date approaches, reflecting shifts in public opinion over time. Rather than segmenting time into arbitrary periods, we treated end_date as continuous to preserve information and enable a straightforward interpretation of trends. The pollster variable was treated as a categorical predictor, allowing us to control for potential biases and methodological differences inherent in polling agencies.
+
+In this Bayesian modeling approach, specific features were included to address key aspects of the data, such as temporal trends, geographic variation, polling quality, and agency differences. end_date was treated as a continuous variable, allowing us to model temporal changes in approval ratings as election day approaches. A spline function on end_date enabled us to capture non-linear trends without oversimplifying time effects. We chose state as a predictor to reflect regional differences, treating it as a categorical variable to capture variations in support by location, and pollscore was included to account for methodological quality, ensuring that higher-quality polls received more weight in our predictions. Additionally, pollster was incorporated as a categorical variable to control for systematic differences in reporting between agencies, a necessary step given known variations in polling methodologies.
+
+Priors were set as normally distributed with moderate variance, reflecting the assumption that predictor effects are centered around zero but allowing the data to influence final estimates. The intercept prior was set around 50%, given that approval ratings often center around this mark, with a larger variance to accommodate potential shifts. The Bayesian framework enables us to quantify uncertainty around these parameters with credible intervals, providing probabilistic insights that go beyond point estimates.
+
+
+## Model limitations
+
+The linear model assumes normally distributed errors and non-collinearity among predictors to ensure stable and unbiased coefficient estimates. However, one limitation of the model is its inability to capture non-linear trends, which could lead to oversimplified estimates of approval ratings over time. Additionally, treating pollster and state as fixed effects may overlook random variations unique to individual polls or regions, which could lead to less precise estimates for outlier observations. The model also relies heavily on end_date for temporal prediction, which may be less effective far in advance of the election.
+
+The Bayesian model assumes normally distributed errors and independent observations. Non-collinearity among predictors was also assumed to maintain stability in coefficient estimates. One limitation is the potential for overfitting due to the spline’s flexibility; this risk was mitigated by choosing a moderate degree of freedom for the spline term. Additionally, the model’s reliance on end_date as a temporal predictor means it may be less reliable for long-term forecasting. Another limitation is that unobserved variables, such as unexpected political events, are not accounted for, which could affect model accuracy.
 
 
 # Results {#sec-result}
+## Data Analysis Result
+After thoroughly examining the data and establishing our modeling framework, we now turn to the results. This section presents a detailed exploration of approval ratings for Trump and Harris, focusing on key trends over time, geographic variations, and differences across polling agencies. Through a combination of summary statistics, tables, and visualizations, we relay the findings without interpretation, providing a clear and objective view of each candidate's support dynamics across various dimensions. This analysis highlights shifts in public opinion as election day nears and reveals insights into the influence of geographic and methodological factors on approval ratings.
 
-Our results are summarized in 
+
+```{r}
+#| label: fig-of-pct-change
+#| fig-cap: "Comparsion of PCT Change over Time "
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# Assuming combined_data contains data for both Trump and Harris
+ggplot(combined_data, aes(x = end_date, y = pct, color = candidate)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(se = FALSE) +
+  labs(
+    title = "Approval Ratings Over Time for Trump and Harris",
+    x = "Date",
+    y = "Approval Rating (%)",
+    color = "Candidate"
+  ) +
+  theme_minimal()
+
+
+```
+This plot @fig-of-pct-change compares the approval ratings of Trump and Harris from early 2023 to late 2024, illustrating trends in public sentiment over time. Each dot represents an individual approval rating data point, with teal marking Trump and red marking Harris. Both candidates show a slight upward trend in approval, but while Trump’s ratings remain relatively steady, fluctuating between 40% and 50%, Harris’s ratings display more variability after she decleared her campaign for president, so data points cluster more densely. This clustering suggests a period of heightened public attention, possibly due to upcoming elections or significant political developments. Overall, the plot highlights that Trump’s approval has remained stable with a gradual increase, whereas Harris has experienced more pronounced shifts, particularly in recent months, reflecting differing public responses to each candidate’s actions or policies.
+
+
+
+
+
+
+```{r}
+#| label: fig-state
+#| fig-cap: "Average PCT by State in U.S."
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+state_avg <- combined_data %>%
+  group_by(state, candidate) %>%
+  summarise(mean_pct = mean(pct, na.rm = TRUE))
+
+ggplot(state_avg, aes(x = reorder(state, mean_pct), y = mean_pct, fill = candidate)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  coord_flip() +
+  labs(
+    title = "Average Approval Ratings by State",
+    x = "State",
+    y = "Mean Approval Rating (%)",
+    fill = "Candidate"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 5),  
+    legend.text = element_text(size = 8),  
+    legend.title = element_text(size = 10)
+  )
+
+
+
+
+
+
+```
+This plot @fig-state displays the average approval ratings for Trump and Harris across U.S. states, highlighting regional differences in support for each candidate. Each bar represents the mean approval rating within a state, with teal bars for Trump and red for Harris. Trump generally enjoys higher ratings in conservative states like Wyoming, West Virginia, and Arkansas, where his approval exceeds 50%, while Harris receives stronger support in liberal states such as California and New York, although her ratings typically do not reach the same levels as Trump’s in his most favorable states. The inclusion of a national average provides a benchmark for comparison, illustrating a clear geographic polarization in public sentiment. This distribution of support underscores regional political divides, suggesting that each candidate’s approval is strongly influenced by state-level ideological leanings, which could shape their future electoral strategies.
+
+
+```{r}
+#| label: fig-pollster
+#| fig-cap: "PCT of Different Pollster"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+ggplot(combined_data, aes(x = pollster, y = pct, fill = candidate)) +
+  geom_boxplot(outlier.shape = NA) +
+  labs(
+    title = "Approval Ratings by Pollster",
+    x = "Pollster",
+    y = "Approval Rating (%)",
+    fill = "Candidate"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 8), 
+    legend.text = element_text(size = 8),                       
+    legend.title = element_text(size = 10)                       
+  )
+
+
+
+```
+This boxplot @fig-pollster shows the approval ratings of Trump and Harris across various pollsters, illustrating the variability in results from different sources. Each box represents the interquartile range of approval ratings for either Trump (teal) or Harris (red), with the central line showing the median rating. The whiskers extend to capture the range of ratings, highlighting the spread of each pollster’s data. Some pollsters, such as Ipsos and Emerson, show a wider range of approval ratings, indicating more variability in public opinion, while others, like Quinnipiac and CNN/SSRS, report more consistent ratings with narrower ranges. Overall, the ratings tend to cluster around similar median values, although certain pollsters consistently report higher or lower ratings for one candidate. This visualization underscores the influence of methodological differences between pollsters and highlights the value of examining multiple sources for a comprehensive understanding of public sentiment.
+
+
+```{r}
+#| label: fig-density
+#| fig-cap: "Density of Approval Ratings for Trump and Harris"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+ggplot(combined_data, aes(x = pollscore, fill = candidate)) +
+  geom_density(alpha = 0.5) +
+  labs(
+    title = "Density of Poll Scores for Trump and Harris",
+    x = "Poll Score",
+    y = "Density",
+    fill = "Candidate"
+  ) +
+  theme_minimal()
+
+
+```
+This density plot @fig-density displays the distribution of poll scores for Trump and Harris, revealing differences in the concentration of their approval ratings. The x-axis shows poll scores, with values closer to zero indicating higher approval, while the y-axis represents the density or frequency of these scores. Trump’s distribution, represented in teal, peaks prominently around -1.0, indicating that his ratings tend to cluster around this lower approval range. Harris, shown in red, has a slightly broader distribution with a peak closer to -0.75, suggesting somewhat higher ratings on average compared to Trump. This visualization suggests that, while both candidates face generally low approval ratings, Harris’s distribution includes slightly higher scores, potentially indicating a modest advantage in public perception over Trump.
+
+
+
+## Model Prediction Result
+### Bayesian Result
+The Bayesian model @fig-bayesian predictions provide a nuanced view of the poll trends for Kamala Harris and Donald Trump over time. By incorporating prior information, this approach allows for flexible updates as new data points emerge, enhancing the reliability of the trend predictions. In these results, Harris’s predicted average support is estimated at 48.3%, slightly ahead of Trump’s at 47.1%. The smooth lines in the graph represent the predicted trends, with Harris shown in blue and Trump in red. These lines indicate the direction and consistency of public support across the observed period, suggesting Harris may have a modest lead. The shaded areas around each line reflect the uncertainty in the predictions, illustrating the variability in poll data and capturing the possible range of outcomes. Although Harris’s predicted support is somewhat higher, the overlapping prediction intervals highlight that the race remains close, with potential shifts possible as new polling data becomes available. This Bayesian model thus emphasizes a competitive landscape with no definitive outcome at this stage, underscoring the evolving nature of public sentiment as election day approaches. But it shows clearly that Harris is ahead of Trump.
+
+
+```{r}
+#| label: fig-bayesian 
+#| fig-cap: "Bayesian Model Prediction for Harris and Trump"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+
+harris_analysis_data <- harris_analysis_data %>%
+  mutate(
+    end_date = as.Date(end_date),  # Convert to Date format if not already
+    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))
+  )
+
+trump_analysis_data <- trump_analysis_data %>%
+  mutate(
+    end_date = as.Date(end_date),  # Convert to Date format if not already
+    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))
+  )
+
+# Filter out any rows with missing or infinite values in end_date_num
+harris_analysis_data <- harris_analysis_data %>%
+  filter(!is.na(end_date_num) & is.finite(end_date_num))
+
+trump_analysis_data <- trump_analysis_data %>%
+  filter(!is.na(end_date_num) & is.finite(end_date_num))
+
+# Prepare Harris data for Bayesian model
+harris_analysis_data$state <- factor(harris_analysis_data$state)
+harris_analysis_data$pollster <- factor(harris_analysis_data$pollster)
+harris_analysis_data$pollscore <- as.numeric(as.character(harris_analysis_data$pollscore))
+
+# Define unique levels of pollster
+pollster_levels <- levels(harris_analysis_data$pollster)
+
+# Initialize list to store predictions for each pollster (Harris)
+all_pollster_preds_harris <- list()
+
+# Loop over each pollster to generate predictions for Harris
+for (p in pollster_levels) {
+  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)
+  harris_new_data <- data.frame(
+    end_date_num = seq(
+      min(harris_analysis_data$end_date_num),
+      max(harris_analysis_data$end_date_num),
+      length.out = 100
+    ),
+    pollster = factor(p, levels = pollster_levels),
+    state = "National",
+    pollscore = random_pollscore
+  )
+  
+  # Generate posterior predictions for Harris
+  preds <- posterior_predict(model_harris_bayesian, newdata = harris_new_data)
+  all_pollster_preds_harris[[p]] <- preds
+}
+
+# Convert predictions to array and calculate summary statistics for Harris
+all_pollster_preds_array_harris <- simplify2array(all_pollster_preds_harris)
+pred_mean_harris <- apply(all_pollster_preds_array_harris, c(1, 2), mean)
+pred_lower_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.025)
+pred_upper_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.975)
+
+# Summary data frame for Harris
+harris_pred_summary <- harris_new_data %>%
+  mutate(
+    pred_mean = colMeans(pred_mean_harris),
+    pred_lower = pred_lower_harris,
+    pred_upper = pred_upper_harris,
+    candidate = "Kamala Harris"
+  )
+
+
+# Prepare Trump data for Bayesian model
+trump_analysis_data$state <- factor(trump_analysis_data$state)
+trump_analysis_data$pollster <- factor(trump_analysis_data$pollster)
+trump_analysis_data$pollscore <- as.numeric(as.character(trump_analysis_data$pollscore))
+
+# Initialize list to store predictions for each pollster (Trump)
+all_pollster_preds_trump <- list()
+
+# Loop over each pollster to generate predictions for Trump
+for (p in pollster_levels) {
+  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)
+  trump_new_data <- data.frame(
+    end_date_num = seq(
+      min(trump_analysis_data$end_date_num),
+      max(trump_analysis_data$end_date_num),
+      length.out = 100
+    ),
+    pollster = factor(p, levels = pollster_levels),
+    state = "National",
+    pollscore = random_pollscore
+  )
+  
+  # Generate posterior predictions for Trump
+  preds <- posterior_predict(model_trump_bayesian, newdata = trump_new_data)
+  all_pollster_preds_trump[[p]] <- preds
+}
+
+# Convert predictions to array and calculate summary statistics for Trump
+all_pollster_preds_array_trump <- simplify2array(all_pollster_preds_trump)
+pred_mean_trump <- apply(all_pollster_preds_array_trump, c(1, 2), mean)
+pred_lower_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.025)
+pred_upper_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.975)
+
+# Summary data frame for Trump
+trump_pred_summary <- trump_new_data %>%
+  mutate(
+    pred_mean = colMeans(pred_mean_trump),
+    pred_lower = pred_lower_trump,
+    pred_upper = pred_upper_trump,
+    candidate = "Donald Trump"
+  )
+
+
+# Combine data frames for plotting
+combined_pred_summary <- bind_rows(harris_pred_summary, trump_pred_summary)
+
+# Generate the plot with 'pct' as the column for percentages
+ggplot() +
+  # Plot data points for Harris using 'pct'
+  geom_point(data = harris_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +
+  # Plot data points for Trump using 'pct'
+  geom_point(data = trump_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +
+  # Prediction line and ribbon for Harris
+  geom_line(
+    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),
+    aes(x = end_date_num, y = pred_mean, color = candidate),
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),
+    alpha = 0.1,
+    inherit.aes = FALSE
+  ) +
+  # Prediction line and ribbon for Trump
+  geom_line(
+    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),
+    aes(x = end_date_num, y = pred_mean, color = candidate),
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),
+    alpha = 0.1,
+    inherit.aes = FALSE
+  ) +
+  # Annotate the final predicted values
+  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 48.3, 
+           label = "48.3", color = "blue", hjust = -0.2, size = 2) +
+  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 47.1, 
+           label = "47.1", color = "red", hjust = -0.2, size = 2) +
+  labs(
+    x = "Days since July 15, 2024",
+    y = "Percentage",
+    title = "Bayesian Prediction Poll PCT for Trump and Harris"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_color_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +
+  scale_fill_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +
+  guides(
+    color = guide_legend(title = "", override.aes = list(fill = NA, linetype = 1)),
+    fill = "none"
+  )
+
+```
+
+### Linear Model Predictions Result
+
+This graph @fig-linear illustrates the linear model predictions for Kamala Harris and Donald Trump over time, with data points representing poll percentages. Each dashed line corresponds to a linear regression model generated by individual pollsters, highlighting the variability and specific trends in polling data reported by each source. These dashed lines show how different pollsters have projected support levels for each candidate, providing insight into polling diversity.
+
+The solid, curved lines represent the overall trend for Harris and Trump after aggregating data from all pollsters. These lines offer a smoothed view of each candidate’s polling trajectory over time, indicating the general direction of support. The result shows that Harris is a little bit ahead of Trump with slightly differenece. This visualization effectively captures both the consistency and fluctuations in polling data, demonstrating how individual pollster projections contribute to the overarching trends for each candidate.
+
+
+```{r}
+#| label: fig-linear
+#| fig-cap: "Linear Model Prediction for Harris and Trump"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+
+# Generate predictions for each candidate's data
+harris_analysis_data <- harris_analysis_data %>%
+  mutate(
+    fitted_date_pollster = predict(model_date_pollster_harris),
+    candidate = "Harris"
+  )
+
+trump_analysis_data<- trump_analysis_data %>%
+  mutate(
+    fitted_date_pollster = predict(model_date_trump_pollster),
+    candidate = "Trump"
+  )
+
+# Combine the datasets for Harris and Trump
+combined_data <- bind_rows(harris_analysis_data, trump_analysis_data)
+
+# Plot the combined data with individual pollster trend lines and final smoothed prediction
+ggplot(combined_data, aes(x = end_date, y = fitted_date_pollster, color = candidate, group = interaction(candidate, pollster))) +
+  geom_line(linetype = "dotted", alpha = 0.4, size = 0.8) + # Individual trend lines for each pollster
+  geom_smooth(aes(group = candidate), method = "loess", span = 0.3, size = 1.2, se = FALSE) + # Final smoothed curve
+  theme_classic() +
+  labs(
+    y = "Poll Percentage",
+    x = "Date",
+    title = "Linear Model Predictions for Harris and Trump",
+    color = "Candidate"
+  )
+
+
+```
+
+
+
+
+
+
+
 
 
 
@@ -189,7 +664,7 @@ Weaknesses and next steps should also be included.
 
 \appendix
 
-# Appendix {-}
+# Appendix A {#appendix-a}
 Polling Methodology for CBS News/YouGov Survey (October 11-16, 2024)
 
 1. Population, Frame, and Sample
@@ -236,9 +711,70 @@ p ̂± 100 × √((1+CV^2)/n)
 Where CV is the coefficient of variation of the sample weights, and \( n \) is the sample size. This formula calculates the sampling error, meaning that 95% of the sample results should fall within this range. It’s important to note that this margin doesn’t account for non-sampling errors, such as biases from panel selection or respondent behavior.
 
 
-# Additional data details
+# Appendix B {#appendix-b}
+## Research Methodology
+We wanted to use a stratified sampling method for our study in consideration of our budget constraint. Stratified sampling is an efficient method that can ensure the coverage of diverse groups, by stratifying national electorates by geographic area (state), age, gender, and educational level so that we can ensure the representation of each group and in the meanwhile rationalize the budget control. Moreover, random samples will be drawn within each stratum to ensure coverage of various population groups. Based on budget constraints, the total sample size is set at 2,000 individuals, which is allocated to each stratum to ensure that each stratum provides statistically significant results. As a result, not only does the stratified sampling increase the representativeness of the data, but also it improves the accuracy of the results, making it extremely cost-effecient, especially when budgetary constraints are in place.
+ 
+In order to obtain a more comprehensive sample coverage in the survey, respondents will be recruited through two primary approaches using online questionnaires and telephone surveys to ensure that voter groups of different ages and technology preferences are covered. To be more specific, for voters aged 18-64, a Google Forms online questionnaire will be utilized and promoted through social media advertisment like Facebook and Google Ads, with an estimated budget of \$30,000 used to increase exposure and appeal. Online questionnaires are less expensive, suitable for wide distribution and convenient for collecting large amounts of data. For senior voters aged 65 and over, we can opt for a telephone survey to overcome the fact that this group may not be familiar with or use online tools. The budget for this component was \$40,000, covering costs such as call costs, phone carrier fees, and data entry to ensure representation of the senior population. In order to increase the completion and response rate of the questionnaire, $10,000 of the total budget will also be allocated for incentives such as small gift cards or raffle entries. Those incentives will be particularly effective for younger respondents to the online questionnaire, significantly reducing abandonment and improving the quality of the data.
+ 
+The questionnaire will be designed to cover key voter demographics, political leanings, candidate preferences, policy attitudes, etc. It ensures that the major factors likely to influence voters' voting choices are captured. The questionnaire will be distributed through Google Forms, while the questionnaire content of the telephone survey remains consistent to ensure data compatibility and consistency. Specifically, the questionnaire will include demographic information such as age, gender, state of residence, education, and annual income to help analyze the preferences of different groups. In addition, the questionnaire will ask respondents about their political leanings (from “very conservative” to “very liberal”), candidate support intentions (Candidate A, Candidate B, other candidates, or undecided), and views on major debated policies by two parties such as health insurance, education policy, and tax policy, immigration policy. Finally, the questionnaire will also include a voting intention question asking respondents if they plan to run in the upcoming presidential election.
+ 
+Upon completion of data collection, the data will undergo rigorous validation and cleaning steps to ensure the quality and accuracy of the data. For online questionnaires, IP restrictions will be set to prevent duplicate submissions from the same IP address, while logic checks will be performed to identify unreasonable responses, such as quickly completed questionnaires or inconsistent responses. Telephone data will be double-validated for consistency checking and data entry to ensure accuracy. During the data cleaning process, $10,000 of the budget will be used for labor costs for data validation and cleaning. The data cleaning step helps to improve the reliability of the data and provide high quality data to support subsequent analysis.
+ 
+After that, the cleaned data will be weighted by stratified characteristics to ensure that the representation of different districts and groups is consistent with the characteristics of the U.S. presidential election. Since the U.S. presidential election adopts the Electoral College system, and the outcome of each state directly affects the electoral votes attributed to that state, rather than being based on the number of votes cast in the national popular vote, our data analysis will focus on voting trends at the state level. In our weighted average calculations, we’ll weigh each state based on its percentage of voter population to ensure that states with larger populations in the aggregate data, such as California, Texas, and Florida, will have a greater impact on the results. This weighted treatment better simulates the influence of states in actual elections. Additionally, we adjust the weights based on the number of electoral votes in each state, paying particular attention to voter preferences in key “swing states” such as Florida, Pennsylvania, and Michigan. In addition to weighting, we will use regression analysis to explore the impact of demographic characteristics, such as age, income, and education level, on voter preferences to reveal trends in support for various kinds of groups. The data analysis budget is $10,000 for hiring a professional data analyst or purchasing statistical software services to ensure the scientific validity of the project.
+ 
+## Google Form
+https://docs.google.com/forms/d/e/1FAIpQLSedLCpBggwaUAy1xA2el9yrE3M31_YVVGOnsB1m
+EVh73uDahw/viewform?usp=sf_link
 
-# Model details {#sec-model-details}
+
+
+
+# Appendix C {#appendixc}
+## Detailed Linear Model Data summary 
+```{r}
+#| label: tbl-Summary-lin-model
+#| tbl-cap: "Summary of Linear Models for Harris and Trump"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+
+harris_summary <- broom::tidy(model_date_pollster_harris) %>%
+  select(term, estimate, std.error) %>%
+  mutate(Harris = paste0(round(estimate, 3), " (", round(std.error, 3), ")"))
+
+trump_summary <- broom::tidy(model_date_trump_pollster) %>%
+  select(term, estimate, std.error) %>%
+  mutate(Trump = paste0(round(estimate, 3), " (", round(std.error, 3), ")"))
+
+# Combine summaries side by side based on 'term'
+combined_summary <- full_join(harris_summary %>% select(term, Harris),
+                              trump_summary %>% select(term, Trump),
+                              by = "term")
+
+# Display the table with separate columns for Harris and Trump
+knitr::kable(combined_summary,
+             col.names = c("Term", "Harris Linear Model", "Trump Linear Model"))
+```
+
+## Detailed Bayesian Model summary 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+summary(model_trump_bayesian)
+
+summary(model_harris_bayesian)
+
+
+```
+
+
+
+
 
 ## Posterior predictive check
 
