@@ -1,1001 +1,1001 @@
 pollster,numeric_grade,pollscore,methodology,transparency_score,start_date,end_date,candidate_name,pct
-YouGov,1.4,-0.9,In-person,7,01/01/2024,11/04/2024,Pete Buttigieg,66.8
-YouGov,1.3,1.8,Mixed-mode,9,01/08/2024,11/11/2024,Gavin Newsom,37.5
-Pew Research,2.9,2.1,Telephone,8,01/15/2024,11/18/2024,Donald Trump,41.5
-YouGov,2.3,3.1,Online Panel,4,01/22/2024,11/25/2024,Donald Trump,20.3
-Pew Research,2.2,2.2,Mixed-mode,8,01/29/2024,12/02/2024,Pete Buttigieg,62.3
-Pew Research,1.2,4.2,Online Panel,3,02/05/2024,12/09/2024,Pete Buttigieg,71.2
-Ipsos,1.8,-0.8,Mixed-mode,4,02/12/2024,12/16/2024,Kamala Harris,97.8
-SurveyMonkey,1,2.7,Online Panel,4,02/19/2024,12/23/2024,Elizabeth Warren,94.9
-Gallup,2.3,0.6,Telephone,4,02/26/2024,12/30/2024,Elizabeth Warren,99.2
-SurveyMonkey,3,-1.5,Mixed-mode,8,03/04/2024,01/06/2025,Elizabeth Warren,16.5
-Gallup,2.3,4.1,In-person,6,03/11/2024,01/13/2025,Pete Buttigieg,3.5
-Ipsos,1.9,0.5,Online Panel,7,03/18/2024,01/20/2025,Kamala Harris,52.1
-Pew Research,1.6,1.5,In-person,1,03/25/2024,01/27/2025,Bernie Sanders,63.8
-SurveyMonkey,2.4,1.9,In-person,9,04/01/2024,02/03/2025,Bernie Sanders,79.3
-YouGov,2.7,3.3,In-person,0,04/08/2024,02/10/2025,Elizabeth Warren,27.6
-Gallup,2,-1.6,In-person,9,04/15/2024,02/17/2025,Donald Trump,61.5
-SurveyMonkey,2.1,1.2,In-person,4,04/22/2024,02/24/2025,Donald Trump,69.3
-Gallup,2.9,-1.1,Telephone,9,04/29/2024,03/03/2025,Kamala Harris,10.4
-Gallup,2.6,1.8,In-person,3,05/06/2024,03/10/2025,Kamala Harris,68.8
-Ipsos,1,3.9,Telephone,2,05/13/2024,03/17/2025,Pete Buttigieg,95
-Pew Research,2.4,-0.2,Mixed-mode,2,05/20/2024,03/24/2025,Elizabeth Warren,62.3
-Ipsos,1.7,0.5,Online Panel,8,05/27/2024,03/31/2025,Donald Trump,69.3
-Gallup,2.5,-1.9,In-person,2,06/03/2024,04/07/2025,Pete Buttigieg,94.5
-Ipsos,1.3,3.5,Online Panel,3,06/10/2024,04/14/2025,Gavin Newsom,11.4
-Ipsos,2.2,-1.5,Mixed-mode,1,06/17/2024,04/21/2025,Kamala Harris,56.1
-Ipsos,2.3,2.9,In-person,7,06/24/2024,04/28/2025,Gavin Newsom,24.2
-YouGov,2,4.4,Telephone,4,07/01/2024,05/05/2025,Donald Trump,72.1
-Pew Research,1.2,3.4,In-person,7,07/08/2024,05/12/2025,Gavin Newsom,43.1
-Ipsos,2.9,-0.8,Telephone,1,07/15/2024,05/19/2025,Gavin Newsom,53.9
-Gallup,1.3,3,Telephone,6,07/22/2024,05/26/2025,Pete Buttigieg,35
-Gallup,1.9,-0.5,Mixed-mode,3,07/29/2024,06/02/2025,Gavin Newsom,41.8
-Gallup,2,2.1,Mixed-mode,4,08/05/2024,06/09/2025,Gavin Newsom,45.5
-Pew Research,2.3,2.6,In-person,0,08/12/2024,06/16/2025,Bernie Sanders,74.6
-SurveyMonkey,1.6,-1.8,Telephone,0,08/19/2024,06/23/2025,Gavin Newsom,4.8
-Pew Research,1,4.5,In-person,7,08/26/2024,06/30/2025,Kamala Harris,11
-Gallup,2.3,0.2,Telephone,5,09/02/2024,07/07/2025,Bernie Sanders,35.1
-Pew Research,2.2,0.4,In-person,3,09/09/2024,07/14/2025,Elizabeth Warren,85.7
-Gallup,2.7,1.3,Mixed-mode,8,09/16/2024,07/21/2025,Bernie Sanders,66.9
-Ipsos,2.2,4.5,Telephone,8,09/23/2024,07/28/2025,Elizabeth Warren,40.3
-Gallup,2.5,2.8,Mixed-mode,2,09/30/2024,08/04/2025,Elizabeth Warren,63.8
-SurveyMonkey,2.2,-1.1,In-person,0,10/07/2024,08/11/2025,Donald Trump,16.2
-SurveyMonkey,2.4,-0.4,In-person,8,10/14/2024,08/18/2025,Elizabeth Warren,10.7
-SurveyMonkey,1.3,1.4,Online Panel,7,10/21/2024,08/25/2025,Elizabeth Warren,48.5
-Ipsos,1.1,0.8,Online Panel,7,10/28/2024,09/01/2025,Gavin Newsom,34.8
-Pew Research,1.4,4.1,Telephone,9,11/04/2024,09/08/2025,Pete Buttigieg,76
-Pew Research,2.6,0.9,Online Panel,0,11/11/2024,09/15/2025,Elizabeth Warren,35.5
-Ipsos,2.9,-0.1,In-person,5,11/18/2024,09/22/2025,Gavin Newsom,71.4
-Gallup,2.3,0,Online Panel,5,11/25/2024,09/29/2025,Bernie Sanders,94.6
-Gallup,2.4,4.6,Telephone,2,12/02/2024,10/06/2025,Kamala Harris,52
-Ipsos,2.3,3.2,Mixed-mode,8,12/09/2024,10/13/2025,Kamala Harris,98.7
-Ipsos,2.9,0.1,Telephone,0,12/16/2024,10/20/2025,Kamala Harris,58
-Gallup,1.5,0.5,Mixed-mode,1,12/23/2024,10/27/2025,Kamala Harris,34.1
-SurveyMonkey,2.7,-2,Mixed-mode,0,12/30/2024,11/03/2025,Bernie Sanders,74.1
-Pew Research,2.4,0.7,Mixed-mode,0,01/06/2025,11/10/2025,Kamala Harris,84.7
-SurveyMonkey,1.2,3.1,Telephone,8,01/13/2025,11/17/2025,Donald Trump,38.7
-Ipsos,2,2.6,Mixed-mode,7,01/20/2025,11/24/2025,Pete Buttigieg,95.9
-Gallup,2.4,-1.7,In-person,9,01/27/2025,12/01/2025,Gavin Newsom,77
-SurveyMonkey,2.2,3.9,Mixed-mode,3,02/03/2025,12/08/2025,Bernie Sanders,32.8
-Ipsos,1,-1.8,Mixed-mode,7,02/10/2025,12/15/2025,Elizabeth Warren,70.2
-YouGov,2.1,4.6,Online Panel,6,02/17/2025,12/22/2025,Donald Trump,69.8
-YouGov,2.9,3.3,Telephone,8,02/24/2025,12/29/2025,Bernie Sanders,62.8
-Pew Research,1,0,Telephone,0,03/03/2025,01/05/2026,Kamala Harris,8.4
-Gallup,1,3.5,Online Panel,6,03/10/2025,01/12/2026,Elizabeth Warren,39.8
-Gallup,1.5,4.4,Mixed-mode,9,03/17/2025,01/19/2026,Elizabeth Warren,67.2
-Ipsos,2.2,2.2,Telephone,0,03/24/2025,01/26/2026,Kamala Harris,54.5
-SurveyMonkey,1.9,-1.6,Online Panel,6,03/31/2025,02/02/2026,Gavin Newsom,61.7
-YouGov,2.1,-0.5,Online Panel,0,04/07/2025,02/09/2026,Bernie Sanders,37.4
-Pew Research,1.8,1.8,Online Panel,5,04/14/2025,02/16/2026,Bernie Sanders,15.6
-Pew Research,2,2.7,Online Panel,0,04/21/2025,02/23/2026,Gavin Newsom,77
-YouGov,2.2,4.1,Online Panel,7,04/28/2025,03/02/2026,Gavin Newsom,55.7
-SurveyMonkey,1.5,3.4,Mixed-mode,1,05/05/2025,03/09/2026,Donald Trump,16.2
-YouGov,2.4,-1.9,Mixed-mode,3,05/12/2025,03/16/2026,Gavin Newsom,18.2
-Pew Research,1.8,-1.6,In-person,8,05/19/2025,03/23/2026,Gavin Newsom,9.9
-SurveyMonkey,2.8,0.3,In-person,3,05/26/2025,03/30/2026,Donald Trump,77.3
-Pew Research,2.9,-1.7,Online Panel,0,06/02/2025,04/06/2026,Kamala Harris,43.5
-Pew Research,1.6,3.8,Telephone,1,06/09/2025,04/13/2026,Gavin Newsom,31.8
-Gallup,1.8,0.3,In-person,5,06/16/2025,04/20/2026,Pete Buttigieg,23.2
-YouGov,1.3,2.5,Mixed-mode,6,06/23/2025,04/27/2026,Pete Buttigieg,35.4
-Pew Research,1.7,-0.9,Telephone,9,06/30/2025,05/04/2026,Gavin Newsom,31.4
-SurveyMonkey,2.9,2.6,Telephone,8,07/07/2025,05/11/2026,Pete Buttigieg,93.7
-Pew Research,2.4,-1.6,Online Panel,6,07/14/2025,05/18/2026,Elizabeth Warren,38.7
-YouGov,2.4,0.3,Mixed-mode,7,07/21/2025,05/25/2026,Elizabeth Warren,57.7
-Pew Research,2.4,1.9,In-person,8,07/28/2025,06/01/2026,Kamala Harris,27.4
-Ipsos,3,-1.6,In-person,8,08/04/2025,06/08/2026,Gavin Newsom,49.2
-Ipsos,2.8,0.3,Online Panel,4,08/11/2025,06/15/2026,Kamala Harris,66.4
-Gallup,2.6,3.3,Online Panel,7,08/18/2025,06/22/2026,Bernie Sanders,15.5
-YouGov,2.6,-0.2,Mixed-mode,8,08/25/2025,06/29/2026,Elizabeth Warren,53.5
-Gallup,1.9,-1.5,Telephone,8,09/01/2025,07/06/2026,Kamala Harris,85.3
-Pew Research,2.9,-1.9,Online Panel,2,09/08/2025,07/13/2026,Elizabeth Warren,63.1
-Ipsos,2.1,3.5,Online Panel,0,09/15/2025,07/20/2026,Pete Buttigieg,65.1
-Pew Research,2.6,4.7,Telephone,2,09/22/2025,07/27/2026,Elizabeth Warren,60.3
-Gallup,2.7,2.1,Online Panel,8,09/29/2025,08/03/2026,Pete Buttigieg,56.3
-Ipsos,2.9,4.2,Mixed-mode,3,10/06/2025,08/10/2026,Elizabeth Warren,7.1
-Gallup,1.3,2.2,Mixed-mode,9,10/13/2025,08/17/2026,Bernie Sanders,36.8
-SurveyMonkey,2.8,3.9,Mixed-mode,0,10/20/2025,08/24/2026,Kamala Harris,69.8
-Gallup,2.6,3,In-person,4,10/27/2025,08/31/2026,Gavin Newsom,33.9
-Ipsos,2.1,-1.8,Mixed-mode,8,11/03/2025,09/07/2026,Bernie Sanders,25
-YouGov,2.8,0.1,Mixed-mode,8,11/10/2025,09/14/2026,Kamala Harris,24.3
-SurveyMonkey,2.3,1.8,In-person,0,11/17/2025,09/21/2026,Donald Trump,54.4
-Pew Research,1.2,3,Mixed-mode,9,11/24/2025,09/28/2026,Donald Trump,63.3
-Ipsos,2.8,0.7,Mixed-mode,9,12/01/2025,10/05/2026,Gavin Newsom,94.1
-Gallup,2.1,-0.8,Online Panel,2,12/08/2025,10/12/2026,Elizabeth Warren,96.5
-SurveyMonkey,2.6,0.7,Telephone,6,12/15/2025,10/19/2026,Gavin Newsom,52
-Ipsos,1.7,0.4,Telephone,2,12/22/2025,10/26/2026,Donald Trump,92.3
-SurveyMonkey,2.6,2.8,Telephone,6,12/29/2025,11/02/2026,Kamala Harris,18.3
-SurveyMonkey,1.5,0.5,Online Panel,0,01/05/2026,11/09/2026,Elizabeth Warren,65.2
-Ipsos,1.9,-1.6,Telephone,3,01/12/2026,11/16/2026,Donald Trump,41
-YouGov,1.2,-1.4,Telephone,6,01/19/2026,11/23/2026,Elizabeth Warren,13.8
-Ipsos,2.5,3.1,Mixed-mode,9,01/26/2026,11/30/2026,Pete Buttigieg,21.4
-Pew Research,1.9,0.4,Telephone,0,02/02/2026,12/07/2026,Bernie Sanders,70.9
-Gallup,1.5,2.4,Telephone,4,02/09/2026,12/14/2026,Gavin Newsom,45.2
-Pew Research,1.1,3.8,Telephone,1,02/16/2026,12/21/2026,Pete Buttigieg,69.6
-Pew Research,2,4.5,Online Panel,3,02/23/2026,12/28/2026,Kamala Harris,20.2
-SurveyMonkey,1.1,2.3,In-person,1,03/02/2026,01/04/2027,Bernie Sanders,20.7
-YouGov,1.3,-0.3,In-person,2,03/09/2026,01/11/2027,Elizabeth Warren,40.8
-Gallup,2.4,0.8,Online Panel,7,03/16/2026,01/18/2027,Donald Trump,51.3
-SurveyMonkey,1.7,-0.1,Telephone,4,03/23/2026,01/25/2027,Gavin Newsom,74.7
-Gallup,2.7,-1.8,Online Panel,5,03/30/2026,02/01/2027,Gavin Newsom,71.3
-Ipsos,2.6,2.3,In-person,2,04/06/2026,02/08/2027,Elizabeth Warren,94.1
-SurveyMonkey,1.7,-1.5,Mixed-mode,9,04/13/2026,02/15/2027,Donald Trump,9.1
-Ipsos,2.5,-1.9,Online Panel,3,04/20/2026,02/22/2027,Bernie Sanders,3
-Ipsos,1.5,4.7,Telephone,1,04/27/2026,03/01/2027,Gavin Newsom,37.2
-SurveyMonkey,2.1,-1.5,Telephone,1,05/04/2026,03/08/2027,Gavin Newsom,17.4
-YouGov,2,1.4,In-person,2,05/11/2026,03/15/2027,Elizabeth Warren,5.9
-YouGov,2,1.1,Mixed-mode,6,05/18/2026,03/22/2027,Bernie Sanders,29.4
-SurveyMonkey,2,2.6,Online Panel,7,05/25/2026,03/29/2027,Elizabeth Warren,26
-Ipsos,1.9,-1.1,In-person,1,06/01/2026,04/05/2027,Pete Buttigieg,51.2
-Pew Research,1,-0.7,Telephone,9,06/08/2026,04/12/2027,Pete Buttigieg,23.7
-YouGov,1.1,-0.4,In-person,4,06/15/2026,04/19/2027,Pete Buttigieg,60.2
-Pew Research,2.6,4.6,Telephone,0,06/22/2026,04/26/2027,Kamala Harris,49.5
-YouGov,2.7,2.6,In-person,1,06/29/2026,05/03/2027,Gavin Newsom,29.1
-YouGov,1.1,-1.1,Online Panel,7,07/06/2026,05/10/2027,Bernie Sanders,79.3
-YouGov,1.4,1.3,Telephone,3,07/13/2026,05/17/2027,Elizabeth Warren,70.8
-Pew Research,2.3,3.9,Telephone,6,07/20/2026,05/24/2027,Elizabeth Warren,11.1
-Pew Research,2.6,2.6,Online Panel,2,07/27/2026,05/31/2027,Donald Trump,17.5
-Gallup,2.8,-0.2,Mixed-mode,5,08/03/2026,06/07/2027,Gavin Newsom,1.6
-Gallup,1.6,-0.8,Telephone,9,08/10/2026,06/14/2027,Gavin Newsom,76.4
-YouGov,2.3,2.1,Mixed-mode,3,08/17/2026,06/21/2027,Kamala Harris,82.4
-Ipsos,1.1,4.4,Telephone,8,08/24/2026,06/28/2027,Elizabeth Warren,14.7
-Pew Research,2.5,-1.8,Mixed-mode,1,08/31/2026,07/05/2027,Donald Trump,41.8
-SurveyMonkey,2.9,0.4,In-person,7,09/07/2026,07/12/2027,Gavin Newsom,53.7
-Pew Research,2.2,1.2,Mixed-mode,1,09/14/2026,07/19/2027,Elizabeth Warren,8.4
-Gallup,1,4.7,Online Panel,9,09/21/2026,07/26/2027,Donald Trump,65.4
-SurveyMonkey,2,0.6,Online Panel,5,09/28/2026,08/02/2027,Gavin Newsom,36.5
-SurveyMonkey,2.9,0.9,In-person,7,10/05/2026,08/09/2027,Bernie Sanders,91
-SurveyMonkey,1.5,4.7,Mixed-mode,7,10/12/2026,08/16/2027,Gavin Newsom,16.7
-Pew Research,1.8,1.4,In-person,8,10/19/2026,08/23/2027,Donald Trump,88.8
-YouGov,1.2,1.5,Telephone,8,10/26/2026,08/30/2027,Pete Buttigieg,18.4
-Pew Research,1.9,0.8,Mixed-mode,4,11/02/2026,09/06/2027,Pete Buttigieg,63.7
-SurveyMonkey,2.6,0.4,Telephone,1,11/09/2026,09/13/2027,Donald Trump,68.7
-Gallup,2.7,0.5,In-person,2,11/16/2026,09/20/2027,Bernie Sanders,60.5
-Ipsos,2.3,-1.5,Online Panel,5,11/23/2026,09/27/2027,Elizabeth Warren,86.3
-Ipsos,1.1,1.6,Telephone,4,11/30/2026,10/04/2027,Elizabeth Warren,7.2
-Gallup,1,4,Online Panel,9,12/07/2026,10/11/2027,Pete Buttigieg,53.9
-YouGov,2,0.5,Mixed-mode,7,12/14/2026,10/18/2027,Elizabeth Warren,27.7
-SurveyMonkey,2.4,-1.2,Mixed-mode,6,12/21/2026,10/25/2027,Pete Buttigieg,56.8
-YouGov,1.8,-1,In-person,4,12/28/2026,11/01/2027,Elizabeth Warren,59.8
-Gallup,1.5,-0.4,Mixed-mode,7,01/04/2027,11/08/2027,Kamala Harris,68.6
-Ipsos,1.6,3.4,Telephone,3,01/11/2027,11/15/2027,Bernie Sanders,89.5
-Pew Research,3,4.7,Telephone,3,01/18/2027,11/22/2027,Donald Trump,31.7
-Gallup,1.4,3.2,Online Panel,1,01/25/2027,11/29/2027,Donald Trump,76.1
-SurveyMonkey,2.9,2.1,Online Panel,3,02/01/2027,12/06/2027,Donald Trump,24.5
-SurveyMonkey,1.8,-1.6,In-person,8,02/08/2027,12/13/2027,Kamala Harris,50.3
-Gallup,2.6,0.6,Mixed-mode,0,02/15/2027,12/20/2027,Kamala Harris,20.7
-Ipsos,2.9,4.7,Mixed-mode,1,02/22/2027,12/27/2027,Elizabeth Warren,51.4
-SurveyMonkey,1.7,2.2,Online Panel,1,03/01/2027,01/03/2028,Bernie Sanders,22.9
-Ipsos,1.5,0.1,Mixed-mode,2,03/08/2027,01/10/2028,Bernie Sanders,12.5
-Pew Research,2.5,-0.8,Telephone,8,03/15/2027,01/17/2028,Elizabeth Warren,49.8
-Pew Research,2.5,0,Telephone,0,03/22/2027,01/24/2028,Pete Buttigieg,75.1
-Pew Research,2.3,3.1,Telephone,7,03/29/2027,01/31/2028,Kamala Harris,62.8
-Gallup,2.4,-1.2,Mixed-mode,8,04/05/2027,02/07/2028,Donald Trump,5.4
-YouGov,2.5,-1.6,Mixed-mode,8,04/12/2027,02/14/2028,Gavin Newsom,83.9
-Gallup,3,4.4,Online Panel,2,04/19/2027,02/21/2028,Kamala Harris,95.4
-SurveyMonkey,2.8,2.1,Mixed-mode,7,04/26/2027,02/28/2028,Donald Trump,12.3
-Pew Research,2.1,-0.4,Online Panel,6,05/03/2027,03/06/2028,Donald Trump,23.3
-YouGov,2.7,1.3,Mixed-mode,8,05/10/2027,03/13/2028,Bernie Sanders,59.4
-Ipsos,1,2.6,Telephone,6,05/17/2027,03/20/2028,Bernie Sanders,59.6
-Gallup,1.5,2.6,Online Panel,8,05/24/2027,03/27/2028,Pete Buttigieg,26.6
-YouGov,1.2,-1.7,Telephone,4,05/31/2027,04/03/2028,Gavin Newsom,10
-Ipsos,2.1,-1.5,Mixed-mode,9,06/07/2027,04/10/2028,Donald Trump,34.9
-YouGov,2.8,4.5,Telephone,4,06/14/2027,04/17/2028,Donald Trump,68
-Gallup,2.3,-0.9,In-person,9,06/21/2027,04/24/2028,Donald Trump,34.5
-YouGov,2.8,4,In-person,3,06/28/2027,05/01/2028,Bernie Sanders,59
-Gallup,2.6,0.7,In-person,9,07/05/2027,05/08/2028,Kamala Harris,36.1
-Pew Research,1.1,4.8,In-person,7,07/12/2027,05/15/2028,Kamala Harris,66.5
-Gallup,2.7,2.4,Mixed-mode,4,07/19/2027,05/22/2028,Bernie Sanders,82.8
-SurveyMonkey,2,3.4,Mixed-mode,2,07/26/2027,05/29/2028,Kamala Harris,93
-Pew Research,1.7,2.8,Mixed-mode,1,08/02/2027,06/05/2028,Pete Buttigieg,77.9
-SurveyMonkey,2.6,0.1,Telephone,9,08/09/2027,06/12/2028,Elizabeth Warren,86.9
-YouGov,1.1,2.5,In-person,3,08/16/2027,06/19/2028,Bernie Sanders,95.3
-YouGov,1.3,1.5,In-person,7,08/23/2027,06/26/2028,Pete Buttigieg,2.1
-Gallup,1.2,0.8,Mixed-mode,9,08/30/2027,07/03/2028,Kamala Harris,33.6
-Pew Research,1.3,2.4,Online Panel,1,09/06/2027,07/10/2028,Elizabeth Warren,93.5
-Gallup,1.3,4.9,Online Panel,6,09/13/2027,07/17/2028,Donald Trump,85.7
-SurveyMonkey,2.5,-0.3,In-person,6,09/20/2027,07/24/2028,Pete Buttigieg,65.2
-Ipsos,1.4,-1.7,In-person,4,09/27/2027,07/31/2028,Pete Buttigieg,11.5
-Gallup,3,-0.4,Mixed-mode,1,10/04/2027,08/07/2028,Pete Buttigieg,1.2
-Gallup,1.7,2.6,Online Panel,0,10/11/2027,08/14/2028,Pete Buttigieg,57.7
-YouGov,1.2,0.4,Telephone,5,10/18/2027,08/21/2028,Bernie Sanders,71.1
-YouGov,1,2.5,Online Panel,7,10/25/2027,08/28/2028,Kamala Harris,70.7
-Pew Research,1.5,-2,Telephone,8,11/01/2027,09/04/2028,Gavin Newsom,34.1
-YouGov,2.2,0.7,Online Panel,2,11/08/2027,09/11/2028,Kamala Harris,38.7
-Ipsos,1.6,2.4,Telephone,9,11/15/2027,09/18/2028,Gavin Newsom,88.9
-Ipsos,2.4,2.7,Online Panel,2,11/22/2027,09/25/2028,Bernie Sanders,43.4
-YouGov,1.7,4.1,Mixed-mode,0,11/29/2027,10/02/2028,Bernie Sanders,32.3
-Gallup,1.5,-1.4,Mixed-mode,8,12/06/2027,10/09/2028,Gavin Newsom,87.4
-Gallup,1.5,0.5,Telephone,9,12/13/2027,10/16/2028,Pete Buttigieg,77.4
-YouGov,1.1,1.6,In-person,5,12/20/2027,10/23/2028,Donald Trump,51.2
-Ipsos,1.9,-0.3,In-person,7,12/27/2027,10/30/2028,Kamala Harris,83.5
-Gallup,2.1,0.2,In-person,7,01/03/2028,11/06/2028,Gavin Newsom,99.3
-SurveyMonkey,1.2,-0.4,In-person,4,01/10/2028,11/13/2028,Elizabeth Warren,85.6
-Pew Research,1.9,-0.1,Mixed-mode,0,01/17/2028,11/20/2028,Kamala Harris,30.4
-SurveyMonkey,1.9,4.9,In-person,0,01/24/2028,11/27/2028,Kamala Harris,96.6
-Ipsos,1.2,-1.6,Online Panel,2,01/31/2028,12/04/2028,Gavin Newsom,31.8
-Pew Research,2.7,-1.7,Mixed-mode,0,02/07/2028,12/11/2028,Bernie Sanders,87.7
-YouGov,1,-0,Online Panel,3,02/14/2028,12/18/2028,Gavin Newsom,20.7
-Gallup,1.2,4.4,In-person,6,02/21/2028,12/25/2028,Pete Buttigieg,96.4
-Pew Research,2.5,0.1,Mixed-mode,0,02/28/2028,01/01/2029,Kamala Harris,29.3
-Ipsos,2.4,-0.2,In-person,6,03/06/2028,01/08/2029,Pete Buttigieg,97.6
-Ipsos,2.1,2.3,Mixed-mode,1,03/13/2028,01/15/2029,Elizabeth Warren,77.1
-Gallup,2.7,-1.7,Online Panel,0,03/20/2028,01/22/2029,Bernie Sanders,4.6
-Pew Research,2.2,4.1,Telephone,0,03/27/2028,01/29/2029,Kamala Harris,97.3
-Ipsos,1.6,4.4,Telephone,7,04/03/2028,02/05/2029,Elizabeth Warren,56.9
-Pew Research,2.5,2,In-person,2,04/10/2028,02/12/2029,Donald Trump,46.3
-Pew Research,2.5,3.9,Mixed-mode,7,04/17/2028,02/19/2029,Gavin Newsom,90.5
-Gallup,2.4,4.6,Mixed-mode,7,04/24/2028,02/26/2029,Bernie Sanders,49.9
-Ipsos,3,2.2,Online Panel,0,05/01/2028,03/05/2029,Donald Trump,69.1
-YouGov,2.8,3.7,In-person,5,05/08/2028,03/12/2029,Gavin Newsom,93.9
-YouGov,1.6,-0.8,Telephone,4,05/15/2028,03/19/2029,Bernie Sanders,71.8
-SurveyMonkey,2.2,-1.7,Telephone,2,05/22/2028,03/26/2029,Elizabeth Warren,80.9
-SurveyMonkey,2.1,3.5,In-person,0,05/29/2028,04/02/2029,Pete Buttigieg,65.7
-Ipsos,2.4,2.5,Online Panel,8,06/05/2028,04/09/2029,Bernie Sanders,86.3
-Pew Research,2.4,-1.9,Mixed-mode,2,06/12/2028,04/16/2029,Gavin Newsom,18.5
-Gallup,2.2,-1.2,Online Panel,7,06/19/2028,04/23/2029,Pete Buttigieg,7.5
-SurveyMonkey,2.1,4.1,Telephone,8,06/26/2028,04/30/2029,Donald Trump,20.8
-Pew Research,1.7,3.7,Online Panel,3,07/03/2028,05/07/2029,Gavin Newsom,43.8
-YouGov,1.5,0.9,Telephone,0,07/10/2028,05/14/2029,Elizabeth Warren,1.5
-Pew Research,2.6,-1.5,In-person,6,07/17/2028,05/21/2029,Pete Buttigieg,23.7
-YouGov,1.5,-0.8,Mixed-mode,1,07/24/2028,05/28/2029,Elizabeth Warren,22.6
-Ipsos,2,0.6,Telephone,0,07/31/2028,06/04/2029,Kamala Harris,80.6
-Gallup,1.1,1.1,Mixed-mode,4,08/07/2028,06/11/2029,Bernie Sanders,41.5
-YouGov,1.5,1.9,In-person,1,08/14/2028,06/18/2029,Donald Trump,50.1
-Gallup,1.1,-0.2,Mixed-mode,5,08/21/2028,06/25/2029,Elizabeth Warren,72.3
-YouGov,1.8,-0.6,Mixed-mode,1,08/28/2028,07/02/2029,Donald Trump,85.5
-Gallup,2.8,3.5,In-person,0,09/04/2028,07/09/2029,Pete Buttigieg,2.5
-Pew Research,2.8,2.5,Mixed-mode,1,09/11/2028,07/16/2029,Kamala Harris,48.1
-Ipsos,1.2,1,In-person,9,09/18/2028,07/23/2029,Pete Buttigieg,33.4
-Pew Research,1.9,-0.8,Mixed-mode,9,09/25/2028,07/30/2029,Elizabeth Warren,84.2
-Ipsos,2,0.4,Online Panel,3,10/02/2028,08/06/2029,Kamala Harris,66.8
-Ipsos,1.9,0.2,Telephone,4,10/09/2028,08/13/2029,Bernie Sanders,46.2
-Ipsos,2.8,3.3,Telephone,0,10/16/2028,08/20/2029,Kamala Harris,3.6
-SurveyMonkey,1.6,2.3,Online Panel,9,10/23/2028,08/27/2029,Bernie Sanders,41
-SurveyMonkey,2.5,4.5,In-person,6,10/30/2028,09/03/2029,Kamala Harris,94.5
-Gallup,1.5,1.6,Online Panel,1,11/06/2028,09/10/2029,Donald Trump,10.1
-Gallup,2,0.7,Telephone,1,11/13/2028,09/17/2029,Kamala Harris,92.5
-YouGov,2.6,4.8,In-person,8,11/20/2028,09/24/2029,Pete Buttigieg,33.5
-SurveyMonkey,1.1,0.4,In-person,3,11/27/2028,10/01/2029,Bernie Sanders,82.6
-Gallup,2.3,2.4,Online Panel,0,12/04/2028,10/08/2029,Gavin Newsom,11.9
-YouGov,2.3,1.6,Mixed-mode,0,12/11/2028,10/15/2029,Gavin Newsom,69.4
-Pew Research,2.6,3.9,Mixed-mode,2,12/18/2028,10/22/2029,Gavin Newsom,67.3
-YouGov,2.8,-1.3,Telephone,0,12/25/2028,10/29/2029,Bernie Sanders,40.9
-SurveyMonkey,2.6,-1.1,In-person,7,01/01/2029,11/05/2029,Kamala Harris,3.8
-Ipsos,1.2,-1.4,Mixed-mode,5,01/08/2029,11/12/2029,Pete Buttigieg,65.4
-YouGov,1.1,3.1,In-person,3,01/15/2029,11/19/2029,Bernie Sanders,65.7
-Pew Research,1.5,3,In-person,4,01/22/2029,11/26/2029,Donald Trump,97.7
-Pew Research,1.4,0.7,Mixed-mode,3,01/29/2029,12/03/2029,Bernie Sanders,39.7
-Ipsos,2.8,3.5,Telephone,2,02/05/2029,12/10/2029,Kamala Harris,73.3
-SurveyMonkey,1.7,3,Online Panel,3,02/12/2029,12/17/2029,Kamala Harris,45.8
-Pew Research,2.7,4.6,Online Panel,7,02/19/2029,12/24/2029,Kamala Harris,13.1
-SurveyMonkey,2.7,2.2,Telephone,1,02/26/2029,12/31/2029,Kamala Harris,9.2
-Ipsos,3,3.5,In-person,8,03/05/2029,01/07/2030,Donald Trump,3.1
-Gallup,1.3,-1.9,In-person,6,03/12/2029,01/14/2030,Kamala Harris,14.1
-Gallup,2.8,1.3,Online Panel,4,03/19/2029,01/21/2030,Kamala Harris,75.9
-Gallup,1.3,1.4,Mixed-mode,3,03/26/2029,01/28/2030,Kamala Harris,71.3
-Ipsos,2.7,3.2,Telephone,5,04/02/2029,02/04/2030,Gavin Newsom,53.9
-Gallup,1.3,1.7,In-person,4,04/09/2029,02/11/2030,Elizabeth Warren,41.3
-YouGov,1.5,0.6,Online Panel,5,04/16/2029,02/18/2030,Gavin Newsom,7.4
-SurveyMonkey,1.2,3.4,Telephone,7,04/23/2029,02/25/2030,Pete Buttigieg,58.6
-Pew Research,1.2,4.5,Online Panel,1,04/30/2029,03/04/2030,Gavin Newsom,67.5
-YouGov,1.3,-0,Mixed-mode,7,05/07/2029,03/11/2030,Kamala Harris,63.8
-YouGov,1.4,2.6,Online Panel,4,05/14/2029,03/18/2030,Donald Trump,94.7
-SurveyMonkey,2.1,-0.1,Telephone,6,05/21/2029,03/25/2030,Donald Trump,38.2
-Pew Research,1.4,2.8,In-person,8,05/28/2029,04/01/2030,Kamala Harris,89.1
-Ipsos,1.3,-0.1,Online Panel,6,06/04/2029,04/08/2030,Elizabeth Warren,29.5
-Gallup,2.4,0.3,Online Panel,2,06/11/2029,04/15/2030,Gavin Newsom,14.2
-Ipsos,1.3,1.8,Mixed-mode,8,06/18/2029,04/22/2030,Pete Buttigieg,89.7
-Ipsos,1.9,0.3,Online Panel,9,06/25/2029,04/29/2030,Bernie Sanders,76.5
-SurveyMonkey,2.3,-0.2,In-person,6,07/02/2029,05/06/2030,Elizabeth Warren,59.5
-Ipsos,1.6,3.4,In-person,3,07/09/2029,05/13/2030,Pete Buttigieg,26.9
-Pew Research,1.7,3.8,Telephone,1,07/16/2029,05/20/2030,Kamala Harris,59.2
-YouGov,2.4,-0.4,Telephone,0,07/23/2029,05/27/2030,Pete Buttigieg,4.3
-YouGov,1.6,-1.3,Mixed-mode,5,07/30/2029,06/03/2030,Gavin Newsom,92.9
-Pew Research,2.3,2.4,Telephone,7,08/06/2029,06/10/2030,Gavin Newsom,32.8
-SurveyMonkey,2.3,0,Mixed-mode,1,08/13/2029,06/17/2030,Gavin Newsom,66.5
-Gallup,1.7,3.7,Telephone,1,08/20/2029,06/24/2030,Bernie Sanders,4.7
-YouGov,2,-0.1,Telephone,8,08/27/2029,07/01/2030,Gavin Newsom,2.6
-SurveyMonkey,2.3,2.8,In-person,7,09/03/2029,07/08/2030,Donald Trump,1.4
-SurveyMonkey,2.1,2.2,Online Panel,9,09/10/2029,07/15/2030,Gavin Newsom,75.5
-YouGov,1.2,-1.8,Mixed-mode,8,09/17/2029,07/22/2030,Bernie Sanders,69.9
-Pew Research,2.2,1.8,Online Panel,0,09/24/2029,07/29/2030,Kamala Harris,67.3
-SurveyMonkey,2.2,-0.7,Mixed-mode,2,10/01/2029,08/05/2030,Pete Buttigieg,41.6
-Pew Research,2.5,-0.9,Online Panel,3,10/08/2029,08/12/2030,Pete Buttigieg,51
-Gallup,2,0.8,In-person,5,10/15/2029,08/19/2030,Elizabeth Warren,62
-SurveyMonkey,1.3,1.1,Mixed-mode,5,10/22/2029,08/26/2030,Kamala Harris,4.7
-Gallup,1.9,2.4,In-person,7,10/29/2029,09/02/2030,Donald Trump,99
-YouGov,1.9,2.6,Online Panel,4,11/05/2029,09/09/2030,Kamala Harris,72
-Pew Research,2.5,1.5,In-person,2,11/12/2029,09/16/2030,Gavin Newsom,45.6
-SurveyMonkey,1.5,1.3,Mixed-mode,8,11/19/2029,09/23/2030,Pete Buttigieg,67
-SurveyMonkey,1.8,-0.3,Online Panel,7,11/26/2029,09/30/2030,Elizabeth Warren,5.9
-Gallup,1.7,3.8,Mixed-mode,4,12/03/2029,10/07/2030,Bernie Sanders,47
-SurveyMonkey,1.9,4.3,Online Panel,3,12/10/2029,10/14/2030,Pete Buttigieg,59.6
-Pew Research,2.8,4.9,Online Panel,3,12/17/2029,10/21/2030,Elizabeth Warren,85.8
-SurveyMonkey,1.6,3.2,Online Panel,9,12/24/2029,10/28/2030,Kamala Harris,77.9
-Gallup,2.3,-1.7,In-person,9,12/31/2029,11/04/2030,Pete Buttigieg,89.1
-SurveyMonkey,1.1,-1.2,Mixed-mode,4,01/07/2030,11/11/2030,Donald Trump,46.9
-Pew Research,2.4,3.6,Online Panel,4,01/14/2030,11/18/2030,Bernie Sanders,3.6
-YouGov,2.4,2.7,Mixed-mode,2,01/21/2030,11/25/2030,Kamala Harris,6.7
-Ipsos,1.2,1.3,Telephone,1,01/28/2030,12/02/2030,Bernie Sanders,74
-Pew Research,1,1.5,Mixed-mode,5,02/04/2030,12/09/2030,Elizabeth Warren,98.3
-Ipsos,1.5,1.9,Mixed-mode,5,02/11/2030,12/16/2030,Kamala Harris,69.9
-Gallup,2.8,-1.9,Mixed-mode,6,02/18/2030,12/23/2030,Elizabeth Warren,75.5
-SurveyMonkey,2.8,1.4,In-person,7,02/25/2030,12/30/2030,Kamala Harris,4.1
-SurveyMonkey,1.9,2.1,Telephone,2,03/04/2030,01/06/2031,Bernie Sanders,42.9
-SurveyMonkey,1.8,0.2,Mixed-mode,8,03/11/2030,01/13/2031,Kamala Harris,16.4
-Ipsos,1.1,3.7,Mixed-mode,4,03/18/2030,01/20/2031,Donald Trump,5.1
-Gallup,1.5,1,Online Panel,5,03/25/2030,01/27/2031,Elizabeth Warren,32.5
-Pew Research,1.2,0.1,Online Panel,7,04/01/2030,02/03/2031,Gavin Newsom,8.7
-Gallup,2.9,1,Online Panel,0,04/08/2030,02/10/2031,Pete Buttigieg,70.6
-Ipsos,1.1,0.7,Mixed-mode,8,04/15/2030,02/17/2031,Gavin Newsom,52.4
-SurveyMonkey,1.2,4.2,Online Panel,4,04/22/2030,02/24/2031,Pete Buttigieg,12.1
-Pew Research,1.3,-1.6,Telephone,3,04/29/2030,03/03/2031,Gavin Newsom,63.5
-Pew Research,2.7,0.9,Online Panel,8,05/06/2030,03/10/2031,Pete Buttigieg,75
-YouGov,2.3,1.9,In-person,6,05/13/2030,03/17/2031,Pete Buttigieg,22.9
-Ipsos,2.2,1.8,In-person,4,05/20/2030,03/24/2031,Pete Buttigieg,72.4
-YouGov,2.3,-0.2,Mixed-mode,4,05/27/2030,03/31/2031,Pete Buttigieg,78.5
-SurveyMonkey,2.3,-1.7,Online Panel,2,06/03/2030,04/07/2031,Bernie Sanders,32
-YouGov,2.1,2.6,In-person,5,06/10/2030,04/14/2031,Bernie Sanders,34.2
-Gallup,2.2,2.4,Mixed-mode,1,06/17/2030,04/21/2031,Donald Trump,38.2
-Pew Research,2.2,3.7,Online Panel,0,06/24/2030,04/28/2031,Bernie Sanders,93
-YouGov,1.5,-1.9,Telephone,9,07/01/2030,05/05/2031,Donald Trump,62.2
-SurveyMonkey,2.6,-0.4,Online Panel,3,07/08/2030,05/12/2031,Bernie Sanders,35.4
-YouGov,3,4.4,Online Panel,4,07/15/2030,05/19/2031,Pete Buttigieg,22.2
-SurveyMonkey,1.8,-0.8,Telephone,1,07/22/2030,05/26/2031,Bernie Sanders,32.9
-YouGov,1.8,1.5,Online Panel,6,07/29/2030,06/02/2031,Pete Buttigieg,87.1
-YouGov,2,1.4,Online Panel,9,08/05/2030,06/09/2031,Bernie Sanders,7.4
-YouGov,2.2,1.1,Mixed-mode,9,08/12/2030,06/16/2031,Pete Buttigieg,39.9
-Gallup,1.6,4,Telephone,4,08/19/2030,06/23/2031,Gavin Newsom,30.1
-SurveyMonkey,2.5,4.2,In-person,5,08/26/2030,06/30/2031,Pete Buttigieg,32.3
-Pew Research,1.6,2.8,Telephone,1,09/02/2030,07/07/2031,Elizabeth Warren,98.9
-SurveyMonkey,1.5,-1.9,Online Panel,8,09/09/2030,07/14/2031,Pete Buttigieg,66
-Gallup,1.1,-0.8,Mixed-mode,6,09/16/2030,07/21/2031,Elizabeth Warren,61.2
-Ipsos,2.2,0.5,Telephone,7,09/23/2030,07/28/2031,Pete Buttigieg,85.3
-YouGov,2.7,0.8,In-person,6,09/30/2030,08/04/2031,Kamala Harris,57.3
-Pew Research,1.1,-0,Mixed-mode,7,10/07/2030,08/11/2031,Pete Buttigieg,62
-Ipsos,2,4.7,Telephone,0,10/14/2030,08/18/2031,Kamala Harris,39.9
-Ipsos,2.9,3.3,Telephone,6,10/21/2030,08/25/2031,Donald Trump,20.1
-Gallup,2.5,1.8,In-person,6,10/28/2030,09/01/2031,Kamala Harris,31.3
-SurveyMonkey,1.3,3.8,Online Panel,9,11/04/2030,09/08/2031,Bernie Sanders,68.9
-Pew Research,1.4,-1.9,Mixed-mode,1,11/11/2030,09/15/2031,Elizabeth Warren,94.5
-SurveyMonkey,2,5,Online Panel,0,11/18/2030,09/22/2031,Elizabeth Warren,21.6
-Ipsos,2.4,-0.8,Mixed-mode,5,11/25/2030,09/29/2031,Bernie Sanders,20.1
-YouGov,1.9,2.2,In-person,2,12/02/2030,10/06/2031,Elizabeth Warren,20.4
-Ipsos,1.3,3.6,Online Panel,8,12/09/2030,10/13/2031,Gavin Newsom,23.4
-SurveyMonkey,1.7,1.5,Mixed-mode,6,12/16/2030,10/20/2031,Bernie Sanders,40.7
-SurveyMonkey,1.7,2.5,In-person,9,12/23/2030,10/27/2031,Gavin Newsom,84
-SurveyMonkey,2.9,1.2,Telephone,6,12/30/2030,11/03/2031,Kamala Harris,36.6
-Ipsos,1.7,2.4,Mixed-mode,6,01/06/2031,11/10/2031,Gavin Newsom,10.9
-Pew Research,1.9,2.9,Telephone,5,01/13/2031,11/17/2031,Bernie Sanders,62.2
-Pew Research,2.4,1.3,In-person,4,01/20/2031,11/24/2031,Elizabeth Warren,38
-YouGov,2.4,2.5,Telephone,1,01/27/2031,12/01/2031,Pete Buttigieg,64.6
-Gallup,1.4,-1.8,In-person,6,02/03/2031,12/08/2031,Pete Buttigieg,41.9
-Ipsos,2,4,Mixed-mode,0,02/10/2031,12/15/2031,Gavin Newsom,23.4
-Gallup,1.8,-0.3,In-person,2,02/17/2031,12/22/2031,Elizabeth Warren,13.9
-Gallup,1.7,-0.5,In-person,9,02/24/2031,12/29/2031,Kamala Harris,81.1
-Ipsos,2.9,-2,Telephone,0,03/03/2031,01/05/2032,Gavin Newsom,76.4
-Ipsos,2.4,1.7,Mixed-mode,3,03/10/2031,01/12/2032,Elizabeth Warren,58.9
-YouGov,1.8,-1.8,In-person,4,03/17/2031,01/19/2032,Pete Buttigieg,14.7
-YouGov,1.6,-1.5,In-person,7,03/24/2031,01/26/2032,Kamala Harris,51.1
-SurveyMonkey,2.9,1,Online Panel,8,03/31/2031,02/02/2032,Donald Trump,41.7
-Pew Research,2.2,3,Mixed-mode,2,04/07/2031,02/09/2032,Kamala Harris,9.3
-Ipsos,1.9,4.2,Online Panel,4,04/14/2031,02/16/2032,Donald Trump,30.3
-Pew Research,1.5,4.2,Mixed-mode,1,04/21/2031,02/23/2032,Kamala Harris,55.9
-Pew Research,1.2,3,Mixed-mode,4,04/28/2031,03/01/2032,Gavin Newsom,84.4
-Ipsos,2.8,3.9,Online Panel,9,05/05/2031,03/08/2032,Bernie Sanders,22
-Ipsos,2.8,0.1,Mixed-mode,2,05/12/2031,03/15/2032,Elizabeth Warren,65.4
-Ipsos,1,-1.5,Mixed-mode,1,05/19/2031,03/22/2032,Elizabeth Warren,51.4
-Pew Research,2,2.1,Telephone,1,05/26/2031,03/29/2032,Elizabeth Warren,73.8
-YouGov,2.2,-1.8,In-person,3,06/02/2031,04/05/2032,Donald Trump,77.5
-Pew Research,1.8,4.6,Online Panel,9,06/09/2031,04/12/2032,Gavin Newsom,82.8
-Pew Research,2.9,2.6,Mixed-mode,6,06/16/2031,04/19/2032,Donald Trump,20.2
-Ipsos,2.7,1.1,In-person,8,06/23/2031,04/26/2032,Gavin Newsom,1.1
-Pew Research,1.1,-0,Mixed-mode,9,06/30/2031,05/03/2032,Donald Trump,35.4
-Pew Research,2.1,4.9,Mixed-mode,2,07/07/2031,05/10/2032,Pete Buttigieg,36.4
-YouGov,2.1,4.8,Mixed-mode,9,07/14/2031,05/17/2032,Pete Buttigieg,12.8
-Pew Research,2.1,-1.1,Online Panel,4,07/21/2031,05/24/2032,Bernie Sanders,41.2
-Gallup,2.3,-0.4,Mixed-mode,9,07/28/2031,05/31/2032,Elizabeth Warren,17.7
-Gallup,1.7,-0.1,In-person,4,08/04/2031,06/07/2032,Elizabeth Warren,56.4
-SurveyMonkey,1.7,-0.4,In-person,1,08/11/2031,06/14/2032,Gavin Newsom,93.3
-Pew Research,3,-1.8,Mixed-mode,6,08/18/2031,06/21/2032,Pete Buttigieg,85.6
-Gallup,1.8,4.7,Online Panel,5,08/25/2031,06/28/2032,Bernie Sanders,88.7
-YouGov,1.5,2.3,Telephone,9,09/01/2031,07/05/2032,Bernie Sanders,76.1
-YouGov,2.4,-1.5,Mixed-mode,7,09/08/2031,07/12/2032,Pete Buttigieg,57.3
-SurveyMonkey,1,-2,In-person,0,09/15/2031,07/19/2032,Elizabeth Warren,79.9
-Pew Research,2,4.1,Mixed-mode,3,09/22/2031,07/26/2032,Kamala Harris,10.5
-Pew Research,1.3,1.3,Online Panel,6,09/29/2031,08/02/2032,Pete Buttigieg,44.8
-Pew Research,2.1,0.8,Online Panel,2,10/06/2031,08/09/2032,Donald Trump,76.7
-SurveyMonkey,1.3,0.7,Mixed-mode,2,10/13/2031,08/16/2032,Donald Trump,33.6
-Pew Research,2.7,1.8,Mixed-mode,0,10/20/2031,08/23/2032,Donald Trump,10.6
-Pew Research,1.2,-1.5,Telephone,4,10/27/2031,08/30/2032,Gavin Newsom,80.5
-YouGov,1.3,1.3,In-person,5,11/03/2031,09/06/2032,Kamala Harris,76.6
-Ipsos,1.8,-0.3,Telephone,9,11/10/2031,09/13/2032,Elizabeth Warren,55
-SurveyMonkey,1.7,1.8,Telephone,4,11/17/2031,09/20/2032,Donald Trump,64.7
-Ipsos,1.9,0.9,Mixed-mode,3,11/24/2031,09/27/2032,Kamala Harris,18.3
-Gallup,1.1,-0.1,Mixed-mode,6,12/01/2031,10/04/2032,Pete Buttigieg,46.8
-YouGov,2.5,1.4,Online Panel,1,12/08/2031,10/11/2032,Pete Buttigieg,95.4
-SurveyMonkey,1.8,0.1,Online Panel,0,12/15/2031,10/18/2032,Pete Buttigieg,93.1
-Gallup,1.7,4.8,Mixed-mode,0,12/22/2031,10/25/2032,Pete Buttigieg,58.3
-SurveyMonkey,2,1.8,Online Panel,0,12/29/2031,11/01/2032,Gavin Newsom,24.7
-Gallup,1.1,-1,Online Panel,8,01/05/2032,11/08/2032,Kamala Harris,63.8
-YouGov,2,-0,Mixed-mode,4,01/12/2032,11/15/2032,Pete Buttigieg,1.7
-SurveyMonkey,1.5,3.7,Online Panel,1,01/19/2032,11/22/2032,Pete Buttigieg,83.4
-Pew Research,2.1,-0.6,Online Panel,3,01/26/2032,11/29/2032,Gavin Newsom,11.3
-YouGov,1.5,4.8,In-person,7,02/02/2032,12/06/2032,Bernie Sanders,89.2
-Gallup,1.5,-1.5,In-person,5,02/09/2032,12/13/2032,Elizabeth Warren,77.6
-SurveyMonkey,1.8,3.5,Mixed-mode,5,02/16/2032,12/20/2032,Gavin Newsom,70.3
-YouGov,2,2.1,Online Panel,2,02/23/2032,12/27/2032,Elizabeth Warren,95.5
-Ipsos,2.6,4.9,Mixed-mode,0,03/01/2032,01/03/2033,Bernie Sanders,25.4
-YouGov,1.2,3.4,Telephone,3,03/08/2032,01/10/2033,Gavin Newsom,55.4
-SurveyMonkey,2.1,0.8,Telephone,5,03/15/2032,01/17/2033,Gavin Newsom,87.6
-Pew Research,1.8,-0.5,Mixed-mode,3,03/22/2032,01/24/2033,Gavin Newsom,35.1
-Ipsos,1.2,1.7,In-person,0,03/29/2032,01/31/2033,Donald Trump,74.5
-Gallup,2.8,4.7,Mixed-mode,0,04/05/2032,02/07/2033,Gavin Newsom,76.9
-Pew Research,1.8,2.1,In-person,5,04/12/2032,02/14/2033,Bernie Sanders,9.8
-SurveyMonkey,2.3,2.1,Online Panel,6,04/19/2032,02/21/2033,Donald Trump,67.9
-Pew Research,2.6,0.3,Telephone,3,04/26/2032,02/28/2033,Gavin Newsom,97.1
-Pew Research,1.3,-2,Telephone,9,05/03/2032,03/07/2033,Gavin Newsom,89.3
-Pew Research,2.3,-0,Online Panel,2,05/10/2032,03/14/2033,Donald Trump,67.1
-Pew Research,2.6,2.7,Online Panel,9,05/17/2032,03/21/2033,Bernie Sanders,30.5
-Pew Research,2.2,-0.2,Online Panel,6,05/24/2032,03/28/2033,Pete Buttigieg,2.7
-Gallup,2.7,0.5,Telephone,9,05/31/2032,04/04/2033,Gavin Newsom,39.8
-Gallup,2.2,2.5,Mixed-mode,6,06/07/2032,04/11/2033,Pete Buttigieg,26
-SurveyMonkey,1.4,3.2,In-person,0,06/14/2032,04/18/2033,Pete Buttigieg,18.9
-Gallup,1.6,2,In-person,7,06/21/2032,04/25/2033,Gavin Newsom,77
-Pew Research,2.5,4.6,Online Panel,9,06/28/2032,05/02/2033,Gavin Newsom,8.1
-SurveyMonkey,1.7,1.3,Online Panel,4,07/05/2032,05/09/2033,Bernie Sanders,31.9
-YouGov,2.4,4.2,Telephone,3,07/12/2032,05/16/2033,Bernie Sanders,58.6
-YouGov,1.6,4.3,Telephone,5,07/19/2032,05/23/2033,Elizabeth Warren,47.2
-YouGov,1.8,3,In-person,1,07/26/2032,05/30/2033,Gavin Newsom,55.4
-Gallup,2.9,4.4,In-person,7,08/02/2032,06/06/2033,Kamala Harris,96.1
-Ipsos,2.8,3.3,Mixed-mode,4,08/09/2032,06/13/2033,Pete Buttigieg,91.1
-YouGov,2.1,0.1,Mixed-mode,9,08/16/2032,06/20/2033,Gavin Newsom,45.6
-Gallup,1.7,-0.6,Telephone,2,08/23/2032,06/27/2033,Bernie Sanders,51.4
-YouGov,2.4,-1.7,Mixed-mode,5,08/30/2032,07/04/2033,Pete Buttigieg,27.7
-Pew Research,1.4,2.4,Online Panel,2,09/06/2032,07/11/2033,Gavin Newsom,0.2
-Gallup,3,1.8,In-person,6,09/13/2032,07/18/2033,Bernie Sanders,88.7
-SurveyMonkey,2.5,-0.8,Telephone,6,09/20/2032,07/25/2033,Bernie Sanders,46
-Pew Research,2,1.5,Telephone,0,09/27/2032,08/01/2033,Donald Trump,61.3
-Gallup,2.9,2.8,Online Panel,1,10/04/2032,08/08/2033,Gavin Newsom,9
-YouGov,2.8,1.3,Telephone,1,10/11/2032,08/15/2033,Donald Trump,35.3
-Pew Research,1.4,2.8,In-person,4,10/18/2032,08/22/2033,Donald Trump,22.9
-Pew Research,1.2,-1,In-person,8,10/25/2032,08/29/2033,Kamala Harris,49.7
-Pew Research,1.6,4,Online Panel,2,11/01/2032,09/05/2033,Gavin Newsom,74.6
-YouGov,2.8,3.4,Online Panel,5,11/08/2032,09/12/2033,Elizabeth Warren,72.9
-Pew Research,1.5,1.7,Mixed-mode,0,11/15/2032,09/19/2033,Elizabeth Warren,21.2
-SurveyMonkey,2.9,-1.2,Mixed-mode,3,11/22/2032,09/26/2033,Gavin Newsom,2.6
-Gallup,2,4.7,Telephone,0,11/29/2032,10/03/2033,Pete Buttigieg,36.8
-Gallup,1.7,1.1,Online Panel,4,12/06/2032,10/10/2033,Gavin Newsom,59.1
-SurveyMonkey,1.7,-1.2,Mixed-mode,6,12/13/2032,10/17/2033,Bernie Sanders,56.5
-Gallup,2.8,3,Telephone,1,12/20/2032,10/24/2033,Bernie Sanders,94.8
-Pew Research,2.7,-1.8,Online Panel,3,12/27/2032,10/31/2033,Gavin Newsom,76.5
-Pew Research,1.4,-0,Telephone,8,01/03/2033,11/07/2033,Bernie Sanders,66.5
-Pew Research,2.7,2.1,In-person,0,01/10/2033,11/14/2033,Elizabeth Warren,70.6
-YouGov,2.1,4.6,Online Panel,7,01/17/2033,11/21/2033,Pete Buttigieg,31
-Gallup,2.8,-1.2,Mixed-mode,6,01/24/2033,11/28/2033,Bernie Sanders,96.2
-Ipsos,1.8,-0.2,In-person,3,01/31/2033,12/05/2033,Bernie Sanders,88.2
-SurveyMonkey,2.7,-1.4,Online Panel,9,02/07/2033,12/12/2033,Elizabeth Warren,14.2
-Gallup,2.2,4.8,Telephone,8,02/14/2033,12/19/2033,Donald Trump,17
-SurveyMonkey,1.5,-0.4,Telephone,1,02/21/2033,12/26/2033,Gavin Newsom,53.1
-Gallup,2.5,0.2,Mixed-mode,2,02/28/2033,01/02/2034,Donald Trump,94.2
-Ipsos,1.2,0.7,Mixed-mode,0,03/07/2033,01/09/2034,Donald Trump,59.8
-Pew Research,1.3,3.9,Online Panel,0,03/14/2033,01/16/2034,Bernie Sanders,21.4
-Pew Research,1.7,-1.7,Online Panel,4,03/21/2033,01/23/2034,Pete Buttigieg,64.2
-YouGov,2.4,-1.3,Online Panel,0,03/28/2033,01/30/2034,Bernie Sanders,70.4
-Ipsos,1.9,3.2,Telephone,6,04/04/2033,02/06/2034,Elizabeth Warren,56.4
-Gallup,2.7,1.4,Online Panel,7,04/11/2033,02/13/2034,Pete Buttigieg,58
-Pew Research,2.2,-0.9,Online Panel,4,04/18/2033,02/20/2034,Gavin Newsom,30.6
-Gallup,2.7,1.1,Telephone,0,04/25/2033,02/27/2034,Donald Trump,98.8
-Ipsos,1.3,1,Mixed-mode,7,05/02/2033,03/06/2034,Donald Trump,28.2
-YouGov,2.2,-0.6,Telephone,9,05/09/2033,03/13/2034,Pete Buttigieg,65.3
-SurveyMonkey,2.9,4.3,Online Panel,3,05/16/2033,03/20/2034,Bernie Sanders,37.2
-YouGov,2.5,4.6,Online Panel,5,05/23/2033,03/27/2034,Elizabeth Warren,46
-YouGov,2.7,4.5,Telephone,8,05/30/2033,04/03/2034,Donald Trump,32.2
-Gallup,1.6,-0.9,In-person,4,06/06/2033,04/10/2034,Kamala Harris,54
-YouGov,2.5,2.5,Online Panel,2,06/13/2033,04/17/2034,Kamala Harris,82
-Ipsos,2.7,3.6,Mixed-mode,9,06/20/2033,04/24/2034,Bernie Sanders,55.4
-Pew Research,1.1,4.1,Mixed-mode,6,06/27/2033,05/01/2034,Kamala Harris,70.1
-YouGov,2.7,4,Mixed-mode,7,07/04/2033,05/08/2034,Gavin Newsom,96.3
-Ipsos,2,0.5,Mixed-mode,9,07/11/2033,05/15/2034,Kamala Harris,51
-Gallup,2,2.1,Online Panel,1,07/18/2033,05/22/2034,Gavin Newsom,90.5
-SurveyMonkey,2.4,2.2,Online Panel,3,07/25/2033,05/29/2034,Bernie Sanders,68.5
-Pew Research,1.1,4.1,Telephone,0,08/01/2033,06/05/2034,Pete Buttigieg,26.8
-Gallup,2.3,3,Online Panel,3,08/08/2033,06/12/2034,Donald Trump,92.6
-SurveyMonkey,1.5,1.6,In-person,2,08/15/2033,06/19/2034,Elizabeth Warren,95.5
-YouGov,2.2,-1.7,Mixed-mode,9,08/22/2033,06/26/2034,Donald Trump,62
-Pew Research,2.3,1.8,Online Panel,7,08/29/2033,07/03/2034,Kamala Harris,83.6
-YouGov,2.7,1.4,Telephone,1,09/05/2033,07/10/2034,Bernie Sanders,27
-SurveyMonkey,2.2,3.4,Telephone,8,09/12/2033,07/17/2034,Bernie Sanders,5.6
-Ipsos,2.2,4,Online Panel,6,09/19/2033,07/24/2034,Bernie Sanders,58.8
-Gallup,1.7,4.7,Online Panel,9,09/26/2033,07/31/2034,Pete Buttigieg,26.6
-YouGov,1.7,4.2,Mixed-mode,5,10/03/2033,08/07/2034,Donald Trump,36.9
-Ipsos,2.6,-1.3,Telephone,3,10/10/2033,08/14/2034,Pete Buttigieg,21.6
-Ipsos,2.6,3.7,In-person,6,10/17/2033,08/21/2034,Elizabeth Warren,45.4
-Gallup,2.8,1.2,In-person,4,10/24/2033,08/28/2034,Donald Trump,14.1
-Ipsos,2.8,4,Online Panel,4,10/31/2033,09/04/2034,Pete Buttigieg,42.4
-Ipsos,2.2,2.5,In-person,1,11/07/2033,09/11/2034,Bernie Sanders,76.2
-Ipsos,2.4,3.3,In-person,0,11/14/2033,09/18/2034,Donald Trump,21.6
-Pew Research,1.4,-1.8,Online Panel,8,11/21/2033,09/25/2034,Gavin Newsom,87.8
-YouGov,2,4.5,Mixed-mode,2,11/28/2033,10/02/2034,Pete Buttigieg,73.2
-Pew Research,1.5,4.4,In-person,9,12/05/2033,10/09/2034,Elizabeth Warren,42.5
-YouGov,1.8,3.1,Telephone,9,12/12/2033,10/16/2034,Kamala Harris,89.5
-YouGov,1.5,0.3,Mixed-mode,5,12/19/2033,10/23/2034,Bernie Sanders,40.3
-YouGov,1.8,-1.2,Telephone,1,12/26/2033,10/30/2034,Kamala Harris,46.8
-SurveyMonkey,2.5,3.8,Online Panel,6,01/02/2034,11/06/2034,Elizabeth Warren,8.7
-Ipsos,2.4,-1.2,Online Panel,1,01/09/2034,11/13/2034,Bernie Sanders,80
-YouGov,2.6,-1,Telephone,5,01/16/2034,11/20/2034,Kamala Harris,1.2
-Pew Research,1.3,2.6,In-person,6,01/23/2034,11/27/2034,Pete Buttigieg,93.5
-Pew Research,1.9,2.8,Telephone,3,01/30/2034,12/04/2034,Kamala Harris,79.4
-SurveyMonkey,1.1,0.2,Telephone,7,02/06/2034,12/11/2034,Kamala Harris,3.1
-Gallup,1,3.4,Telephone,2,02/13/2034,12/18/2034,Pete Buttigieg,59.8
-Pew Research,1.1,-1.1,Telephone,2,02/20/2034,12/25/2034,Pete Buttigieg,65
-Gallup,2.1,4.2,Telephone,9,02/27/2034,01/01/2035,Elizabeth Warren,17
-Gallup,1.5,-1.5,Online Panel,1,03/06/2034,01/08/2035,Kamala Harris,99.9
-Pew Research,2.6,4.8,In-person,0,03/13/2034,01/15/2035,Bernie Sanders,22.3
-SurveyMonkey,1.7,2.4,In-person,3,03/20/2034,01/22/2035,Elizabeth Warren,21
-Gallup,2.4,4.5,In-person,2,03/27/2034,01/29/2035,Donald Trump,22.8
-YouGov,2.6,4.4,Online Panel,9,04/03/2034,02/05/2035,Gavin Newsom,51.2
-Pew Research,1,-0.5,Mixed-mode,8,04/10/2034,02/12/2035,Bernie Sanders,20.2
-Ipsos,2.5,3.9,Mixed-mode,0,04/17/2034,02/19/2035,Pete Buttigieg,77.1
-YouGov,1.3,1.4,Mixed-mode,7,04/24/2034,02/26/2035,Donald Trump,3.6
-Pew Research,1.1,4.4,Mixed-mode,6,05/01/2034,03/05/2035,Elizabeth Warren,47.4
-Gallup,2.1,0.6,In-person,3,05/08/2034,03/12/2035,Kamala Harris,85.7
-YouGov,2.9,1,Mixed-mode,5,05/15/2034,03/19/2035,Elizabeth Warren,69.4
-Ipsos,1.8,4.9,Online Panel,5,05/22/2034,03/26/2035,Bernie Sanders,0.5
-YouGov,2.5,-2,Telephone,3,05/29/2034,04/02/2035,Gavin Newsom,56.3
-Gallup,1.7,-0.4,Mixed-mode,4,06/05/2034,04/09/2035,Bernie Sanders,77.2
-Ipsos,2.1,-0.8,In-person,2,06/12/2034,04/16/2035,Pete Buttigieg,54.5
-Pew Research,2.6,4.8,Mixed-mode,3,06/19/2034,04/23/2035,Bernie Sanders,80.6
-SurveyMonkey,1,-0.1,Online Panel,5,06/26/2034,04/30/2035,Donald Trump,83.3
-Gallup,2.3,1.5,In-person,6,07/03/2034,05/07/2035,Kamala Harris,37.9
-Gallup,2.2,1.2,Telephone,5,07/10/2034,05/14/2035,Donald Trump,96.1
-Gallup,2.6,-0.1,In-person,0,07/17/2034,05/21/2035,Elizabeth Warren,60.3
-SurveyMonkey,2.7,3.8,In-person,3,07/24/2034,05/28/2035,Elizabeth Warren,79.9
-YouGov,1.5,2.4,Telephone,3,07/31/2034,06/04/2035,Gavin Newsom,74
-SurveyMonkey,1.7,-1.3,Mixed-mode,8,08/07/2034,06/11/2035,Pete Buttigieg,85.7
-Ipsos,2.2,1.2,Mixed-mode,8,08/14/2034,06/18/2035,Kamala Harris,56
-Pew Research,2.7,0.5,Telephone,5,08/21/2034,06/25/2035,Elizabeth Warren,50.3
-Ipsos,1.8,3.6,Mixed-mode,3,08/28/2034,07/02/2035,Elizabeth Warren,57
-Ipsos,2.8,-1.9,Mixed-mode,4,09/04/2034,07/09/2035,Pete Buttigieg,64.2
-Gallup,2.3,3.8,Online Panel,0,09/11/2034,07/16/2035,Donald Trump,55.4
-SurveyMonkey,2.7,4.6,Online Panel,2,09/18/2034,07/23/2035,Pete Buttigieg,34.3
-Pew Research,1.4,2.6,Telephone,5,09/25/2034,07/30/2035,Gavin Newsom,51.9
-Ipsos,1.1,-1.2,Telephone,7,10/02/2034,08/06/2035,Donald Trump,97.5
-YouGov,2.6,1,Online Panel,4,10/09/2034,08/13/2035,Gavin Newsom,55.8
-SurveyMonkey,2.2,4.2,Telephone,9,10/16/2034,08/20/2035,Gavin Newsom,7.8
-YouGov,1.3,3.6,Mixed-mode,6,10/23/2034,08/27/2035,Elizabeth Warren,22.8
-YouGov,2.8,-0,Mixed-mode,7,10/30/2034,09/03/2035,Donald Trump,39
-SurveyMonkey,2,-1.4,Online Panel,5,11/06/2034,09/10/2035,Gavin Newsom,81.1
-Gallup,1.6,4.6,Mixed-mode,3,11/13/2034,09/17/2035,Kamala Harris,77.2
-Pew Research,1.7,-0.4,Telephone,8,11/20/2034,09/24/2035,Pete Buttigieg,74.3
-YouGov,1.1,2.1,Mixed-mode,5,11/27/2034,10/01/2035,Kamala Harris,0.7
-Pew Research,1.1,1.1,Online Panel,3,12/04/2034,10/08/2035,Gavin Newsom,51
-SurveyMonkey,2.1,2.1,Mixed-mode,7,12/11/2034,10/15/2035,Kamala Harris,65
-Ipsos,1.4,2.2,Telephone,5,12/18/2034,10/22/2035,Elizabeth Warren,83.1
-Gallup,2.4,0.2,Mixed-mode,0,12/25/2034,10/29/2035,Donald Trump,31.1
-Pew Research,1.2,4,Mixed-mode,4,01/01/2035,11/05/2035,Elizabeth Warren,33.1
-SurveyMonkey,2.5,1.6,Telephone,5,01/08/2035,11/12/2035,Donald Trump,19.6
-Gallup,2.1,0.1,Telephone,7,01/15/2035,11/19/2035,Pete Buttigieg,78.6
-Gallup,2.9,-0.9,Online Panel,0,01/22/2035,11/26/2035,Elizabeth Warren,94.6
-Gallup,2.8,2.9,In-person,4,01/29/2035,12/03/2035,Gavin Newsom,11.9
-SurveyMonkey,1.1,4.8,In-person,6,02/05/2035,12/10/2035,Donald Trump,0.2
-SurveyMonkey,2.6,-2,In-person,1,02/12/2035,12/17/2035,Gavin Newsom,85.9
-Gallup,1.1,-1.4,Telephone,1,02/19/2035,12/24/2035,Gavin Newsom,39.9
-Pew Research,1.4,3.4,Mixed-mode,0,02/26/2035,12/31/2035,Elizabeth Warren,59.7
-SurveyMonkey,2.9,4.2,Online Panel,2,03/05/2035,01/07/2036,Kamala Harris,4.4
-YouGov,2.6,0.6,Online Panel,3,03/12/2035,01/14/2036,Bernie Sanders,35
-YouGov,2,-0.8,Telephone,4,03/19/2035,01/21/2036,Elizabeth Warren,19.3
-Gallup,2,2.3,Mixed-mode,4,03/26/2035,01/28/2036,Bernie Sanders,85.3
-YouGov,1.8,2.5,Telephone,4,04/02/2035,02/04/2036,Donald Trump,20.6
-Gallup,1.6,2.1,Telephone,7,04/09/2035,02/11/2036,Gavin Newsom,67.7
-Gallup,2.7,-1.5,Mixed-mode,8,04/16/2035,02/18/2036,Pete Buttigieg,40.6
-SurveyMonkey,2.4,3.2,Telephone,8,04/23/2035,02/25/2036,Pete Buttigieg,51
-Gallup,2.8,3.7,Mixed-mode,5,04/30/2035,03/03/2036,Pete Buttigieg,81
-SurveyMonkey,2.1,-0.3,Mixed-mode,4,05/07/2035,03/10/2036,Donald Trump,6.7
-Gallup,2.2,0.5,Telephone,2,05/14/2035,03/17/2036,Bernie Sanders,44.8
-Pew Research,2,-1.1,In-person,6,05/21/2035,03/24/2036,Pete Buttigieg,85.7
-Ipsos,1.4,1.6,Online Panel,6,05/28/2035,03/31/2036,Pete Buttigieg,94.4
-Pew Research,1.2,-1.2,In-person,9,06/04/2035,04/07/2036,Bernie Sanders,78.3
-YouGov,1.2,1.3,In-person,1,06/11/2035,04/14/2036,Donald Trump,68.1
-YouGov,1.4,4.8,Telephone,4,06/18/2035,04/21/2036,Kamala Harris,17.6
-Pew Research,1.8,2.3,In-person,2,06/25/2035,04/28/2036,Kamala Harris,23.1
-YouGov,1.8,-1.5,Mixed-mode,8,07/02/2035,05/05/2036,Kamala Harris,63.9
-Ipsos,3,2.6,In-person,6,07/09/2035,05/12/2036,Elizabeth Warren,26.7
-Pew Research,2.8,1.6,Telephone,1,07/16/2035,05/19/2036,Donald Trump,79.1
-Ipsos,2.7,4.6,Mixed-mode,9,07/23/2035,05/26/2036,Kamala Harris,50.8
-Pew Research,2.4,1,Online Panel,4,07/30/2035,06/02/2036,Donald Trump,61.8
-Gallup,2.5,1.6,Online Panel,4,08/06/2035,06/09/2036,Pete Buttigieg,33.3
-YouGov,2.7,0.7,In-person,8,08/13/2035,06/16/2036,Pete Buttigieg,66.5
-Pew Research,1,1.8,Mixed-mode,4,08/20/2035,06/23/2036,Kamala Harris,57.9
-SurveyMonkey,2.3,3.1,In-person,0,08/27/2035,06/30/2036,Donald Trump,97.8
-Pew Research,1.5,3.7,In-person,5,09/03/2035,07/07/2036,Gavin Newsom,16.9
-Ipsos,1.9,-1.8,Telephone,3,09/10/2035,07/14/2036,Pete Buttigieg,1
-SurveyMonkey,1.4,3.8,Telephone,7,09/17/2035,07/21/2036,Pete Buttigieg,98.4
-Ipsos,1.3,-1.7,Online Panel,5,09/24/2035,07/28/2036,Gavin Newsom,12.5
-Gallup,2.4,-1.5,Online Panel,8,10/01/2035,08/04/2036,Elizabeth Warren,43.3
-SurveyMonkey,1.2,-1,Telephone,9,10/08/2035,08/11/2036,Bernie Sanders,43.3
-Pew Research,2.3,4.6,In-person,6,10/15/2035,08/18/2036,Gavin Newsom,88.2
-YouGov,2,4.8,Mixed-mode,0,10/22/2035,08/25/2036,Kamala Harris,19.6
-YouGov,1.3,4.5,In-person,6,10/29/2035,09/01/2036,Donald Trump,5.8
-Ipsos,1.4,1.4,Telephone,2,11/05/2035,09/08/2036,Elizabeth Warren,73.7
-Ipsos,2.8,2.6,In-person,6,11/12/2035,09/15/2036,Gavin Newsom,52.2
-Ipsos,1,0.7,Telephone,0,11/19/2035,09/22/2036,Pete Buttigieg,75.4
-Pew Research,2.3,-1.3,In-person,2,11/26/2035,09/29/2036,Pete Buttigieg,89.8
-SurveyMonkey,1.6,3.8,In-person,6,12/03/2035,10/06/2036,Elizabeth Warren,79.9
-SurveyMonkey,2.5,0.7,Telephone,0,12/10/2035,10/13/2036,Donald Trump,27.4
-Pew Research,1.9,3.6,In-person,1,12/17/2035,10/20/2036,Donald Trump,26.7
-Pew Research,2.3,1.3,Telephone,5,12/24/2035,10/27/2036,Gavin Newsom,75.6
-Pew Research,1.3,-1.7,Telephone,1,12/31/2035,11/03/2036,Donald Trump,89.3
-YouGov,2.8,-2,Telephone,0,01/07/2036,11/10/2036,Bernie Sanders,11.4
-YouGov,1.5,1.7,Telephone,7,01/14/2036,11/17/2036,Kamala Harris,82.2
-Ipsos,3,3,Telephone,2,01/21/2036,11/24/2036,Donald Trump,14.8
-Ipsos,1.2,-1.7,Telephone,6,01/28/2036,12/01/2036,Pete Buttigieg,95.1
-YouGov,2.6,1.8,Telephone,8,02/04/2036,12/08/2036,Pete Buttigieg,14.2
-Pew Research,2.9,2.5,In-person,7,02/11/2036,12/15/2036,Donald Trump,35.8
-YouGov,2.1,0.2,In-person,7,02/18/2036,12/22/2036,Donald Trump,53.4
-SurveyMonkey,2.6,4.7,Online Panel,7,02/25/2036,12/29/2036,Kamala Harris,87.8
-Gallup,2.6,1.3,In-person,1,03/03/2036,01/05/2037,Pete Buttigieg,41.8
-Pew Research,2.1,1,Online Panel,9,03/10/2036,01/12/2037,Kamala Harris,47.5
-YouGov,1.2,4.3,In-person,6,03/17/2036,01/19/2037,Donald Trump,28.3
-SurveyMonkey,1.7,-0.3,Telephone,4,03/24/2036,01/26/2037,Elizabeth Warren,16.5
-Ipsos,2.3,-1.8,Telephone,6,03/31/2036,02/02/2037,Elizabeth Warren,64.6
-YouGov,2.2,-1.6,Telephone,6,04/07/2036,02/09/2037,Kamala Harris,27.8
-Gallup,2.3,0.9,Online Panel,4,04/14/2036,02/16/2037,Elizabeth Warren,6.2
-Pew Research,1.3,-1,Telephone,0,04/21/2036,02/23/2037,Gavin Newsom,28.1
-Ipsos,1.5,3.1,Telephone,4,04/28/2036,03/02/2037,Gavin Newsom,91
-SurveyMonkey,1.5,-1.7,In-person,7,05/05/2036,03/09/2037,Donald Trump,90.7
-Gallup,1.6,-1.6,In-person,9,05/12/2036,03/16/2037,Donald Trump,73.3
-Ipsos,1.1,-1,In-person,4,05/19/2036,03/23/2037,Donald Trump,65.5
-Gallup,1.9,1.7,Telephone,1,05/26/2036,03/30/2037,Bernie Sanders,18
-Pew Research,2.9,-1.9,Telephone,9,06/02/2036,04/06/2037,Bernie Sanders,16.5
-Ipsos,2.5,-0.3,Telephone,3,06/09/2036,04/13/2037,Kamala Harris,17.7
-Pew Research,1.6,1.3,In-person,8,06/16/2036,04/20/2037,Bernie Sanders,55.4
-YouGov,2.5,-0.5,Mixed-mode,6,06/23/2036,04/27/2037,Pete Buttigieg,96.7
-Ipsos,1.6,4,Telephone,9,06/30/2036,05/04/2037,Elizabeth Warren,10.8
-YouGov,1.5,4.3,Mixed-mode,6,07/07/2036,05/11/2037,Gavin Newsom,45.7
-YouGov,1.2,3,Online Panel,5,07/14/2036,05/18/2037,Kamala Harris,96.7
-YouGov,1.9,2.9,Telephone,3,07/21/2036,05/25/2037,Gavin Newsom,85.6
-Gallup,2.6,0.7,Telephone,0,07/28/2036,06/01/2037,Kamala Harris,16.2
-Gallup,1.8,-1.1,Mixed-mode,5,08/04/2036,06/08/2037,Gavin Newsom,99.4
-Gallup,2.2,2.7,Online Panel,2,08/11/2036,06/15/2037,Pete Buttigieg,79.7
-SurveyMonkey,2.9,-1.1,Telephone,0,08/18/2036,06/22/2037,Gavin Newsom,38.8
-Pew Research,3,1.9,Telephone,2,08/25/2036,06/29/2037,Elizabeth Warren,12.2
-Gallup,2.8,-0.9,Mixed-mode,3,09/01/2036,07/06/2037,Kamala Harris,98.4
-Ipsos,2.8,2.1,Mixed-mode,0,09/08/2036,07/13/2037,Bernie Sanders,27
-Ipsos,1.1,-1.9,In-person,7,09/15/2036,07/20/2037,Donald Trump,65.2
-Ipsos,2,-1.6,Online Panel,0,09/22/2036,07/27/2037,Elizabeth Warren,86.4
-Pew Research,1.1,4.7,Mixed-mode,4,09/29/2036,08/03/2037,Donald Trump,30.2
-Pew Research,2,3.4,Mixed-mode,9,10/06/2036,08/10/2037,Gavin Newsom,36.6
-Ipsos,2.4,-1.2,Mixed-mode,8,10/13/2036,08/17/2037,Kamala Harris,98
-Pew Research,1.1,4.8,In-person,4,10/20/2036,08/24/2037,Kamala Harris,25.2
-Pew Research,2.2,4.7,In-person,8,10/27/2036,08/31/2037,Pete Buttigieg,41.7
-Pew Research,2.4,0.9,Telephone,5,11/03/2036,09/07/2037,Kamala Harris,23
-YouGov,1.3,4.6,Mixed-mode,4,11/10/2036,09/14/2037,Donald Trump,30.8
-SurveyMonkey,2.3,1.1,Telephone,5,11/17/2036,09/21/2037,Gavin Newsom,21.8
-YouGov,2.3,2.9,Online Panel,8,11/24/2036,09/28/2037,Gavin Newsom,79.5
-YouGov,1.4,0.8,In-person,9,12/01/2036,10/05/2037,Pete Buttigieg,30.3
-Gallup,2,1.6,Telephone,2,12/08/2036,10/12/2037,Kamala Harris,26.5
-Gallup,3,3.7,Mixed-mode,2,12/15/2036,10/19/2037,Bernie Sanders,73.7
-SurveyMonkey,1.4,1.5,Mixed-mode,4,12/22/2036,10/26/2037,Elizabeth Warren,90.4
-Gallup,1.9,1.6,Telephone,1,12/29/2036,11/02/2037,Donald Trump,84.3
-Pew Research,1.1,2.6,In-person,7,01/05/2037,11/09/2037,Elizabeth Warren,21.4
-Ipsos,1.4,4.2,Online Panel,1,01/12/2037,11/16/2037,Pete Buttigieg,1.3
-Pew Research,1.9,4,Online Panel,6,01/19/2037,11/23/2037,Bernie Sanders,61.7
-Pew Research,1.7,-1.7,Mixed-mode,9,01/26/2037,11/30/2037,Bernie Sanders,40.5
-Gallup,1.8,3.4,Online Panel,3,02/02/2037,12/07/2037,Donald Trump,61.3
-Pew Research,1.3,-1.6,Mixed-mode,6,02/09/2037,12/14/2037,Elizabeth Warren,94.8
-YouGov,2.8,0.9,Online Panel,8,02/16/2037,12/21/2037,Gavin Newsom,33.7
-Pew Research,2.2,0.4,Online Panel,9,02/23/2037,12/28/2037,Gavin Newsom,86.1
-Gallup,2,4.1,Telephone,7,03/02/2037,01/04/2038,Gavin Newsom,8.7
-Gallup,2.8,1,Mixed-mode,2,03/09/2037,01/11/2038,Kamala Harris,58
-YouGov,1.1,0.4,In-person,3,03/16/2037,01/18/2038,Bernie Sanders,48
-Gallup,1.2,-1.3,Telephone,6,03/23/2037,01/25/2038,Bernie Sanders,65.8
-YouGov,1.3,0.4,Online Panel,3,03/30/2037,02/01/2038,Kamala Harris,73.6
-Ipsos,1.7,2,Telephone,9,04/06/2037,02/08/2038,Pete Buttigieg,94.4
-Ipsos,1.4,-1.6,Online Panel,2,04/13/2037,02/15/2038,Gavin Newsom,95.9
-YouGov,2.9,-0.2,Telephone,9,04/20/2037,02/22/2038,Elizabeth Warren,74.8
-Pew Research,1.6,2.6,Telephone,3,04/27/2037,03/01/2038,Bernie Sanders,94.5
-YouGov,1.1,2.3,Online Panel,4,05/04/2037,03/08/2038,Pete Buttigieg,86.7
-Pew Research,1.4,2.2,Telephone,0,05/11/2037,03/15/2038,Kamala Harris,77.7
-SurveyMonkey,1.9,4.6,In-person,9,05/18/2037,03/22/2038,Donald Trump,86.5
-Pew Research,1.8,-0.9,Online Panel,0,05/25/2037,03/29/2038,Donald Trump,37
-Gallup,2.5,1.1,In-person,6,06/01/2037,04/05/2038,Kamala Harris,2.9
-Gallup,1.7,-0.4,Online Panel,6,06/08/2037,04/12/2038,Elizabeth Warren,87.1
-Gallup,2.8,1.9,In-person,0,06/15/2037,04/19/2038,Kamala Harris,10.9
-SurveyMonkey,1.3,2.3,Mixed-mode,8,06/22/2037,04/26/2038,Donald Trump,25.8
-Gallup,1.8,2.1,Mixed-mode,9,06/29/2037,05/03/2038,Donald Trump,18.4
-Ipsos,1.3,4,Telephone,1,07/06/2037,05/10/2038,Kamala Harris,49.8
-Ipsos,1.6,0.9,Online Panel,6,07/13/2037,05/17/2038,Donald Trump,13.7
-Ipsos,1.2,-0.8,In-person,2,07/20/2037,05/24/2038,Bernie Sanders,87.4
-Ipsos,2.6,0.1,In-person,4,07/27/2037,05/31/2038,Bernie Sanders,64.4
-SurveyMonkey,2.7,3.4,Mixed-mode,0,08/03/2037,06/07/2038,Pete Buttigieg,27
-Gallup,2.3,-0.8,Mixed-mode,6,08/10/2037,06/14/2038,Bernie Sanders,59.1
-Pew Research,2.5,3.7,Online Panel,4,08/17/2037,06/21/2038,Kamala Harris,15.3
-Ipsos,1.3,2.8,Telephone,5,08/24/2037,06/28/2038,Gavin Newsom,50.1
-Ipsos,2.3,0.4,Mixed-mode,0,08/31/2037,07/05/2038,Bernie Sanders,36.7
-SurveyMonkey,2.6,0.1,Telephone,0,09/07/2037,07/12/2038,Pete Buttigieg,54.9
-SurveyMonkey,2.5,3.1,Online Panel,8,09/14/2037,07/19/2038,Pete Buttigieg,65.1
-YouGov,1.6,1.8,Online Panel,5,09/21/2037,07/26/2038,Pete Buttigieg,4.5
-Ipsos,2.7,4.3,Telephone,0,09/28/2037,08/02/2038,Gavin Newsom,4
-Ipsos,2.2,1,Online Panel,5,10/05/2037,08/09/2038,Elizabeth Warren,26
-SurveyMonkey,2.4,4.4,In-person,8,10/12/2037,08/16/2038,Pete Buttigieg,7.8
-Gallup,2.2,4.4,In-person,1,10/19/2037,08/23/2038,Pete Buttigieg,98.8
-Pew Research,1.3,3.4,In-person,4,10/26/2037,08/30/2038,Pete Buttigieg,63.1
-YouGov,2.6,3,Online Panel,4,11/02/2037,09/06/2038,Elizabeth Warren,5.9
-SurveyMonkey,2.6,2.3,In-person,1,11/09/2037,09/13/2038,Pete Buttigieg,84
-Pew Research,2.8,2.2,Telephone,2,11/16/2037,09/20/2038,Kamala Harris,38.6
-Pew Research,3,1.7,Mixed-mode,0,11/23/2037,09/27/2038,Pete Buttigieg,17.2
-YouGov,1.5,2.6,Online Panel,4,11/30/2037,10/04/2038,Bernie Sanders,31.2
-YouGov,2,-0.6,Mixed-mode,9,12/07/2037,10/11/2038,Pete Buttigieg,22.2
-Pew Research,1.1,4.5,Telephone,2,12/14/2037,10/18/2038,Gavin Newsom,42.2
-SurveyMonkey,2.1,-0.1,Mixed-mode,7,12/21/2037,10/25/2038,Gavin Newsom,46.4
-YouGov,1.3,-0.8,In-person,4,12/28/2037,11/01/2038,Gavin Newsom,97.4
-SurveyMonkey,1.2,2.2,In-person,3,01/04/2038,11/08/2038,Bernie Sanders,42.1
-Pew Research,1.7,0.3,Telephone,9,01/11/2038,11/15/2038,Gavin Newsom,98.8
-Ipsos,1.4,0.5,Telephone,8,01/18/2038,11/22/2038,Pete Buttigieg,69.4
-Pew Research,2.6,-1.3,Mixed-mode,1,01/25/2038,11/29/2038,Elizabeth Warren,77.3
-Pew Research,1.5,4.7,Mixed-mode,7,02/01/2038,12/06/2038,Gavin Newsom,22.5
-Ipsos,2.7,2.8,Mixed-mode,2,02/08/2038,12/13/2038,Donald Trump,77.7
-SurveyMonkey,2.1,4,Mixed-mode,5,02/15/2038,12/20/2038,Bernie Sanders,88.3
-Ipsos,1.5,-2,In-person,0,02/22/2038,12/27/2038,Donald Trump,84.7
-Pew Research,2.5,3,Mixed-mode,2,03/01/2038,01/03/2039,Kamala Harris,1
-Pew Research,2.8,-1.6,Online Panel,0,03/08/2038,01/10/2039,Pete Buttigieg,14.4
-Ipsos,1.1,-0.1,Telephone,0,03/15/2038,01/17/2039,Elizabeth Warren,2.1
-SurveyMonkey,1.9,4.2,Online Panel,2,03/22/2038,01/24/2039,Kamala Harris,87
-Ipsos,2,1.5,In-person,0,03/29/2038,01/31/2039,Gavin Newsom,20.5
-Pew Research,1.7,4.7,Mixed-mode,0,04/05/2038,02/07/2039,Pete Buttigieg,45.9
-Gallup,2.3,-1.4,In-person,4,04/12/2038,02/14/2039,Bernie Sanders,75.6
-Ipsos,1.3,0.2,Online Panel,7,04/19/2038,02/21/2039,Pete Buttigieg,97.8
-Pew Research,2.2,-1.9,Mixed-mode,4,04/26/2038,02/28/2039,Gavin Newsom,84.7
-SurveyMonkey,1.7,2,Mixed-mode,0,05/03/2038,03/07/2039,Bernie Sanders,0.1
-YouGov,2.4,0.1,Mixed-mode,6,05/10/2038,03/14/2039,Donald Trump,12.4
-Gallup,2.8,3.3,Telephone,4,05/17/2038,03/21/2039,Pete Buttigieg,30.6
-YouGov,1.2,0.5,Online Panel,8,05/24/2038,03/28/2039,Bernie Sanders,60.4
-SurveyMonkey,1.3,-2,Online Panel,9,05/31/2038,04/04/2039,Gavin Newsom,65
-Ipsos,1.8,1.9,Online Panel,0,06/07/2038,04/11/2039,Bernie Sanders,71.6
-Gallup,2.7,0.6,Online Panel,8,06/14/2038,04/18/2039,Donald Trump,72.1
-Pew Research,2.5,0.8,Online Panel,2,06/21/2038,04/25/2039,Elizabeth Warren,52.9
-Pew Research,1.9,1.3,In-person,4,06/28/2038,05/02/2039,Bernie Sanders,13.3
-Gallup,2.6,1.1,In-person,2,07/05/2038,05/09/2039,Donald Trump,46.1
-Gallup,1.5,0.1,Telephone,9,07/12/2038,05/16/2039,Pete Buttigieg,57.3
-Gallup,2.6,3.3,In-person,2,07/19/2038,05/23/2039,Donald Trump,8.5
-Gallup,2,4.5,Mixed-mode,8,07/26/2038,05/30/2039,Kamala Harris,25
-YouGov,2.4,4.2,In-person,9,08/02/2038,06/06/2039,Elizabeth Warren,45
-Pew Research,1.2,1.4,Online Panel,0,08/09/2038,06/13/2039,Gavin Newsom,70.2
-Ipsos,1,2.9,Telephone,1,08/16/2038,06/20/2039,Pete Buttigieg,52.1
-Pew Research,2.7,3.1,Telephone,2,08/23/2038,06/27/2039,Pete Buttigieg,90.4
-YouGov,2.3,-0.1,In-person,8,08/30/2038,07/04/2039,Gavin Newsom,21.1
-SurveyMonkey,2.5,1.5,Telephone,2,09/06/2038,07/11/2039,Gavin Newsom,56.2
-Pew Research,3,3.2,In-person,1,09/13/2038,07/18/2039,Bernie Sanders,82
-Ipsos,1.7,2.1,Online Panel,9,09/20/2038,07/25/2039,Kamala Harris,49.9
-YouGov,1.3,-1.7,In-person,2,09/27/2038,08/01/2039,Bernie Sanders,12
-Pew Research,1,-0.8,In-person,8,10/04/2038,08/08/2039,Bernie Sanders,58.4
-Ipsos,2.5,-1,Mixed-mode,0,10/11/2038,08/15/2039,Pete Buttigieg,80.1
-Pew Research,2.5,3.6,Mixed-mode,6,10/18/2038,08/22/2039,Bernie Sanders,68
-Pew Research,2.8,-0.9,In-person,9,10/25/2038,08/29/2039,Kamala Harris,32.5
-SurveyMonkey,1.3,0.9,In-person,6,11/01/2038,09/05/2039,Elizabeth Warren,6.8
-Ipsos,2.1,4.9,Online Panel,4,11/08/2038,09/12/2039,Kamala Harris,13.7
-Ipsos,2,-1.5,Telephone,0,11/15/2038,09/19/2039,Pete Buttigieg,50.6
-Pew Research,1.7,-0.3,Telephone,6,11/22/2038,09/26/2039,Bernie Sanders,78
-Ipsos,2.9,-0.2,In-person,4,11/29/2038,10/03/2039,Elizabeth Warren,18.7
-YouGov,2.1,0.3,Telephone,0,12/06/2038,10/10/2039,Donald Trump,31.3
-SurveyMonkey,2.5,2.2,Online Panel,7,12/13/2038,10/17/2039,Bernie Sanders,37.8
-Ipsos,1.3,1.4,Mixed-mode,5,12/20/2038,10/24/2039,Kamala Harris,4.8
-Gallup,2.8,0.5,In-person,7,12/27/2038,10/31/2039,Pete Buttigieg,69
-YouGov,1.1,1.9,Mixed-mode,7,01/03/2039,11/07/2039,Elizabeth Warren,75.5
-Ipsos,1.5,2.9,Online Panel,8,01/10/2039,11/14/2039,Pete Buttigieg,87.4
-Gallup,2.9,-1.3,Online Panel,7,01/17/2039,11/21/2039,Kamala Harris,90.4
-Pew Research,1.8,4.8,Mixed-mode,0,01/24/2039,11/28/2039,Donald Trump,87.3
-Ipsos,1.7,2.7,Online Panel,5,01/31/2039,12/05/2039,Bernie Sanders,87.9
-Ipsos,2,1.8,Online Panel,2,02/07/2039,12/12/2039,Elizabeth Warren,40.7
-YouGov,1.8,0.7,Mixed-mode,3,02/14/2039,12/19/2039,Kamala Harris,83.5
-Gallup,1.2,3.4,Mixed-mode,3,02/21/2039,12/26/2039,Gavin Newsom,76.6
-Gallup,2.6,4.5,Online Panel,5,02/28/2039,01/02/2040,Elizabeth Warren,19.3
-YouGov,2.8,1.1,Telephone,0,03/07/2039,01/09/2040,Gavin Newsom,20.3
-YouGov,2.5,3,Online Panel,1,03/14/2039,01/16/2040,Elizabeth Warren,6.5
-Gallup,2.7,4.9,In-person,2,03/21/2039,01/23/2040,Bernie Sanders,45.6
-YouGov,1.2,-1.4,Mixed-mode,7,03/28/2039,01/30/2040,Donald Trump,34.1
-Gallup,1.3,1.9,In-person,3,04/04/2039,02/06/2040,Gavin Newsom,69.3
-SurveyMonkey,1.9,1.4,Mixed-mode,2,04/11/2039,02/13/2040,Kamala Harris,16.6
-YouGov,2.2,1.8,Telephone,9,04/18/2039,02/20/2040,Donald Trump,84.3
-SurveyMonkey,1.5,-0.1,Online Panel,9,04/25/2039,02/27/2040,Gavin Newsom,14.2
-Ipsos,1.6,-1.5,Online Panel,1,05/02/2039,03/05/2040,Bernie Sanders,41.9
-Pew Research,1.2,0.9,Mixed-mode,9,05/09/2039,03/12/2040,Gavin Newsom,75.7
-YouGov,2.7,2.2,Mixed-mode,6,05/16/2039,03/19/2040,Elizabeth Warren,85.3
-Ipsos,1.3,3.2,Telephone,7,05/23/2039,03/26/2040,Gavin Newsom,91.4
-Ipsos,2,2.1,Online Panel,5,05/30/2039,04/02/2040,Gavin Newsom,10.2
-Pew Research,2.5,3.6,Online Panel,8,06/06/2039,04/09/2040,Pete Buttigieg,57.4
-Gallup,1.5,-1.1,Online Panel,6,06/13/2039,04/16/2040,Elizabeth Warren,26
-Ipsos,1.1,2.5,Online Panel,0,06/20/2039,04/23/2040,Kamala Harris,30.5
-SurveyMonkey,1.2,1.6,In-person,5,06/27/2039,04/30/2040,Pete Buttigieg,72
-Gallup,2.9,3.3,In-person,8,07/04/2039,05/07/2040,Pete Buttigieg,17.2
-Gallup,1.1,2.8,Telephone,4,07/11/2039,05/14/2040,Donald Trump,43.8
-Pew Research,1.4,-1,In-person,5,07/18/2039,05/21/2040,Gavin Newsom,85.9
-Gallup,1.4,2.6,Mixed-mode,9,07/25/2039,05/28/2040,Kamala Harris,10.9
-Ipsos,1.3,-1.1,In-person,5,08/01/2039,06/04/2040,Gavin Newsom,21.1
-SurveyMonkey,1.6,4.5,Mixed-mode,0,08/08/2039,06/11/2040,Gavin Newsom,93.4
-Pew Research,1.1,4.1,Online Panel,3,08/15/2039,06/18/2040,Donald Trump,70.6
-YouGov,2.1,2,Mixed-mode,5,08/22/2039,06/25/2040,Kamala Harris,23.5
-YouGov,2.2,-1,Mixed-mode,9,08/29/2039,07/02/2040,Kamala Harris,71.5
-SurveyMonkey,2.4,1.9,Online Panel,6,09/05/2039,07/09/2040,Pete Buttigieg,47.1
-YouGov,1.3,1.8,In-person,8,09/12/2039,07/16/2040,Donald Trump,50.6
-Gallup,2.2,3.8,In-person,7,09/19/2039,07/23/2040,Elizabeth Warren,56.7
-Ipsos,2.5,3.3,Online Panel,6,09/26/2039,07/30/2040,Bernie Sanders,31.9
-Pew Research,1.2,-1.2,In-person,5,10/03/2039,08/06/2040,Bernie Sanders,52.9
-Pew Research,2.3,4.5,In-person,6,10/10/2039,08/13/2040,Donald Trump,17.8
-SurveyMonkey,2.1,-1.4,Online Panel,2,10/17/2039,08/20/2040,Gavin Newsom,86.8
-Ipsos,1.7,-2,Mixed-mode,4,10/24/2039,08/27/2040,Elizabeth Warren,96.4
-Gallup,1.2,5,Mixed-mode,2,10/31/2039,09/03/2040,Gavin Newsom,55.7
-SurveyMonkey,1.4,3.6,In-person,1,11/07/2039,09/10/2040,Donald Trump,76.6
-SurveyMonkey,2.5,1.7,Telephone,5,11/14/2039,09/17/2040,Donald Trump,79.6
-Pew Research,2.5,-1.1,Online Panel,0,11/21/2039,09/24/2040,Pete Buttigieg,28.7
-SurveyMonkey,1.5,4.8,In-person,0,11/28/2039,10/01/2040,Kamala Harris,55.3
-SurveyMonkey,1.2,3,In-person,0,12/05/2039,10/08/2040,Gavin Newsom,86.5
-Gallup,2.2,1.1,Mixed-mode,6,12/12/2039,10/15/2040,Bernie Sanders,56
-Pew Research,2,2.4,Online Panel,2,12/19/2039,10/22/2040,Pete Buttigieg,32.7
-Gallup,2.3,0.6,In-person,1,12/26/2039,10/29/2040,Bernie Sanders,31.9
-YouGov,2.6,2.2,Online Panel,9,01/02/2040,11/05/2040,Gavin Newsom,17.5
-SurveyMonkey,1.6,2.9,Telephone,1,01/09/2040,11/12/2040,Bernie Sanders,65
-SurveyMonkey,1,3.8,In-person,9,01/16/2040,11/19/2040,Donald Trump,88.2
-Ipsos,2.3,-0.7,Telephone,3,01/23/2040,11/26/2040,Gavin Newsom,44.9
-Ipsos,2.7,2.7,Online Panel,6,01/30/2040,12/03/2040,Elizabeth Warren,60
-Gallup,1.5,4,Online Panel,8,02/06/2040,12/10/2040,Elizabeth Warren,29.5
-Gallup,2.1,4.7,Telephone,4,02/13/2040,12/17/2040,Pete Buttigieg,80.8
-Ipsos,1.7,3.1,Mixed-mode,7,02/20/2040,12/24/2040,Bernie Sanders,63.1
-SurveyMonkey,2.6,-0.7,Mixed-mode,6,02/27/2040,12/31/2040,Donald Trump,71.2
-SurveyMonkey,1.2,2.7,Online Panel,5,03/05/2040,01/07/2041,Donald Trump,52.8
-YouGov,1.4,5,Online Panel,6,03/12/2040,01/14/2041,Donald Trump,43.3
-Ipsos,1.4,1.7,Telephone,4,03/19/2040,01/21/2041,Bernie Sanders,40.7
-Pew Research,2,3.7,Mixed-mode,9,03/26/2040,01/28/2041,Elizabeth Warren,95.8
-SurveyMonkey,2.7,2.7,In-person,3,04/02/2040,02/04/2041,Pete Buttigieg,70.8
-SurveyMonkey,2.7,4.8,Telephone,8,04/09/2040,02/11/2041,Bernie Sanders,71.3
-Pew Research,1.1,-1.5,Telephone,8,04/16/2040,02/18/2041,Donald Trump,21
-YouGov,1.2,1.3,Mixed-mode,6,04/23/2040,02/25/2041,Elizabeth Warren,54.1
-Ipsos,1.6,4.8,Online Panel,9,04/30/2040,03/04/2041,Gavin Newsom,77.3
-YouGov,2.8,-1.9,In-person,4,05/07/2040,03/11/2041,Donald Trump,90.9
-YouGov,1.1,4.1,Online Panel,2,05/14/2040,03/18/2041,Donald Trump,29.7
-Pew Research,2.4,4.8,Mixed-mode,0,05/21/2040,03/25/2041,Pete Buttigieg,44.7
-Gallup,2.8,0.6,Mixed-mode,2,05/28/2040,04/01/2041,Gavin Newsom,34.9
-Gallup,2.8,0.5,In-person,7,06/04/2040,04/08/2041,Gavin Newsom,79
-Gallup,1.3,2.9,In-person,6,06/11/2040,04/15/2041,Donald Trump,75.7
-Ipsos,2.3,4,Telephone,9,06/18/2040,04/22/2041,Kamala Harris,27
-YouGov,1.6,-1.1,Online Panel,9,06/25/2040,04/29/2041,Elizabeth Warren,46.4
-YouGov,2.3,-1,In-person,8,07/02/2040,05/06/2041,Gavin Newsom,77.1
-Gallup,2.8,2.2,In-person,3,07/09/2040,05/13/2041,Bernie Sanders,51.6
-YouGov,1.4,2.8,In-person,8,07/16/2040,05/20/2041,Pete Buttigieg,25.9
-SurveyMonkey,1.7,2.3,Online Panel,3,07/23/2040,05/27/2041,Bernie Sanders,54.9
-Pew Research,2.6,-1.2,Mixed-mode,7,07/30/2040,06/03/2041,Bernie Sanders,42.3
-Pew Research,1.8,0.6,In-person,3,08/06/2040,06/10/2041,Kamala Harris,74.8
-Pew Research,2.5,3.6,Online Panel,1,08/13/2040,06/17/2041,Gavin Newsom,92.8
-Gallup,2.4,2.6,Online Panel,9,08/20/2040,06/24/2041,Donald Trump,79.7
-SurveyMonkey,1.4,2.9,Online Panel,0,08/27/2040,07/01/2041,Gavin Newsom,47.3
-Pew Research,2.4,2.2,Telephone,8,09/03/2040,07/08/2041,Bernie Sanders,26.5
-Ipsos,1.7,1.3,Online Panel,3,09/10/2040,07/15/2041,Elizabeth Warren,43
-Pew Research,2.7,1.8,In-person,5,09/17/2040,07/22/2041,Kamala Harris,49
-SurveyMonkey,1.2,2.8,Telephone,4,09/24/2040,07/29/2041,Gavin Newsom,74.7
-Gallup,2.6,-0.3,Online Panel,1,10/01/2040,08/05/2041,Donald Trump,39.3
-SurveyMonkey,2.3,0.5,Mixed-mode,7,10/08/2040,08/12/2041,Elizabeth Warren,98.7
-Gallup,1.1,-1.1,Telephone,2,10/15/2040,08/19/2041,Elizabeth Warren,80
-Pew Research,1.7,4.7,Online Panel,6,10/22/2040,08/26/2041,Gavin Newsom,84.5
-Pew Research,2.2,3.9,In-person,7,10/29/2040,09/02/2041,Elizabeth Warren,6.4
-YouGov,2.3,3.9,Mixed-mode,5,11/05/2040,09/09/2041,Bernie Sanders,3.9
-Ipsos,2.7,-1.6,Telephone,4,11/12/2040,09/16/2041,Bernie Sanders,55.2
-Ipsos,2.5,4.9,Mixed-mode,1,11/19/2040,09/23/2041,Donald Trump,47.6
-Pew Research,1.5,0,Online Panel,0,11/26/2040,09/30/2041,Gavin Newsom,85.9
-YouGov,3,2.3,Telephone,0,12/03/2040,10/07/2041,Donald Trump,62.5
-YouGov,1.5,4.1,In-person,8,12/10/2040,10/14/2041,Kamala Harris,80.5
-Pew Research,2.7,1.1,Online Panel,8,12/17/2040,10/21/2041,Donald Trump,70.4
-YouGov,1.5,3.8,In-person,4,12/24/2040,10/28/2041,Gavin Newsom,96.1
-Pew Research,2.1,0.2,Telephone,0,12/31/2040,11/04/2041,Elizabeth Warren,56.9
-Ipsos,1.2,1.9,In-person,9,01/07/2041,11/11/2041,Donald Trump,33.2
-Pew Research,1.3,2.6,Online Panel,6,01/14/2041,11/18/2041,Pete Buttigieg,43.2
-Ipsos,2.5,-0.6,Online Panel,8,01/21/2041,11/25/2041,Pete Buttigieg,73.4
-Pew Research,1.3,-0.2,Telephone,6,01/28/2041,12/02/2041,Donald Trump,25.5
-YouGov,1.6,4.4,Mixed-mode,8,02/04/2041,12/09/2041,Donald Trump,57.7
-Pew Research,2.7,2.9,Mixed-mode,0,02/11/2041,12/16/2041,Donald Trump,30
-SurveyMonkey,3,1.8,Mixed-mode,1,02/18/2041,12/23/2041,Donald Trump,92
-Pew Research,2,2.9,Mixed-mode,1,02/25/2041,12/30/2041,Donald Trump,50.7
-Ipsos,1.1,4,Telephone,0,03/04/2041,01/06/2042,Elizabeth Warren,36.1
-YouGov,3,2.9,In-person,4,03/11/2041,01/13/2042,Bernie Sanders,67
-SurveyMonkey,1.7,2.7,In-person,0,03/18/2041,01/20/2042,Pete Buttigieg,61.1
-Pew Research,2.7,1.7,Online Panel,4,03/25/2041,01/27/2042,Donald Trump,44.3
-Gallup,1.1,4.5,Telephone,7,04/01/2041,02/03/2042,Bernie Sanders,37.7
-Pew Research,2,4.9,Online Panel,6,04/08/2041,02/10/2042,Elizabeth Warren,71.6
-Gallup,2.6,2.9,Online Panel,0,04/15/2041,02/17/2042,Elizabeth Warren,74.1
-YouGov,2.9,3.8,In-person,8,04/22/2041,02/24/2042,Kamala Harris,30.1
-Pew Research,2.5,-1.8,Online Panel,8,04/29/2041,03/03/2042,Donald Trump,21.7
-SurveyMonkey,1.4,2.3,Online Panel,2,05/06/2041,03/10/2042,Gavin Newsom,66.9
-YouGov,2.5,-1.5,Mixed-mode,6,05/13/2041,03/17/2042,Kamala Harris,8.6
-YouGov,2.3,0.6,Mixed-mode,8,05/20/2041,03/24/2042,Donald Trump,27.4
-YouGov,2.4,1.1,Online Panel,9,05/27/2041,03/31/2042,Donald Trump,95.2
-Pew Research,2.5,-0.3,Online Panel,5,06/03/2041,04/07/2042,Donald Trump,14.3
-Pew Research,1.8,1.2,In-person,5,06/10/2041,04/14/2042,Gavin Newsom,38.6
-Gallup,2.4,0.5,Mixed-mode,4,06/17/2041,04/21/2042,Pete Buttigieg,2.8
-YouGov,1.1,1,Online Panel,2,06/24/2041,04/28/2042,Kamala Harris,62.4
-Pew Research,1.9,-1.8,In-person,2,07/01/2041,05/05/2042,Bernie Sanders,85.1
-YouGov,2.8,1.6,In-person,9,07/08/2041,05/12/2042,Bernie Sanders,38
-Ipsos,1.4,2.7,Mixed-mode,3,07/15/2041,05/19/2042,Gavin Newsom,5.7
-YouGov,1.3,5,Online Panel,6,07/22/2041,05/26/2042,Gavin Newsom,56.2
-SurveyMonkey,1.6,3.2,Mixed-mode,1,07/29/2041,06/02/2042,Bernie Sanders,52.1
-Gallup,1.2,4.8,Online Panel,8,08/05/2041,06/09/2042,Bernie Sanders,64
-Gallup,2.5,0.6,Mixed-mode,4,08/12/2041,06/16/2042,Bernie Sanders,46.6
-SurveyMonkey,2,0.8,Online Panel,0,08/19/2041,06/23/2042,Elizabeth Warren,21.8
-Pew Research,1.2,1.9,In-person,3,08/26/2041,06/30/2042,Donald Trump,13.4
-SurveyMonkey,2.9,-1.9,In-person,2,09/02/2041,07/07/2042,Gavin Newsom,93.3
-YouGov,1.1,1.2,Telephone,3,09/09/2041,07/14/2042,Gavin Newsom,25.5
-SurveyMonkey,1.5,0.3,Mixed-mode,6,09/16/2041,07/21/2042,Gavin Newsom,13.3
-SurveyMonkey,1.7,-0.2,In-person,7,09/23/2041,07/28/2042,Pete Buttigieg,43.4
-Pew Research,2.2,4.1,In-person,7,09/30/2041,08/04/2042,Kamala Harris,29.5
-SurveyMonkey,1.8,-0.9,In-person,3,10/07/2041,08/11/2042,Donald Trump,44.8
-Ipsos,2.8,4.4,Telephone,0,10/14/2041,08/18/2042,Elizabeth Warren,77
-YouGov,1.5,0.6,Mixed-mode,9,10/21/2041,08/25/2042,Donald Trump,47
-YouGov,1.7,3.4,Mixed-mode,0,10/28/2041,09/01/2042,Gavin Newsom,90
-Pew Research,2.9,-1.2,Online Panel,9,11/04/2041,09/08/2042,Gavin Newsom,81.1
-SurveyMonkey,3,1.7,Online Panel,0,11/11/2041,09/15/2042,Donald Trump,27.1
-Pew Research,1.8,3,In-person,3,11/18/2041,09/22/2042,Gavin Newsom,10.1
-SurveyMonkey,1.2,2.7,In-person,1,11/25/2041,09/29/2042,Kamala Harris,78.2
-SurveyMonkey,2.3,4.4,In-person,0,12/02/2041,10/06/2042,Pete Buttigieg,58.4
-YouGov,1.1,4.1,Telephone,1,12/09/2041,10/13/2042,Bernie Sanders,45.5
-Gallup,1.9,-1.8,Telephone,9,12/16/2041,10/20/2042,Donald Trump,37.5
-YouGov,1.1,1.6,Mixed-mode,6,12/23/2041,10/27/2042,Elizabeth Warren,28.6
-YouGov,1.2,0.1,In-person,2,12/30/2041,11/03/2042,Donald Trump,38.9
-Pew Research,2.6,-0.7,Mixed-mode,6,01/06/2042,11/10/2042,Elizabeth Warren,55.4
-Pew Research,1.8,3.6,Mixed-mode,4,01/13/2042,11/17/2042,Kamala Harris,59.6
-YouGov,2.6,3.5,Mixed-mode,6,01/20/2042,11/24/2042,Pete Buttigieg,73.5
-Ipsos,1.4,1.7,Mixed-mode,3,01/27/2042,12/01/2042,Elizabeth Warren,25.2
-Pew Research,2.4,4.3,Mixed-mode,1,02/03/2042,12/08/2042,Gavin Newsom,28.1
-Pew Research,2.4,4,Telephone,0,02/10/2042,12/15/2042,Bernie Sanders,90.5
-Pew Research,1.3,2.8,Telephone,1,02/17/2042,12/22/2042,Pete Buttigieg,13.3
-YouGov,1.2,0.9,In-person,4,02/24/2042,12/29/2042,Kamala Harris,54.9
-SurveyMonkey,1.5,4.2,Online Panel,5,03/03/2042,01/05/2043,Gavin Newsom,13.7
-Ipsos,1.8,1.8,Mixed-mode,0,03/10/2042,01/12/2043,Bernie Sanders,54.8
-YouGov,2.9,2.1,Telephone,3,03/17/2042,01/19/2043,Elizabeth Warren,94.7
-Ipsos,1.1,-0.7,Mixed-mode,9,03/24/2042,01/26/2043,Pete Buttigieg,12.1
-YouGov,1.2,2.8,Mixed-mode,8,03/31/2042,02/02/2043,Elizabeth Warren,41.6
-YouGov,2.7,2.5,Mixed-mode,2,04/07/2042,02/09/2043,Kamala Harris,42.7
-SurveyMonkey,2.9,4.5,In-person,6,04/14/2042,02/16/2043,Pete Buttigieg,23.5
-Pew Research,2.6,3.7,Mixed-mode,9,04/21/2042,02/23/2043,Kamala Harris,43.1
-Gallup,1.3,-0.1,Telephone,0,04/28/2042,03/02/2043,Gavin Newsom,37.8
-SurveyMonkey,1.4,2.9,Mixed-mode,8,05/05/2042,03/09/2043,Kamala Harris,44.9
-SurveyMonkey,1.9,-0.9,Online Panel,4,05/12/2042,03/16/2043,Elizabeth Warren,52.1
-Gallup,1.2,0.4,Mixed-mode,0,05/19/2042,03/23/2043,Kamala Harris,41.5
-Pew Research,2.3,-1.5,Online Panel,1,05/26/2042,03/30/2043,Kamala Harris,70.2
-Gallup,2.9,4.7,In-person,8,06/02/2042,04/06/2043,Pete Buttigieg,87.8
-Gallup,2.8,1,Telephone,2,06/09/2042,04/13/2043,Elizabeth Warren,30.7
-Gallup,2.8,2.9,Telephone,0,06/16/2042,04/20/2043,Donald Trump,96.8
-Ipsos,2.9,0.9,In-person,9,06/23/2042,04/27/2043,Bernie Sanders,77.5
-Pew Research,1.1,3.8,Mixed-mode,7,06/30/2042,05/04/2043,Kamala Harris,66.7
-Gallup,2.8,-1.4,Telephone,5,07/07/2042,05/11/2043,Pete Buttigieg,86.4
-YouGov,1.8,1.3,Online Panel,2,07/14/2042,05/18/2043,Elizabeth Warren,88.4
-YouGov,2.5,-1,Mixed-mode,9,07/21/2042,05/25/2043,Bernie Sanders,10.6
-Pew Research,2.2,-0.3,Telephone,2,07/28/2042,06/01/2043,Bernie Sanders,35.9
-Gallup,2.1,1.6,Online Panel,0,08/04/2042,06/08/2043,Elizabeth Warren,5.7
-Pew Research,1.9,4.7,Mixed-mode,6,08/11/2042,06/15/2043,Bernie Sanders,7.6
-YouGov,2.4,0.5,Mixed-mode,6,08/18/2042,06/22/2043,Gavin Newsom,32.8
-YouGov,1.5,-1.9,Telephone,8,08/25/2042,06/29/2043,Elizabeth Warren,57.2
-SurveyMonkey,2.3,0.3,Telephone,9,09/01/2042,07/06/2043,Gavin Newsom,90.5
-Pew Research,2.7,2.1,In-person,9,09/08/2042,07/13/2043,Donald Trump,49.8
-Ipsos,2.5,3.1,Online Panel,3,09/15/2042,07/20/2043,Kamala Harris,39
-Ipsos,2.2,3.4,Mixed-mode,0,09/22/2042,07/27/2043,Gavin Newsom,72
-Pew Research,2.6,1.1,Mixed-mode,2,09/29/2042,08/03/2043,Gavin Newsom,52.9
-Ipsos,1.1,0.2,In-person,6,10/06/2042,08/10/2043,Donald Trump,11.3
-Pew Research,2.5,2.3,Online Panel,5,10/13/2042,08/17/2043,Elizabeth Warren,64
-Gallup,2.3,3.9,Online Panel,8,10/20/2042,08/24/2043,Pete Buttigieg,22.5
-Gallup,2.5,-1.5,Mixed-mode,5,10/27/2042,08/31/2043,Pete Buttigieg,26.5
-YouGov,1.9,0.5,Online Panel,3,11/03/2042,09/07/2043,Bernie Sanders,0.6
-YouGov,2.9,4.8,In-person,2,11/10/2042,09/14/2043,Donald Trump,79.1
-Pew Research,2.5,0.9,Online Panel,7,11/17/2042,09/21/2043,Elizabeth Warren,28.7
-Gallup,1.2,2.6,Mixed-mode,8,11/24/2042,09/28/2043,Bernie Sanders,43.1
-Gallup,1.9,2.9,Mixed-mode,3,12/01/2042,10/05/2043,Gavin Newsom,59.2
-YouGov,2,-0.5,Mixed-mode,4,12/08/2042,10/12/2043,Donald Trump,71.1
-Ipsos,2.8,-0.3,Telephone,9,12/15/2042,10/19/2043,Gavin Newsom,34.9
-YouGov,2.6,-1.4,Mixed-mode,5,12/22/2042,10/26/2043,Kamala Harris,60.4
-SurveyMonkey,1,-1.8,Mixed-mode,2,12/29/2042,11/02/2043,Kamala Harris,26.6
-YouGov,1.5,2.3,Online Panel,4,01/05/2043,11/09/2043,Donald Trump,49.2
-Gallup,1.7,2.6,Mixed-mode,2,01/12/2043,11/16/2043,Elizabeth Warren,50.9
-SurveyMonkey,2.5,4.2,Online Panel,1,01/19/2043,11/23/2043,Bernie Sanders,99.8
-Pew Research,1.1,3.6,In-person,5,01/26/2043,11/30/2043,Pete Buttigieg,81.3
-Gallup,2.2,-1.8,Telephone,2,02/02/2043,12/07/2043,Bernie Sanders,98.7
-Pew Research,2.8,2.6,Telephone,5,02/09/2043,12/14/2043,Elizabeth Warren,54.2
-SurveyMonkey,1.9,4.2,Online Panel,5,02/16/2043,12/21/2043,Bernie Sanders,3.6
-Ipsos,1.6,5,Online Panel,9,02/23/2043,12/28/2043,Bernie Sanders,64.7
+SurveyMonkey,3,-0,Telephone,7,01/01/2024,11/04/2024,Kamala Harris,8.2
+SurveyMonkey,1.3,-0.8,Mixed-mode,1,01/08/2024,11/11/2024,Elizabeth Warren,29.5
+Ipsos,1.6,-0.8,Online Panel,2,01/15/2024,11/18/2024,Elizabeth Warren,31.6
+Gallup,1.6,1.5,In-person,2,01/22/2024,11/25/2024,Elizabeth Warren,78.1
+Gallup,1.9,1.7,Mixed-mode,0,01/29/2024,12/02/2024,Elizabeth Warren,43
+Pew Research,2.6,0.2,In-person,4,02/05/2024,12/09/2024,Bernie Sanders,32.4
+Gallup,1.2,4.3,Mixed-mode,3,02/12/2024,12/16/2024,Elizabeth Warren,34.3
+Ipsos,2.9,4.4,Online Panel,5,02/19/2024,12/23/2024,Gavin Newsom,55.5
+YouGov,1.3,3.5,Telephone,9,02/26/2024,12/30/2024,Pete Buttigieg,21.1
+Gallup,2.1,1.2,Mixed-mode,6,03/04/2024,01/06/2025,Pete Buttigieg,49.3
+SurveyMonkey,2.8,3.2,In-person,5,03/11/2024,01/13/2025,Gavin Newsom,87.8
+SurveyMonkey,2,3.6,Mixed-mode,3,03/18/2024,01/20/2025,Elizabeth Warren,20.1
+Pew Research,2.6,-0.9,In-person,6,03/25/2024,01/27/2025,Elizabeth Warren,51
+Ipsos,1.6,4,Telephone,6,04/01/2024,02/03/2025,Pete Buttigieg,61.2
+YouGov,2,-2,Telephone,9,04/08/2024,02/10/2025,Kamala Harris,91.3
+YouGov,2.3,3.4,In-person,4,04/15/2024,02/17/2025,Elizabeth Warren,37.1
+SurveyMonkey,1,3.7,Online Panel,7,04/22/2024,02/24/2025,Kamala Harris,74.7
+Pew Research,2.1,4.4,In-person,4,04/29/2024,03/03/2025,Gavin Newsom,52.7
+YouGov,1.7,0.9,Telephone,8,05/06/2024,03/10/2025,Elizabeth Warren,98.6
+Pew Research,1.8,0.7,Telephone,6,05/13/2024,03/17/2025,Elizabeth Warren,81
+Ipsos,2,4.2,Telephone,3,05/20/2024,03/24/2025,Donald Trump,68.3
+Gallup,2.1,3.3,Online Panel,1,05/27/2024,03/31/2025,Bernie Sanders,51.3
+Pew Research,2.3,0.5,Mixed-mode,4,06/03/2024,04/07/2025,Donald Trump,38
+Gallup,1.6,3.6,In-person,3,06/10/2024,04/14/2025,Pete Buttigieg,19.6
+YouGov,1.9,2.5,Online Panel,1,06/17/2024,04/21/2025,Gavin Newsom,34.1
+YouGov,2.4,0.8,In-person,4,06/24/2024,04/28/2025,Elizabeth Warren,53.4
+Gallup,2.7,2.8,Telephone,8,07/01/2024,05/05/2025,Donald Trump,91.2
+SurveyMonkey,1.8,3.5,In-person,5,07/08/2024,05/12/2025,Donald Trump,6.9
+Gallup,2.1,1.6,Mixed-mode,6,07/15/2024,05/19/2025,Bernie Sanders,90.5
+SurveyMonkey,2.1,-1.3,Telephone,5,07/22/2024,05/26/2025,Kamala Harris,20.6
+SurveyMonkey,1.4,0.8,Telephone,1,07/29/2024,06/02/2025,Donald Trump,51.5
+Ipsos,3,-0.8,Mixed-mode,8,08/05/2024,06/09/2025,Pete Buttigieg,31.3
+SurveyMonkey,2.6,2.3,In-person,1,08/12/2024,06/16/2025,Bernie Sanders,20.3
+SurveyMonkey,1.2,4,Mixed-mode,3,08/19/2024,06/23/2025,Kamala Harris,79.4
+YouGov,1.2,2.3,Mixed-mode,8,08/26/2024,06/30/2025,Donald Trump,27.8
+Pew Research,2.6,2.5,Online Panel,9,09/02/2024,07/07/2025,Elizabeth Warren,99.1
+SurveyMonkey,2.8,4,In-person,7,09/09/2024,07/14/2025,Bernie Sanders,93.8
+SurveyMonkey,2.5,4.4,In-person,2,09/16/2024,07/21/2025,Donald Trump,44.2
+YouGov,2,-0.3,Telephone,4,09/23/2024,07/28/2025,Donald Trump,58
+Ipsos,2.2,4.3,Telephone,9,09/30/2024,08/04/2025,Gavin Newsom,90.2
+Pew Research,1.1,-0.3,Mixed-mode,2,10/07/2024,08/11/2025,Kamala Harris,5
+SurveyMonkey,1.3,0.1,Telephone,9,10/14/2024,08/18/2025,Pete Buttigieg,90.7
+YouGov,1.5,-0.2,In-person,8,10/21/2024,08/25/2025,Pete Buttigieg,24.6
+Gallup,1.5,2.1,Mixed-mode,3,10/28/2024,09/01/2025,Donald Trump,32
+Pew Research,3,2.4,Online Panel,0,11/04/2024,09/08/2025,Gavin Newsom,23
+SurveyMonkey,2.9,1.8,Mixed-mode,6,11/11/2024,09/15/2025,Donald Trump,70.1
+YouGov,3,2.6,Online Panel,5,11/18/2024,09/22/2025,Donald Trump,75.1
+Ipsos,1.7,-1.9,Mixed-mode,0,11/25/2024,09/29/2025,Kamala Harris,51.5
+Pew Research,2.1,-0.1,In-person,7,12/02/2024,10/06/2025,Pete Buttigieg,99.9
+YouGov,1.3,3.1,In-person,6,12/09/2024,10/13/2025,Pete Buttigieg,8.2
+SurveyMonkey,2.2,3.2,In-person,2,12/16/2024,10/20/2025,Kamala Harris,47.6
+Gallup,1.6,1.2,Online Panel,1,12/23/2024,10/27/2025,Elizabeth Warren,83.4
+YouGov,2,0.2,Mixed-mode,2,12/30/2024,11/03/2025,Gavin Newsom,94.5
+Ipsos,1.7,2.8,Online Panel,7,01/06/2025,11/10/2025,Bernie Sanders,9.2
+Gallup,2.2,2.9,Telephone,7,01/13/2025,11/17/2025,Gavin Newsom,88.4
+Pew Research,2.4,4.4,Telephone,4,01/20/2025,11/24/2025,Donald Trump,33.3
+YouGov,1.1,-0.3,Telephone,3,01/27/2025,12/01/2025,Kamala Harris,28.7
+SurveyMonkey,2.3,0.5,In-person,4,02/03/2025,12/08/2025,Elizabeth Warren,55.3
+Pew Research,1.4,3.5,Mixed-mode,6,02/10/2025,12/15/2025,Pete Buttigieg,50.4
+Ipsos,1.2,1.1,Telephone,8,02/17/2025,12/22/2025,Elizabeth Warren,81.1
+Gallup,2.1,4.8,Mixed-mode,3,02/24/2025,12/29/2025,Elizabeth Warren,33
+YouGov,2.3,-0.1,In-person,5,03/03/2025,01/05/2026,Kamala Harris,69.9
+Gallup,2.3,4.5,Online Panel,2,03/10/2025,01/12/2026,Gavin Newsom,97.5
+SurveyMonkey,2.8,1.7,Mixed-mode,8,03/17/2025,01/19/2026,Pete Buttigieg,3.7
+Gallup,2,4,Telephone,0,03/24/2025,01/26/2026,Bernie Sanders,84.2
+Gallup,1.9,-0.1,Online Panel,2,03/31/2025,02/02/2026,Pete Buttigieg,19.2
+Gallup,2.9,4,Online Panel,6,04/07/2025,02/09/2026,Kamala Harris,3.1
+Gallup,1.5,3.8,In-person,6,04/14/2025,02/16/2026,Bernie Sanders,43.4
+YouGov,2.8,4,Mixed-mode,5,04/21/2025,02/23/2026,Donald Trump,33.8
+YouGov,2.2,1.5,Online Panel,6,04/28/2025,03/02/2026,Kamala Harris,24.4
+Ipsos,1.3,4.3,In-person,0,05/05/2025,03/09/2026,Donald Trump,47.5
+Ipsos,1.7,2.9,Online Panel,5,05/12/2025,03/16/2026,Kamala Harris,24.9
+Ipsos,1.6,0.1,In-person,3,05/19/2025,03/23/2026,Gavin Newsom,35.9
+YouGov,1.9,0.3,Telephone,8,05/26/2025,03/30/2026,Bernie Sanders,82.5
+YouGov,2.2,1.8,Online Panel,1,06/02/2025,04/06/2026,Kamala Harris,27.6
+Ipsos,2.8,4.2,Mixed-mode,1,06/09/2025,04/13/2026,Elizabeth Warren,98.8
+Pew Research,1.9,-0.7,Mixed-mode,2,06/16/2025,04/20/2026,Pete Buttigieg,69.3
+Gallup,2.7,1.4,Mixed-mode,2,06/23/2025,04/27/2026,Donald Trump,72.6
+Gallup,1.1,2.1,Online Panel,8,06/30/2025,05/04/2026,Elizabeth Warren,13.8
+YouGov,2.5,-0.3,Telephone,6,07/07/2025,05/11/2026,Pete Buttigieg,64.8
+Gallup,2.5,2.9,Mixed-mode,9,07/14/2025,05/18/2026,Pete Buttigieg,49.6
+SurveyMonkey,1.9,-1,Online Panel,3,07/21/2025,05/25/2026,Kamala Harris,36.9
+SurveyMonkey,2.1,1.4,Mixed-mode,5,07/28/2025,06/01/2026,Kamala Harris,23.7
+YouGov,1.6,-1.8,In-person,0,08/04/2025,06/08/2026,Donald Trump,66.5
+Pew Research,1.6,-0.9,Telephone,1,08/11/2025,06/15/2026,Elizabeth Warren,79.5
+Pew Research,1.2,3.2,Online Panel,3,08/18/2025,06/22/2026,Elizabeth Warren,45.3
+SurveyMonkey,2.1,1.2,Online Panel,7,08/25/2025,06/29/2026,Kamala Harris,45.3
+YouGov,2.8,4.5,Mixed-mode,5,09/01/2025,07/06/2026,Bernie Sanders,80.3
+Pew Research,2.4,-0.5,Mixed-mode,8,09/08/2025,07/13/2026,Pete Buttigieg,21.7
+YouGov,2.2,0.6,Online Panel,0,09/15/2025,07/20/2026,Donald Trump,85.1
+YouGov,2.2,-1.1,Mixed-mode,4,09/22/2025,07/27/2026,Pete Buttigieg,98.6
+Ipsos,1.1,2.5,Telephone,8,09/29/2025,08/03/2026,Gavin Newsom,66.6
+Gallup,1.8,-1.5,Mixed-mode,0,10/06/2025,08/10/2026,Gavin Newsom,38.5
+Gallup,2.7,0.4,In-person,1,10/13/2025,08/17/2026,Pete Buttigieg,23.6
+Pew Research,3,-1,Telephone,6,10/20/2025,08/24/2026,Gavin Newsom,15.7
+YouGov,1.3,4.8,In-person,6,10/27/2025,08/31/2026,Kamala Harris,78.6
+Ipsos,2.7,0.4,Mixed-mode,7,11/03/2025,09/07/2026,Pete Buttigieg,83.7
+YouGov,2.4,4.2,Mixed-mode,1,11/10/2025,09/14/2026,Elizabeth Warren,99.3
+Ipsos,2.7,1.3,In-person,9,11/17/2025,09/21/2026,Gavin Newsom,29.3
+Pew Research,2.9,-1.2,In-person,7,11/24/2025,09/28/2026,Bernie Sanders,4.6
+SurveyMonkey,2.3,-0.8,In-person,4,12/01/2025,10/05/2026,Pete Buttigieg,98.6
+Pew Research,1.4,1.2,Online Panel,1,12/08/2025,10/12/2026,Pete Buttigieg,82.6
+Ipsos,2.9,2.8,In-person,8,12/15/2025,10/19/2026,Pete Buttigieg,74.4
+Ipsos,2.9,3.6,Telephone,2,12/22/2025,10/26/2026,Pete Buttigieg,3
+Pew Research,1.4,0.7,Telephone,9,12/29/2025,11/02/2026,Gavin Newsom,78.7
+Pew Research,2.5,-1.4,Online Panel,6,01/05/2026,11/09/2026,Donald Trump,78.1
+SurveyMonkey,2.3,4.4,Online Panel,8,01/12/2026,11/16/2026,Elizabeth Warren,98.6
+YouGov,1.2,0.3,Telephone,8,01/19/2026,11/23/2026,Bernie Sanders,41.8
+YouGov,1.4,4.2,In-person,1,01/26/2026,11/30/2026,Elizabeth Warren,28.2
+Pew Research,1.5,1.6,Telephone,4,02/02/2026,12/07/2026,Kamala Harris,14.2
+YouGov,1.5,4.9,Mixed-mode,5,02/09/2026,12/14/2026,Elizabeth Warren,55.2
+Pew Research,1.6,2.9,Mixed-mode,1,02/16/2026,12/21/2026,Donald Trump,58.8
+Ipsos,1.4,0.2,Online Panel,8,02/23/2026,12/28/2026,Donald Trump,33.6
+SurveyMonkey,2.3,2.5,Mixed-mode,0,03/02/2026,01/04/2027,Donald Trump,58.1
+Pew Research,1.3,-1.1,Online Panel,9,03/09/2026,01/11/2027,Pete Buttigieg,57.9
+SurveyMonkey,1.2,2.3,Mixed-mode,1,03/16/2026,01/18/2027,Bernie Sanders,66.6
+Pew Research,1.3,2.6,Online Panel,1,03/23/2026,01/25/2027,Bernie Sanders,92
+Gallup,1.9,3.5,In-person,3,03/30/2026,02/01/2027,Donald Trump,51.7
+Gallup,1.5,2.4,Telephone,9,04/06/2026,02/08/2027,Gavin Newsom,57
+Ipsos,2.3,2.9,Mixed-mode,7,04/13/2026,02/15/2027,Kamala Harris,72.6
+Ipsos,2.1,0.9,In-person,2,04/20/2026,02/22/2027,Pete Buttigieg,92.4
+Pew Research,1.5,1.7,Telephone,0,04/27/2026,03/01/2027,Bernie Sanders,53.2
+Ipsos,1.9,3.8,Telephone,9,05/04/2026,03/08/2027,Bernie Sanders,77.5
+Pew Research,1.7,4.8,In-person,1,05/11/2026,03/15/2027,Donald Trump,97.4
+SurveyMonkey,1.8,0.5,In-person,0,05/18/2026,03/22/2027,Bernie Sanders,81.9
+SurveyMonkey,1.3,-1.1,In-person,9,05/25/2026,03/29/2027,Gavin Newsom,43.6
+YouGov,2.4,0.1,Online Panel,4,06/01/2026,04/05/2027,Elizabeth Warren,75.8
+Ipsos,2,2.6,Telephone,8,06/08/2026,04/12/2027,Pete Buttigieg,56.4
+Pew Research,1,-1.5,In-person,3,06/15/2026,04/19/2027,Gavin Newsom,88.8
+Ipsos,2.8,-0.1,Online Panel,6,06/22/2026,04/26/2027,Kamala Harris,43.8
+SurveyMonkey,2.5,2,Telephone,7,06/29/2026,05/03/2027,Pete Buttigieg,58
+Gallup,2.7,5,Telephone,9,07/06/2026,05/10/2027,Kamala Harris,37.1
+YouGov,1.6,2.1,Mixed-mode,6,07/13/2026,05/17/2027,Kamala Harris,5.7
+SurveyMonkey,1.2,0.4,Online Panel,3,07/20/2026,05/24/2027,Donald Trump,98.5
+SurveyMonkey,3,3.5,Mixed-mode,3,07/27/2026,05/31/2027,Kamala Harris,81.1
+YouGov,1.3,3.2,Online Panel,5,08/03/2026,06/07/2027,Elizabeth Warren,60.9
+Ipsos,2.3,2,Telephone,6,08/10/2026,06/14/2027,Gavin Newsom,3.4
+Pew Research,1.3,0.9,In-person,4,08/17/2026,06/21/2027,Elizabeth Warren,37.8
+Pew Research,1.9,2.5,Online Panel,9,08/24/2026,06/28/2027,Donald Trump,38.5
+Ipsos,1.8,2.7,Mixed-mode,0,08/31/2026,07/05/2027,Donald Trump,3.6
+Gallup,2.4,2,Telephone,5,09/07/2026,07/12/2027,Kamala Harris,17.7
+Ipsos,1.1,4.8,Telephone,8,09/14/2026,07/19/2027,Kamala Harris,66.1
+Pew Research,2.6,3.1,Telephone,3,09/21/2026,07/26/2027,Bernie Sanders,38.3
+SurveyMonkey,1.3,1.4,Telephone,6,09/28/2026,08/02/2027,Pete Buttigieg,64.4
+Ipsos,1.8,0.3,In-person,3,10/05/2026,08/09/2027,Elizabeth Warren,73.9
+YouGov,2.5,4.2,Telephone,7,10/12/2026,08/16/2027,Kamala Harris,2.4
+Ipsos,3,4.6,Mixed-mode,8,10/19/2026,08/23/2027,Gavin Newsom,99.2
+Pew Research,3,-1.6,Online Panel,2,10/26/2026,08/30/2027,Bernie Sanders,72
+YouGov,2.4,3.8,Online Panel,4,11/02/2026,09/06/2027,Donald Trump,51.5
+YouGov,2.3,4.5,In-person,2,11/09/2026,09/13/2027,Kamala Harris,67.7
+Ipsos,2.6,1.9,Mixed-mode,1,11/16/2026,09/20/2027,Elizabeth Warren,47.5
+YouGov,2.2,-0.9,Mixed-mode,7,11/23/2026,09/27/2027,Gavin Newsom,62.6
+Gallup,1.7,1.7,Telephone,6,11/30/2026,10/04/2027,Pete Buttigieg,47.8
+Ipsos,1.5,3.1,Telephone,6,12/07/2026,10/11/2027,Bernie Sanders,79
+Pew Research,2.5,-1.3,Mixed-mode,4,12/14/2026,10/18/2027,Gavin Newsom,54.1
+YouGov,3,3,In-person,7,12/21/2026,10/25/2027,Gavin Newsom,57.7
+Gallup,1,-1,Telephone,3,12/28/2026,11/01/2027,Pete Buttigieg,0.4
+SurveyMonkey,1.1,4.2,Telephone,4,01/04/2027,11/08/2027,Bernie Sanders,32.5
+Ipsos,2.3,2.2,In-person,6,01/11/2027,11/15/2027,Bernie Sanders,21.7
+SurveyMonkey,2.8,4,Online Panel,1,01/18/2027,11/22/2027,Kamala Harris,51.1
+Gallup,1.9,1.9,Online Panel,6,01/25/2027,11/29/2027,Bernie Sanders,82.3
+Gallup,2.4,3,Mixed-mode,9,02/01/2027,12/06/2027,Donald Trump,22.5
+Pew Research,2.2,2.2,In-person,4,02/08/2027,12/13/2027,Kamala Harris,80.4
+YouGov,1.2,1.5,Telephone,6,02/15/2027,12/20/2027,Kamala Harris,95.3
+Ipsos,2.1,1.2,Telephone,5,02/22/2027,12/27/2027,Gavin Newsom,49.6
+Gallup,1.2,4.6,Telephone,1,03/01/2027,01/03/2028,Elizabeth Warren,82.6
+YouGov,3,-1.9,Online Panel,1,03/08/2027,01/10/2028,Bernie Sanders,91.1
+Pew Research,3,3.7,Mixed-mode,6,03/15/2027,01/17/2028,Pete Buttigieg,36.4
+Ipsos,1.3,0.5,In-person,5,03/22/2027,01/24/2028,Kamala Harris,96.1
+YouGov,1.8,4.9,Telephone,4,03/29/2027,01/31/2028,Bernie Sanders,7.4
+Ipsos,1.8,2.2,Telephone,1,04/05/2027,02/07/2028,Bernie Sanders,34.2
+Ipsos,1.6,1.8,Online Panel,7,04/12/2027,02/14/2028,Bernie Sanders,56.5
+Pew Research,2.9,2.8,Telephone,4,04/19/2027,02/21/2028,Kamala Harris,16.6
+Pew Research,1.2,0.4,Mixed-mode,3,04/26/2027,02/28/2028,Elizabeth Warren,19.3
+Gallup,1.5,-0.9,Online Panel,6,05/03/2027,03/06/2028,Elizabeth Warren,26.2
+SurveyMonkey,1.9,-1.5,Online Panel,8,05/10/2027,03/13/2028,Bernie Sanders,40.3
+YouGov,2.6,1.5,In-person,2,05/17/2027,03/20/2028,Bernie Sanders,45.7
+YouGov,1.7,1.5,In-person,6,05/24/2027,03/27/2028,Kamala Harris,34.1
+YouGov,2.8,-1.7,In-person,9,05/31/2027,04/03/2028,Elizabeth Warren,55.4
+Pew Research,1.2,3.9,Online Panel,6,06/07/2027,04/10/2028,Pete Buttigieg,20.6
+Gallup,2.9,0.2,Online Panel,2,06/14/2027,04/17/2028,Donald Trump,77
+Ipsos,1.9,2.9,In-person,4,06/21/2027,04/24/2028,Kamala Harris,3.4
+Gallup,2,-0.5,In-person,9,06/28/2027,05/01/2028,Bernie Sanders,72.7
+Gallup,1.1,4.4,Mixed-mode,1,07/05/2027,05/08/2028,Bernie Sanders,18.2
+SurveyMonkey,2.9,3.5,In-person,4,07/12/2027,05/15/2028,Pete Buttigieg,29.9
+Ipsos,2.6,-0.4,Online Panel,1,07/19/2027,05/22/2028,Elizabeth Warren,35.2
+SurveyMonkey,1.8,0.5,Mixed-mode,9,07/26/2027,05/29/2028,Pete Buttigieg,14.8
+Ipsos,2.1,4.5,Telephone,2,08/02/2027,06/05/2028,Elizabeth Warren,56.8
+SurveyMonkey,2.6,1.2,In-person,5,08/09/2027,06/12/2028,Elizabeth Warren,92.8
+Pew Research,2.8,-0.3,Mixed-mode,1,08/16/2027,06/19/2028,Kamala Harris,2.2
+YouGov,2.7,2.7,Mixed-mode,5,08/23/2027,06/26/2028,Kamala Harris,99.9
+Pew Research,2.5,-1.8,In-person,4,08/30/2027,07/03/2028,Pete Buttigieg,32.8
+Gallup,2.5,-1.8,Online Panel,8,09/06/2027,07/10/2028,Kamala Harris,60
+Ipsos,1.7,1.2,Mixed-mode,1,09/13/2027,07/17/2028,Gavin Newsom,90.6
+Gallup,1.4,1.9,Telephone,7,09/20/2027,07/24/2028,Pete Buttigieg,51.8
+Gallup,1.5,-0.2,In-person,8,09/27/2027,07/31/2028,Gavin Newsom,76.2
+YouGov,1.6,1.4,Telephone,6,10/04/2027,08/07/2028,Kamala Harris,41.7
+Pew Research,1.3,3.4,Online Panel,9,10/11/2027,08/14/2028,Bernie Sanders,5.3
+Gallup,1.1,4.4,In-person,4,10/18/2027,08/21/2028,Kamala Harris,36.5
+Gallup,1.2,3.8,Online Panel,5,10/25/2027,08/28/2028,Gavin Newsom,90.5
+SurveyMonkey,1.3,-1.8,Online Panel,7,11/01/2027,09/04/2028,Donald Trump,31
+SurveyMonkey,3,0.2,Online Panel,3,11/08/2027,09/11/2028,Kamala Harris,15.6
+SurveyMonkey,2.5,1.4,Online Panel,1,11/15/2027,09/18/2028,Elizabeth Warren,69.5
+Ipsos,2.2,-0.5,Mixed-mode,8,11/22/2027,09/25/2028,Donald Trump,3.1
+Pew Research,1.3,2.3,In-person,9,11/29/2027,10/02/2028,Bernie Sanders,22.8
+SurveyMonkey,1.7,-1.7,In-person,0,12/06/2027,10/09/2028,Donald Trump,95.6
+Gallup,2.3,3.8,Telephone,1,12/13/2027,10/16/2028,Donald Trump,56.2
+Gallup,1.5,4,In-person,3,12/20/2027,10/23/2028,Bernie Sanders,83.9
+SurveyMonkey,1.1,4.8,Mixed-mode,4,12/27/2027,10/30/2028,Pete Buttigieg,59.9
+Ipsos,2.1,1,Telephone,2,01/03/2028,11/06/2028,Donald Trump,15.4
+Gallup,1.2,1.6,Telephone,8,01/10/2028,11/13/2028,Pete Buttigieg,38.9
+Gallup,2,2.4,Online Panel,4,01/17/2028,11/20/2028,Elizabeth Warren,25.3
+Pew Research,1.3,3.8,Mixed-mode,6,01/24/2028,11/27/2028,Donald Trump,21.2
+SurveyMonkey,1.7,4.3,Mixed-mode,5,01/31/2028,12/04/2028,Donald Trump,67.2
+Ipsos,2.2,0.3,Online Panel,4,02/07/2028,12/11/2028,Elizabeth Warren,22.8
+Gallup,2.9,3.7,In-person,6,02/14/2028,12/18/2028,Donald Trump,91.8
+Pew Research,2.4,0.5,In-person,4,02/21/2028,12/25/2028,Elizabeth Warren,4.8
+Gallup,1.8,2.1,Mixed-mode,2,02/28/2028,01/01/2029,Kamala Harris,87.1
+SurveyMonkey,2.5,1.4,Mixed-mode,2,03/06/2028,01/08/2029,Pete Buttigieg,46.8
+Pew Research,1.4,1.5,Online Panel,3,03/13/2028,01/15/2029,Elizabeth Warren,96.8
+Pew Research,2.2,4.5,In-person,3,03/20/2028,01/22/2029,Kamala Harris,28.8
+SurveyMonkey,1.4,0.2,Online Panel,7,03/27/2028,01/29/2029,Bernie Sanders,71.9
+YouGov,1.3,3.4,Telephone,2,04/03/2028,02/05/2029,Bernie Sanders,38.9
+Ipsos,1.6,-0.5,Mixed-mode,9,04/10/2028,02/12/2029,Pete Buttigieg,69.9
+SurveyMonkey,1.1,3,Mixed-mode,3,04/17/2028,02/19/2029,Gavin Newsom,90.6
+Pew Research,2.5,3.3,Online Panel,2,04/24/2028,02/26/2029,Gavin Newsom,13.3
+Pew Research,1.5,-1.2,Online Panel,9,05/01/2028,03/05/2029,Gavin Newsom,30.7
+Ipsos,1.8,1.2,Online Panel,1,05/08/2028,03/12/2029,Bernie Sanders,33.7
+Ipsos,3,1.4,Online Panel,2,05/15/2028,03/19/2029,Elizabeth Warren,47.9
+Pew Research,1.7,3.2,In-person,7,05/22/2028,03/26/2029,Donald Trump,83.3
+YouGov,2.4,1.5,In-person,1,05/29/2028,04/02/2029,Pete Buttigieg,80.9
+Ipsos,1.2,4.6,In-person,2,06/05/2028,04/09/2029,Pete Buttigieg,24.9
+Ipsos,2.9,5,Mixed-mode,3,06/12/2028,04/16/2029,Gavin Newsom,45.3
+Gallup,1.5,0.9,Online Panel,6,06/19/2028,04/23/2029,Donald Trump,39
+SurveyMonkey,1.6,3.7,In-person,5,06/26/2028,04/30/2029,Elizabeth Warren,27.5
+Gallup,2.3,1.2,In-person,9,07/03/2028,05/07/2029,Kamala Harris,25
+Ipsos,1.1,3.3,Mixed-mode,5,07/10/2028,05/14/2029,Kamala Harris,23.6
+Gallup,1.4,-1.7,In-person,5,07/17/2028,05/21/2029,Bernie Sanders,11.7
+Ipsos,1.9,0.9,Mixed-mode,6,07/24/2028,05/28/2029,Gavin Newsom,84.1
+Gallup,2.1,2.5,Telephone,0,07/31/2028,06/04/2029,Donald Trump,76.1
+Ipsos,2,-1.9,Telephone,0,08/07/2028,06/11/2029,Kamala Harris,8
+Pew Research,1.3,2.2,Online Panel,9,08/14/2028,06/18/2029,Donald Trump,46.3
+YouGov,2.6,0.9,Online Panel,0,08/21/2028,06/25/2029,Pete Buttigieg,30.9
+SurveyMonkey,2.5,-2,Telephone,2,08/28/2028,07/02/2029,Donald Trump,19.9
+YouGov,1.5,-1.5,Online Panel,7,09/04/2028,07/09/2029,Donald Trump,94.7
+Pew Research,1.6,2.3,Online Panel,0,09/11/2028,07/16/2029,Elizabeth Warren,68.3
+YouGov,2.4,-0.7,Online Panel,3,09/18/2028,07/23/2029,Bernie Sanders,94.8
+Ipsos,1.6,2,Online Panel,5,09/25/2028,07/30/2029,Pete Buttigieg,92.9
+YouGov,2.1,2.1,Online Panel,2,10/02/2028,08/06/2029,Pete Buttigieg,56.2
+Pew Research,1.3,4.4,Online Panel,3,10/09/2028,08/13/2029,Bernie Sanders,38.8
+Pew Research,1.4,3,In-person,5,10/16/2028,08/20/2029,Bernie Sanders,83.8
+Ipsos,1.7,-1.7,Telephone,9,10/23/2028,08/27/2029,Donald Trump,52
+Ipsos,1.5,3.4,Mixed-mode,4,10/30/2028,09/03/2029,Elizabeth Warren,16.9
+YouGov,1.4,0.4,Mixed-mode,8,11/06/2028,09/10/2029,Elizabeth Warren,75.4
+YouGov,2.1,0.5,Mixed-mode,3,11/13/2028,09/17/2029,Pete Buttigieg,52.6
+Pew Research,2.1,0.7,Telephone,5,11/20/2028,09/24/2029,Elizabeth Warren,81.6
+Gallup,1.2,-0.4,Online Panel,1,11/27/2028,10/01/2029,Elizabeth Warren,85.4
+Gallup,2.7,2.4,Online Panel,4,12/04/2028,10/08/2029,Elizabeth Warren,42.5
+Ipsos,2.1,0.1,Telephone,1,12/11/2028,10/15/2029,Elizabeth Warren,37.9
+SurveyMonkey,2.6,0.6,In-person,0,12/18/2028,10/22/2029,Pete Buttigieg,65.3
+SurveyMonkey,3,1.4,In-person,2,12/25/2028,10/29/2029,Pete Buttigieg,43.2
+YouGov,2.7,3.2,Mixed-mode,1,01/01/2029,11/05/2029,Donald Trump,71.8
+YouGov,2.5,2.2,In-person,5,01/08/2029,11/12/2029,Gavin Newsom,40.3
+Pew Research,1.9,2,Telephone,2,01/15/2029,11/19/2029,Gavin Newsom,63.3
+YouGov,3,0.8,In-person,0,01/22/2029,11/26/2029,Pete Buttigieg,33.7
+Ipsos,2.1,4.3,Telephone,9,01/29/2029,12/03/2029,Bernie Sanders,58.5
+YouGov,1.7,-1,Online Panel,8,02/05/2029,12/10/2029,Donald Trump,79.6
+YouGov,1.2,-0.2,Online Panel,4,02/12/2029,12/17/2029,Pete Buttigieg,76.9
+Ipsos,1.7,0.7,Mixed-mode,8,02/19/2029,12/24/2029,Elizabeth Warren,30.8
+YouGov,1.3,3.5,Telephone,3,02/26/2029,12/31/2029,Elizabeth Warren,74.1
+Pew Research,2.5,4.7,In-person,1,03/05/2029,01/07/2030,Gavin Newsom,81.5
+Ipsos,2.8,-0.8,Telephone,3,03/12/2029,01/14/2030,Pete Buttigieg,11.7
+Pew Research,2,1.5,In-person,6,03/19/2029,01/21/2030,Pete Buttigieg,79.8
+Ipsos,1.6,4.3,Telephone,9,03/26/2029,01/28/2030,Gavin Newsom,59.3
+YouGov,2.6,4.5,In-person,3,04/02/2029,02/04/2030,Pete Buttigieg,34.2
+SurveyMonkey,1.8,-1.2,In-person,7,04/09/2029,02/11/2030,Elizabeth Warren,1.2
+Ipsos,2.7,-0.1,Online Panel,4,04/16/2029,02/18/2030,Elizabeth Warren,0.9
+Ipsos,2.6,-1,Online Panel,7,04/23/2029,02/25/2030,Kamala Harris,14.8
+Gallup,2.6,4.2,Online Panel,9,04/30/2029,03/04/2030,Bernie Sanders,73.7
+Gallup,2,2.7,Online Panel,1,05/07/2029,03/11/2030,Donald Trump,44.8
+YouGov,1.1,-0.1,Telephone,1,05/14/2029,03/18/2030,Kamala Harris,61.1
+Ipsos,1.2,3.5,In-person,6,05/21/2029,03/25/2030,Pete Buttigieg,68.8
+Ipsos,1.8,1.2,In-person,9,05/28/2029,04/01/2030,Gavin Newsom,38.4
+Pew Research,2.6,1.7,Mixed-mode,3,06/04/2029,04/08/2030,Pete Buttigieg,4.4
+Ipsos,1,2.4,Telephone,4,06/11/2029,04/15/2030,Elizabeth Warren,47.2
+YouGov,2.2,-1.9,Mixed-mode,9,06/18/2029,04/22/2030,Elizabeth Warren,29.5
+Pew Research,2.2,4,Telephone,8,06/25/2029,04/29/2030,Kamala Harris,67.3
+Gallup,2.1,2.8,Mixed-mode,8,07/02/2029,05/06/2030,Elizabeth Warren,74.2
+Ipsos,1.4,-1.4,Online Panel,2,07/09/2029,05/13/2030,Pete Buttigieg,14.3
+Ipsos,2.4,1.1,Online Panel,9,07/16/2029,05/20/2030,Gavin Newsom,69.8
+Gallup,1.1,-0.6,Mixed-mode,3,07/23/2029,05/27/2030,Bernie Sanders,59
+SurveyMonkey,2.9,3.3,Online Panel,4,07/30/2029,06/03/2030,Pete Buttigieg,83.9
+Ipsos,1.4,4.8,Telephone,7,08/06/2029,06/10/2030,Bernie Sanders,36
+YouGov,1.7,2.6,Mixed-mode,4,08/13/2029,06/17/2030,Kamala Harris,84.8
+Pew Research,1.2,1.5,Online Panel,4,08/20/2029,06/24/2030,Donald Trump,49.4
+Ipsos,1.5,0.9,In-person,9,08/27/2029,07/01/2030,Pete Buttigieg,72.8
+SurveyMonkey,2.5,3.4,Online Panel,1,09/03/2029,07/08/2030,Kamala Harris,25.2
+Gallup,2.9,3.3,Online Panel,0,09/10/2029,07/15/2030,Pete Buttigieg,20.6
+Ipsos,2.8,4.6,In-person,7,09/17/2029,07/22/2030,Pete Buttigieg,1.2
+SurveyMonkey,2.9,-0.8,Telephone,0,09/24/2029,07/29/2030,Elizabeth Warren,69.6
+YouGov,2.7,4.6,In-person,2,10/01/2029,08/05/2030,Gavin Newsom,54.2
+Gallup,1.4,-1.6,Telephone,5,10/08/2029,08/12/2030,Gavin Newsom,57.9
+SurveyMonkey,2.9,-2,Online Panel,9,10/15/2029,08/19/2030,Gavin Newsom,38.7
+YouGov,2,-0.4,Mixed-mode,4,10/22/2029,08/26/2030,Pete Buttigieg,29.1
+SurveyMonkey,2.5,4.6,Online Panel,3,10/29/2029,09/02/2030,Kamala Harris,93.8
+YouGov,2.7,4.1,Mixed-mode,7,11/05/2029,09/09/2030,Elizabeth Warren,23.7
+Ipsos,2.8,5,Telephone,7,11/12/2029,09/16/2030,Kamala Harris,60.6
+YouGov,2.2,0.7,In-person,6,11/19/2029,09/23/2030,Pete Buttigieg,15.6
+SurveyMonkey,1.5,1,Mixed-mode,5,11/26/2029,09/30/2030,Donald Trump,89.4
+YouGov,2.1,-0.7,In-person,0,12/03/2029,10/07/2030,Gavin Newsom,98.5
+SurveyMonkey,2.5,2.2,Online Panel,0,12/10/2029,10/14/2030,Kamala Harris,61.7
+Gallup,1.6,3.5,Mixed-mode,6,12/17/2029,10/21/2030,Pete Buttigieg,28.7
+SurveyMonkey,1.8,-0.9,Mixed-mode,5,12/24/2029,10/28/2030,Pete Buttigieg,57.7
+Gallup,1.3,-0.9,Telephone,2,12/31/2029,11/04/2030,Gavin Newsom,39
+SurveyMonkey,2.1,0.2,Online Panel,2,01/07/2030,11/11/2030,Bernie Sanders,83.9
+SurveyMonkey,2.9,3.1,Telephone,3,01/14/2030,11/18/2030,Gavin Newsom,13.3
+Ipsos,2.1,0.8,Online Panel,4,01/21/2030,11/25/2030,Pete Buttigieg,96.2
+SurveyMonkey,2.7,4.7,Telephone,1,01/28/2030,12/02/2030,Donald Trump,14.1
+SurveyMonkey,1.6,-1.5,Mixed-mode,0,02/04/2030,12/09/2030,Donald Trump,69.8
+SurveyMonkey,2.9,0.5,Telephone,8,02/11/2030,12/16/2030,Gavin Newsom,5.5
+Gallup,2.3,-2,In-person,1,02/18/2030,12/23/2030,Pete Buttigieg,94.6
+Pew Research,1.8,2,Mixed-mode,9,02/25/2030,12/30/2030,Pete Buttigieg,46.5
+YouGov,2.5,4.9,Online Panel,3,03/04/2030,01/06/2031,Donald Trump,37.4
+Gallup,1.4,-0.4,Mixed-mode,0,03/11/2030,01/13/2031,Gavin Newsom,58.7
+Pew Research,1.3,4.1,Telephone,0,03/18/2030,01/20/2031,Pete Buttigieg,51.9
+YouGov,1.8,4.4,Mixed-mode,6,03/25/2030,01/27/2031,Pete Buttigieg,20.5
+Ipsos,2.3,4.1,Online Panel,3,04/01/2030,02/03/2031,Donald Trump,56.6
+Ipsos,1.1,1.2,In-person,5,04/08/2030,02/10/2031,Donald Trump,81.6
+Gallup,1.2,-0.5,Mixed-mode,5,04/15/2030,02/17/2031,Kamala Harris,31.1
+Ipsos,1.5,-1.7,Telephone,4,04/22/2030,02/24/2031,Donald Trump,3.8
+Gallup,1.8,-1.6,Online Panel,3,04/29/2030,03/03/2031,Elizabeth Warren,27.4
+Ipsos,2.7,1.6,In-person,3,05/06/2030,03/10/2031,Gavin Newsom,59.8
+SurveyMonkey,1.3,4.9,Online Panel,2,05/13/2030,03/17/2031,Gavin Newsom,97.6
+YouGov,1.3,-1.6,Telephone,5,05/20/2030,03/24/2031,Elizabeth Warren,59.2
+Ipsos,1,3.4,Mixed-mode,4,05/27/2030,03/31/2031,Bernie Sanders,39.9
+YouGov,2.6,-0.2,Mixed-mode,5,06/03/2030,04/07/2031,Pete Buttigieg,14
+Gallup,2.7,0.4,Online Panel,7,06/10/2030,04/14/2031,Pete Buttigieg,25.3
+YouGov,1,-1.7,Mixed-mode,2,06/17/2030,04/21/2031,Elizabeth Warren,87.6
+YouGov,2.5,-0.7,Online Panel,2,06/24/2030,04/28/2031,Gavin Newsom,52.3
+Ipsos,1.9,0.1,In-person,0,07/01/2030,05/05/2031,Pete Buttigieg,21.8
+Ipsos,1.3,1.2,Online Panel,1,07/08/2030,05/12/2031,Gavin Newsom,26.9
+YouGov,1.4,2.9,In-person,7,07/15/2030,05/19/2031,Kamala Harris,5.7
+SurveyMonkey,1.3,2.9,Mixed-mode,1,07/22/2030,05/26/2031,Elizabeth Warren,5.3
+SurveyMonkey,2.1,1.8,Telephone,7,07/29/2030,06/02/2031,Kamala Harris,12.4
+YouGov,2.5,-0.4,Telephone,1,08/05/2030,06/09/2031,Donald Trump,55.7
+YouGov,1.9,4.3,Mixed-mode,4,08/12/2030,06/16/2031,Gavin Newsom,74.6
+Pew Research,2.6,3.9,Online Panel,7,08/19/2030,06/23/2031,Elizabeth Warren,7.5
+YouGov,1.5,3.1,Telephone,4,08/26/2030,06/30/2031,Elizabeth Warren,85.2
+Pew Research,2.6,3.9,In-person,6,09/02/2030,07/07/2031,Donald Trump,39
+YouGov,1.9,-0.3,Telephone,2,09/09/2030,07/14/2031,Kamala Harris,11.9
+Ipsos,1.4,1.6,In-person,7,09/16/2030,07/21/2031,Bernie Sanders,65.2
+SurveyMonkey,2.6,3.9,Telephone,4,09/23/2030,07/28/2031,Pete Buttigieg,51.8
+Pew Research,2.4,2,Online Panel,5,09/30/2030,08/04/2031,Gavin Newsom,31.9
+SurveyMonkey,2.9,4.4,Mixed-mode,3,10/07/2030,08/11/2031,Kamala Harris,4.8
+Gallup,1.1,1.4,Online Panel,6,10/14/2030,08/18/2031,Gavin Newsom,28.7
+Pew Research,1.6,0.5,Telephone,4,10/21/2030,08/25/2031,Donald Trump,94.9
+Pew Research,2.3,-1.3,Telephone,0,10/28/2030,09/01/2031,Kamala Harris,46.7
+SurveyMonkey,2.6,3.2,Telephone,8,11/04/2030,09/08/2031,Kamala Harris,38.9
+Pew Research,2.7,-1.2,In-person,1,11/11/2030,09/15/2031,Bernie Sanders,13.7
+Ipsos,2.1,3.1,In-person,2,11/18/2030,09/22/2031,Gavin Newsom,18.9
+SurveyMonkey,2.4,-0.3,Online Panel,9,11/25/2030,09/29/2031,Elizabeth Warren,76.3
+Gallup,1.4,-1.1,In-person,3,12/02/2030,10/06/2031,Gavin Newsom,19.9
+Gallup,2.5,-1.5,In-person,9,12/09/2030,10/13/2031,Donald Trump,14.7
+Ipsos,2.1,-0.5,Telephone,0,12/16/2030,10/20/2031,Gavin Newsom,18.9
+SurveyMonkey,2.2,4.7,In-person,9,12/23/2030,10/27/2031,Kamala Harris,29.5
+Pew Research,2.9,-0.3,Telephone,7,12/30/2030,11/03/2031,Donald Trump,33.1
+Pew Research,2.5,2.4,Telephone,8,01/06/2031,11/10/2031,Gavin Newsom,100
+Pew Research,2.8,0.4,In-person,4,01/13/2031,11/17/2031,Elizabeth Warren,91
+SurveyMonkey,2.2,-1.5,Telephone,8,01/20/2031,11/24/2031,Donald Trump,49.6
+Ipsos,2.9,-0.5,Telephone,0,01/27/2031,12/01/2031,Pete Buttigieg,50.1
+SurveyMonkey,1.4,2.8,In-person,5,02/03/2031,12/08/2031,Elizabeth Warren,45.3
+Gallup,1.1,0.8,Mixed-mode,0,02/10/2031,12/15/2031,Donald Trump,84.1
+Gallup,1.3,-1.5,In-person,5,02/17/2031,12/22/2031,Bernie Sanders,64.4
+Gallup,1.1,3.4,In-person,6,02/24/2031,12/29/2031,Bernie Sanders,3.9
+Pew Research,2.9,-1.9,Online Panel,5,03/03/2031,01/05/2032,Gavin Newsom,53.9
+YouGov,1.3,1.8,Online Panel,8,03/10/2031,01/12/2032,Pete Buttigieg,39.2
+YouGov,2.3,3.4,Mixed-mode,0,03/17/2031,01/19/2032,Bernie Sanders,54.3
+YouGov,1.1,5,In-person,0,03/24/2031,01/26/2032,Pete Buttigieg,44.2
+SurveyMonkey,2.6,-0.8,Online Panel,6,03/31/2031,02/02/2032,Elizabeth Warren,36.6
+Gallup,2.4,3.7,In-person,5,04/07/2031,02/09/2032,Bernie Sanders,46.7
+Ipsos,3,-1.6,Telephone,6,04/14/2031,02/16/2032,Elizabeth Warren,45.7
+Ipsos,1.4,-1.6,Mixed-mode,0,04/21/2031,02/23/2032,Kamala Harris,30.6
+SurveyMonkey,1.4,2.4,Telephone,8,04/28/2031,03/01/2032,Bernie Sanders,53.5
+Ipsos,1,-1.8,Mixed-mode,7,05/05/2031,03/08/2032,Donald Trump,17.2
+Ipsos,2.4,2.6,Mixed-mode,4,05/12/2031,03/15/2032,Bernie Sanders,71.7
+Pew Research,2.4,0.7,Online Panel,5,05/19/2031,03/22/2032,Bernie Sanders,37.6
+Gallup,1.8,1.3,Mixed-mode,4,05/26/2031,03/29/2032,Donald Trump,77.2
+Pew Research,1.6,-1.9,Telephone,6,06/02/2031,04/05/2032,Donald Trump,92.9
+Gallup,2.4,2.7,Online Panel,7,06/09/2031,04/12/2032,Gavin Newsom,99.8
+SurveyMonkey,1.7,2.7,Online Panel,5,06/16/2031,04/19/2032,Gavin Newsom,25.5
+Gallup,1.9,-1,Online Panel,1,06/23/2031,04/26/2032,Elizabeth Warren,30.3
+Gallup,1.8,2.7,Mixed-mode,8,06/30/2031,05/03/2032,Elizabeth Warren,6.9
+Gallup,2.4,4.9,Telephone,1,07/07/2031,05/10/2032,Kamala Harris,91.8
+Pew Research,2.6,2.5,Online Panel,8,07/14/2031,05/17/2032,Kamala Harris,46.1
+Pew Research,2.2,-1,In-person,4,07/21/2031,05/24/2032,Elizabeth Warren,29.7
+Ipsos,3,-0.2,Telephone,1,07/28/2031,05/31/2032,Elizabeth Warren,16.7
+Gallup,1.4,-1.4,Online Panel,2,08/04/2031,06/07/2032,Pete Buttigieg,1
+Ipsos,1.4,3.1,Mixed-mode,4,08/11/2031,06/14/2032,Donald Trump,32.5
+SurveyMonkey,1.5,2.2,In-person,4,08/18/2031,06/21/2032,Donald Trump,80
+Ipsos,2.1,0.4,Online Panel,1,08/25/2031,06/28/2032,Donald Trump,76.9
+YouGov,1.1,1,Telephone,0,09/01/2031,07/05/2032,Gavin Newsom,69.1
+Gallup,1.5,2.1,Mixed-mode,3,09/08/2031,07/12/2032,Kamala Harris,50.5
+Ipsos,2.7,0.8,Mixed-mode,0,09/15/2031,07/19/2032,Bernie Sanders,55.2
+YouGov,1.7,1.6,Online Panel,4,09/22/2031,07/26/2032,Bernie Sanders,95.8
+YouGov,2.6,-0.6,In-person,3,09/29/2031,08/02/2032,Bernie Sanders,91.3
+YouGov,1,1.2,Online Panel,8,10/06/2031,08/09/2032,Gavin Newsom,45.7
+Pew Research,2.2,-0.1,Mixed-mode,1,10/13/2031,08/16/2032,Gavin Newsom,0.5
+Pew Research,1.2,-1.5,Mixed-mode,9,10/20/2031,08/23/2032,Bernie Sanders,61.1
+Pew Research,1.8,4,In-person,8,10/27/2031,08/30/2032,Bernie Sanders,41.3
+Gallup,2.4,4.8,Telephone,5,11/03/2031,09/06/2032,Bernie Sanders,94.4
+YouGov,2.5,0.9,Mixed-mode,1,11/10/2031,09/13/2032,Pete Buttigieg,34.1
+YouGov,2.8,2.9,Mixed-mode,9,11/17/2031,09/20/2032,Elizabeth Warren,54.7
+YouGov,2.3,-1.7,Mixed-mode,1,11/24/2031,09/27/2032,Gavin Newsom,95.7
+Gallup,1.4,-1.1,Mixed-mode,9,12/01/2031,10/04/2032,Donald Trump,23.1
+Pew Research,2.6,4.1,In-person,6,12/08/2031,10/11/2032,Pete Buttigieg,18.5
+Gallup,1.6,4.5,In-person,5,12/15/2031,10/18/2032,Pete Buttigieg,51.6
+Gallup,1.3,1.6,Mixed-mode,5,12/22/2031,10/25/2032,Bernie Sanders,96.8
+Ipsos,1.2,-0.7,In-person,5,12/29/2031,11/01/2032,Gavin Newsom,68
+Ipsos,2.2,-0.4,Online Panel,4,01/05/2032,11/08/2032,Pete Buttigieg,68.1
+Pew Research,1.2,0.4,Online Panel,0,01/12/2032,11/15/2032,Kamala Harris,93.2
+YouGov,2.6,4.3,Mixed-mode,3,01/19/2032,11/22/2032,Donald Trump,77
+Pew Research,1.9,4.7,Online Panel,6,01/26/2032,11/29/2032,Gavin Newsom,1.7
+Pew Research,1.1,-1,Mixed-mode,6,02/02/2032,12/06/2032,Donald Trump,85.3
+Pew Research,1.2,3.5,Online Panel,3,02/09/2032,12/13/2032,Donald Trump,13.4
+SurveyMonkey,1.7,3.7,Telephone,5,02/16/2032,12/20/2032,Pete Buttigieg,21.6
+YouGov,2.6,-1.9,Mixed-mode,5,02/23/2032,12/27/2032,Donald Trump,31.6
+Pew Research,3,4.5,Mixed-mode,2,03/01/2032,01/03/2033,Kamala Harris,72.3
+Gallup,1,-0.6,Telephone,9,03/08/2032,01/10/2033,Donald Trump,53.1
+SurveyMonkey,1.4,4.3,In-person,0,03/15/2032,01/17/2033,Donald Trump,38.5
+Ipsos,2.9,-0.8,Online Panel,3,03/22/2032,01/24/2033,Elizabeth Warren,97.7
+YouGov,2.6,4,Mixed-mode,2,03/29/2032,01/31/2033,Gavin Newsom,92.9
+SurveyMonkey,2.2,1.9,Mixed-mode,5,04/05/2032,02/07/2033,Elizabeth Warren,5.2
+Ipsos,1,3.2,In-person,6,04/12/2032,02/14/2033,Kamala Harris,7.7
+Ipsos,2.1,1.9,Online Panel,8,04/19/2032,02/21/2033,Gavin Newsom,80
+Gallup,1.9,3.3,Mixed-mode,6,04/26/2032,02/28/2033,Bernie Sanders,17.4
+Pew Research,2,2.5,In-person,1,05/03/2032,03/07/2033,Gavin Newsom,5.7
+YouGov,2.1,0.4,In-person,0,05/10/2032,03/14/2033,Gavin Newsom,16.4
+Gallup,1.9,1.4,Online Panel,7,05/17/2032,03/21/2033,Pete Buttigieg,80.3
+SurveyMonkey,2.4,2.3,Online Panel,7,05/24/2032,03/28/2033,Pete Buttigieg,92.9
+YouGov,2,2.9,Mixed-mode,8,05/31/2032,04/04/2033,Elizabeth Warren,82.6
+YouGov,1.1,4.9,Mixed-mode,5,06/07/2032,04/11/2033,Gavin Newsom,49.1
+Ipsos,2.1,4.5,Telephone,4,06/14/2032,04/18/2033,Donald Trump,72.6
+Pew Research,1.6,-0.8,Online Panel,1,06/21/2032,04/25/2033,Donald Trump,98
+SurveyMonkey,2.6,-1.9,In-person,7,06/28/2032,05/02/2033,Donald Trump,76.6
+SurveyMonkey,2.2,1.2,Online Panel,6,07/05/2032,05/09/2033,Pete Buttigieg,11.3
+YouGov,2.4,2.3,In-person,5,07/12/2032,05/16/2033,Bernie Sanders,30.1
+YouGov,2.6,1.7,In-person,7,07/19/2032,05/23/2033,Kamala Harris,48.2
+Ipsos,1.3,3.4,Mixed-mode,0,07/26/2032,05/30/2033,Elizabeth Warren,39.7
+Ipsos,2.4,3,Mixed-mode,1,08/02/2032,06/06/2033,Elizabeth Warren,99.1
+YouGov,2.8,4.9,Telephone,0,08/09/2032,06/13/2033,Donald Trump,59.7
+Pew Research,2,3.9,Online Panel,7,08/16/2032,06/20/2033,Gavin Newsom,9.9
+SurveyMonkey,1.1,-1.3,Online Panel,7,08/23/2032,06/27/2033,Elizabeth Warren,51.4
+SurveyMonkey,2.1,0.9,In-person,1,08/30/2032,07/04/2033,Bernie Sanders,91
+SurveyMonkey,1.8,2,Telephone,0,09/06/2032,07/11/2033,Kamala Harris,1.1
+SurveyMonkey,2.3,-0.6,Mixed-mode,9,09/13/2032,07/18/2033,Gavin Newsom,95.4
+Gallup,1.9,-1.8,In-person,6,09/20/2032,07/25/2033,Elizabeth Warren,86.6
+SurveyMonkey,1.4,1.3,Telephone,3,09/27/2032,08/01/2033,Elizabeth Warren,6.8
+YouGov,1.8,0.3,In-person,1,10/04/2032,08/08/2033,Bernie Sanders,88.4
+Pew Research,2.8,-0,In-person,8,10/11/2032,08/15/2033,Gavin Newsom,63.5
+YouGov,2.3,3.1,Online Panel,0,10/18/2032,08/22/2033,Donald Trump,91.5
+SurveyMonkey,1.1,-1.5,Telephone,8,10/25/2032,08/29/2033,Donald Trump,20.8
+YouGov,1.5,4.2,In-person,3,11/01/2032,09/05/2033,Donald Trump,58.6
+YouGov,2.3,2.9,Telephone,8,11/08/2032,09/12/2033,Bernie Sanders,78.1
+Gallup,1.9,2,In-person,4,11/15/2032,09/19/2033,Kamala Harris,14.5
+Pew Research,2.9,3,Telephone,7,11/22/2032,09/26/2033,Pete Buttigieg,58.5
+Ipsos,2.5,4,Online Panel,6,11/29/2032,10/03/2033,Gavin Newsom,66.3
+Ipsos,2.9,2.6,Telephone,8,12/06/2032,10/10/2033,Pete Buttigieg,49.9
+Ipsos,2.8,0.4,In-person,0,12/13/2032,10/17/2033,Donald Trump,40.4
+Ipsos,1.8,1.3,Mixed-mode,1,12/20/2032,10/24/2033,Donald Trump,0.8
+YouGov,1.5,4.5,In-person,0,12/27/2032,10/31/2033,Elizabeth Warren,64.5
+YouGov,2.7,-0.1,Mixed-mode,5,01/03/2033,11/07/2033,Pete Buttigieg,23.7
+Ipsos,1.2,-1.2,Telephone,0,01/10/2033,11/14/2033,Kamala Harris,38.2
+YouGov,3,3,In-person,7,01/17/2033,11/21/2033,Gavin Newsom,93.1
+Ipsos,2.5,1.9,Online Panel,7,01/24/2033,11/28/2033,Gavin Newsom,88.8
+YouGov,2.7,1.2,Mixed-mode,1,01/31/2033,12/05/2033,Gavin Newsom,45.1
+Ipsos,2.3,4.3,Online Panel,6,02/07/2033,12/12/2033,Gavin Newsom,46.5
+Pew Research,1.9,0.6,Online Panel,1,02/14/2033,12/19/2033,Bernie Sanders,24.8
+Pew Research,1.4,1.6,Telephone,0,02/21/2033,12/26/2033,Donald Trump,32.2
+Pew Research,1.4,-1.3,Telephone,8,02/28/2033,01/02/2034,Gavin Newsom,14.8
+SurveyMonkey,2.3,-0.4,Online Panel,8,03/07/2033,01/09/2034,Bernie Sanders,60.6
+YouGov,1.2,4.7,Online Panel,6,03/14/2033,01/16/2034,Bernie Sanders,88.1
+Ipsos,2.9,-1.5,In-person,8,03/21/2033,01/23/2034,Donald Trump,71.7
+SurveyMonkey,2.2,-0.6,In-person,4,03/28/2033,01/30/2034,Donald Trump,67.5
+YouGov,2.8,4.8,Online Panel,4,04/04/2033,02/06/2034,Bernie Sanders,58
+Pew Research,1.4,3.6,Mixed-mode,6,04/11/2033,02/13/2034,Kamala Harris,21.5
+Gallup,2.3,4.2,Online Panel,2,04/18/2033,02/20/2034,Kamala Harris,45.8
+Gallup,1.5,3.1,Online Panel,0,04/25/2033,02/27/2034,Pete Buttigieg,50.3
+Ipsos,1.8,3.3,Online Panel,1,05/02/2033,03/06/2034,Pete Buttigieg,90.2
+Pew Research,2,-0.9,Telephone,2,05/09/2033,03/13/2034,Pete Buttigieg,94.1
+SurveyMonkey,1.8,4.3,Mixed-mode,5,05/16/2033,03/20/2034,Bernie Sanders,53.4
+Ipsos,2.7,1.1,In-person,9,05/23/2033,03/27/2034,Gavin Newsom,71.6
+Pew Research,1.9,2.6,Telephone,3,05/30/2033,04/03/2034,Pete Buttigieg,69.2
+SurveyMonkey,2.5,-0.1,In-person,3,06/06/2033,04/10/2034,Donald Trump,1.5
+Ipsos,1.3,1.5,In-person,3,06/13/2033,04/17/2034,Elizabeth Warren,29.5
+YouGov,2.1,3.1,Mixed-mode,9,06/20/2033,04/24/2034,Kamala Harris,17.6
+SurveyMonkey,1.8,-1.8,Online Panel,4,06/27/2033,05/01/2034,Donald Trump,28.3
+YouGov,2.4,0.1,Mixed-mode,9,07/04/2033,05/08/2034,Elizabeth Warren,50.4
+SurveyMonkey,1.9,1.7,Online Panel,4,07/11/2033,05/15/2034,Kamala Harris,55.5
+Ipsos,2.9,-0.5,In-person,6,07/18/2033,05/22/2034,Kamala Harris,31
+Pew Research,2.1,1.3,In-person,4,07/25/2033,05/29/2034,Donald Trump,97.1
+Gallup,1,4.6,Mixed-mode,7,08/01/2033,06/05/2034,Pete Buttigieg,32.2
+Pew Research,2.9,0.6,In-person,0,08/08/2033,06/12/2034,Elizabeth Warren,13.7
+SurveyMonkey,2.1,1.4,Online Panel,7,08/15/2033,06/19/2034,Kamala Harris,52
+SurveyMonkey,2.4,-0.2,In-person,9,08/22/2033,06/26/2034,Kamala Harris,20.6
+Pew Research,1.2,4.3,In-person,5,08/29/2033,07/03/2034,Bernie Sanders,44.3
+YouGov,2,1.7,In-person,1,09/05/2033,07/10/2034,Donald Trump,83.1
+Pew Research,1.2,3.7,Telephone,3,09/12/2033,07/17/2034,Kamala Harris,77.9
+Gallup,2.5,-0.7,Online Panel,7,09/19/2033,07/24/2034,Gavin Newsom,58.7
+YouGov,1.8,-0.6,Online Panel,6,09/26/2033,07/31/2034,Donald Trump,84.1
+Pew Research,1.6,3.9,Mixed-mode,7,10/03/2033,08/07/2034,Gavin Newsom,66.7
+Ipsos,2.3,2.1,Telephone,6,10/10/2033,08/14/2034,Gavin Newsom,91.1
+Ipsos,1.1,3.8,In-person,9,10/17/2033,08/21/2034,Donald Trump,40.4
+SurveyMonkey,1.7,2.9,Telephone,1,10/24/2033,08/28/2034,Kamala Harris,46.8
+Gallup,2.2,-1.1,Mixed-mode,5,10/31/2033,09/04/2034,Gavin Newsom,30.9
+YouGov,2.1,-1.3,In-person,2,11/07/2033,09/11/2034,Pete Buttigieg,49.5
+Pew Research,2.7,4.8,Online Panel,5,11/14/2033,09/18/2034,Pete Buttigieg,34.9
+SurveyMonkey,1.5,4.7,Mixed-mode,5,11/21/2033,09/25/2034,Bernie Sanders,9
+Gallup,1.9,-1.7,Telephone,3,11/28/2033,10/02/2034,Pete Buttigieg,94.4
+YouGov,1.2,4.6,Telephone,2,12/05/2033,10/09/2034,Kamala Harris,18.5
+SurveyMonkey,1.7,-1.8,Telephone,7,12/12/2033,10/16/2034,Gavin Newsom,82.4
+SurveyMonkey,2.9,4.3,Telephone,0,12/19/2033,10/23/2034,Donald Trump,23.9
+YouGov,1.2,0.2,Mixed-mode,9,12/26/2033,10/30/2034,Donald Trump,96.2
+Ipsos,2.3,3,Telephone,2,01/02/2034,11/06/2034,Donald Trump,72.3
+Pew Research,2.9,2.8,Online Panel,6,01/09/2034,11/13/2034,Donald Trump,63.1
+SurveyMonkey,2.8,-1.3,In-person,4,01/16/2034,11/20/2034,Kamala Harris,19.8
+Ipsos,2,3.7,Telephone,0,01/23/2034,11/27/2034,Gavin Newsom,2.2
+YouGov,2.1,-1.4,In-person,8,01/30/2034,12/04/2034,Donald Trump,29
+Ipsos,2.5,0.8,In-person,9,02/06/2034,12/11/2034,Donald Trump,24
+Gallup,1.7,-0.5,Online Panel,6,02/13/2034,12/18/2034,Pete Buttigieg,18.1
+SurveyMonkey,2,4.8,Mixed-mode,7,02/20/2034,12/25/2034,Bernie Sanders,71.9
+Pew Research,1.4,-1.5,Online Panel,4,02/27/2034,01/01/2035,Kamala Harris,33.9
+Gallup,1.8,0.6,Online Panel,9,03/06/2034,01/08/2035,Gavin Newsom,95.1
+YouGov,2.2,-0.8,In-person,5,03/13/2034,01/15/2035,Elizabeth Warren,39.9
+YouGov,1.2,-0.8,In-person,0,03/20/2034,01/22/2035,Elizabeth Warren,49.7
+YouGov,2.4,-0.7,In-person,2,03/27/2034,01/29/2035,Bernie Sanders,43.5
+YouGov,2.8,-1.1,Online Panel,0,04/03/2034,02/05/2035,Elizabeth Warren,31
+YouGov,2.5,3.5,Telephone,0,04/10/2034,02/12/2035,Kamala Harris,86.6
+Gallup,1.3,-0.4,Mixed-mode,4,04/17/2034,02/19/2035,Donald Trump,97.1
+SurveyMonkey,2.3,0.6,Telephone,5,04/24/2034,02/26/2035,Donald Trump,20.8
+Ipsos,2.5,2,Mixed-mode,5,05/01/2034,03/05/2035,Pete Buttigieg,3.9
+YouGov,2,0.4,Mixed-mode,2,05/08/2034,03/12/2035,Gavin Newsom,92.8
+SurveyMonkey,1.7,1.2,In-person,2,05/15/2034,03/19/2035,Kamala Harris,11.5
+YouGov,1.3,4.9,Online Panel,6,05/22/2034,03/26/2035,Donald Trump,36.2
+Pew Research,2.9,1.7,Online Panel,1,05/29/2034,04/02/2035,Donald Trump,11.4
+Pew Research,2.4,0.3,Mixed-mode,0,06/05/2034,04/09/2035,Elizabeth Warren,73.9
+SurveyMonkey,2.4,1.9,Telephone,2,06/12/2034,04/16/2035,Gavin Newsom,92.1
+Gallup,1.8,3.5,Mixed-mode,0,06/19/2034,04/23/2035,Bernie Sanders,23.9
+Gallup,2.4,-0.8,In-person,2,06/26/2034,04/30/2035,Donald Trump,53.6
+Gallup,1.1,3.7,Telephone,3,07/03/2034,05/07/2035,Gavin Newsom,46
+Pew Research,2.6,3.2,Telephone,9,07/10/2034,05/14/2035,Gavin Newsom,90.5
+Gallup,2.3,0.7,Mixed-mode,6,07/17/2034,05/21/2035,Gavin Newsom,8.4
+SurveyMonkey,2.7,3.6,In-person,8,07/24/2034,05/28/2035,Pete Buttigieg,43.2
+SurveyMonkey,2.1,2.1,Telephone,2,07/31/2034,06/04/2035,Elizabeth Warren,20
+Gallup,3,4,Mixed-mode,7,08/07/2034,06/11/2035,Pete Buttigieg,58.2
+SurveyMonkey,2.5,4.1,Mixed-mode,0,08/14/2034,06/18/2035,Kamala Harris,36.6
+Gallup,2.7,-0.7,In-person,1,08/21/2034,06/25/2035,Elizabeth Warren,30.5
+Gallup,1.3,4.6,In-person,6,08/28/2034,07/02/2035,Donald Trump,95.2
+SurveyMonkey,1.5,-0.7,In-person,7,09/04/2034,07/09/2035,Elizabeth Warren,96.2
+Pew Research,1.4,0.3,Mixed-mode,8,09/11/2034,07/16/2035,Gavin Newsom,27.5
+Pew Research,1.5,2.6,Mixed-mode,8,09/18/2034,07/23/2035,Kamala Harris,36.8
+Ipsos,2,0.2,Telephone,2,09/25/2034,07/30/2035,Kamala Harris,30.4
+YouGov,1.8,-1.8,In-person,2,10/02/2034,08/06/2035,Elizabeth Warren,22.5
+SurveyMonkey,1.2,-0.9,Online Panel,5,10/09/2034,08/13/2035,Bernie Sanders,57.7
+SurveyMonkey,2.2,3.6,Telephone,5,10/16/2034,08/20/2035,Bernie Sanders,92.9
+Pew Research,1.9,0.3,Telephone,5,10/23/2034,08/27/2035,Gavin Newsom,40.1
+YouGov,2.6,-1.5,Online Panel,4,10/30/2034,09/03/2035,Bernie Sanders,51
+Gallup,1.7,2.8,Online Panel,9,11/06/2034,09/10/2035,Gavin Newsom,50.4
+Pew Research,1.9,-0.8,Telephone,5,11/13/2034,09/17/2035,Elizabeth Warren,9.3
+Ipsos,2.1,2.8,In-person,6,11/20/2034,09/24/2035,Kamala Harris,20.2
+Pew Research,2.5,1.5,Telephone,6,11/27/2034,10/01/2035,Pete Buttigieg,72.4
+SurveyMonkey,2.4,-1.6,Mixed-mode,3,12/04/2034,10/08/2035,Elizabeth Warren,13.1
+YouGov,1.1,0.7,In-person,2,12/11/2034,10/15/2035,Gavin Newsom,19.6
+SurveyMonkey,2,1.5,Mixed-mode,8,12/18/2034,10/22/2035,Elizabeth Warren,43.3
+Gallup,1.9,-0.7,Online Panel,7,12/25/2034,10/29/2035,Kamala Harris,38.5
+Gallup,1.8,-1.3,Telephone,7,01/01/2035,11/05/2035,Donald Trump,28
+Ipsos,1.6,-1.5,Online Panel,7,01/08/2035,11/12/2035,Pete Buttigieg,71.8
+SurveyMonkey,2.4,-1.7,Online Panel,1,01/15/2035,11/19/2035,Bernie Sanders,59.5
+SurveyMonkey,2.3,1.5,Online Panel,9,01/22/2035,11/26/2035,Bernie Sanders,29.8
+YouGov,1.6,-1.7,Telephone,3,01/29/2035,12/03/2035,Pete Buttigieg,35.7
+YouGov,2.8,1.7,Telephone,6,02/05/2035,12/10/2035,Gavin Newsom,63.5
+Ipsos,2.8,2.9,Telephone,8,02/12/2035,12/17/2035,Elizabeth Warren,48.6
+Gallup,2.2,-0.7,Mixed-mode,5,02/19/2035,12/24/2035,Kamala Harris,6.7
+Pew Research,3,0.8,Online Panel,5,02/26/2035,12/31/2035,Bernie Sanders,94.8
+SurveyMonkey,1.1,3.3,Telephone,2,03/05/2035,01/07/2036,Pete Buttigieg,90.3
+YouGov,1.6,0.6,Online Panel,1,03/12/2035,01/14/2036,Pete Buttigieg,22.2
+SurveyMonkey,1.5,3.3,Mixed-mode,2,03/19/2035,01/21/2036,Bernie Sanders,21.6
+Gallup,2,-1.1,Mixed-mode,6,03/26/2035,01/28/2036,Elizabeth Warren,75.3
+YouGov,1.4,4.4,Mixed-mode,3,04/02/2035,02/04/2036,Kamala Harris,79.5
+Pew Research,2.6,1.3,Online Panel,3,04/09/2035,02/11/2036,Bernie Sanders,68.8
+Ipsos,2.7,-1.8,Telephone,3,04/16/2035,02/18/2036,Kamala Harris,59.4
+YouGov,1.1,-0.6,Telephone,9,04/23/2035,02/25/2036,Bernie Sanders,72.7
+Gallup,1.9,1.6,Telephone,1,04/30/2035,03/03/2036,Bernie Sanders,40.6
+SurveyMonkey,1.9,4.1,Online Panel,1,05/07/2035,03/10/2036,Elizabeth Warren,10.9
+SurveyMonkey,1.7,2.3,Online Panel,9,05/14/2035,03/17/2036,Gavin Newsom,45.3
+YouGov,2.3,4.2,In-person,5,05/21/2035,03/24/2036,Gavin Newsom,88.2
+Ipsos,1.5,4,Telephone,1,05/28/2035,03/31/2036,Kamala Harris,62.6
+YouGov,2.8,3.2,In-person,6,06/04/2035,04/07/2036,Elizabeth Warren,19.5
+Ipsos,1.3,1.3,Telephone,5,06/11/2035,04/14/2036,Elizabeth Warren,47.9
+Ipsos,1.6,1.8,Online Panel,0,06/18/2035,04/21/2036,Donald Trump,58.6
+Gallup,1.1,3.1,Online Panel,7,06/25/2035,04/28/2036,Kamala Harris,15.1
+Pew Research,2,3.9,Mixed-mode,8,07/02/2035,05/05/2036,Donald Trump,73.4
+Pew Research,2.7,-0.7,In-person,3,07/09/2035,05/12/2036,Gavin Newsom,33.8
+Pew Research,1.1,-1.1,Mixed-mode,8,07/16/2035,05/19/2036,Pete Buttigieg,79.6
+Gallup,2.3,4.7,Telephone,1,07/23/2035,05/26/2036,Kamala Harris,23.9
+YouGov,1.9,-1,Mixed-mode,0,07/30/2035,06/02/2036,Pete Buttigieg,65.2
+SurveyMonkey,2.1,0.4,Online Panel,1,08/06/2035,06/09/2036,Gavin Newsom,19.9
+SurveyMonkey,2.3,0.1,In-person,3,08/13/2035,06/16/2036,Gavin Newsom,26.7
+Gallup,1.2,-0.4,Telephone,8,08/20/2035,06/23/2036,Donald Trump,23.5
+Ipsos,2.8,3.8,Mixed-mode,8,08/27/2035,06/30/2036,Gavin Newsom,48.8
+Pew Research,1.8,-0.4,Telephone,0,09/03/2035,07/07/2036,Gavin Newsom,88
+Gallup,2.1,4.9,Telephone,3,09/10/2035,07/14/2036,Kamala Harris,93.1
+Gallup,1,2.7,In-person,2,09/17/2035,07/21/2036,Pete Buttigieg,31
+YouGov,1.5,0.9,Telephone,8,09/24/2035,07/28/2036,Donald Trump,43.9
+SurveyMonkey,2.8,4.2,Mixed-mode,7,10/01/2035,08/04/2036,Donald Trump,71.5
+SurveyMonkey,2.3,-0.8,Telephone,2,10/08/2035,08/11/2036,Gavin Newsom,27
+Gallup,2,2.4,Mixed-mode,4,10/15/2035,08/18/2036,Elizabeth Warren,84.8
+Ipsos,2.5,4.8,Online Panel,6,10/22/2035,08/25/2036,Kamala Harris,7.5
+Ipsos,2.6,-1.6,Telephone,5,10/29/2035,09/01/2036,Gavin Newsom,72.2
+Ipsos,2,-0.9,Mixed-mode,8,11/05/2035,09/08/2036,Pete Buttigieg,87.7
+YouGov,2.7,4.4,Online Panel,0,11/12/2035,09/15/2036,Elizabeth Warren,26.2
+Pew Research,2.8,2.7,Telephone,7,11/19/2035,09/22/2036,Kamala Harris,15.6
+Gallup,1.3,1.4,In-person,1,11/26/2035,09/29/2036,Elizabeth Warren,25
+YouGov,2.4,-0.4,Mixed-mode,8,12/03/2035,10/06/2036,Pete Buttigieg,56.9
+Gallup,2,-1.5,Online Panel,3,12/10/2035,10/13/2036,Gavin Newsom,34.7
+Pew Research,1.6,3.6,Online Panel,9,12/17/2035,10/20/2036,Gavin Newsom,68.3
+Ipsos,2.2,4.8,Online Panel,7,12/24/2035,10/27/2036,Elizabeth Warren,10.9
+Pew Research,1,2.7,Mixed-mode,7,12/31/2035,11/03/2036,Donald Trump,25.6
+Gallup,1.6,-1.8,In-person,7,01/07/2036,11/10/2036,Kamala Harris,29.8
+YouGov,2.6,0.6,Online Panel,7,01/14/2036,11/17/2036,Donald Trump,59.4
+SurveyMonkey,2.3,4.9,Online Panel,4,01/21/2036,11/24/2036,Donald Trump,67.9
+Pew Research,2.6,3.4,Online Panel,3,01/28/2036,12/01/2036,Pete Buttigieg,54.1
+YouGov,2.3,-1.3,Online Panel,7,02/04/2036,12/08/2036,Pete Buttigieg,5.4
+YouGov,2.1,0.1,Mixed-mode,1,02/11/2036,12/15/2036,Gavin Newsom,65.2
+Pew Research,1.1,2.2,In-person,1,02/18/2036,12/22/2036,Elizabeth Warren,65.8
+Pew Research,1.5,3.8,In-person,6,02/25/2036,12/29/2036,Pete Buttigieg,99
+Gallup,1.3,-1.4,In-person,4,03/03/2036,01/05/2037,Bernie Sanders,58.6
+SurveyMonkey,2.5,0.5,In-person,1,03/10/2036,01/12/2037,Elizabeth Warren,20.6
+Ipsos,2.3,1.8,In-person,7,03/17/2036,01/19/2037,Pete Buttigieg,63.5
+SurveyMonkey,1.8,0.2,Online Panel,1,03/24/2036,01/26/2037,Pete Buttigieg,81.7
+SurveyMonkey,2.8,3,Online Panel,4,03/31/2036,02/02/2037,Bernie Sanders,0.8
+Ipsos,1.6,2.6,In-person,6,04/07/2036,02/09/2037,Gavin Newsom,55.9
+Ipsos,2.4,-1.6,Mixed-mode,3,04/14/2036,02/16/2037,Kamala Harris,50.3
+Gallup,2.4,3.3,Online Panel,2,04/21/2036,02/23/2037,Elizabeth Warren,26.9
+Gallup,1.5,0.9,Mixed-mode,6,04/28/2036,03/02/2037,Elizabeth Warren,46.1
+Gallup,1.5,3.3,Online Panel,3,05/05/2036,03/09/2037,Pete Buttigieg,53.8
+SurveyMonkey,1.8,0.5,Mixed-mode,9,05/12/2036,03/16/2037,Gavin Newsom,26
+Ipsos,2.3,3.4,Mixed-mode,1,05/19/2036,03/23/2037,Bernie Sanders,49.7
+Gallup,2.1,4.3,Telephone,2,05/26/2036,03/30/2037,Gavin Newsom,98.4
+Pew Research,1.8,0.9,Online Panel,5,06/02/2036,04/06/2037,Bernie Sanders,80.6
+SurveyMonkey,2.3,2.5,In-person,3,06/09/2036,04/13/2037,Gavin Newsom,33.2
+Ipsos,1.3,-1.9,In-person,4,06/16/2036,04/20/2037,Elizabeth Warren,17.1
+SurveyMonkey,2.6,3.4,Online Panel,4,06/23/2036,04/27/2037,Pete Buttigieg,25.8
+SurveyMonkey,2.5,2.8,Telephone,0,06/30/2036,05/04/2037,Gavin Newsom,21.1
+SurveyMonkey,2.4,2.7,In-person,9,07/07/2036,05/11/2037,Donald Trump,95.5
+YouGov,1.8,1.5,Mixed-mode,7,07/14/2036,05/18/2037,Gavin Newsom,3.2
+YouGov,1.4,2.2,Online Panel,4,07/21/2036,05/25/2037,Bernie Sanders,19.9
+Ipsos,2.1,4,Online Panel,9,07/28/2036,06/01/2037,Kamala Harris,44.2
+SurveyMonkey,2.6,-1.2,Mixed-mode,2,08/04/2036,06/08/2037,Pete Buttigieg,55
+Gallup,2.9,0.4,Online Panel,8,08/11/2036,06/15/2037,Kamala Harris,87.3
+Ipsos,2.4,2.4,Online Panel,5,08/18/2036,06/22/2037,Pete Buttigieg,14.7
+YouGov,1.6,3.3,Telephone,1,08/25/2036,06/29/2037,Bernie Sanders,73
+SurveyMonkey,1,1.1,Online Panel,4,09/01/2036,07/06/2037,Elizabeth Warren,90.8
+Ipsos,2.3,-1.3,Mixed-mode,4,09/08/2036,07/13/2037,Pete Buttigieg,20.4
+Gallup,2.4,-1.8,Telephone,0,09/15/2036,07/20/2037,Elizabeth Warren,10.4
+Gallup,1.6,4.7,Mixed-mode,0,09/22/2036,07/27/2037,Gavin Newsom,30.3
+Pew Research,2.8,3.9,In-person,7,09/29/2036,08/03/2037,Gavin Newsom,39.3
+Ipsos,1.3,-0.9,In-person,4,10/06/2036,08/10/2037,Donald Trump,21
+SurveyMonkey,2.6,2.8,In-person,7,10/13/2036,08/17/2037,Elizabeth Warren,25.4
+Gallup,2.7,-1.6,Online Panel,7,10/20/2036,08/24/2037,Elizabeth Warren,57.4
+Ipsos,1.3,2.7,Mixed-mode,9,10/27/2036,08/31/2037,Gavin Newsom,74
+Ipsos,2.5,-1.6,Online Panel,6,11/03/2036,09/07/2037,Donald Trump,36.6
+Pew Research,2.2,4.5,Mixed-mode,8,11/10/2036,09/14/2037,Bernie Sanders,24.2
+Pew Research,2.2,3.2,Online Panel,9,11/17/2036,09/21/2037,Bernie Sanders,21.4
+YouGov,3,1.5,Telephone,5,11/24/2036,09/28/2037,Pete Buttigieg,67.5
+SurveyMonkey,1.9,1.4,Telephone,4,12/01/2036,10/05/2037,Kamala Harris,28.8
+Pew Research,2.5,2.3,Mixed-mode,7,12/08/2036,10/12/2037,Gavin Newsom,34
+SurveyMonkey,2.8,0.3,Mixed-mode,9,12/15/2036,10/19/2037,Pete Buttigieg,84.7
+YouGov,2,-1.7,Telephone,4,12/22/2036,10/26/2037,Kamala Harris,73.6
+SurveyMonkey,2.2,-0,Telephone,1,12/29/2036,11/02/2037,Kamala Harris,9.9
+Gallup,2.6,0.2,Telephone,9,01/05/2037,11/09/2037,Donald Trump,45.3
+Ipsos,1.8,-0.1,Online Panel,4,01/12/2037,11/16/2037,Elizabeth Warren,40.4
+YouGov,2.8,3.5,In-person,9,01/19/2037,11/23/2037,Pete Buttigieg,79.1
+Pew Research,1.4,0.1,Mixed-mode,5,01/26/2037,11/30/2037,Elizabeth Warren,62.2
+Pew Research,1.6,0.9,Telephone,0,02/02/2037,12/07/2037,Gavin Newsom,59.2
+SurveyMonkey,1.6,4.8,Online Panel,6,02/09/2037,12/14/2037,Bernie Sanders,90.4
+Ipsos,1.7,3.8,Mixed-mode,3,02/16/2037,12/21/2037,Elizabeth Warren,78
+Pew Research,2.8,0.2,Telephone,1,02/23/2037,12/28/2037,Pete Buttigieg,6.1
+SurveyMonkey,2.1,-1.7,Telephone,6,03/02/2037,01/04/2038,Gavin Newsom,94.7
+Pew Research,2.8,-0.7,Mixed-mode,4,03/09/2037,01/11/2038,Donald Trump,73.2
+Ipsos,2.5,-0.4,Mixed-mode,3,03/16/2037,01/18/2038,Donald Trump,61.6
+Ipsos,1.1,-1.2,In-person,7,03/23/2037,01/25/2038,Gavin Newsom,53.7
+Ipsos,2.3,1.9,Online Panel,8,03/30/2037,02/01/2038,Donald Trump,11.3
+Pew Research,1,3,Telephone,4,04/06/2037,02/08/2038,Pete Buttigieg,19.2
+YouGov,2.6,-1.5,Online Panel,0,04/13/2037,02/15/2038,Bernie Sanders,77.3
+Pew Research,2.7,-1.9,Telephone,0,04/20/2037,02/22/2038,Bernie Sanders,8
+Pew Research,2.9,2.1,Telephone,2,04/27/2037,03/01/2038,Gavin Newsom,69.5
+Pew Research,3,3.2,Online Panel,5,05/04/2037,03/08/2038,Bernie Sanders,42.4
+Gallup,1.5,2,In-person,0,05/11/2037,03/15/2038,Pete Buttigieg,31.9
+Pew Research,2.6,-0.5,Online Panel,7,05/18/2037,03/22/2038,Gavin Newsom,97.9
+Ipsos,2.4,1.6,Telephone,8,05/25/2037,03/29/2038,Donald Trump,50.5
+SurveyMonkey,1.8,-1.4,In-person,7,06/01/2037,04/05/2038,Donald Trump,46.5
+YouGov,2.4,-1.3,Online Panel,6,06/08/2037,04/12/2038,Donald Trump,67.8
+Gallup,1.2,4.9,Online Panel,6,06/15/2037,04/19/2038,Bernie Sanders,32.4
+Pew Research,2.2,2.5,Mixed-mode,1,06/22/2037,04/26/2038,Bernie Sanders,93.1
+YouGov,2.6,2.5,Online Panel,1,06/29/2037,05/03/2038,Donald Trump,94.7
+SurveyMonkey,1.5,-0.5,Mixed-mode,5,07/06/2037,05/10/2038,Donald Trump,79.5
+Gallup,2.9,3.4,Online Panel,9,07/13/2037,05/17/2038,Donald Trump,85.4
+Pew Research,1.5,3.4,Telephone,1,07/20/2037,05/24/2038,Gavin Newsom,83.4
+SurveyMonkey,2.8,3.7,Mixed-mode,4,07/27/2037,05/31/2038,Donald Trump,74.9
+Gallup,2.1,-0.9,Online Panel,7,08/03/2037,06/07/2038,Bernie Sanders,38.6
+SurveyMonkey,2,2.8,Telephone,4,08/10/2037,06/14/2038,Elizabeth Warren,44.7
+YouGov,2.5,0.7,Telephone,5,08/17/2037,06/21/2038,Gavin Newsom,20.6
+Gallup,1.9,3.9,In-person,2,08/24/2037,06/28/2038,Kamala Harris,32.6
+Gallup,2.3,2.9,Telephone,7,08/31/2037,07/05/2038,Gavin Newsom,47.4
+Pew Research,2.2,1.3,In-person,4,09/07/2037,07/12/2038,Bernie Sanders,42.6
+YouGov,2.3,-0,In-person,5,09/14/2037,07/19/2038,Donald Trump,14.3
+Pew Research,1.9,1.4,Mixed-mode,1,09/21/2037,07/26/2038,Elizabeth Warren,14.6
+SurveyMonkey,2.3,0.4,Telephone,7,09/28/2037,08/02/2038,Gavin Newsom,92.2
+Pew Research,1,0.4,In-person,0,10/05/2037,08/09/2038,Kamala Harris,40.5
+Ipsos,2,1.8,Online Panel,0,10/12/2037,08/16/2038,Gavin Newsom,27.1
+Pew Research,2,1.5,Mixed-mode,0,10/19/2037,08/23/2038,Bernie Sanders,93.4
+Pew Research,3,0.7,Telephone,3,10/26/2037,08/30/2038,Pete Buttigieg,62
+YouGov,2.2,2.7,In-person,7,11/02/2037,09/06/2038,Kamala Harris,31
+Gallup,2.3,-1,Telephone,8,11/09/2037,09/13/2038,Bernie Sanders,3.2
+SurveyMonkey,1.8,1.1,Online Panel,8,11/16/2037,09/20/2038,Donald Trump,16.3
+Gallup,2.1,0.9,In-person,0,11/23/2037,09/27/2038,Gavin Newsom,29.5
+Ipsos,1.1,1.9,In-person,6,11/30/2037,10/04/2038,Donald Trump,87.8
+SurveyMonkey,1.5,4.7,In-person,7,12/07/2037,10/11/2038,Donald Trump,29.6
+Ipsos,1.7,-0.2,Mixed-mode,8,12/14/2037,10/18/2038,Donald Trump,83.7
+Ipsos,2.7,2.5,Online Panel,8,12/21/2037,10/25/2038,Kamala Harris,65.3
+YouGov,2.6,1.5,Mixed-mode,0,12/28/2037,11/01/2038,Elizabeth Warren,64.5
+Gallup,1.4,-1.5,Mixed-mode,2,01/04/2038,11/08/2038,Bernie Sanders,44.8
+Gallup,1.9,3.4,Online Panel,0,01/11/2038,11/15/2038,Donald Trump,98.5
+YouGov,2.1,-1.3,Online Panel,2,01/18/2038,11/22/2038,Donald Trump,3
+SurveyMonkey,2.5,3.7,Telephone,1,01/25/2038,11/29/2038,Bernie Sanders,46.9
+Ipsos,2.2,3.5,Telephone,3,02/01/2038,12/06/2038,Kamala Harris,10.1
+Pew Research,2.1,0.5,Online Panel,0,02/08/2038,12/13/2038,Donald Trump,96.6
+Gallup,1.7,-1.1,Mixed-mode,3,02/15/2038,12/20/2038,Donald Trump,52.9
+Pew Research,2,1.1,Online Panel,5,02/22/2038,12/27/2038,Pete Buttigieg,16
+SurveyMonkey,1.8,-0.1,Online Panel,6,03/01/2038,01/03/2039,Bernie Sanders,40.4
+Ipsos,1,1.2,Mixed-mode,6,03/08/2038,01/10/2039,Kamala Harris,19.6
+Ipsos,1.3,1.2,In-person,3,03/15/2038,01/17/2039,Gavin Newsom,63.7
+Gallup,1.4,-1.2,Online Panel,8,03/22/2038,01/24/2039,Donald Trump,4.7
+Gallup,1.3,3.9,Telephone,6,03/29/2038,01/31/2039,Bernie Sanders,36.1
+Pew Research,1.8,2.1,Mixed-mode,3,04/05/2038,02/07/2039,Pete Buttigieg,94
+Gallup,1.8,-1.1,Telephone,2,04/12/2038,02/14/2039,Bernie Sanders,70.2
+YouGov,1.5,-0.8,Telephone,4,04/19/2038,02/21/2039,Pete Buttigieg,14.1
+Gallup,2.4,-1.3,Telephone,8,04/26/2038,02/28/2039,Gavin Newsom,39.2
+YouGov,2.2,-0.6,In-person,7,05/03/2038,03/07/2039,Bernie Sanders,54.2
+Pew Research,1.8,-0.4,Online Panel,4,05/10/2038,03/14/2039,Bernie Sanders,27.6
+Ipsos,1.7,3.2,Mixed-mode,8,05/17/2038,03/21/2039,Pete Buttigieg,66.5
+Pew Research,1.8,0.4,In-person,8,05/24/2038,03/28/2039,Kamala Harris,46.7
+Ipsos,2.1,4.9,Telephone,0,05/31/2038,04/04/2039,Gavin Newsom,47.1
+YouGov,1.8,-0.3,Mixed-mode,9,06/07/2038,04/11/2039,Kamala Harris,10.6
+Ipsos,2.3,-0.8,Online Panel,6,06/14/2038,04/18/2039,Bernie Sanders,44.4
+Pew Research,2.4,3,Mixed-mode,2,06/21/2038,04/25/2039,Donald Trump,19.4
+Gallup,1.3,3.5,Telephone,5,06/28/2038,05/02/2039,Kamala Harris,11.1
+YouGov,2.3,0.9,Telephone,4,07/05/2038,05/09/2039,Donald Trump,10.5
+SurveyMonkey,1.9,0.3,Mixed-mode,5,07/12/2038,05/16/2039,Bernie Sanders,72.9
+Ipsos,1.1,2.5,Mixed-mode,6,07/19/2038,05/23/2039,Bernie Sanders,74.3
+Ipsos,1.6,1.7,Mixed-mode,3,07/26/2038,05/30/2039,Kamala Harris,93.5
+SurveyMonkey,2.3,0.7,In-person,3,08/02/2038,06/06/2039,Kamala Harris,20.9
+SurveyMonkey,2.2,3.9,Telephone,1,08/09/2038,06/13/2039,Kamala Harris,16.1
+Ipsos,1.3,0.8,Mixed-mode,2,08/16/2038,06/20/2039,Elizabeth Warren,32.2
+Ipsos,2.3,3.9,In-person,7,08/23/2038,06/27/2039,Donald Trump,93.3
+SurveyMonkey,2.3,0.1,Online Panel,4,08/30/2038,07/04/2039,Bernie Sanders,88.1
+Ipsos,2.3,4.7,Telephone,4,09/06/2038,07/11/2039,Bernie Sanders,59.7
+YouGov,1.4,-0.4,Online Panel,9,09/13/2038,07/18/2039,Bernie Sanders,29.8
+SurveyMonkey,2.7,2.1,Mixed-mode,2,09/20/2038,07/25/2039,Donald Trump,93.6
+Ipsos,1.2,2,In-person,6,09/27/2038,08/01/2039,Elizabeth Warren,76.7
+Pew Research,2.8,-0.9,Telephone,8,10/04/2038,08/08/2039,Pete Buttigieg,3.6
+YouGov,2.5,-1.4,Telephone,6,10/11/2038,08/15/2039,Elizabeth Warren,32.5
+Pew Research,1.3,5,Mixed-mode,9,10/18/2038,08/22/2039,Elizabeth Warren,80.7
+Ipsos,2.6,-0.7,Telephone,2,10/25/2038,08/29/2039,Kamala Harris,92.9
+Gallup,1.8,3.4,Online Panel,0,11/01/2038,09/05/2039,Elizabeth Warren,87.6
+YouGov,1.2,-1.9,In-person,0,11/08/2038,09/12/2039,Elizabeth Warren,69.6
+YouGov,2.5,2.1,Mixed-mode,2,11/15/2038,09/19/2039,Elizabeth Warren,51.3
+Gallup,2.7,2,In-person,6,11/22/2038,09/26/2039,Kamala Harris,47.7
+Ipsos,2.6,3.2,In-person,3,11/29/2038,10/03/2039,Pete Buttigieg,31.6
+Pew Research,2.3,3.8,In-person,8,12/06/2038,10/10/2039,Bernie Sanders,17.7
+SurveyMonkey,2,-1.3,Telephone,9,12/13/2038,10/17/2039,Bernie Sanders,10
+Ipsos,3,3.8,Telephone,8,12/20/2038,10/24/2039,Kamala Harris,48.5
+Gallup,2.8,0.4,Online Panel,5,12/27/2038,10/31/2039,Donald Trump,90.8
+Pew Research,2.6,-0.7,In-person,5,01/03/2039,11/07/2039,Donald Trump,12.8
+YouGov,2.7,0.3,Mixed-mode,0,01/10/2039,11/14/2039,Elizabeth Warren,3.1
+YouGov,2.7,3.3,In-person,3,01/17/2039,11/21/2039,Gavin Newsom,9.3
+YouGov,2.4,2.2,In-person,7,01/24/2039,11/28/2039,Donald Trump,6.6
+Pew Research,2.9,3.8,Online Panel,2,01/31/2039,12/05/2039,Donald Trump,29.2
+Gallup,2.9,4.6,In-person,9,02/07/2039,12/12/2039,Kamala Harris,56.3
+SurveyMonkey,1.7,-0.9,Telephone,3,02/14/2039,12/19/2039,Bernie Sanders,81.9
+YouGov,2.9,4.3,Telephone,9,02/21/2039,12/26/2039,Bernie Sanders,26.7
+Gallup,1.2,4.6,Telephone,0,02/28/2039,01/02/2040,Bernie Sanders,5.2
+YouGov,1.1,1.1,Telephone,8,03/07/2039,01/09/2040,Bernie Sanders,52.5
+YouGov,2.9,0.8,In-person,9,03/14/2039,01/16/2040,Donald Trump,50.4
+Gallup,1.5,4.8,In-person,7,03/21/2039,01/23/2040,Bernie Sanders,30.3
+YouGov,2.2,4.9,Telephone,6,03/28/2039,01/30/2040,Bernie Sanders,64.3
+SurveyMonkey,2.6,-1.5,In-person,6,04/04/2039,02/06/2040,Donald Trump,10.6
+Pew Research,2.7,3.2,Telephone,2,04/11/2039,02/13/2040,Bernie Sanders,25.9
+SurveyMonkey,2.4,4.9,Mixed-mode,5,04/18/2039,02/20/2040,Pete Buttigieg,8.1
+Gallup,2.7,4.6,Telephone,0,04/25/2039,02/27/2040,Pete Buttigieg,73.3
+Ipsos,1.2,-1.6,Online Panel,1,05/02/2039,03/05/2040,Elizabeth Warren,80
+SurveyMonkey,1.9,-0.9,Online Panel,5,05/09/2039,03/12/2040,Pete Buttigieg,41.1
+YouGov,1.8,-1.3,Online Panel,9,05/16/2039,03/19/2040,Pete Buttigieg,47.6
+Gallup,1.9,0.1,Mixed-mode,8,05/23/2039,03/26/2040,Pete Buttigieg,92.2
+Gallup,1.9,-0.1,Mixed-mode,1,05/30/2039,04/02/2040,Kamala Harris,43
+YouGov,2,-1.8,Telephone,1,06/06/2039,04/09/2040,Gavin Newsom,41.6
+Pew Research,2.2,-1.5,Mixed-mode,6,06/13/2039,04/16/2040,Donald Trump,33.2
+Ipsos,2.4,4.7,Telephone,9,06/20/2039,04/23/2040,Pete Buttigieg,61
+Ipsos,1.2,1.5,In-person,9,06/27/2039,04/30/2040,Kamala Harris,3.9
+Ipsos,2.9,-0.6,In-person,1,07/04/2039,05/07/2040,Pete Buttigieg,79.1
+Gallup,1.6,1.1,Mixed-mode,7,07/11/2039,05/14/2040,Gavin Newsom,38.5
+SurveyMonkey,2.2,0.5,In-person,6,07/18/2039,05/21/2040,Donald Trump,58.9
+Ipsos,2.6,3.7,Mixed-mode,1,07/25/2039,05/28/2040,Gavin Newsom,84.3
+SurveyMonkey,1.7,0.3,Online Panel,3,08/01/2039,06/04/2040,Kamala Harris,61.7
+Pew Research,2.7,-1,Telephone,0,08/08/2039,06/11/2040,Gavin Newsom,19.4
+Ipsos,1.7,0.7,In-person,0,08/15/2039,06/18/2040,Elizabeth Warren,21.5
+YouGov,2.3,2.6,In-person,9,08/22/2039,06/25/2040,Gavin Newsom,28.6
+Ipsos,1.9,2.7,Online Panel,7,08/29/2039,07/02/2040,Bernie Sanders,15.1
+Pew Research,1.8,0.1,In-person,6,09/05/2039,07/09/2040,Bernie Sanders,14.6
+YouGov,1.4,-0.2,Online Panel,5,09/12/2039,07/16/2040,Gavin Newsom,81.4
+Pew Research,2.3,0.4,Telephone,8,09/19/2039,07/23/2040,Gavin Newsom,14.1
+YouGov,1.4,2.9,Mixed-mode,1,09/26/2039,07/30/2040,Kamala Harris,28
+YouGov,2.3,3.6,In-person,4,10/03/2039,08/06/2040,Donald Trump,69.8
+SurveyMonkey,1.6,-0.5,Mixed-mode,7,10/10/2039,08/13/2040,Bernie Sanders,77
+Pew Research,2.8,4.7,In-person,5,10/17/2039,08/20/2040,Elizabeth Warren,56.4
+Gallup,1.9,-1.7,In-person,8,10/24/2039,08/27/2040,Elizabeth Warren,99
+SurveyMonkey,2.9,1.6,Telephone,2,10/31/2039,09/03/2040,Bernie Sanders,45.2
+Gallup,1.5,0,In-person,1,11/07/2039,09/10/2040,Donald Trump,95.5
+Pew Research,2,1.8,In-person,0,11/14/2039,09/17/2040,Gavin Newsom,75.2
+Gallup,2,-1.5,Telephone,4,11/21/2039,09/24/2040,Elizabeth Warren,92.2
+Pew Research,1.3,-0.8,Online Panel,1,11/28/2039,10/01/2040,Kamala Harris,54.2
+Gallup,1.9,0.9,In-person,4,12/05/2039,10/08/2040,Donald Trump,48.1
+SurveyMonkey,2.9,1.1,In-person,7,12/12/2039,10/15/2040,Donald Trump,17.8
+Gallup,2,1,Telephone,7,12/19/2039,10/22/2040,Donald Trump,88.9
+Pew Research,2.2,-1.7,Mixed-mode,8,12/26/2039,10/29/2040,Pete Buttigieg,59.7
+Pew Research,1.4,2,Mixed-mode,0,01/02/2040,11/05/2040,Donald Trump,45.6
+Pew Research,1.5,1.8,Telephone,3,01/09/2040,11/12/2040,Kamala Harris,52.2
+Pew Research,1.6,2.3,In-person,2,01/16/2040,11/19/2040,Elizabeth Warren,98.5
+Ipsos,1.7,4.9,Mixed-mode,8,01/23/2040,11/26/2040,Elizabeth Warren,65.7
+Gallup,2.5,0.6,Online Panel,7,01/30/2040,12/03/2040,Donald Trump,85.1
+Ipsos,2.4,3,In-person,6,02/06/2040,12/10/2040,Elizabeth Warren,38.1
+Pew Research,2.2,0.4,Online Panel,3,02/13/2040,12/17/2040,Donald Trump,46.9
+Pew Research,1.8,2.1,Telephone,7,02/20/2040,12/24/2040,Donald Trump,34.9
+Pew Research,2.1,-1.8,In-person,2,02/27/2040,12/31/2040,Bernie Sanders,62.8
+Ipsos,2.2,3.5,Mixed-mode,8,03/05/2040,01/07/2041,Gavin Newsom,99
+YouGov,2,-0.1,Online Panel,2,03/12/2040,01/14/2041,Gavin Newsom,23.2
+Gallup,3,4.2,Mixed-mode,4,03/19/2040,01/21/2041,Pete Buttigieg,13.5
+Pew Research,1.4,0.8,Online Panel,8,03/26/2040,01/28/2041,Elizabeth Warren,11.3
+YouGov,2.2,4.6,In-person,2,04/02/2040,02/04/2041,Elizabeth Warren,96.1
+Ipsos,2.2,1.2,Mixed-mode,7,04/09/2040,02/11/2041,Bernie Sanders,26
+Pew Research,2.1,-1.1,Mixed-mode,6,04/16/2040,02/18/2041,Bernie Sanders,61.4
+YouGov,1.8,-0.7,Mixed-mode,5,04/23/2040,02/25/2041,Kamala Harris,45.9
+Ipsos,1.5,-1,Online Panel,2,04/30/2040,03/04/2041,Pete Buttigieg,97
+YouGov,2.5,1.9,Online Panel,2,05/07/2040,03/11/2041,Donald Trump,72.6
+Ipsos,1.6,2.9,Telephone,3,05/14/2040,03/18/2041,Kamala Harris,23.6
+SurveyMonkey,2.3,-1.4,Telephone,4,05/21/2040,03/25/2041,Pete Buttigieg,95.1
+Ipsos,2.8,1.3,Telephone,3,05/28/2040,04/01/2041,Bernie Sanders,40.5
+SurveyMonkey,2.5,-1.2,Telephone,1,06/04/2040,04/08/2041,Donald Trump,81.7
+SurveyMonkey,1.4,0.8,Mixed-mode,5,06/11/2040,04/15/2041,Elizabeth Warren,87.7
+SurveyMonkey,1,0.5,In-person,3,06/18/2040,04/22/2041,Bernie Sanders,49.4
+Gallup,1.1,2.9,Online Panel,8,06/25/2040,04/29/2041,Donald Trump,8.6
+YouGov,2.6,1.7,Mixed-mode,0,07/02/2040,05/06/2041,Kamala Harris,34.5
+SurveyMonkey,1.6,3.3,In-person,2,07/09/2040,05/13/2041,Elizabeth Warren,2.8
+Gallup,2.1,3.8,Mixed-mode,1,07/16/2040,05/20/2041,Kamala Harris,90.9
+Gallup,2.4,3.7,Online Panel,0,07/23/2040,05/27/2041,Elizabeth Warren,7.1
+Gallup,2,-1.6,Mixed-mode,3,07/30/2040,06/03/2041,Donald Trump,30.9
+YouGov,1.2,4.3,Online Panel,7,08/06/2040,06/10/2041,Bernie Sanders,64.1
+SurveyMonkey,1.8,3.2,Online Panel,0,08/13/2040,06/17/2041,Donald Trump,77.2
+Pew Research,2.6,3.5,Online Panel,2,08/20/2040,06/24/2041,Gavin Newsom,7.1
+SurveyMonkey,2.7,4,In-person,3,08/27/2040,07/01/2041,Gavin Newsom,49.6
+SurveyMonkey,1.4,-0.4,Mixed-mode,4,09/03/2040,07/08/2041,Pete Buttigieg,57.4
+Ipsos,2.1,2.9,Mixed-mode,9,09/10/2040,07/15/2041,Kamala Harris,47.5
+Ipsos,2.2,-0.4,Mixed-mode,1,09/17/2040,07/22/2041,Elizabeth Warren,33.1
+SurveyMonkey,1.6,2.4,Mixed-mode,7,09/24/2040,07/29/2041,Kamala Harris,10.7
+YouGov,2.7,4.5,In-person,5,10/01/2040,08/05/2041,Gavin Newsom,64.4
+Gallup,2.9,0.9,Mixed-mode,0,10/08/2040,08/12/2041,Donald Trump,44.9
+Ipsos,2.6,0.5,In-person,0,10/15/2040,08/19/2041,Gavin Newsom,18.3
+YouGov,1,4.5,In-person,0,10/22/2040,08/26/2041,Bernie Sanders,82.4
+Gallup,1.4,1.6,Online Panel,2,10/29/2040,09/02/2041,Gavin Newsom,66.2
+Ipsos,2.7,-1.6,Online Panel,3,11/05/2040,09/09/2041,Pete Buttigieg,26.4
+Gallup,3,1.1,Mixed-mode,7,11/12/2040,09/16/2041,Bernie Sanders,99
+SurveyMonkey,1.9,-1,Mixed-mode,0,11/19/2040,09/23/2041,Donald Trump,18
+Pew Research,2.3,1.2,Telephone,7,11/26/2040,09/30/2041,Kamala Harris,90
+Gallup,2.6,3.5,Online Panel,5,12/03/2040,10/07/2041,Gavin Newsom,55.1
+YouGov,2.8,-1.2,In-person,1,12/10/2040,10/14/2041,Bernie Sanders,4.2
+YouGov,3,2.8,Telephone,4,12/17/2040,10/21/2041,Kamala Harris,56.7
+YouGov,1.4,2,Telephone,9,12/24/2040,10/28/2041,Elizabeth Warren,34.1
+Gallup,1.5,2.9,In-person,5,12/31/2040,11/04/2041,Bernie Sanders,69.1
+Gallup,2.6,4.8,In-person,4,01/07/2041,11/11/2041,Kamala Harris,55.1
+Gallup,2.8,-0.8,In-person,9,01/14/2041,11/18/2041,Bernie Sanders,75
+SurveyMonkey,2.4,-1.3,Mixed-mode,3,01/21/2041,11/25/2041,Bernie Sanders,3
+Pew Research,2,-1.4,Online Panel,7,01/28/2041,12/02/2041,Donald Trump,35.7
+Gallup,1.7,0.8,Mixed-mode,8,02/04/2041,12/09/2041,Gavin Newsom,74.4
+YouGov,2.5,2.4,Telephone,4,02/11/2041,12/16/2041,Elizabeth Warren,39.4
+Ipsos,2.2,4.5,Telephone,6,02/18/2041,12/23/2041,Bernie Sanders,48
+Ipsos,1.4,0.4,Telephone,6,02/25/2041,12/30/2041,Pete Buttigieg,82.2
+Pew Research,2.3,1.4,In-person,8,03/04/2041,01/06/2042,Kamala Harris,81.3
+Pew Research,2.5,2.2,Telephone,2,03/11/2041,01/13/2042,Pete Buttigieg,43.1
+Pew Research,2.8,-0.7,Online Panel,4,03/18/2041,01/20/2042,Donald Trump,42.3
+Ipsos,2.1,-0.2,Online Panel,5,03/25/2041,01/27/2042,Donald Trump,7.8
+YouGov,2.9,2.5,Mixed-mode,6,04/01/2041,02/03/2042,Elizabeth Warren,50.9
+Pew Research,2,0.8,Telephone,4,04/08/2041,02/10/2042,Gavin Newsom,44
+Gallup,2.4,0,Online Panel,7,04/15/2041,02/17/2042,Bernie Sanders,5.9
+Ipsos,2.5,3.7,Online Panel,2,04/22/2041,02/24/2042,Gavin Newsom,70.6
+SurveyMonkey,2.9,4.6,In-person,6,04/29/2041,03/03/2042,Bernie Sanders,39.5
+SurveyMonkey,2.8,0.2,In-person,2,05/06/2041,03/10/2042,Donald Trump,46
+SurveyMonkey,1.2,0.1,Mixed-mode,0,05/13/2041,03/17/2042,Elizabeth Warren,64.7
+SurveyMonkey,2.2,-0.6,Mixed-mode,4,05/20/2041,03/24/2042,Donald Trump,80.1
+SurveyMonkey,2.4,2.3,Online Panel,8,05/27/2041,03/31/2042,Pete Buttigieg,41
+YouGov,2.3,0.7,Online Panel,7,06/03/2041,04/07/2042,Donald Trump,14.1
+Ipsos,1.6,2.3,Mixed-mode,9,06/10/2041,04/14/2042,Elizabeth Warren,80.6
+Pew Research,1.1,-1.9,Online Panel,6,06/17/2041,04/21/2042,Gavin Newsom,73.9
+Ipsos,2,-0.9,Telephone,3,06/24/2041,04/28/2042,Elizabeth Warren,1.7
+Gallup,2.5,-1.4,Telephone,5,07/01/2041,05/05/2042,Gavin Newsom,100
+Ipsos,2,-1.7,In-person,4,07/08/2041,05/12/2042,Gavin Newsom,41.5
+SurveyMonkey,1.5,4.4,Online Panel,1,07/15/2041,05/19/2042,Gavin Newsom,25.6
+Ipsos,2,-1.5,Online Panel,3,07/22/2041,05/26/2042,Kamala Harris,73.8
+YouGov,2.6,4.3,In-person,0,07/29/2041,06/02/2042,Bernie Sanders,49.5
+YouGov,2.7,-1.8,Online Panel,0,08/05/2041,06/09/2042,Donald Trump,80.1
+Pew Research,1.9,4,Mixed-mode,4,08/12/2041,06/16/2042,Pete Buttigieg,81.3
+SurveyMonkey,2.6,-0.6,Telephone,4,08/19/2041,06/23/2042,Donald Trump,67
+Gallup,2.3,2.8,Telephone,3,08/26/2041,06/30/2042,Donald Trump,20.1
+Pew Research,2.9,2.4,Mixed-mode,8,09/02/2041,07/07/2042,Donald Trump,46.5
+YouGov,1.2,3.3,Mixed-mode,9,09/09/2041,07/14/2042,Gavin Newsom,33.8
+Pew Research,2,3.9,Mixed-mode,3,09/16/2041,07/21/2042,Bernie Sanders,83.5
+YouGov,1.6,1.8,In-person,9,09/23/2041,07/28/2042,Kamala Harris,49.6
+YouGov,2.7,3,Mixed-mode,0,09/30/2041,08/04/2042,Pete Buttigieg,93
+SurveyMonkey,1.1,-0.1,Telephone,9,10/07/2041,08/11/2042,Pete Buttigieg,39.5
+SurveyMonkey,1.3,-1.9,Online Panel,2,10/14/2041,08/18/2042,Elizabeth Warren,51.4
+Gallup,1.3,1,In-person,0,10/21/2041,08/25/2042,Pete Buttigieg,23.1
+Gallup,2.1,3.1,Online Panel,8,10/28/2041,09/01/2042,Elizabeth Warren,35.1
+Pew Research,2,4,Online Panel,3,11/04/2041,09/08/2042,Pete Buttigieg,37.2
+Gallup,2.8,-0.8,In-person,2,11/11/2041,09/15/2042,Elizabeth Warren,87.4
+Gallup,2.2,0.6,Mixed-mode,2,11/18/2041,09/22/2042,Elizabeth Warren,2.7
+YouGov,2.8,1.2,Online Panel,4,11/25/2041,09/29/2042,Bernie Sanders,29.3
+Pew Research,2.8,1.1,Mixed-mode,5,12/02/2041,10/06/2042,Elizabeth Warren,2.9
+Gallup,1.6,-1.6,Online Panel,3,12/09/2041,10/13/2042,Donald Trump,22.3
+YouGov,1.7,0.7,Telephone,6,12/16/2041,10/20/2042,Pete Buttigieg,35
+SurveyMonkey,2.5,2.1,Mixed-mode,4,12/23/2041,10/27/2042,Elizabeth Warren,20.3
+Gallup,1.8,4.5,Mixed-mode,3,12/30/2041,11/03/2042,Kamala Harris,50
+Gallup,1.8,0.6,Mixed-mode,7,01/06/2042,11/10/2042,Pete Buttigieg,77.3
+SurveyMonkey,1.6,4.2,Online Panel,0,01/13/2042,11/17/2042,Elizabeth Warren,72.8
+SurveyMonkey,1.4,2,In-person,4,01/20/2042,11/24/2042,Gavin Newsom,7.6
+SurveyMonkey,2.1,3.3,Online Panel,4,01/27/2042,12/01/2042,Pete Buttigieg,66.5
+Pew Research,1.2,0.2,Telephone,7,02/03/2042,12/08/2042,Pete Buttigieg,7.2
+Pew Research,2.7,2.3,Online Panel,4,02/10/2042,12/15/2042,Kamala Harris,23
+YouGov,2.7,-1.5,Mixed-mode,8,02/17/2042,12/22/2042,Elizabeth Warren,93.9
+Gallup,1.6,3,In-person,8,02/24/2042,12/29/2042,Bernie Sanders,38.8
+YouGov,1.3,0.4,In-person,4,03/03/2042,01/05/2043,Elizabeth Warren,75.6
+SurveyMonkey,2.3,-1.1,Online Panel,3,03/10/2042,01/12/2043,Gavin Newsom,59.2
+Pew Research,2.8,-0,Telephone,2,03/17/2042,01/19/2043,Kamala Harris,72.8
+SurveyMonkey,1.3,1.8,In-person,1,03/24/2042,01/26/2043,Elizabeth Warren,99.1
+Ipsos,2.1,3.9,Telephone,2,03/31/2042,02/02/2043,Elizabeth Warren,93
+YouGov,1.7,0.6,Mixed-mode,5,04/07/2042,02/09/2043,Elizabeth Warren,95.4
+Gallup,1.6,-0.9,Telephone,1,04/14/2042,02/16/2043,Kamala Harris,76.7
+YouGov,2.8,5,Online Panel,6,04/21/2042,02/23/2043,Elizabeth Warren,97.2
+Gallup,1.7,3.7,Online Panel,9,04/28/2042,03/02/2043,Donald Trump,33.9
+Pew Research,2.2,0.2,Online Panel,7,05/05/2042,03/09/2043,Kamala Harris,1.7
+YouGov,2.9,-1.1,Telephone,6,05/12/2042,03/16/2043,Bernie Sanders,41.2
+SurveyMonkey,2.9,4.6,Telephone,0,05/19/2042,03/23/2043,Elizabeth Warren,6.1
+YouGov,1.7,1.3,In-person,4,05/26/2042,03/30/2043,Bernie Sanders,40.1
+Ipsos,2.4,0.6,Mixed-mode,7,06/02/2042,04/06/2043,Kamala Harris,0.5
+Ipsos,2.1,4.2,In-person,9,06/09/2042,04/13/2043,Kamala Harris,95.4
+Pew Research,1.5,1.6,Online Panel,3,06/16/2042,04/20/2043,Elizabeth Warren,78.1
+YouGov,1.2,-1.4,Online Panel,0,06/23/2042,04/27/2043,Bernie Sanders,42.9
+SurveyMonkey,1.9,1.7,Telephone,4,06/30/2042,05/04/2043,Pete Buttigieg,77.1
+Pew Research,1.7,3.1,In-person,9,07/07/2042,05/11/2043,Bernie Sanders,49.4
+SurveyMonkey,2.4,3.1,Telephone,2,07/14/2042,05/18/2043,Donald Trump,37.6
+YouGov,3,4.2,Online Panel,6,07/21/2042,05/25/2043,Elizabeth Warren,11.7
+Pew Research,1.6,0,Telephone,5,07/28/2042,06/01/2043,Kamala Harris,41.5
+Gallup,2.1,3.2,Online Panel,5,08/04/2042,06/08/2043,Gavin Newsom,14.5
+SurveyMonkey,2.4,-1.7,Mixed-mode,6,08/11/2042,06/15/2043,Bernie Sanders,56.9
+Ipsos,2.9,3,In-person,8,08/18/2042,06/22/2043,Pete Buttigieg,39
+Ipsos,2.4,-0.2,In-person,9,08/25/2042,06/29/2043,Gavin Newsom,63.8
+Ipsos,1.8,2.2,Online Panel,2,09/01/2042,07/06/2043,Gavin Newsom,52.3
+Ipsos,1,4.1,In-person,6,09/08/2042,07/13/2043,Bernie Sanders,0.6
+Pew Research,2.1,1.9,In-person,2,09/15/2042,07/20/2043,Elizabeth Warren,87.6
+Gallup,1.3,-0.8,In-person,4,09/22/2042,07/27/2043,Bernie Sanders,45.7
+Ipsos,1.2,4.9,Mixed-mode,5,09/29/2042,08/03/2043,Donald Trump,38.9
+SurveyMonkey,2.8,1.9,Mixed-mode,4,10/06/2042,08/10/2043,Donald Trump,8.4
+Gallup,1.8,1.2,Online Panel,6,10/13/2042,08/17/2043,Elizabeth Warren,21.4
+SurveyMonkey,1.5,0.8,Telephone,1,10/20/2042,08/24/2043,Pete Buttigieg,44.1
+Pew Research,1.7,2.3,Telephone,8,10/27/2042,08/31/2043,Pete Buttigieg,98.1
+YouGov,2.5,-0.5,In-person,6,11/03/2042,09/07/2043,Pete Buttigieg,16.7
+Pew Research,2.1,-0.3,Mixed-mode,1,11/10/2042,09/14/2043,Gavin Newsom,81.8
+YouGov,2.2,4.1,Telephone,3,11/17/2042,09/21/2043,Gavin Newsom,95.9
+Ipsos,2.8,-0.3,Mixed-mode,8,11/24/2042,09/28/2043,Elizabeth Warren,51.4
+Ipsos,1.8,-0,Telephone,6,12/01/2042,10/05/2043,Gavin Newsom,81.6
+SurveyMonkey,1.7,1.8,Mixed-mode,7,12/08/2042,10/12/2043,Donald Trump,73.1
+SurveyMonkey,2.6,4.4,In-person,8,12/15/2042,10/19/2043,Pete Buttigieg,71.5
+YouGov,2.7,0.2,Mixed-mode,0,12/22/2042,10/26/2043,Pete Buttigieg,23.6
+YouGov,2.4,0.4,Mixed-mode,8,12/29/2042,11/02/2043,Gavin Newsom,30.1
+Ipsos,1.6,4.7,Mixed-mode,5,01/05/2043,11/09/2043,Elizabeth Warren,96.7
+Gallup,2.1,3.2,Telephone,8,01/12/2043,11/16/2043,Pete Buttigieg,18.4
+YouGov,2.5,3.9,In-person,9,01/19/2043,11/23/2043,Pete Buttigieg,82.2
+SurveyMonkey,1.3,-1.8,Online Panel,9,01/26/2043,11/30/2043,Gavin Newsom,80.4
+Ipsos,1.3,0.8,Telephone,2,02/02/2043,12/07/2043,Kamala Harris,17.3
+Gallup,1.3,3.9,Mixed-mode,1,02/09/2043,12/14/2043,Kamala Harris,36.1
+SurveyMonkey,1.4,3.5,Mixed-mode,1,02/16/2043,12/21/2043,Bernie Sanders,29
+YouGov,1.5,-0.8,In-person,7,02/23/2043,12/28/2043,Donald Trump,54.2
