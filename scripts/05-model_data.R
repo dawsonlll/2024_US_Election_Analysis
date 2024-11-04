@@ -27,8 +27,8 @@ library(dplyr)
 just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
 just_harris_high_quality <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
 
-#### Starter Trump models ####
 
+#### Starter Trump models ####
 # Linear Model: pct as a function of end_date and pollster
 model_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
 
@@ -56,7 +56,6 @@ spline_trump_model <- stan_glm(
 
 
 #### Starter Harris models ####
-
 # Linear Model: pct as a function of end_date and pollster
 model_harris_date_pollster <- lm(pct ~ end_date + pollster, data = just_harris_high_quality)
 
@@ -68,7 +67,6 @@ just_harris_high_quality <- just_harris_high_quality |>
   )
 
 # Fit Bayesian model with spline and pollster as fixed effect
-
 spline_harris_model <- stan_glm(
   pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
   data = just_harris_high_quality,
@@ -80,8 +78,6 @@ spline_harris_model <- stan_glm(
   chains = 4,
   refresh = 0
 )
-
-
 
 
 #### Save model ####
