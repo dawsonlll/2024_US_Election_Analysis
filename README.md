@@ -19,4 +19,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of this project were developed with the assistance of the AI tool, ChatGPT. The abstract, introduction, result, and discussion sections were written with the help of ChatGPT. Portions of the code were adapted from resources in Telling Stories with Data and with ChatGPT. Additionally, the modelling, prediction, results, data analysis, introduction, and discussion sections were conducted using ChatGPT-4o. The entire chat history available in inputs/llms/usage.txt.
+Aspects of this project were developed with the assistance of the AI tool, ChatGPT. The abstract, introduction, result, discussion, appendix sections were written with the help of ChatGPT. Portions of the code were adapted from resources in Telling Stories with Data and written with the help of ChatGPT-4o. Additionally, the modelling, prediction, results, and data analysis were conducted using ChatGPT-4o. The entire chat history available in inputs/llms/usage.txt.
