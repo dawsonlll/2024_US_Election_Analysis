@@ -189,7 +189,8 @@ print(trump_summary)
 Replace "path/to/president_polls.parquet" with the actual path to your Parquet file. This will read the file and output separate summaries for Harris and Trump.
 
 您说：
- trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")Error: IOError: Failed to open local file 'data/02-analysis_data/analysis_trump_data.parquet'. Detail: [errno 2] No such file or directory
+ trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+Error: IOError: Failed to open local file 'data/02-analysis_data/analysis_trump_data.parquet'. Detail: [errno 2] No such file or directory
 ChatGPT 说：
 ChatGPT
 The error you're seeing indicates that R cannot locate the file at the specified path. Here are a few steps to troubleshoot and resolve this issue:
@@ -292,7 +293,9 @@ data <- read_parquet("path/to/your_file.parquet", columns = c("column1", "column
 This function is highly useful in data science workflows, particularly when working with large datasets stored in the Parquet format.
 
 您说：
-> setwd(here::here())Warning: The working directory was changed to /Users/dingshuo/Desktop/paper2 inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.> trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")> harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
+> setwd(here::here())
+Warning: The working directory was changed to /Users/dingshuo/Desktop/paper2 inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.> trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+> harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
 ChatGPT 说：
 ChatGPT
 In an RMarkdown or Quarto document, working directory changes within chunks can reset after the chunk finishes running, as you're seeing. Instead of setwd(here::here()), you can set a global working directory for all chunks using the knitr option root.dir in your setup chunk. Here’s how to adjust your setup chunk to ensure consistent file paths across all chunks:
@@ -384,7 +387,21 @@ Output: Prints the summary statistics for Trump and Harris.
 This setup ensures consistent file paths throughout the document and provides separate summaries for Trump and Harris.
 
 您说：
-library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> library(arrow)> library(here)> library(modelr)> library(knitr)> library(rstanarm)> opts_knit$set(root.dir = here::here())> > > > trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")Error: IOError: Failed to open local file 'data/02-analysis_data/analysis_trump_data.parquet'. Detail: [errno 2] No such file or directory
+library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> library(arrow)
+> library(here)
+> library(modelr)
+> library(knitr)
+> library(rstanarm)
+> opts_knit$set(root.dir = here::here())
+> 
+> 
+> 
+> trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+Error: IOError: Failed to open local file 'data/02-analysis_data/analysis_trump_data.parquet'. Detail: [errno 2] No such file or directory
 ChatGPT 说：
 ChatGPT
 The error message indicates that R still cannot find the file "data/02-analysis_data/analysis_trump_data.parquet". Here are some troubleshooting steps:
@@ -570,7 +587,24 @@ knitr::kable: Displays the table with custom column names for clarity.
 This will create a table with state as the first column, followed by Harris Mean % and Trump Mean %.
 
 您说：
-fix code: # Model:pct as a function of end_date and pollstermodel_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)# Augment data with model predictionsjust_trump_high_quality <- just_trump_high_quality |>  mutate(    fitted_date = predict(model_date),    fitted_date_pollster = predict(model_trump_date_pollster)  )# Model 2ggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+fix code: 
+# Model:pct as a function of end_date and pollster
+model_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+
+# Augment data with model predictions
+just_trump_high_quality <- just_trump_high_quality |>
+  mutate(
+    fitted_date = predict(model_date),
+    fitted_date_pollster = predict(model_trump_date_pollster)
+  )
+
+# Model 2
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
 ChatGPT 说：
 ChatGPT
 There are a few issues in your code:
@@ -647,7 +681,17 @@ Plotting: Shows actual pct values and the predicted trend by end_date, with a fa
 This will yield a plot showing the polling percentage trends across different states, with national/state effects modeled as part of the predictions.
 
 您说：
-how do i plot this bayesian regressionspline_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_harris_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)
+how do i plot this bayesian regressionspline_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_harris_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
 ChatGPT 说：
 ChatGPT
 To plot the Bayesian regression model created with stan_glm() using a spline, you can follow these steps:
@@ -1020,7 +1064,506 @@ The second predictor, pollscore, assesses the reliability and quality of each po
 By examining pct in relation to state and pollscore, we aim to understand not only the levels of support for each candidate but also how reliable and geographically diverse that support is. The analysis includes tables and graphs that illustrate these relationships, with summary statistics that highlight the central tendencies, range, and variability in pct for different states and poll qualities. For a complete view, any extensive tables or additional data visuals are provided in the appendix to maintain the clarity of the main text.
 
 您说：
-  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-planesWARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2Rendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                            output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2[WARNING] Citeproc: citation table-pct not foundRendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                            output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2[WARNING] Citeproc: citation table-pct not foundRendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                            output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2[WARNING] Citeproc: citation table-pct not foundRendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesWARN: connection closed before message completedprocessing file: paper.qmd                                                                                                                 output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2[WARNING] Citeproc: citation table-pct not foundRendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                               output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2[WARNING] Citeproc: citation table-pct not foundRendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                               output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2Rendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd                                                                                                               output file: paper.knit.mdWarning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitpandoc   to: latex  output-file: paper.tex  standalone: true  pdf-engine: xelatex  variables:    graphics: true    tables: true  default-image-extension: pdf  number-sections: true  metadata  documentclass: scrartcl  classoption:    - DIV=11    - numbers=noendperiod  papersize: letter  header-includes:    - '\KOMAoption{captions}{tableheading}'  block-headings: true  title: 2024 US Election Prediction  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes  author:    - Betty Liu    - Jingchuan Xu    - Dingshuo Li  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'  date: 'Nov 04, 2024'  date-format: long  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.  bibliography:    - references.bib  WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2Rendering PDFrunning xelatex - 1  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  running xelatex - 2  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)   restricted \write18 enabled.  entering extended mode  Output created: paper.pdfWatching files for changesprocessing file: paper.qmd  |.................................             |  73% [tbl-preview-pollscore]Error in select():! Can't subset columns that don't exist.x Column candidate doesn't exist.Backtrace: 1. ... %>% arrange(pollster) 6. dplyr:::select.data.frame(., candidate, pollster, pollscore)Warning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitQuitting from lines 151-168 [tbl-preview-pollscore] (paper.qmd)                                                                                                                  Execution haltedprocessing file: paper.qmd  |.................................             |  73% [tbl-preview-pollscore]Error in pivot_wider():! Can't subset columns that don't exist.x Column candidate doesn't exist.Backtrace: 1. ... %>% arrange(pollster) 4. tidyr:::pivot_wider.data.frame(., names_from = candidate, values_from = pollscore, values_fill = NA)Warning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit                                                                                                                  Quitting from lines 151-168 [tbl-preview-pollscore] (paper.qmd)Execution halted
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-planes
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                            
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+[WARNING] Citeproc: citation table-pct not found
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                            
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+[WARNING] Citeproc: citation table-pct not found
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                            
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+[WARNING] Citeproc: citation table-pct not found
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+WARN: connection closed before message completed
+
+
+processing file: paper.qmd
+                                                                                                                 
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+[WARNING] Citeproc: citation table-pct not found
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                               
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+[WARNING] Citeproc: citation table-pct not found
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                               
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+                                                                                                               
+output file: paper.knit.md
+
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+pandoc 
+  to: latex
+  output-file: paper.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  number-sections: true
+  
+metadata
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 2024 US Election Prediction
+  subtitle: An Analysis of Donald Trump’s Polling Trends and Predictive Outcomes
+  author:
+    - Betty Liu
+    - Jingchuan Xu
+    - Dingshuo Li
+  thanks: 'Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis'
+  date: 'Nov 04, 2024'
+  date-format: long
+  abstract: First sentence. Second sentence. Third sentence. Fourth sentence.
+  bibliography:
+    - references.bib
+  
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-ppcheckandposteriorvsprior-2
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-1
+WARNING (/Applications/quarto/share/filters/main.lua:13900) Unable to resolve crossref @fig-stanareyouokay-2
+
+Rendering PDF
+running xelatex - 1
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+running xelatex - 2
+  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: paper.pdf
+
+Watching files for changes
+
+
+processing file: paper.qmd
+  |.................................             |  73% [tbl-preview-pollscore]Error in select():
+! Can't subset columns that don't exist.
+x Column candidate doesn't exist.
+Backtrace:
+ 1. ... %>% arrange(pollster)
+ 6. dplyr:::select.data.frame(., candidate, pollster, pollscore)
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+
+
+
+Quitting from lines 151-168 [tbl-preview-pollscore] (paper.qmd)
+                                                                                                                  
+Execution halted
+
+
+processing file: paper.qmd
+  |.................................             |  73% [tbl-preview-pollscore]Error in pivot_wider():
+! Can't subset columns that don't exist.
+x Column candidate doesn't exist.
+Backtrace:
+ 1. ... %>% arrange(pollster)
+ 4. tidyr:::pivot_wider.data.frame(., names_from = candidate, values_from = pollscore, values_fill = NA)
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+                                                                                                                  
+
+
+Quitting from lines 151-168 [tbl-preview-pollscore] (paper.qmd)
+
+Execution halted
 ChatGPT 说：
 ChatGPT
 The error messages indicate that the candidate column does not exist in the dataset at the time of processing. To fix this, ensure that you correctly add the candidate column to each dataset before combining them. Here’s a refined approach:
@@ -1065,7 +1608,22 @@ Error Handling: If pollster and pollscore don’t exist in combined_data, it hal
 This code should work as long as both datasets have the required columns. Adjust file paths or data loading steps if the issue persists.
 
 您说：
-make this r table only display a preview # Combine Trump and Harris data with an identifying column for each candidatecombined_data <- trump_analysis_data %>%  mutate(Candidate = "Trump") %>%  bind_rows(harris_analysis_data %>% mutate(Candidate = "Harris"))# Calculate mean percentage by state for each candidate, round to 2 decimal places, and display side-by-sidestate_summary <- combined_data %>%  group_by(state, Candidate) %>%  summarise(mean_pct = round(mean(pct, na.rm = TRUE), 2)) %>%  # Round to 2 decimal places  ungroup() %>%  pivot_wider(names_from = Candidate, values_from = mean_pct, values_fill = 0) %>%  rename("Harris %" = Harris, "Trump %" = Trump) %>%  filter(Harris % > 0 & Trump % > 0)  # Filter rows where both percentages are non-zero# Display the table with Harris and Trump in separate columnsknitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"))
+make this r table only display a preview # Combine Trump and Harris data with an identifying column for each candidate
+combined_data <- trump_analysis_data %>%
+  mutate(Candidate = "Trump") %>%
+  bind_rows(harris_analysis_data %>% mutate(Candidate = "Harris"))
+
+# Calculate mean percentage by state for each candidate, round to 2 decimal places, and display side-by-side
+state_summary <- combined_data %>%
+  group_by(state, Candidate) %>%
+  summarise(mean_pct = round(mean(pct, na.rm = TRUE), 2)) %>%  # Round to 2 decimal places
+  ungroup() %>%
+  pivot_wider(names_from = Candidate, values_from = mean_pct, values_fill = 0) %>%
+  rename("Harris %" = Harris, "Trump %" = Trump) %>%
+  filter(Harris % > 0 & Trump % > 0)  # Filter rows where both percentages are non-zero
+
+# Display the table with Harris and Trump in separate columns
+knitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"))
 ChatGPT 说：
 ChatGPT
 To display only a preview of the table (e.g., the first 10 rows), you can use the head() function before passing the data to knitr::kable(). Here’s how to modify your code:
@@ -1193,7 +1751,130 @@ In addition to state, another critical set of predictor variables includes polls
 Summary statistics for pollscore reveal the distribution of poll quality in our dataset, highlighting potential variability in pct associated with different pollsters. This dual-variable approach is essential for mitigating the potential bias introduced by less rigorous polling methods, ultimately providing a clearer and more accurate representation of public opinion. Including both pollster and pollscore as predictors ensures that our analysis accounts for the variability and quality inherent in polling data, leading to more robust and reliable insights into candidate support.
 
 您说：
-here is the model of r code i used: #### Read data ####just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")just_harris_high_quality <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")#### Starter Trump models ##### Model: pct as a function of end_date and pollstermodel_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)# Augment data with model predictions from model_trump_date_pollsterjust_trump_high_quality <- just_trump_high_quality %>%  mutate(    fitted_date_pollster = predict(model_trump_date_pollster)  )# Plot Model with Predictionsggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")# Bayesian Model for Trumpjust_trump_high_quality <- just_trump_high_quality |>  mutate(    end_date_num = as.numeric(end_date - min(end_date))  )# Fit Bayesian model with spline and pollster as fixed effectspline_trump_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_trump_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)trump_predictions <- posterior_predict(spline_trump_model)# Calculate summary statistics for plotting# Get mean prediction and 95% credible intervalsjust_trump_high_quality <- just_trump_high_quality %>%  mutate(    mean_pred = colMeans(trump_predictions),    lower_credible = apply(trump_predictions, 2, quantile, probs = 0.025),    upper_credible = apply(trump_predictions, 2, quantile, probs = 0.975)  )# Plot with credible intervalsggplot(just_trump_high_quality, aes(x = end_date_num, y = pct)) +  geom_point(color = "black", alpha = 0.5) +  geom_line(aes(y = mean_pred), color = "blue") +  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +  facet_wrap(vars(state)) +  theme_classic() +  labs(y = "Trump Percent", x = "Date", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")#### Starter Harris models ##### Linear Model: pct as a function of end_date and pollstermodel_harris_date_pollster <- lm(pct ~ end_date + pollster, data = just_harris_high_quality)# Augment data with model predictionsjust_harris_high_quality <- just_harris_high_quality |>  mutate(    fitted_date_pollster = predict(model_date_pollster)  )ggplot(just_harris_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")# Bayesian Model for Harrisjust_harris_high_quality <- just_harris_high_quality |>  mutate(    end_date_num = as.numeric(end_date - min(end_date))  )# Fit Bayesian model with spline and pollster as fixed effectspline_harris_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_harris_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)harris_predictions <- posterior_predict(spline_harris_model)# Calculate summary statistics for plotting# Get mean prediction and 95% credible intervalsjust_harris_high_quality <- just_harris_high_quality %>%  mutate(    mean_pred = colMeans(harris_predictions),    lower_credible = apply(harris_predictions, 2, quantile, probs = 0.025),    upper_credible = apply(harris_predictions, 2, quantile, probs = 0.975)  )# Plot with credible intervalsggplot(just_harris_high_quality, aes(x = end_date_num, y = pct)) +  geom_point(color = "black", alpha = 0.5) +  geom_line(aes(y = mean_pred), color = "blue") +  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +  facet_wrap(vars(state)) +  theme_classic() +  labs(y = "Harris Percent", x = "Date (numeric)", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")
+here is the model of r code i used: #### Read data ####
+just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+just_harris_high_quality <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
+
+#### Starter Trump models ####
+
+# Model: pct as a function of end_date and pollster
+model_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+
+# Augment data with model predictions from model_trump_date_pollster
+just_trump_high_quality <- just_trump_high_quality %>%
+  mutate(
+    fitted_date_pollster = predict(model_trump_date_pollster)
+  )
+
+# Plot Model with Predictions
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+
+
+# Bayesian Model for Trump
+just_trump_high_quality <- just_trump_high_quality |>
+  mutate(
+    end_date_num = as.numeric(end_date - min(end_date))
+  )
+
+# Fit Bayesian model with spline and pollster as fixed effect
+
+spline_trump_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_trump_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
+
+trump_predictions <- posterior_predict(spline_trump_model)
+
+# Calculate summary statistics for plotting
+# Get mean prediction and 95% credible intervals
+just_trump_high_quality <- just_trump_high_quality %>%
+  mutate(
+    mean_pred = colMeans(trump_predictions),
+    lower_credible = apply(trump_predictions, 2, quantile, probs = 0.025),
+    upper_credible = apply(trump_predictions, 2, quantile, probs = 0.975)
+  )
+
+# Plot with credible intervals
+ggplot(just_trump_high_quality, aes(x = end_date_num, y = pct)) +
+  geom_point(color = "black", alpha = 0.5) +
+  geom_line(aes(y = mean_pred), color = "blue") +
+  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +
+  facet_wrap(vars(state)) +
+  theme_classic() +
+  labs(y = "Trump Percent", x = "Date", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")
+
+
+
+#### Starter Harris models ####
+
+# Linear Model: pct as a function of end_date and pollster
+model_harris_date_pollster <- lm(pct ~ end_date + pollster, data = just_harris_high_quality)
+
+# Augment data with model predictions
+just_harris_high_quality <- just_harris_high_quality |>
+  mutate(
+    fitted_date_pollster = predict(model_date_pollster)
+  )
+
+ggplot(just_harris_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+
+# Bayesian Model for Harris
+just_harris_high_quality <- just_harris_high_quality |>
+  mutate(
+    end_date_num = as.numeric(end_date - min(end_date))
+  )
+
+# Fit Bayesian model with spline and pollster as fixed effect
+
+spline_harris_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_harris_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
+
+harris_predictions <- posterior_predict(spline_harris_model)
+
+# Calculate summary statistics for plotting
+# Get mean prediction and 95% credible intervals
+just_harris_high_quality <- just_harris_high_quality %>%
+  mutate(
+    mean_pred = colMeans(harris_predictions),
+    lower_credible = apply(harris_predictions, 2, quantile, probs = 0.025),
+    upper_credible = apply(harris_predictions, 2, quantile, probs = 0.975)
+  )
+
+# Plot with credible intervals
+ggplot(just_harris_high_quality, aes(x = end_date_num, y = pct)) +
+  geom_point(color = "black", alpha = 0.5) +
+  geom_line(aes(y = mean_pred), color = "blue") +
+  geom_ribbon(aes(ymin = lower_credible, ymax = upper_credible), alpha = 0.2, fill = "blue") +
+  facet_wrap(vars(state)) +
+  theme_classic() +
+  labs(y = "Harris Percent", x = "Date (numeric)", title = "Bayesian Regression Spline: pct ~ Spline(End_date) + State + Pollscore + Pollster")
+
 ChatGPT 说：
 ChatGPT
 Here’s a structured explanation of the approach taken in modeling and visualizing Trump and Harris’s approval ratings (pct) using both linear and Bayesian models with predictor variables including end_date, pollster, state, and pollscore. This explanation aligns with the rubric for clarity, emphasizing the destination rather than the journey.
@@ -2010,7 +2691,17 @@ markdown
 This will render a centered, formatted equation with a clean description, perfect for Quarto. Just replace the content directly in your Quarto document.
 您说：
 make them all start in new line 
-{=tex}\[\text{pct}_i = \beta_0 + \beta_1 \cdot \text{end\_date}_i + \beta_2 \cdot \text{pollster}_i + \epsilon_i\]where:- \(\text{pct}\): Approval rating (dependent variable).- \(\beta_0\): Intercept term.- \(\beta_1(\text{end\_date})\): Effect of time on `pct`.- \(\beta_2(\text{pollster})\): Effect of each pollster.- \(\epsilon\): Error term, assumed to be normally distributed.
+{=tex}
+\[
+\text{pct}_i = \beta_0 + \beta_1 \cdot \text{end\_date}_i + \beta_2 \cdot \text{pollster}_i + \epsilon_i
+\]
+
+where:
+- \(\text{pct}\): Approval rating (dependent variable).
+- \(\beta_0\): Intercept term.
+- \(\beta_1(\text{end\_date})\): Effect of time on `pct`.
+- \(\beta_2(\text{pollster})\): Effect of each pollster.
+- \(\epsilon\): Error term, assumed to be normally distributed.
 ChatGPT 说：
 ChatGPT
 Here’s the updated version with each line starting on a new line for clarity. This formatting works in Quarto and ensures the equation and explanations are neatly aligned:
@@ -2304,7 +2995,11 @@ Bayesian Model Table: The Bayesian summary provides the posterior mean, standard
 These tables provide a concise summary of the models, making it easier to interpret and compare the effects of each predictor on the approval ratings.
 
 您说：
-model_date_pollster_harris <-   readRDS(file = here::here("models/model_date_pollster_harris.rds"))model_date_trump_pollster <-    readRDS(file = here::here("models/model_date_trump_pollster.rds"))modelsummary(models = list("Harris Linear Model" = model_date_pollster_harris, "Trump Linear Model" = model_date_trump_pollster))
+model_date_pollster_harris <- 
+  readRDS(file = here::here("models/model_date_pollster_harris.rds"))
+model_date_trump_pollster <- 
+   readRDS(file = here::here("models/model_date_trump_pollster.rds"))
+modelsummary(models = list("Harris Linear Model" = model_date_pollster_harris, "Trump Linear Model" = model_date_trump_pollster))
 
 
 make this to a table
@@ -2387,7 +3082,8 @@ Incorporating pollster as a categorical variable controls for systematic differe
 Assumptions for this model include the normality of errors and non-collinearity of predictors, both necessary for stable and reliable coefficient estimates. However, limitations include potential overfitting from the spline function if its complexity is too high and the model’s reliance on end_date for temporal accuracy, which may lead to less reliable long-term predictions.
 
 您说：
-do the same for the bayesian models for trump and harris, write a short explanation model_trump_bayesian <- readRDS(file = here::here("models/model_trump_bayesian.rds"))model_harris_bayesian <- readRDS(file = here::here("models/model_harris_bayesian.rds"))
+do the same for the bayesian models for trump and harris, write a short explanation model_trump_bayesian <- readRDS(file = here::here("models/model_trump_bayesian.rds"))
+model_harris_bayesian <- readRDS(file = here::here("models/model_harris_bayesian.rds"))
 ChatGPT 说：
 ChatGPT
 The Bayesian models for Trump and Harris (model_trump_bayesian and model_harris_bayesian) are designed to estimate approval ratings (pct) using end_date, pollster, state, and pollscore, with added flexibility from Bayesian inference. By including end_date as a spline term, these models capture non-linear trends, allowing approval ratings to vary smoothly over time in response to key events as the election approaches.
@@ -2441,7 +3137,9 @@ knitr::kable(): Formats the combined data frame as a table with a caption for re
 This table will display the posterior mean, standard deviation, 95% credible intervals, and R-hat values for each parameter in both the Trump and Harris Bayesian models.
 
 您说：
-Error in summary(model_trump_bayesian)$summary :   $ operator is invalid for atomic vectorsError in summary(model_trump_bayesian)$summary :   $ operator is invalid for atomic vectors
+Error in summary(model_trump_bayesian)$summary : 
+  $ operator is invalid for atomic vectorsError in summary(model_trump_bayesian)$summary : 
+  $ operator is invalid for atomic vectors
 ChatGPT 说：
 ChatGPT
 The error suggests that summary(model_trump_bayesian) is not returning a list with a $summary element, which can happen if the summary function on rstanarm objects is being called incorrectly.
@@ -2710,7 +3408,47 @@ Trump’s Predicted Approval Rating on Election Day: Y% (95% CI: Lower - Upper)
 This approach provides a clear prediction of each candidate's approval rating, incorporating uncertainty where applicable with the Bayesian models. Adjust pollster, state, and pollscore values in new_data_harris and new_data_trump based on any specific polling context or known average values leading up to election day.
 
 您说：
-new_data <- data.frame(  end_date_num = seq(    min(just_harris_high_quality$end_date_num),    max(just_harris_high_quality$end_date_num),    length.out = 100  ),  pollster = factor("YouGov", levels = levels(just_harris_high_quality$pollster)))# Predict posterior drawsposterior_preds <- posterior_predict(spline_model, newdata = new_data)# Summarize predictionspred_summary <- new_data |>  mutate(    pred_mean = colMeans(posterior_preds),    pred_lower = apply(posterior_preds, 2, quantile, probs = 0.025),    pred_upper = apply(posterior_preds, 2, quantile, probs = 0.975)  )# Plot the spline fitggplot(just_harris_high_quality, aes(x = end_date_num, y = pct, color = pollster)) +  geom_point() +  geom_line(    data = pred_summary,    aes(x = end_date_num, y = pred_mean),    color = "blue",    inherit.aes = FALSE  ) +  geom_ribbon(    data = pred_summary,    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper),    alpha = 0.2,    inherit.aes = FALSE  ) +  labs(    x = "Days since earliest poll",    y = "Percentage",    title = "Poll Percentage over Time with Spline Fit"  ) +  theme_minimal()
+new_data <- data.frame(
+  end_date_num = seq(
+    min(just_harris_high_quality$end_date_num),
+    max(just_harris_high_quality$end_date_num),
+    length.out = 100
+  ),
+  pollster = factor("YouGov", levels = levels(just_harris_high_quality$pollster))
+)
+
+# Predict posterior draws
+posterior_preds <- posterior_predict(spline_model, newdata = new_data)
+
+# Summarize predictions
+pred_summary <- new_data |>
+  mutate(
+    pred_mean = colMeans(posterior_preds),
+    pred_lower = apply(posterior_preds, 2, quantile, probs = 0.025),
+    pred_upper = apply(posterior_preds, 2, quantile, probs = 0.975)
+  )
+
+# Plot the spline fit
+ggplot(just_harris_high_quality, aes(x = end_date_num, y = pct, color = pollster)) +
+  geom_point() +
+  geom_line(
+    data = pred_summary,
+    aes(x = end_date_num, y = pred_mean),
+    color = "blue",
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = pred_summary,
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper),
+    alpha = 0.2,
+    inherit.aes = FALSE
+  ) +
+  labs(
+    x = "Days since earliest poll",
+    y = "Percentage",
+    title = "Poll Percentage over Time with Spline Fit"
+  ) +
+  theme_minimal()
 
 Error: NAs are not allowed in 'newdata'.
 
@@ -2911,7 +3649,31 @@ Row Check: If new_data has zero rows after filtering, an error is raised. This e
 This should prevent the error if new_data meets all requirements. If issues persist, ensure each factor level (like pollster or state) exactly matches what’s in the original dataset, as mismatches can also lead to rows being dropped.
 
 您说：
-processing file: paper.qmdError in parse_block(g[-1], g[1], params.src, markdown_mode) :   Duplicate chunk label 'fig-of-date', which has been used for the chunk:combined_data <- trump_analysis_data %>%  mutate(candidate = "Trump") %>%  bind_rows(harris_analysis_data %>% mutate(candidate = "Harris"))harris_declaration_date <- as.Date("2024-07-15")  # Replace with the actual declaration date# Filter data for dates on or after Harris's declaration datefiltered_data <- combined_data %>%  filter(end_date >= harris_declaration_date)# Plot pct over time for both candidates from Harris's declaration dateggplot(filtered_data, aes(x = end_date, y = pct, color = candidate)) +  geom_line(alpha = 0.7) +          # Line plot for pct over time  geom_smooth(se = FALSE, linetype = "dashed") + # Add smoothed trend line  labs(title = "PCT Time for Harris and Trump",       x = "Date",       y = "PCT",       color = "Candidate") +  theme_minimal()Calls: .main ... process_file -> split_file -> lapply -> FUN -> parse_blockExecution halted
+processing file: paper.qmd
+Error in parse_block(g[-1], g[1], params.src, markdown_mode) : 
+  Duplicate chunk label 'fig-of-date', which has been used for the chunk:
+combined_data <- trump_analysis_data %>%
+  mutate(candidate = "Trump") %>%
+  bind_rows(harris_analysis_data %>% mutate(candidate = "Harris"))
+
+
+harris_declaration_date <- as.Date("2024-07-15")  # Replace with the actual declaration date
+
+# Filter data for dates on or after Harris's declaration date
+filtered_data <- combined_data %>%
+  filter(end_date >= harris_declaration_date)
+
+# Plot pct over time for both candidates from Harris's declaration date
+ggplot(filtered_data, aes(x = end_date, y = pct, color = candidate)) +
+  geom_line(alpha = 0.7) +          # Line plot for pct over time
+  geom_smooth(se = FALSE, linetype = "dashed") + # Add smoothed trend line
+  labs(title = "PCT Time for Harris and Trump",
+       x = "Date",
+       y = "PCT",
+       color = "Candidate") +
+  theme_minimal()
+Calls: .main ... process_file -> split_file -> lapply -> FUN -> parse_block
+Execution halted
 ChatGPT 说：
 ChatGPT
 The error message indicates that there is a duplicate chunk label (fig-of-date) in your Quarto document. In Quarto and RMarkdown, each chunk label must be unique within the document. You can fix this by renaming the duplicate chunk label.
@@ -2958,7 +3720,20 @@ ggplot(filtered_data, aes(x = end_date, y = pct, color = candidate)) +
 After renaming the chunk, rerun the Quarto document. This should resolve the duplicate label issue and allow your document to render successfully.
 
 您说：
-rocessing file: paper.qmd  |................................              |  69% [unnamed-chunk-10]     Error in posterior_predict():! object 'spline_harris_model' not foundBacktrace: 1. rstantools::posterior_predict(spline_harris_model)Warning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knitQuitting from lines 373-393 [unnamed-chunk-10] (paper.qmd)                                                                                                                  Execution halted
+rocessing file: paper.qmd
+  |................................              |  69% [unnamed-chunk-10]     Error in posterior_predict():
+! object 'spline_harris_model' not found
+Backtrace:
+ 1. rstantools::posterior_predict(spline_harris_model)
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+
+
+
+Quitting from lines 373-393 [unnamed-chunk-10] (paper.qmd)
+                                                                                                                  
+Execution halted
 ChatGPT 说：
 ChatGPT
 The error message indicates that spline_harris_model has not been created or loaded in the session, so posterior_predict() cannot find it. Here’s how to resolve this issue:
@@ -2995,7 +3770,132 @@ Load spline_harris_model if it’s saved to an RDS file.
 Fit spline_harris_model if it hasn’t been defined in the current session.
 Ensure all necessary chunks are executed in the correct order if running interactively or in a single knitting process.
 您说：
-Those code are given by professor: #### Bayesian models ##### Change 'pollster' and 'state' to factor variablesjust_harris_high_quality <- just_harris_high_quality |>  mutate(    pollster = factor(pollster),    state = factor(state)  )# Model 1model_formula_1 <- cbind(num_harris, sample_size - num_harris) ~ (1 | pollster)# Model 2model_formula_2 <- cbind(num_harris, sample_size - num_harris) ~ (1 | pollster) + (1 | state)# Specify priorspriors <- normal(0, 2.5, autoscale = TRUE)# Fit the modelsbayesian_model_1 <- stan_glmer(  formula = model_formula_1,  data = just_harris_high_quality,  family = binomial(link = "logit"),  prior = priors,  prior_intercept = priors,  seed = 123,  cores = 4,  adapt_delta = 0.95)bayesian_model_2 <- stan_glmer(  formula = model_formula_2,  data = just_harris_high_quality,  family = binomial(link = "logit"),  prior = priors,  prior_intercept = priors,  seed = 123,  cores = 4,  adapt_delta = 0.95)# Note the warnings here and follow the instructions for dealing with it - come back and fix.# Posterior predictive checkspp_check(bayesian_model_1)pp_check(bayesian_model_2)# Summarize the modelsummary(bayesian_model_1)summary(bayesian_model_2)# Plot random effectsplot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)plot(bayesian_model_2, pars = "(Intercept)", prob = 0.95)# Model summary works the same as above for Bayesian models.#### Bayesian models and splines ##### Change date to be number of days since she declared - it's a counter not a datejust_harris_high_quality <- just_harris_high_quality |>  mutate(    end_date_num = as.numeric(end_date - min(end_date))  )# Fit Bayesian model with spline and pollster as fixed effect# cf bayesian_model_1 and bayesian_model_2 where it's a random effect - note the different interpretationsspline_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_harris_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)# Summarize the modelsummary(spline_model)# Posterior predictive checkspp_check(spline_model)# Predict and plot# Create new data for predictionnew_data <- data.frame(  end_date_num = seq(    min(just_harris_high_quality$end_date_num),    max(just_harris_high_quality$end_date_num),    length.out = 100  ),  pollster = factor("YouGov", levels = levels(just_harris_high_quality$pollster)))# Predict posterior drawsposterior_preds <- posterior_predict(spline_model, newdata = new_data)# Summarize predictionspred_summary <- new_data |>  mutate(    pred_mean = colMeans(posterior_preds),    pred_lower = apply(posterior_preds, 2, quantile, probs = 0.025),    pred_upper = apply(posterior_preds, 2, quantile, probs = 0.975)  )# Plot the spline fitggplot(just_harris_high_quality, aes(x = end_date_num, y = pct, color = pollster)) +  geom_point() +  geom_line(    data = pred_summary,    aes(x = end_date_num, y = pred_mean),    color = "blue",    inherit.aes = FALSE  ) +  geom_ribbon(    data = pred_summary,    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper),    alpha = 0.2,    inherit.aes = FALSE  ) +  labs(    x = "Days since earliest poll",    y = "Percentage",    title = "Poll Percentage over Time with Spline Fit"  ) +  theme_minimal()
+Those code are given by professor: #### Bayesian models ####
+# Change 'pollster' and 'state' to factor variables
+just_harris_high_quality <- just_harris_high_quality |>
+  mutate(
+    pollster = factor(pollster),
+    state = factor(state)
+  )
+
+# Model 1
+model_formula_1 <- cbind(num_harris, sample_size - num_harris) ~ (1 | pollster)
+
+# Model 2
+model_formula_2 <- cbind(num_harris, sample_size - num_harris) ~ (1 | pollster) + (1 | state)
+
+# Specify priors
+priors <- normal(0, 2.5, autoscale = TRUE)
+
+# Fit the models
+bayesian_model_1 <- stan_glmer(
+  formula = model_formula_1,
+  data = just_harris_high_quality,
+  family = binomial(link = "logit"),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+
+bayesian_model_2 <- stan_glmer(
+  formula = model_formula_2,
+  data = just_harris_high_quality,
+  family = binomial(link = "logit"),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+# Note the warnings here and follow the instructions for dealing with it - come back and fix.
+
+# Posterior predictive checks
+pp_check(bayesian_model_1)
+pp_check(bayesian_model_2)
+
+# Summarize the model
+summary(bayesian_model_1)
+summary(bayesian_model_2)
+
+# Plot random effects
+plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)
+plot(bayesian_model_2, pars = "(Intercept)", prob = 0.95)
+
+# Model summary works the same as above for Bayesian models.
+
+
+#### Bayesian models and splines ####
+# Change date to be number of days since she declared - it's a counter not a date
+just_harris_high_quality <- just_harris_high_quality |>
+  mutate(
+    end_date_num = as.numeric(end_date - min(end_date))
+  )
+
+# Fit Bayesian model with spline and pollster as fixed effect
+# cf bayesian_model_1 and bayesian_model_2 where it's a random effect - note the different interpretations
+spline_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_harris_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
+
+# Summarize the model
+summary(spline_model)
+
+# Posterior predictive checks
+pp_check(spline_model)
+
+# Predict and plot
+# Create new data for prediction
+new_data <- data.frame(
+  end_date_num = seq(
+    min(just_harris_high_quality$end_date_num),
+    max(just_harris_high_quality$end_date_num),
+    length.out = 100
+  ),
+  pollster = factor("YouGov", levels = levels(just_harris_high_quality$pollster))
+)
+
+# Predict posterior draws
+posterior_preds <- posterior_predict(spline_model, newdata = new_data)
+
+# Summarize predictions
+pred_summary <- new_data |>
+  mutate(
+    pred_mean = colMeans(posterior_preds),
+    pred_lower = apply(posterior_preds, 2, quantile, probs = 0.025),
+    pred_upper = apply(posterior_preds, 2, quantile, probs = 0.975)
+  )
+
+# Plot the spline fit
+ggplot(just_harris_high_quality, aes(x = end_date_num, y = pct, color = pollster)) +
+  geom_point() +
+  geom_line(
+    data = pred_summary,
+    aes(x = end_date_num, y = pred_mean),
+    color = "blue",
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = pred_summary,
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper),
+    alpha = 0.2,
+    inherit.aes = FALSE
+  ) +
+  labs(
+    x = "Days since earliest poll",
+    y = "Percentage",
+    title = "Poll Percentage over Time with Spline Fit"
+  ) +
+  theme_minimal()
 ChatGPT 说：
 ChatGPT
 The code provided by your professor includes Bayesian models (stan_glmer for binomial models and stan_glm for the spline model) to analyze Harris’s approval ratings. It appears that you are encountering issues with spline_model in the predictive section of the code. Let’s break down the important parts and ensure each section is correctly implemented.
@@ -3098,7 +3998,25 @@ ggplot(just_harris_high_quality, aes(x = end_date_num, y = pct, color = pollster
 This code follows the instructions provided by your professor, with additional checks to prevent missing values and ensure each component is successfully executed. Adjust any parameters if additional warnings or issues arise.
 
 您说：
-use professor's code fix my model # Bayesian Model for Harrisjust_harris_high_quality <- just_harris_high_quality |>  mutate(    end_date_num = as.numeric(end_date - min(end_date))  )# Fit Bayesian model with spline and pollster as fixed effectspline_harris_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_harris_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)
+use professor's code fix my model # Bayesian Model for Harris
+just_harris_high_quality <- just_harris_high_quality |>
+  mutate(
+    end_date_num = as.numeric(end_date - min(end_date))
+  )
+
+# Fit Bayesian model with spline and pollster as fixed effect
+
+spline_harris_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_harris_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
 ChatGPT 说：
 ChatGPT
 The code provided by your professor already has a good foundation for fitting a Bayesian spline model with stan_glm. However, if there are issues during the model fitting process, we can take a few steps to troubleshoot and enhance stability.
@@ -3150,7 +4068,24 @@ Adjust df for Splines: If the model is prone to overfitting or is too "wiggly," 
 This revised code should fit the Bayesian model more robustly and handle any warnings or sampling issues better. If the model continues to present issues, the next steps would include examining priors, simplifying the model, or further tuning parameters.
 
 您说：
-just_trump_high_quality <- just_trump_high_quality |>  mutate(    end_date_num = as.numeric(end_date - min(end_date))  )# Fit Bayesian model with spline and pollster as fixed effectspline_trump_model <- stan_glm(  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.  data = just_trump_high_quality,  family = gaussian(),  prior = normal(0, 5),  prior_intercept = normal(50, 10),  seed = 1234,  iter = 2000,  chains = 4,  refresh = 0)
+just_trump_high_quality <- just_trump_high_quality |>
+  mutate(
+    end_date_num = as.numeric(end_date - min(end_date))
+  )
+
+# Fit Bayesian model with spline and pollster as fixed effect
+
+spline_trump_model <- stan_glm(
+  pct ~ ns(end_date_num, df = 5) + state + pollscore + pollster, # Change df for the number of "bits" - higher numbers - more "wiggly" - but then need to worry about overfitting.
+  data = just_trump_high_quality,
+  family = gaussian(),
+  prior = normal(0, 5),
+  prior_intercept = normal(50, 10),
+  seed = 1234,
+  iter = 2000,
+  chains = 4,
+  refresh = 0
+)
 ChatGPT 说：
 ChatGPT
 The code provided for fitting a Bayesian model for Trump’s approval ratings closely follows the structure used for Harris. To improve stability and address potential issues that could arise during sampling, here are a few adjustments:
@@ -3201,8 +4136,10 @@ This configuration should improve model stability, reduce potential convergence 
 您说：
 now you have all those code, i am writing my paper, can u write a prediction of applying bayesian to forecast who will win
 
-also trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
-model_trump_bayesian <- readRDS(file = here::here("models/model_trump_bayesian.rds"))model_harris_bayesian <- readRDS(file = here::here("models/model_harris_bayesian.rds"))
+also trump_analysis_data <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+harris_analysis_data <- read_parquet("data/02-analysis_data/analysis_harris_data.parquet")
+model_trump_bayesian <- readRDS(file = here::here("models/model_trump_bayesian.rds"))
+model_harris_bayesian <- readRDS(file = here::here("models/model_harris_bayesian.rds"))
 
 have read into my qmd file
 ChatGPT 说：
@@ -3793,7 +4730,11 @@ print(trump_spline_plot)
 This R code should generate two plots: one showing Harris’s poll percentage predictions over time, and another showing Trump’s. The geom_ribbon() function provides the credible interval shading, and geom_line() overlays the mean prediction line. Let me know if you need any further customization! ​​
 
 您说：
-16. rlang (local) FUN(X[[i]], ...)Error in geom_point() :ℹ Error occurred in the 1st layer.Caused by error in FUN():! object 'pct_harris' not found
+16. rlang (local) FUN(X[[i]], ...)
+Error in geom_point() :
+ℹ Error occurred in the 1st layer.
+Caused by error in FUN():
+! object 'pct_harris' not found
 ChatGPT 说：
 ChatGPT
 The error message ! object 'pct_harris' not found indicates that the column pct_harris doesn't exist in your harris_analysis_data data frame. This column should represent Harris’s approval percentage (pct) in the dataset. The same applies to the trump_analysis_data data frame if you encounter a similar error with pct_trump.
@@ -4040,7 +4981,8 @@ Plotting: Visualizes Harris and Trump prediction trends with ggplot2.
 This code should now produce the prediction plots for both Harris and Trump, including mean predictions and credible intervals. Let me know if you need further customization or encounter issues!
 
 您说：
-Error in seq.default(min(harris_analysis_data$end_date_num, na.rm = TRUE), :'from' must be a finite number
+Error in seq.default(min(harris_analysis_data$end_date_num, na.rm = TRUE), :
+'from' must be a finite number
 ChatGPT 说：
 ChatGPT
 The error 'from' must be a finite number typically means that min(harris_analysis_data$end_date_num, na.rm = TRUE) or max(harris_analysis_data$end_date_num, na.rm = TRUE) is returning NA or Inf. This often happens if end_date_num contains only missing values or is not numeric.
@@ -4437,7 +5379,19 @@ In these results, Harris’s predicted average support is estimated at 48.3%, sl
 The shaded areas around each line reflect the uncertainty in the predictions, illustrating the variability in poll data and capturing the possible range of outcomes. Although Harris’s predicted support is somewhat higher, the overlapping prediction intervals highlight that the race remains close, with potential shifts possible as new polling data becomes available. This Bayesian model thus emphasizes a competitive landscape with no definitive outcome at this stage, underscoring the evolving nature of public sentiment as election day approaches.
 
 您说：
-just_harris_high_quality <- just_harris_high_quality %>%   mutate(     fitted_date_pollster = predict(model_harris_date_pollster)   )   ggplot(just_harris_high_quality, aes(x = end_date)) +   geom_point(aes(y = pct), color = "black") +   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +   facet_wrap(vars(pollster)) +   theme_classic() +   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster") # Augment data with model predictions from model_trump_date_pollsterjust_trump_high_quality <- just_trump_high_quality %>%  mutate(    fitted_date_pollster = predict(model_trump_date_pollster)  )# Plot Model with Predictionsggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+just_harris_high_quality <- just_harris_high_quality %>%   mutate(     fitted_date_pollster = predict(model_harris_date_pollster)   )   ggplot(just_harris_high_quality, aes(x = end_date)) +   geom_point(aes(y = pct), color = "black") +   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +   facet_wrap(vars(pollster)) +   theme_classic() +   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster") # Augment data with model predictions from model_trump_date_pollster
+just_trump_high_quality <- just_trump_high_quality %>%
+  mutate(
+    fitted_date_pollster = predict(model_trump_date_pollster)
+  )
+
+# Plot Model with Predictions
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
 
 
 can u make these two linear model prediction together and draw final prediction 
@@ -4632,7 +5586,11 @@ The resulting plot will display:
 Dotted lines for each pollster’s prediction per candidate (semi-transparent).
 A solid line for each candidate representing the combined trend, providing a clearer view of the overall prediction.
 您说：
-rror in geom_line(data = combined_average, aes(x = end_date, y = fitted_avg, :ℹ Error occurred in the 2nd layer.Caused by error in interaction():! object 'pollster' not found
+rror in geom_line(data = combined_average, aes(x = end_date, y = fitted_avg, :
+
+ℹ Error occurred in the 2nd layer.
+Caused by error in interaction():
+! object 'pollster' not found
 ChatGPT 说：
 ChatGPT
 The error suggests that pollster is not being recognized in the combined_average data because it's only relevant in the original combined_data where individual pollster predictions are present. Since we're averaging across all pollsters in combined_average, we don’t need pollster in this summarized data.
@@ -4887,8 +5845,194 @@ geom_text() adds the ending percentage near the end of each line, showing the fi
 This will display the final percentage for each candidate’s smoothed trend line at the end of the plot. Let me know if this meets your needs!
 
 您说：
-#| label: fig-bayesian #| fig-cap: "Bayesian Model Prediction for Harris and Trump"#| fig-pos: "H"#| echo: false#| warning: false#| message: falseharris_analysis_data <- harris_analysis_data %>%  mutate(    end_date = as.Date(end_date),  # Convert to Date format if not already    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))  )trump_analysis_data <- trump_analysis_data %>%  mutate(    end_date = as.Date(end_date),  # Convert to Date format if not already    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))  )# Filter out any rows with missing or infinite values in end_date_numharris_analysis_data <- harris_analysis_data %>%  filter(!is.na(end_date_num) & is.finite(end_date_num))trump_analysis_data <- trump_analysis_data %>%  filter(!is.na(end_date_num) & is.finite(end_date_num))# Prepare Harris data for Bayesian modelharris_analysis_data$state <- factor(harris_analysis_data$state)harris_analysis_data$pollster <- factor(harris_analysis_data$pollster)harris_analysis_data$pollscore <- as.numeric(as.character(harris_analysis_data$pollscore))# Define unique levels of pollsterpollster_levels <- levels(harris_analysis_data$pollster)# Initialize list to store predictions for each pollster (Harris)all_pollster_preds_harris <- list()# Loop over each pollster to generate predictions for Harrisfor (p in pollster_levels) {  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)  harris_new_data <- data.frame(    end_date_num = seq(      min(harris_analysis_data$end_date_num),      max(harris_analysis_data$end_date_num),      length.out = 100    ),    pollster = factor(p, levels = pollster_levels),    state = "National",    pollscore = random_pollscore  )    # Generate posterior predictions for Harris  preds <- posterior_predict(model_harris_bayesian, newdata = harris_new_data)  all_pollster_preds_harris[[p]] <- preds}# Convert predictions to array and calculate summary statistics for Harrisall_pollster_preds_array_harris <- simplify2array(all_pollster_preds_harris)pred_mean_harris <- apply(all_pollster_preds_array_harris, c(1, 2), mean)pred_lower_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.025)pred_upper_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.975)# Summary data frame for Harrisharris_pred_summary <- harris_new_data %>%  mutate(    pred_mean = colMeans(pred_mean_harris),    pred_lower = pred_lower_harris,    pred_upper = pred_upper_harris,    candidate = "Kamala Harris"  )# Prepare Trump data for Bayesian modeltrump_analysis_data$state <- factor(trump_analysis_data$state)trump_analysis_data$pollster <- factor(trump_analysis_data$pollster)trump_analysis_data$pollscore <- as.numeric(as.character(trump_analysis_data$pollscore))# Initialize list to store predictions for each pollster (Trump)all_pollster_preds_trump <- list()# Loop over each pollster to generate predictions for Trumpfor (p in pollster_levels) {  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)  trump_new_data <- data.frame(    end_date_num = seq(      min(trump_analysis_data$end_date_num),      max(trump_analysis_data$end_date_num),      length.out = 100    ),    pollster = factor(p, levels = pollster_levels),    state = "National",    pollscore = random_pollscore  )    # Generate posterior predictions for Trump  preds <- posterior_predict(model_trump_bayesian, newdata = trump_new_data)  all_pollster_preds_trump[[p]] <- preds}# Convert predictions to array and calculate summary statistics for Trumpall_pollster_preds_array_trump <- simplify2array(all_pollster_preds_trump)pred_mean_trump <- apply(all_pollster_preds_array_trump, c(1, 2), mean)pred_lower_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.025)pred_upper_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.975)# Summary data frame for Trumptrump_pred_summary <- trump_new_data %>%  mutate(    pred_mean = colMeans(pred_mean_trump),    pred_lower = pred_lower_trump,    pred_upper = pred_upper_trump,    candidate = "Donald Trump"  )# Combine data frames for plottingcombined_pred_summary <- bind_rows(harris_pred_summary, trump_pred_summary)# Generate the plot with 'pct' as the column for percentagesggplot() +  # Plot data points for Harris using 'pct'  geom_point(data = harris_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +  # Plot data points for Trump using 'pct'  geom_point(data = trump_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +  # Prediction line and ribbon for Harris  geom_line(    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),    aes(x = end_date_num, y = pred_mean, color = candidate),    inherit.aes = FALSE  ) +  geom_ribbon(    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),    alpha = 0.1,    inherit.aes = FALSE  ) +  # Prediction line and ribbon for Trump  geom_line(    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),    aes(x = end_date_num, y = pred_mean, color = candidate),    inherit.aes = FALSE  ) +  geom_ribbon(    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),    alpha = 0.1,    inherit.aes = FALSE  ) +  # Annotate the final predicted values  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 48.3,            label = "48.3", color = "blue", hjust = -0.2, size = 2) +  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 47.1,            label = "47.1", color = "red", hjust = -0.2, size = 2) +  labs(    x = "Days since July 15, 2024",    y = "Percentage",    title = "Bayesian Prediction Poll PCT for Trump and Harris"  ) +  theme_minimal() +  scale_y_continuous(labels = percent_format(scale = 1)) +  scale_color_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +  scale_fill_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +  guides(    color = guide_legend(title = "", override.aes = list(fill = NA, linetype = 1)),    fill = "none"  )
-processing file: paper.qmd  |..................................            |  74% [fig-bayesian]         Error in `ns()`:! could not find function "ns"Backtrace: 1. rstantools::posterior_predict(model_harris_bayesian, newdata = harris_new_data) 2. rstanarm:::posterior_predict.stanreg(model_harris_bayesian, newdata = harris_new_data) 4. rstanarm:::pp_data(...) 5. rstanarm:::.pp_data(...) 7. stats::model.frame.default(Terms, newdata, xlev = object$xlevels) 8. base::eval(predvars, data, env) 9. base::eval(predvars, data, env)Warning message:In in_dir(input_dir(), expr) :  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit                                                                                                                  Quitting from lines 415-583 [fig-bayesian] (paper.qmd)Execution halted
+#| label: fig-bayesian 
+#| fig-cap: "Bayesian Model Prediction for Harris and Trump"
+#| fig-pos: "H"
+#| echo: false
+#| warning: false
+#| message: false
+
+
+harris_analysis_data <- harris_analysis_data %>%
+  mutate(
+    end_date = as.Date(end_date),  # Convert to Date format if not already
+    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))
+  )
+
+trump_analysis_data <- trump_analysis_data %>%
+  mutate(
+    end_date = as.Date(end_date),  # Convert to Date format if not already
+    end_date_num = as.numeric(end_date - min(end_date, na.rm = TRUE))
+  )
+
+# Filter out any rows with missing or infinite values in end_date_num
+harris_analysis_data <- harris_analysis_data %>%
+  filter(!is.na(end_date_num) & is.finite(end_date_num))
+
+trump_analysis_data <- trump_analysis_data %>%
+  filter(!is.na(end_date_num) & is.finite(end_date_num))
+
+# Prepare Harris data for Bayesian model
+harris_analysis_data$state <- factor(harris_analysis_data$state)
+harris_analysis_data$pollster <- factor(harris_analysis_data$pollster)
+harris_analysis_data$pollscore <- as.numeric(as.character(harris_analysis_data$pollscore))
+
+# Define unique levels of pollster
+pollster_levels <- levels(harris_analysis_data$pollster)
+
+# Initialize list to store predictions for each pollster (Harris)
+all_pollster_preds_harris <- list()
+
+# Loop over each pollster to generate predictions for Harris
+for (p in pollster_levels) {
+  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)
+  harris_new_data <- data.frame(
+    end_date_num = seq(
+      min(harris_analysis_data$end_date_num),
+      max(harris_analysis_data$end_date_num),
+      length.out = 100
+    ),
+    pollster = factor(p, levels = pollster_levels),
+    state = "National",
+    pollscore = random_pollscore
+  )
+  
+  # Generate posterior predictions for Harris
+  preds <- posterior_predict(model_harris_bayesian, newdata = harris_new_data)
+  all_pollster_preds_harris[[p]] <- preds
+}
+
+# Convert predictions to array and calculate summary statistics for Harris
+all_pollster_preds_array_harris <- simplify2array(all_pollster_preds_harris)
+pred_mean_harris <- apply(all_pollster_preds_array_harris, c(1, 2), mean)
+pred_lower_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.025)
+pred_upper_harris <- apply(all_pollster_preds_array_harris, 2, quantile, probs = 0.975)
+
+# Summary data frame for Harris
+harris_pred_summary <- harris_new_data %>%
+  mutate(
+    pred_mean = colMeans(pred_mean_harris),
+    pred_lower = pred_lower_harris,
+    pred_upper = pred_upper_harris,
+    candidate = "Kamala Harris"
+  )
+
+
+# Prepare Trump data for Bayesian model
+trump_analysis_data$state <- factor(trump_analysis_data$state)
+trump_analysis_data$pollster <- factor(trump_analysis_data$pollster)
+trump_analysis_data$pollscore <- as.numeric(as.character(trump_analysis_data$pollscore))
+
+# Initialize list to store predictions for each pollster (Trump)
+all_pollster_preds_trump <- list()
+
+# Loop over each pollster to generate predictions for Trump
+for (p in pollster_levels) {
+  random_pollscore <- sample(c(-1.1, -1.5, -1.2), 1)
+  trump_new_data <- data.frame(
+    end_date_num = seq(
+      min(trump_analysis_data$end_date_num),
+      max(trump_analysis_data$end_date_num),
+      length.out = 100
+    ),
+    pollster = factor(p, levels = pollster_levels),
+    state = "National",
+    pollscore = random_pollscore
+  )
+  
+  # Generate posterior predictions for Trump
+  preds <- posterior_predict(model_trump_bayesian, newdata = trump_new_data)
+  all_pollster_preds_trump[[p]] <- preds
+}
+
+# Convert predictions to array and calculate summary statistics for Trump
+all_pollster_preds_array_trump <- simplify2array(all_pollster_preds_trump)
+pred_mean_trump <- apply(all_pollster_preds_array_trump, c(1, 2), mean)
+pred_lower_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.025)
+pred_upper_trump <- apply(all_pollster_preds_array_trump, 2, quantile, probs = 0.975)
+
+# Summary data frame for Trump
+trump_pred_summary <- trump_new_data %>%
+  mutate(
+    pred_mean = colMeans(pred_mean_trump),
+    pred_lower = pred_lower_trump,
+    pred_upper = pred_upper_trump,
+    candidate = "Donald Trump"
+  )
+
+
+# Combine data frames for plotting
+combined_pred_summary <- bind_rows(harris_pred_summary, trump_pred_summary)
+
+# Generate the plot with 'pct' as the column for percentages
+ggplot() +
+  # Plot data points for Harris using 'pct'
+  geom_point(data = harris_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +
+  # Plot data points for Trump using 'pct'
+  geom_point(data = trump_analysis_data, aes(x = end_date_num, y = pct, color = pollster), alpha = 0.6) +
+  # Prediction line and ribbon for Harris
+  geom_line(
+    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),
+    aes(x = end_date_num, y = pred_mean, color = candidate),
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = combined_pred_summary %>% filter(candidate == "Kamala Harris"),
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),
+    alpha = 0.1,
+    inherit.aes = FALSE
+  ) +
+  # Prediction line and ribbon for Trump
+  geom_line(
+    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),
+    aes(x = end_date_num, y = pred_mean, color = candidate),
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = combined_pred_summary %>% filter(candidate == "Donald Trump"),
+    aes(x = end_date_num, ymin = pred_lower, ymax = pred_upper, fill = candidate),
+    alpha = 0.1,
+    inherit.aes = FALSE
+  ) +
+  # Annotate the final predicted values
+  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 48.3, 
+           label = "48.3", color = "blue", hjust = -0.2, size = 2) +
+  annotate("text", x = max(combined_pred_summary$end_date_num) - 0.5, y = 47.1, 
+           label = "47.1", color = "red", hjust = -0.2, size = 2) +
+  labs(
+    x = "Days since July 15, 2024",
+    y = "Percentage",
+    title = "Bayesian Prediction Poll PCT for Trump and Harris"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_color_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +
+  scale_fill_manual(values = c("Kamala Harris" = "blue", "Donald Trump" = "red")) +
+  guides(
+    color = guide_legend(title = "", override.aes = list(fill = NA, linetype = 1)),
+    fill = "none"
+  )
+
+processing file: paper.qmd
+  |..................................            |  74% [fig-bayesian]         Error in `ns()`:
+! could not find function "ns"
+Backtrace:
+ 1. rstantools::posterior_predict(model_harris_bayesian, newdata = harris_new_data)
+ 2. rstanarm:::posterior_predict.stanreg(model_harris_bayesian, newdata = harris_new_data)
+ 4. rstanarm:::pp_data(...)
+ 5. rstanarm:::.pp_data(...)
+ 7. stats::model.frame.default(Terms, newdata, xlev = object$xlevels)
+ 8. base::eval(predvars, data, env)
+ 9. base::eval(predvars, data, env)
+Warning message:
+In in_dir(input_dir(), expr) :
+  You changed the working directory to /Users/dingshuo/Desktop/paper2 (probably via setwd()). It will be restored to /Users/dingshuo/Desktop/paper2/paper. See the Note section in ?knitr::knit
+                                                                                                                  
+
+
+Quitting from lines 415-583 [fig-bayesian] (paper.qmd)
+
+Execution halted
 ChatGPT 说：
 ChatGPT
 The error message indicates that the ns() function, which is typically used for natural splines in modeling, is not recognized. This function is part of the splines package, which may need to be explicitly loaded in your script.
@@ -5378,8 +6522,20 @@ A sense of the dataset should be communicated to the reader. The broader context
 
  i am going to write my paper now, use the analysis data, help me write the data section, above is the rubric
 
-please format like: ## OverviewWe use the statistical programming language R [@citeR].... Our data
- [@shelter].... Following @tellingstories, we consider...Overview text## Measurement	Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.## Outcome variablesAdd graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
+please format like: ## Overview
+
+We use the statistical programming language R [@citeR].... Our data
+ [@shelter].... Following @tellingstories, we consider...
+
+Overview text
+
+## Measurement
+	
+Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
+
+## Outcome variables
+
+Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
 ChatGPT 说：
 ChatGPT
 Here’s a structured outline to guide you in drafting the data section of your paper based on the analysis data you uploaded:
@@ -5651,7 +6807,29 @@ ggplot(simulated_data, aes(y = pct)) +
 These three approaches will provide summary statistics, distribution, and spread insights for the pct variable. Make sure to replace simulated_data with your actual data frame name.
 
 您说：
-#| label: table-state-mean-pct#| fig-cap: "Summary Statistics for Trump and Harris"#| echo: false#| warning: false#| message: false# Combine Trump and Harris data with an identifying column for each candidatecombined_data <- trump_analysis_data %>%  mutate(Candidate = "Trump") %>%  bind_rows(harris_analysis_data %>% mutate(Candidate = "Harris"))# Calculate mean percentage by state for each candidate, round to 2 decimal places, and display side-by-sidestate_summary <- combined_data %>%  group_by(state, Candidate) %>%  summarise(mean_pct = round(mean(pct, na.rm = TRUE), 2)) %>%  # Round to 2 decimal places  ungroup() %>%  pivot_wider(names_from = Candidate, values_from = mean_pct, values_fill = 0) %>%  rename("Harris %" = Harris, "Trump %" = Trump) %>%  filter(Harris % > 0 & Trump % > 0)  # Filter rows where both percentages are non-zero# Display the table with Harris and Trump in separate columnsknitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"),              caption = "Mean Polling Percentage by State for Harris and Trump")
+#| label: table-state-mean-pct
+#| fig-cap: "Summary Statistics for Trump and Harris"
+#| echo: false
+#| warning: false
+#| message: false
+
+# Combine Trump and Harris data with an identifying column for each candidate
+combined_data <- trump_analysis_data %>%
+  mutate(Candidate = "Trump") %>%
+  bind_rows(harris_analysis_data %>% mutate(Candidate = "Harris"))
+
+# Calculate mean percentage by state for each candidate, round to 2 decimal places, and display side-by-side
+state_summary <- combined_data %>%
+  group_by(state, Candidate) %>%
+  summarise(mean_pct = round(mean(pct, na.rm = TRUE), 2)) %>%  # Round to 2 decimal places
+  ungroup() %>%
+  pivot_wider(names_from = Candidate, values_from = mean_pct, values_fill = 0) %>%
+  rename("Harris %" = Harris, "Trump %" = Trump) %>%
+  filter(Harris % > 0 & Trump % > 0)  # Filter rows where both percentages are non-zero
+
+# Display the table with Harris and Trump in separate columns
+knitr::kable(state_summary, col.names = c("State", "Harris %", "Trump %"), 
+             caption = "Mean Polling Percentage by State for Harris and Trump")
 
 
 table cap?
@@ -5676,7 +6854,47 @@ Either approach will work, but ensure fig-cap or caption reflects your intended 
 此对话可能会反映链接创建者的个性化数据，这些数据并未共享，并且可能会显著改变模型的回复方式。
 您说：
 fix code, i want both just  trump and harris 
-#### Clean data ####data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>  clean_names()just_trump_high_quality <- data %>%  # Filter for Donald Trump and high-quality polls  filter(    candidate_name == "Donald Trump",    numeric_grade >= 2.7  ) %>%  # Handle missing states and convert end_date to Date format  mutate(    state = if_else(is.na(state), "National", state),    end_date = mdy(end_date)  ) %>%  # Filter out rows with end_date before 2022-11-15  filter(end_date >= as.Date("2022-11-15")) %>%  # Calculate num_trump without dropping NA values  mutate(    num_trump = round((pct / 100) * sample_size, 0)  )# Filter data to Harris estimates based on high-quality polls after she declaredjust_harris_high_quality <- data %>%  # Filter for Donald Trump and high-quality polls  filter(    candidate_name == "Kamala Harris",    numeric_grade >= 2.7  ) %>%  # Handle missing states and convert end_date to Date format  mutate(    state = if_else(is.na(state), "National", state),    end_date = mdy(end_date)  ) %>%  # Filter out rows with end_date before 2022-11-15  filter(end_date >= as.Date("2024-07-15")) %>%  # Calculate num_harris without dropping NA values  mutate(    num_harris = round((pct / 100) * sample_size, 0)  )
+#### Clean data ####
+data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>
+  clean_names()
+
+just_trump_high_quality <- data %>%
+  # Filter for Donald Trump and high-quality polls
+  filter(
+    candidate_name == "Donald Trump",
+    numeric_grade >= 2.7
+  ) %>%
+  # Handle missing states and convert end_date to Date format
+  mutate(
+    state = if_else(is.na(state), "National", state),
+    end_date = mdy(end_date)
+  ) %>%
+  # Filter out rows with end_date before 2022-11-15
+  filter(end_date >= as.Date("2022-11-15")) %>%
+  # Calculate num_trump without dropping NA values
+  mutate(
+    num_trump = round((pct / 100) * sample_size, 0)
+  )
+
+
+# Filter data to Harris estimates based on high-quality polls after she declared
+just_harris_high_quality <- data %>%
+  # Filter for Donald Trump and high-quality polls
+  filter(
+    candidate_name == "Kamala Harris",
+    numeric_grade >= 2.7
+  ) %>%
+  # Handle missing states and convert end_date to Date format
+  mutate(
+    state = if_else(is.na(state), "National", state),
+    end_date = mdy(end_date)
+  ) %>%
+  # Filter out rows with end_date before 2022-11-15
+  filter(end_date >= as.Date("2024-07-15")) %>%
+  # Calculate num_harris without dropping NA values
+  mutate(
+    num_harris = round((pct / 100) * sample_size, 0)
+  )
 ChatGPT 说：
 ChatGPT
 Here's a refined version of your code with modifications to handle both Trump and Harris in a more streamlined way. This will avoid redundancy by filtering for both candidates in one go and calculating the respective columns based on the candidate's name:
@@ -5796,7 +7014,45 @@ The filtered data for Kamala Harris with high-quality polls is now prepared. It 
 
 您说：
 change all the trump to harris
-#### Read data ####just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")#### Starter models ##### Model 1: pct as a function of end_datemodel_date <- lm(pct ~ end_date, data = just_trump_high_quality)# Model 2: pct as a function of end_date and pollstermodel_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)# Augment data with model predictionsjust_trump_high_quality <- just_trump_high_quality |>  mutate(    fitted_date = predict(model_date),    fitted_date_pollster = predict(model_date_pollster)  )# Plot model predictions# Model 1ggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pPct ~ End_date")# Model 2ggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")#### Save model ####saveRDS(model_date, file = "models/model_date.rds")saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
+#### Read data ####
+just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_trump_data.parquet")
+
+
+#### Starter models ####
+# Model 1: pct as a function of end_date
+model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+
+# Model 2: pct as a function of end_date and pollster
+model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+
+# Augment data with model predictions
+just_trump_high_quality <- just_trump_high_quality |>
+  mutate(
+    fitted_date = predict(model_date),
+    fitted_date_pollster = predict(model_date_pollster)
+  )
+
+# Plot model predictions
+# Model 1
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pPct ~ End_date")
+
+# Model 2
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+
+
+
+#### Save model ####
+saveRDS(model_date, file = "models/model_date.rds")
+saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
 ChatGPT 说：
 ChatGPT
 Here's the updated code with all instances of "Trump" changed to "Harris":
@@ -5851,11 +7107,38 @@ This code now focuses on Kamala Harris, using the specified data and model adjus
 analysis trump data
 
 无法显示可视化
-using the analysis trump data csv, i am doing some modelling, model_trump_date <- lm(pct ~ end_date, data = just_trump_high_quality)# Model 2: pct as a function of end_date and pollstermodel_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)# Augment data with model predictionsjust_trump_high_quality <- just_trump_high_quality |>  mutate(    fitted_date = predict(model_date),    fitted_date_pollster = predict(model_date_pollster)  )# Plot model predictions# Model 1ggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pPct ~ End_date")# Model 2ggplot(just_trump_high_quality, aes(x = end_date)) +  geom_point(aes(y = pct), color = "black") +  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +  facet_wrap(vars(pollster)) +  theme_classic() +  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
+using the analysis trump data csv, i am doing some modelling, model_trump_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+
+# Model 2: pct as a function of end_date and pollster
+model_trump_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+
+# Augment data with model predictions
+just_trump_high_quality <- just_trump_high_quality |>
+  mutate(
+    fitted_date = predict(model_date),
+    fitted_date_pollster = predict(model_date_pollster)
+  )
+
+# Plot model predictions
+# Model 1
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pPct ~ End_date")
+
+# Model 2
+ggplot(just_trump_high_quality, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(pollster)) +
+  theme_classic() +
+  labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ End_date + Pollster")
 
 can i built mutil linear regression model?
 
-
+
+
 ChatGPT 说：
 ChatGPT
 You can certainly build multiple linear regression models on this data, using various predictor variables along with end_date and pollster. Here’s how you can structure the code to extend the models, potentially adding other predictors (e.g., numeric_grade, sample_size, etc.):
@@ -6112,7 +7395,711 @@ head(simulated_data)
 This script generates data with a similar distribution to the existing dataset. Let me know if you'd like further customization or have additional requirements for the simulation.
 
 您说：
-R version 4.2.3 (2023-03-15) -- "Shortstop Beagle"Copyright (C) 2023 The R Foundation for Statistical ComputingPlatform: aarch64-apple-darwin20 (64-bit)R is free software and comes with ABSOLUTELY NO WARRANTY.You are welcome to redistribute it under certain conditions.Type 'license()' or 'licence()' for distribution details.  Natural language support but running in an English localeR is a collaborative project with many contributors.Type 'contributors()' for more information and'citation()' on how to cite R or R packages in publications.Type 'demo()' for some demos, 'help()' for on-line help, or'help.start()' for an HTML browser interface to help.Type 'q()' to quit R.> #### Workspace setup ####> library(tidyverse)── Attaching core tidyverse packages ─────────────────── tidyverse 2.0.0 ──✔ dplyr     1.1.4     ✔ readr     2.1.4✔ forcats   1.0.0     ✔ stringr   1.5.0✔ ggplot2   3.5.0     ✔ tibble    3.2.1✔ lubridate 1.9.3     ✔ tidyr     1.3.0✔ purrr     1.0.1     ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──✖ dplyr::filter() masks stats::filter()✖ dplyr::lag()    masks stats::lag()ℹ Use the conflicted package to force all conflicts to become errors> library(arrow)Some features are not enabled in this build of Arrow. Run arrow_info() for more information.The repository you retrieved Arrow from did not include all of Arrow's features.You can install a fully-featured version by running:install.packages('arrow', repos = 'https://apache.r-universe.dev').Attaching package: ‘arrow’The following object is masked from ‘package:lubridate’:    durationThe following object is masked from ‘package:utils’:    timestamp> library(janitor)Attaching package: ‘janitor’The following objects are masked from ‘package:stats’:    chisq.test, fisher.test> library(dplyr)> library(lubridate)> #### Clean data ####> data <- read_csv("data/01-raw_data/president_polls_raw_data.csv") |>+   clean_names()Rows: 16921 Columns: 52                                                                                       ── Column specification ───────────────────────────────────────────────────Delimiter: ","chr (25): pollster, sponsors, display_name, pollster_rating_name, metho...dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, poll...num  (1): sponsor_idslgl (10): endorsed_candidate_id, endorsed_candidate_name, endorsed_cand...ℹ Use spec() to retrieve the full column specification for this data.ℹ Specify the column types or set show_col_types = FALSE to quiet this message.> #### Clean data ####> data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>+   clean_names()Rows: 22429 Columns: 51                                                                                                                                                                 ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────Delimiter: ","chr (28): pollster, sponsors, display_name, pollster_rating_name, methodology, state, start_date, end_date, sponsor_candidate, sponsor_candidate_...dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, pollscore, transparency_score, sponsor_candidate_id, endorsed_candidate_id, qu...num  (1): sponsor_idslgl  (6): tracking, internal, seat_name, nationwide_batch, ranked_choice_reallocated, ranked_choice_roundℹ Use spec() to retrieve the full column specification for this data.ℹ Specify the column types or set show_col_types = FALSE to quiet this message.> just_trump_high_quality <- data %>%+   # Select relevant columns first+   select(+     pollster, sponsors, display_name, numeric_grade, pollscore,+     methodology, transparency_score, state, start_date, end_date,+     office_type, stage, party, candidate_name, pct, sample_size+   ) %>%+   # Filter for Donald Trump and high-quality polls+   filter(+     candidate_name == "Donald Trump",+     numeric_grade >= 2.7+   ) %>%+   # Handle missing states and convert end_date to Date format+   mutate(+     state = if_else(is.na(state), "National", state),+     end_date = mdy(end_date)+   ) %>%+   # Filter out rows with end_date before 2022-11-15+   filter(end_date >= as.Date("2022-11-15")) %>%+   # Calculate num_trump without dropping NA values+   mutate(+     num_trump = round((pct / 100) * sample_size, 0)+   )> #### Save data ####> write_parquet(x = just_trump_high_quality,+               sink = "data/02-analysis_data/analysis_data.parquet")> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")                                                                                                                                                   > > #### Save data ####> write_parquet(x = just_trump_high_quality,+               sink = "data/02-analysis_data/analysis_data.parquet")> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")                                                                                                                                                   > #### Workspace setup ####> install.packages("rstanarm")trying URL 'https://cran.rstudio.com/bin/macosx/big-sur-arm64/contrib/4.2/rstanarm_2.32.1.tgz'Content type 'application/x-gzip' length 57003744 bytes (54.4 MB)==================================================downloaded 54.4 MBThe downloaded binary packages are in	/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T//RtmpaCFwFC/downloaded_packages> library(tidyverse)> library(rstanarm)Loading required package: RcppThis is rstanarm version 2.32.1- See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!- Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.- For execution on a local, multicore CPU with excess RAM we recommend calling  options(mc.cores = parallel::detectCores())> #### Read data ####> analysis_data <- read_csv("data/02-analysis_data/analysis_data.csv")Rows: 393 Columns: 17                                                                                                                                                                   ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────Delimiter: ","chr  (10): pollster, sponsors, display_name, methodology, state, start_date, office_type, stage, party, candidate_namedbl   (6): numeric_grade, pollscore, transparency_score, pct, sample_size, num_trumpdate  (1): end_dateℹ Use spec() to retrieve the full column specification for this data.ℹ Specify the column types or set show_col_types = FALSE to quiet this message.> #### Plot data ####> base_plot <- ggplot(just_trump_high_quality, aes(x = end_date, y = pct)) ++   theme_classic() ++   labs(y = "Trump percent", x = "Date")> # Plots poll estimates and overall smoothing> base_plot ++   geom_point() ++   geom_smooth()geom_smooth() using method = 'loess' and formula = 'y ~ x'> # Color by pollster> # This gets messy - need to add a filter - see line 21> base_plot ++   geom_point(aes(color = pollster)) ++   geom_smooth() ++   theme(legend.position = "bottom")geom_smooth() using method = 'loess' and formula = 'y ~ x'> # Facet by pollster> base_plot ++   geom_point() ++   geom_smooth() ++   facet_wrap(vars(pollster))geom_smooth() using method = 'loess' and formula = 'y ~ x'There were 50 or more warnings (use warnings() to see the first 50)> # Color by pollscore> base_plot ++   geom_point(aes(color = factor(pollscore))) ++   geom_smooth() ++   theme(legend.position = "bottom")geom_smooth() using method = 'loess' and formula = 'y ~ x'> #### Save data ####> write_parquet(x = just_trump_high_quality,+               sink = "data/02-analysis_data/analysis_data.parquet")> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")                                                                                                                                                   > #### Clean data ####> data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>+   clean_names()Rows: 22429 Columns: 51                                                                                                                                                                 ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────Delimiter: ","chr (28): pollster, sponsors, display_name, pollster_rating_name, methodology, state, start_date, end_date, sponsor_candidate, sponsor_candidate_...dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, pollscore, transparency_score, sponsor_candidate_id, endorsed_candidate_id, qu...num  (1): sponsor_idslgl  (6): tracking, internal, seat_name, nationwide_batch, ranked_choice_reallocated, ranked_choice_roundℹ Use spec() to retrieve the full column specification for this data.ℹ Specify the column types or set show_col_types = FALSE to quiet this message.> just_trump_high_quality <- data %>%+   # Filter for Donald Trump and high-quality polls+   filter(+     candidate_name == "Donald Trump",+     numeric_grade >= 2.7+   ) %>%+   # Handle missing states and convert end_date to Date format+   mutate(+     state = if_else(is.na(state), "National", state),+     end_date = mdy(end_date)+   ) %>%+   # Filter out rows with end_date before 2022-11-15+   filter(end_date >= as.Date("2022-11-15")) %>%+   # Calculate num_trump without dropping NA values+   mutate(+     num_trump = round((pct / 100) * sample_size, 0)+   )> #### Save data ####> write_parquet(x = just_trump_high_quality,+               sink = "data/02-analysis_data/analysis_data.parquet")> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")                                                                                                                                                   > #### Read data ####> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")> #### Starter models ####> # Model 1: pct as a function of end_date> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)> # Model 2: pct as a function of end_date and pollster> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)> #### Workspace setup ####> library(tidyverse)> library(rstanarm)> #### Read data ####> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")> #### Starter models ####> # Model 1: pct as a function of end_date> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)> # Model 2: pct as a function of end_date and pollster> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)> # Augment data with model predictions> just_trump_high_quality <- just_trump_high_quality |>+   mutate(+     fitted_date = predict(model_date),+     fitted_date_pollster = predict(model_date_pollster)+   )> # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))Error in modelsummary(models = list(Model 1 = model_date, Model 2 = model_date_pollster)) :   could not find function "modelsummary"> #### Workspace setup ####> library(tidyverse)> library(janitor)> library(lubridate)> library(broom)> library(modelsummary)modelsummary 2.0.0 now uses tinytable as its default table-drawing backend. Learn more at:  https://vincentarelbundock.github.io/tinytable/Revert to kableExtra for one session:  options(modelsummary_factory_default = 'kableExtra')  options(modelsummary_factory_latex = 'kableExtra')  options(modelsummary_factory_html = 'kableExtra')Silence this message forever:  config_modelsummary(startup_message = FALSE)> install.packages("modelsummary")Error in install.packages : Updating loaded packages> install.packages("modelsummary")  There is a binary version available but the source version is later:             binary source needs_compilationmodelsummary  2.1.0  2.2.0             FALSEinstalling the source package ‘modelsummary’trying URL 'https://cran.rstudio.com/src/contrib/modelsummary_2.2.0.tar.gz'Content type 'application/x-gzip' length 3482602 bytes (3.3 MB)==================================================downloaded 3.3 MB* installing *source* package ‘modelsummary’ ...** package ‘modelsummary’ successfully unpacked and MD5 sums checked** using staged installation** R** inst** byte-compile and prepare package for lazy loading** help*** installing help indices*** copying figures** building package indices** testing if installed package can be loaded from temporary location** testing if installed package can be loaded from final location** testing if installed package keeps a record of temporary installation path* DONE (modelsummary)The downloaded source packages are in	‘/private/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T/RtmpaCFwFC/downloaded_packages’> library(modelsummary)> library(rstanarm)> library(splines)> #### Read data ####> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")> #### Starter models ####> # Model 1: pct as a function of end_date> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)> # Model 2: pct as a function of end_date and pollster> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)> # Augment data with model predictions> just_trump_high_quality <- just_trump_high_quality |>+   mutate(+     fitted_date = predict(model_date),+     fitted_date_pollster = predict(model_date_pollster)+   )> # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))> #### Save model ####> saveRDS(model_date, file = "models/model_date.rds")> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")> model_date <- readRDS("~/Desktop/paper2 draft/2024_US_Election_Analysis/models/model_date.rds")> model_date <- readRDS("~/Desktop/paper2 draft/2024_US_Election_Analysis/models/model_date.rds")> > modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))> > > #| echo: false> #| eval: true> #| warning: false> #| message: false> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| include: false> #| warning: false> #| message: false> > library(tidyverse)> librarry(modelsummary)Error in librarry(modelsummary) : could not find function "librarry"> #| include: false> #| warning: false> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> #### Read data ####> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")> #### Starter models ####> # Model 1: pct as a function of end_date> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)> # Model 2: pct as a function of end_date and pollster> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)> # Augment data with model predictions> just_trump_high_quality <- just_trump_high_quality |>+   mutate(+     fitted_date = predict(model_date),+     fitted_date_pollster = predict(model_date_pollster)+   )> # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> #### Save model ####> saveRDS(model_date, file = "models/model_date.rds")> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")> > > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> > > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| include: false> #| warning: false> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| include: false> #| warning: false> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> library(arrow)> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> #### Save model ####> saveRDS(model_date, file = "models/model_date.rds")> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))> > > #| include: false> #| warning: false> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> library(arrow)> library(here)> library(modelr)> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| echo: true> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> echo=TRUE> > library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| include: false> #| warning: false> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> library(arrow)> library(here)> library(modelr)> library(rstanarm)> echo=TRUE> library(rstanarm)> > model_date <- +   readRDS(file = here::here("models/model_date.rds"))> model_date_pollster <- +    readRDS(file = here::here("models/model_date_pollster.rds"))> #| include: false> #| warning: true> #| message: false> > library(tidyverse)> library(modelsummary)> library(palmerpenguins)> library(ggplot2)> library(arrow)> library(here)> library(modelr)> library(rstanarm)> echo=TRUE> library(rstanarm)> > if (file.exists(here::here("models/model_date.rds"))) {+   message("model_date.rds found.")+ } else {+   message("model_date.rds not found.")+ }model_date.rds found.> > if (file.exists(here::here("models/model_date_pollster.rds"))) {+   message("model_date_pollster.rds found.")+ } else {+   message("model_date_pollster.rds not found.")+ }model_date_pollster.rds found.> > # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))> > > #### Workspace setup ####> library(tidyverse)> library(janitor)> library(lubridate)> library(broom)> install.packages("modelsummary")Error in install.packages : Updating loaded packages> install.packages("modelsummary")  There is a binary version available but the source version is later:             binary source needs_compilationmodelsummary  2.1.0  2.2.0             FALSEinstalling the source package ‘modelsummary’trying URL 'https://cran.rstudio.com/src/contrib/modelsummary_2.2.0.tar.gz'Content type 'application/x-gzip' length 3482602 bytes (3.3 MB)==================================================downloaded 3.3 MB* installing *source* package ‘modelsummary’ ...** package ‘modelsummary’ successfully unpacked and MD5 sums checked** using staged installation** R** inst** byte-compile and prepare package for lazy loading** help*** installing help indices*** copying figures** building package indices** testing if installed package can be loaded from temporary location** testing if installed package can be loaded from final location** testing if installed package keeps a record of temporary installation path* DONE (modelsummary)The downloaded source packages are in	‘/private/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T/RtmpaCFwFC/downloaded_packages’> library(modelsummary)> library(rstanarm)> #### Read data ####> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")> #### Starter models ####> # Model 1: pct as a function of end_date> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)> # Model 2: pct as a function of end_date and pollster> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)> # Augment data with model predictions> just_trump_high_quality <- just_trump_high_quality |>+   mutate(+     fitted_date = predict(model_date),+     fitted_date_pollster = predict(model_date_pollster)+   )> # Plot model predictions> # Model 1> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")> # Model 2> ggplot(just_trump_high_quality, aes(x = end_date)) ++   geom_point(aes(y = pct), color = "black") ++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") ++   facet_wrap(vars(pollster)) ++   theme_classic() ++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")> #### Simulate data ####> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)> # Generate simulated data> simulated_data <- data.frame(+   pollscore = rnorm(100, mean = pollscore_mean, sd = pollscore_sd),+   numeric_grade = rnorm(100, mean = numeric_grade_mean, sd = numeric_grade_sd),+   pct = runif(100, min = 0, max = 100),+   num_trump = round(rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump, na.rm = TRUE)))+ )Warning messages:1: Unknown or uninitialised column: num_trump. 2: In mean.default(data$num_trump, na.rm = TRUE) :  argument is not numeric or logical: returning NA3: Unknown or uninitialised column: num_trump. 4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :  NAs produced> # View the simulated data> head(simulated_data)    pollscore numeric_grade       pct num_trump1 -0.09237523      1.635899  1.059219       NaN2 -0.29327353      1.791845 58.434259       NaN3  0.01441255      2.110112 32.610926       NaN4 -0.70806704      1.816709 25.514684       NaN5 -0.43430715      2.433588 24.659232       NaN6 -1.38328268      1.149409 46.305466       NaN> #### Save data ####> write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")                                                                                                                    > #### Workspace setup ####> library(tidyverse)> library(dplyr)> set.seed(853)> #### Simulate data ####> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)> # Generate simulated data> simulated_data <- data.frame(+   pollscore = rnorm(100, mean = pollscore_mean, sd = pollscore_sd),+   numeric_grade = rnorm(100, mean = numeric_grade_mean, sd = numeric_grade_sd),+   pct = runif(100, min = 0, max = 100),+   num_trump = round(rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump, na.rm = TRUE)))+ )Warning messages:1: Unknown or uninitialised column: num_trump. 2: In mean.default(data$num_trump, na.rm = TRUE) :  argument is not numeric or logical: returning NA3: Unknown or uninitialised column: num_trump. 4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :  NAs produced
+
+R version 4.2.3 (2023-03-15) -- "Shortstop Beagle"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #### Workspace setup ####
+> library(tidyverse)
+── Attaching core tidyverse packages ─────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package to force all conflicts to become errors
+> library(arrow)
+Some features are not enabled in this build of Arrow. Run arrow_info() for more information.
+The repository you retrieved Arrow from did not include all of Arrow's features.
+You can install a fully-featured version by running:
+install.packages('arrow', repos = 'https://apache.r-universe.dev').
+
+Attaching package: ‘arrow’
+
+The following object is masked from ‘package:lubridate’:
+
+    duration
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+> library(janitor)
+
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test
+
+> library(dplyr)
+> library(lubridate)
+> #### Clean data ####
+> data <- read_csv("data/01-raw_data/president_polls_raw_data.csv") |>
++   clean_names()
+Rows: 16921 Columns: 52                                                                                       
+── Column specification ───────────────────────────────────────────────────
+Delimiter: ","
+chr (25): pollster, sponsors, display_name, pollster_rating_name, metho...
+dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, poll...
+num  (1): sponsor_ids
+lgl (10): endorsed_candidate_id, endorsed_candidate_name, endorsed_cand...
+
+ℹ Use spec() to retrieve the full column specification for this data.
+ℹ Specify the column types or set show_col_types = FALSE to quiet this message.
+> #### Clean data ####
+> data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>
++   clean_names()
+Rows: 22429 Columns: 51                                                                                                                                                                 
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr (28): pollster, sponsors, display_name, pollster_rating_name, methodology, state, start_date, end_date, sponsor_candidate, sponsor_candidate_...
+dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, pollscore, transparency_score, sponsor_candidate_id, endorsed_candidate_id, qu...
+num  (1): sponsor_ids
+lgl  (6): tracking, internal, seat_name, nationwide_batch, ranked_choice_reallocated, ranked_choice_round
+
+ℹ Use spec() to retrieve the full column specification for this data.
+ℹ Specify the column types or set show_col_types = FALSE to quiet this message.
+> just_trump_high_quality <- data %>%
++   # Select relevant columns first
++   select(
++     pollster, sponsors, display_name, numeric_grade, pollscore,
++     methodology, transparency_score, state, start_date, end_date,
++     office_type, stage, party, candidate_name, pct, sample_size
++   ) %>%
++   # Filter for Donald Trump and high-quality polls
++   filter(
++     candidate_name == "Donald Trump",
++     numeric_grade >= 2.7
++   ) %>%
++   # Handle missing states and convert end_date to Date format
++   mutate(
++     state = if_else(is.na(state), "National", state),
++     end_date = mdy(end_date)
++   ) %>%
++   # Filter out rows with end_date before 2022-11-15
++   filter(end_date >= as.Date("2022-11-15")) %>%
++   # Calculate num_trump without dropping NA values
++   mutate(
++     num_trump = round((pct / 100) * sample_size, 0)
++   )
+> #### Save data ####
+> write_parquet(x = just_trump_high_quality,
++               sink = "data/02-analysis_data/analysis_data.parquet")
+> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
+                                                                                                                                                   
+> 
+> #### Save data ####
+> write_parquet(x = just_trump_high_quality,
++               sink = "data/02-analysis_data/analysis_data.parquet")
+> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
+                                                                                                                                                   
+> #### Workspace setup ####
+> install.packages("rstanarm")
+trying URL 'https://cran.rstudio.com/bin/macosx/big-sur-arm64/contrib/4.2/rstanarm_2.32.1.tgz'
+Content type 'application/x-gzip' length 57003744 bytes (54.4 MB)
+==================================================
+downloaded 54.4 MB
+
+
+The downloaded binary packages are in
+	/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T//RtmpaCFwFC/downloaded_packages
+> library(tidyverse)
+> library(rstanarm)
+Loading required package: Rcpp
+This is rstanarm version 2.32.1
+- See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!
+- Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.
+- For execution on a local, multicore CPU with excess RAM we recommend calling
+  options(mc.cores = parallel::detectCores())
+> #### Read data ####
+> analysis_data <- read_csv("data/02-analysis_data/analysis_data.csv")
+Rows: 393 Columns: 17                                                                                                                                                                   
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (10): pollster, sponsors, display_name, methodology, state, start_date, office_type, stage, party, candidate_name
+dbl   (6): numeric_grade, pollscore, transparency_score, pct, sample_size, num_trump
+date  (1): end_date
+
+ℹ Use spec() to retrieve the full column specification for this data.
+ℹ Specify the column types or set show_col_types = FALSE to quiet this message.
+> #### Plot data ####
+> base_plot <- ggplot(just_trump_high_quality, aes(x = end_date, y = pct)) +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date")
+> # Plots poll estimates and overall smoothing
+> base_plot +
++   geom_point() +
++   geom_smooth()
+geom_smooth() using method = 'loess' and formula = 'y ~ x'
+> # Color by pollster
+> # This gets messy - need to add a filter - see line 21
+> base_plot +
++   geom_point(aes(color = pollster)) +
++   geom_smooth() +
++   theme(legend.position = "bottom")
+geom_smooth() using method = 'loess' and formula = 'y ~ x'
+> # Facet by pollster
+> base_plot +
++   geom_point() +
++   geom_smooth() +
++   facet_wrap(vars(pollster))
+geom_smooth() using method = 'loess' and formula = 'y ~ x'
+There were 50 or more warnings (use warnings() to see the first 50)
+> # Color by pollscore
+> base_plot +
++   geom_point(aes(color = factor(pollscore))) +
++   geom_smooth() +
++   theme(legend.position = "bottom")
+geom_smooth() using method = 'loess' and formula = 'y ~ x'
+> #### Save data ####
+> write_parquet(x = just_trump_high_quality,
++               sink = "data/02-analysis_data/analysis_data.parquet")
+> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
+                                                                                                                                                   
+> #### Clean data ####
+> data <- read_csv("data/01-raw_data/president_primary_polls.csv") |>
++   clean_names()
+Rows: 22429 Columns: 51                                                                                                                                                                 
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr (28): pollster, sponsors, display_name, pollster_rating_name, methodology, state, start_date, end_date, sponsor_candidate, sponsor_candidate_...
+dbl (16): poll_id, pollster_id, pollster_rating_id, numeric_grade, pollscore, transparency_score, sponsor_candidate_id, endorsed_candidate_id, qu...
+num  (1): sponsor_ids
+lgl  (6): tracking, internal, seat_name, nationwide_batch, ranked_choice_reallocated, ranked_choice_round
+
+ℹ Use spec() to retrieve the full column specification for this data.
+ℹ Specify the column types or set show_col_types = FALSE to quiet this message.
+> just_trump_high_quality <- data %>%
++   # Filter for Donald Trump and high-quality polls
++   filter(
++     candidate_name == "Donald Trump",
++     numeric_grade >= 2.7
++   ) %>%
++   # Handle missing states and convert end_date to Date format
++   mutate(
++     state = if_else(is.na(state), "National", state),
++     end_date = mdy(end_date)
++   ) %>%
++   # Filter out rows with end_date before 2022-11-15
++   filter(end_date >= as.Date("2022-11-15")) %>%
++   # Calculate num_trump without dropping NA values
++   mutate(
++     num_trump = round((pct / 100) * sample_size, 0)
++   )
+> #### Save data ####
+> write_parquet(x = just_trump_high_quality,
++               sink = "data/02-analysis_data/analysis_data.parquet")
+> write_csv(just_trump_high_quality, "data/02-analysis_data/analysis_data.csv")
+                                                                                                                                                   
+> #### Read data ####
+> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
+> #### Starter models ####
+> # Model 1: pct as a function of end_date
+> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+> # Model 2: pct as a function of end_date and pollster
+> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+> #### Workspace setup ####
+> library(tidyverse)
+> library(rstanarm)
+> #### Read data ####
+> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
+> #### Starter models ####
+> # Model 1: pct as a function of end_date
+> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+> # Model 2: pct as a function of end_date and pollster
+> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+> # Augment data with model predictions
+> just_trump_high_quality <- just_trump_high_quality |>
++   mutate(
++     fitted_date = predict(model_date),
++     fitted_date_pollster = predict(model_date_pollster)
++   )
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+Error in modelsummary(models = list(Model 1 = model_date, Model 2 = model_date_pollster)) : 
+  could not find function "modelsummary"
+> #### Workspace setup ####
+> library(tidyverse)
+> library(janitor)
+> library(lubridate)
+> library(broom)
+> library(modelsummary)
+modelsummary 2.0.0 now uses tinytable as its default table-drawing backend. Learn more at:
+  https://vincentarelbundock.github.io/tinytable/
+
+Revert to kableExtra for one session:
+
+  options(modelsummary_factory_default = 'kableExtra')
+  options(modelsummary_factory_latex = 'kableExtra')
+  options(modelsummary_factory_html = 'kableExtra')
+
+Silence this message forever:
+
+  config_modelsummary(startup_message = FALSE)
+> install.packages("modelsummary")
+Error in install.packages : Updating loaded packages
+> install.packages("modelsummary")
+
+  There is a binary version available but the source version is later:
+             binary source needs_compilation
+modelsummary  2.1.0  2.2.0             FALSE
+
+installing the source package ‘modelsummary’
+
+trying URL 'https://cran.rstudio.com/src/contrib/modelsummary_2.2.0.tar.gz'
+Content type 'application/x-gzip' length 3482602 bytes (3.3 MB)
+==================================================
+downloaded 3.3 MB
+
+* installing *source* package ‘modelsummary’ ...
+** package ‘modelsummary’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (modelsummary)
+
+The downloaded source packages are in
+	‘/private/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T/RtmpaCFwFC/downloaded_packages’
+> library(modelsummary)
+> library(rstanarm)
+> library(splines)
+> #### Read data ####
+> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
+> #### Starter models ####
+> # Model 1: pct as a function of end_date
+> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+> # Model 2: pct as a function of end_date and pollster
+> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+> # Augment data with model predictions
+> just_trump_high_quality <- just_trump_high_quality |>
++   mutate(
++     fitted_date = predict(model_date),
++     fitted_date_pollster = predict(model_date_pollster)
++   )
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+> #### Save model ####
+> saveRDS(model_date, file = "models/model_date.rds")
+> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
+> model_date <- readRDS("~/Desktop/paper2 draft/2024_US_Election_Analysis/models/model_date.rds")
+> model_date <- readRDS("~/Desktop/paper2 draft/2024_US_Election_Analysis/models/model_date.rds")
+> 
+> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+> 
+> 
+> #| echo: false
+> #| eval: true
+> #| warning: false
+> #| message: false
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> librarry(modelsummary)
+Error in librarry(modelsummary) : could not find function "librarry"
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> #### Read data ####
+> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
+> #### Starter models ####
+> # Model 1: pct as a function of end_date
+> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+> # Model 2: pct as a function of end_date and pollster
+> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+> # Augment data with model predictions
+> just_trump_high_quality <- just_trump_high_quality |>
++   mutate(
++     fitted_date = predict(model_date),
++     fitted_date_pollster = predict(model_date_pollster)
++   )
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> #### Save model ####
+> saveRDS(model_date, file = "models/model_date.rds")
+> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
+> 
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> 
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> library(arrow)
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> #### Save model ####
+> saveRDS(model_date, file = "models/model_date.rds")
+> saveRDS(model_date_pollster, file = "models/model_date_pollster.rds")
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+> 
+> 
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> library(arrow)
+> library(here)
+> library(modelr)
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| echo: true
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> echo=TRUE
+> 
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| include: false
+> #| warning: false
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> library(arrow)
+> library(here)
+> library(modelr)
+> library(rstanarm)
+> echo=TRUE
+> library(rstanarm)
+> 
+> model_date <- 
++   readRDS(file = here::here("models/model_date.rds"))
+> model_date_pollster <- 
++    readRDS(file = here::here("models/model_date_pollster.rds"))
+> #| include: false
+> #| warning: true
+> #| message: false
+> 
+> library(tidyverse)
+> library(modelsummary)
+> library(palmerpenguins)
+> library(ggplot2)
+> library(arrow)
+> library(here)
+> library(modelr)
+> library(rstanarm)
+> echo=TRUE
+> library(rstanarm)
+> 
+> if (file.exists(here::here("models/model_date.rds"))) {
++   message("model_date.rds found.")
++ } else {
++   message("model_date.rds not found.")
++ }
+model_date.rds found.
+> 
+> if (file.exists(here::here("models/model_date_pollster.rds"))) {
++   message("model_date_pollster.rds found.")
++ } else {
++   message("model_date_pollster.rds not found.")
++ }
+model_date_pollster.rds found.
+> 
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
+> 
+> 
+> #### Workspace setup ####
+> library(tidyverse)
+> library(janitor)
+> library(lubridate)
+> library(broom)
+> install.packages("modelsummary")
+Error in install.packages : Updating loaded packages
+> install.packages("modelsummary")
+
+  There is a binary version available but the source version is later:
+             binary source needs_compilation
+modelsummary  2.1.0  2.2.0             FALSE
+
+installing the source package ‘modelsummary’
+
+trying URL 'https://cran.rstudio.com/src/contrib/modelsummary_2.2.0.tar.gz'
+Content type 'application/x-gzip' length 3482602 bytes (3.3 MB)
+==================================================
+downloaded 3.3 MB
+
+* installing *source* package ‘modelsummary’ ...
+** package ‘modelsummary’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (modelsummary)
+
+The downloaded source packages are in
+	‘/private/var/folders/p0/t3j9rswd3257jrykxd5r954r0000gn/T/RtmpaCFwFC/downloaded_packages’
+> library(modelsummary)
+> library(rstanarm)
+> #### Read data ####
+> just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data.parquet")
+> #### Starter models ####
+> # Model 1: pct as a function of end_date
+> model_date <- lm(pct ~ end_date, data = just_trump_high_quality)
+> # Model 2: pct as a function of end_date and pollster
+> model_date_pollster <- lm(pct ~ end_date + pollster, data = just_trump_high_quality)
+> # Augment data with model predictions
+> just_trump_high_quality <- just_trump_high_quality |>
++   mutate(
++     fitted_date = predict(model_date),
++     fitted_date_pollster = predict(model_date_pollster)
++   )
+> # Plot model predictions
+> # Model 1
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date")
+> # Model 2
+> ggplot(just_trump_high_quality, aes(x = end_date)) +
++   geom_point(aes(y = pct), color = "black") +
++   geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
++   facet_wrap(vars(pollster)) +
++   theme_classic() +
++   labs(y = "Trump percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+> #### Simulate data ####
+> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)
+> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)
+> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)
+> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)
+> # Generate simulated data
+> simulated_data <- data.frame(
++   pollscore = rnorm(100, mean = pollscore_mean, sd = pollscore_sd),
++   numeric_grade = rnorm(100, mean = numeric_grade_mean, sd = numeric_grade_sd),
++   pct = runif(100, min = 0, max = 100),
++   num_trump = round(rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump, na.rm = TRUE)))
++ )
+Warning messages:
+1: Unknown or uninitialised column: num_trump. 
+2: In mean.default(data$num_trump, na.rm = TRUE) :
+  argument is not numeric or logical: returning NA
+3: Unknown or uninitialised column: num_trump. 
+4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :
+  NAs produced
+> # View the simulated data
+> head(simulated_data)
+    pollscore numeric_grade       pct num_trump
+1 -0.09237523      1.635899  1.059219       NaN
+2 -0.29327353      1.791845 58.434259       NaN
+3  0.01441255      2.110112 32.610926       NaN
+4 -0.70806704      1.816709 25.514684       NaN
+5 -0.43430715      2.433588 24.659232       NaN
+6 -1.38328268      1.149409 46.305466       NaN
+> #### Save data ####
+> write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+                                                                                                                    
+> #### Workspace setup ####
+> library(tidyverse)
+> library(dplyr)
+> set.seed(853)
+> #### Simulate data ####
+> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)
+> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)
+> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)
+> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)
+> # Generate simulated data
+> simulated_data <- data.frame(
++   pollscore = rnorm(100, mean = pollscore_mean, sd = pollscore_sd),
++   numeric_grade = rnorm(100, mean = numeric_grade_mean, sd = numeric_grade_sd),
++   pct = runif(100, min = 0, max = 100),
++   num_trump = round(rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump, na.rm = TRUE)))
++ )
+Warning messages:
+1: Unknown or uninitialised column: num_trump. 
+2: In mean.default(data$num_trump, na.rm = TRUE) :
+  argument is not numeric or logical: returning NA
+3: Unknown or uninitialised column: num_trump. 
+4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :
+  NAs produced
 ChatGPT 说：
 ChatGPT
 It seems there is an issue with the num_trump column due to some missing or incompatible values in the dataset. This is likely causing warnings during the calculation of its mean and standard deviation.
@@ -6124,7 +8111,16 @@ Impute missing values in num_trump before calculating the mean and standard devi
 Let me know if you'd like to proceed with one of these options or if there are other requirements!
 
 您说：
-── Error (04-test_analysis_data.R:15:1): (code run outside of test_that()) ───Error: 'data/02-analysis_data/analysis_data.csv' does not exist in current working directory ('/Users/dingshuo/Desktop/paper2 draft/2024_US_Election_Analysis/scripts').Backtrace: 1. readr::read_csv("data/02-analysis_data/analysis_data.csv")      at 04-test_analysis_data.R:15:0 4. vroom (local) <fn>("data/02-analysis_data/analysis_data.csv") 5. vroom:::check_path(path)[ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
+
+── Error (04-test_analysis_data.R:15:1): (code run outside of test_that()) ───
+Error: 'data/02-analysis_data/analysis_data.csv' does not exist in current working directory ('/Users/dingshuo/Desktop/paper2 draft/2024_US_Election_Analysis/scripts').
+Backtrace:
+ 1. readr::read_csv("data/02-analysis_data/analysis_data.csv")
+      at 04-test_analysis_data.R:15:0
+ 4. vroom (local) <fn>("data/02-analysis_data/analysis_data.csv")
+ 5. vroom:::check_path(path)
+
+[ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
 ChatGPT 说：
 ChatGPT
 This error indicates that the file data/02-analysis_data/analysis_data.csv is not found in the specified directory. Here are a few steps to troubleshoot:
@@ -6234,7 +8230,13 @@ Test 6: Compares the means and standard deviations of pollscore and numeric_grad
 You can run these tests in a script or RMarkdown file using testthat::test_dir("path/to/your/tests") to ensure your data meets the expected criteria.
 
 您说：
-Warning messages:1: Unknown or uninitialised column: num_trump. 2: In mean.default(data$num_trump, na.rm = TRUE) :  argument is not numeric or logical: returning NA3: Unknown or uninitialised column: num_trump. 4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :  NAs produced
+Warning messages:
+1: Unknown or uninitialised column: num_trump. 
+2: In mean.default(data$num_trump, na.rm = TRUE) :
+  argument is not numeric or logical: returning NA
+3: Unknown or uninitialised column: num_trump. 
+4: In rnorm(100, mean = mean(data$num_trump, na.rm = TRUE), sd = sd(data$num_trump,  :
+  NAs produced
 ChatGPT 说：
 ChatGPT
 The warnings indicate that num_trump does not contain numeric data or may have many missing values, causing mean() and sd() to return NA. Here’s how to address this:
@@ -6623,7 +8625,25 @@ Percentage Simulation: Simulates pct values between 0 and 100 using a uniform di
 Replace "path/to/president_primary_polls.csv" with the actual path to your provided dataset. This code will produce a simulated dataset similar to the original, saved as "simulated_poll_data.csv" in your working directory. Let me know if you need further adjustments! ​​
 
 您说：
-> num_rows <- 1000> pollster_choices <- na.omit(unique(data$pollster))Error in data$pollster : object of type 'closure' is not subsettable> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)Error in data$numeric_grade : object of type 'closure' is not subsettable> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)Error in data$numeric_grade : object of type 'closure' is not subsettable> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)Error in data$pollscore : object of type 'closure' is not subsettable> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)Error in data$pollscore : object of type 'closure' is not subsettable> methodology_choices <- na.omit(unique(data$methodology))Error in data$methodology : object of type 'closure' is not subsettable> transparency_score_mean <- mean(data$transparency_score, na.rm = TRUE)Error in data$transparency_score :   object of type 'closure' is not subsettable> transparency_score_sd <- sd(data$transparency_score, na.rm = TRUE)Error in data$transparency_score :   object of type 'closure' is not subsettable
+> num_rows <- 1000
+> pollster_choices <- na.omit(unique(data$pollster))
+Error in data$pollster : object of type 'closure' is not subsettable
+> numeric_grade_mean <- mean(data$numeric_grade, na.rm = TRUE)
+Error in data$numeric_grade : object of type 'closure' is not subsettable
+> numeric_grade_sd <- sd(data$numeric_grade, na.rm = TRUE)
+Error in data$numeric_grade : object of type 'closure' is not subsettable
+> pollscore_mean <- mean(data$pollscore, na.rm = TRUE)
+Error in data$pollscore : object of type 'closure' is not subsettable
+> pollscore_sd <- sd(data$pollscore, na.rm = TRUE)
+Error in data$pollscore : object of type 'closure' is not subsettable
+> methodology_choices <- na.omit(unique(data$methodology))
+Error in data$methodology : object of type 'closure' is not subsettable
+> transparency_score_mean <- mean(data$transparency_score, na.rm = TRUE)
+Error in data$transparency_score : 
+  object of type 'closure' is not subsettable
+> transparency_score_sd <- sd(data$transparency_score, na.rm = TRUE)
+Error in data$transparency_score : 
+  object of type 'closure' is not subsettable
 ChatGPT 说：
 ChatGPT
 The error messages indicate that data is conflicting with a built-in function in R. To resolve this, rename the data frame variable to avoid this naming conflict.
@@ -6679,7 +8699,30 @@ Kept all other steps: Samples from the original dataset’s distributions and sa
 Replace "path/to/president_primary_polls.csv" with the actual path to your file. This should work without conflicts.
 
 您说：
-library(tidyverse)library(dplyr)set.seed(124)num_rows <- 1000pollsters <- c("YouGov", "Gallup", "Ipsos", "Pew Research", "SurveyMonkey")methodologies <- c("Online Panel", "Telephone", "In-person", "Mixed-mode")candidates <- c("Kamala Harris", "Gavin Newsom", "Pete Buttigieg", "Elizabeth Warren", "Bernie Sanders", "Donald Trump")#### Simulate data ####simulated_data <- data.frame(  pollster = sample(pollsters, num_rows, replace = TRUE),  numeric_grade = round(runif(num_rows, min = 1, max = 5), 1),  pollscore = round(runif(num_rows, min = -2, max = 5), 1),  methodology = sample(methodologies, num_rows, replace = TRUE),  transparency_score = sample(0:9, num_rows, replace = TRUE),  start_date = format(seq(as.Date("2024-01-01"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),  end_date = format(seq(as.Date("2024-10-20"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),  candidate_name = sample(candidates, num_rows, replace = TRUE),  pct = round(runif(num_rows, min = 0, max = 100), 1))
+library(tidyverse)
+library(dplyr)
+set.seed(124)
+
+num_rows <- 1000
+
+
+pollsters <- c("YouGov", "Gallup", "Ipsos", "Pew Research", "SurveyMonkey")
+methodologies <- c("Online Panel", "Telephone", "In-person", "Mixed-mode")
+candidates <- c("Kamala Harris", "Gavin Newsom", "Pete Buttigieg", "Elizabeth Warren", "Bernie Sanders", "Donald Trump")
+
+#### Simulate data ####
+simulated_data <- data.frame(
+  pollster = sample(pollsters, num_rows, replace = TRUE),
+  numeric_grade = round(runif(num_rows, min = 1, max = 5), 1),
+  pollscore = round(runif(num_rows, min = -2, max = 5), 1),
+  methodology = sample(methodologies, num_rows, replace = TRUE),
+  transparency_score = sample(0:9, num_rows, replace = TRUE),
+  start_date = format(seq(as.Date("2024-01-01"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),
+  end_date = format(seq(as.Date("2024-10-20"), by = "7 days", length.out = num_rows), "%m/%d/%Y"),
+  candidate_name = sample(candidates, num_rows, replace = TRUE),
+  pct = round(runif(num_rows, min = 0, max = 100), 1)
+)
+
 
 
 ChatGPT 说：
@@ -6734,7 +8777,54 @@ now develp some tests for the simulated data,
 
 
 
-similar to these: # Check if all values in the 'division' column are uniqueif (n_distinct(analysis_data$division) == nrow(analysis_data)) {  message("Test Passed: All values in 'division' are unique.")} else {  stop("Test Failed: The 'division' column contains duplicate values.")}# Check if the 'state' column contains only valid Australian state namesvalid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia",                   "Western Australia", "Tasmania", "Northern Territory",                   "Australian Capital Territory")if (all(analysis_data$state %in% valid_states)) {  message("Test Passed: The 'state' column contains only valid Australian state names.")} else {  stop("Test Failed: The 'state' column contains invalid state names.")}# Check if the 'party' column contains only valid party namesvalid_parties <- c("Labor", "Liberal", "Greens", "National", "Other")if (all(analysis_data$party %in% valid_parties)) {  message("Test Passed: The 'party' column contains only valid party names.")} else {  stop("Test Failed: The 'party' column contains invalid party names.")}# Check if there are any missing values in the datasetif (all(!is.na(analysis_data))) {  message("Test Passed: The dataset contains no missing values.")} else {  stop("Test Failed: The dataset contains missing values.")}# Check if there are no empty strings in 'division', 'state', and 'party' columnsif (all(analysis_data$division != "" & analysis_data$state != "" & analysis_data$party != "")) {  message("Test Passed: There are no empty strings in 'division', 'state', or 'party'.")} else {  stop("Test Failed: There are empty strings in one or more columns.")}# Check if the 'party' column has at least two unique valuesif (n_distinct(analysis_data$party) >= 2) {  message("Test Passed: The 'party' column contains at least two unique values.")} else {  stop("Test Failed: The 'party' column contains less than two unique values.")}
+similar to these: 
+# Check if all values in the 'division' column are unique
+if (n_distinct(analysis_data$division) == nrow(analysis_data)) {
+  message("Test Passed: All values in 'division' are unique.")
+} else {
+  stop("Test Failed: The 'division' column contains duplicate values.")
+}
+
+# Check if the 'state' column contains only valid Australian state names
+valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", 
+                  "Western Australia", "Tasmania", "Northern Territory", 
+                  "Australian Capital Territory")
+
+if (all(analysis_data$state %in% valid_states)) {
+  message("Test Passed: The 'state' column contains only valid Australian state names.")
+} else {
+  stop("Test Failed: The 'state' column contains invalid state names.")
+}
+
+# Check if the 'party' column contains only valid party names
+valid_parties <- c("Labor", "Liberal", "Greens", "National", "Other")
+
+if (all(analysis_data$party %in% valid_parties)) {
+  message("Test Passed: The 'party' column contains only valid party names.")
+} else {
+  stop("Test Failed: The 'party' column contains invalid party names.")
+}
+
+# Check if there are any missing values in the dataset
+if (all(!is.na(analysis_data))) {
+  message("Test Passed: The dataset contains no missing values.")
+} else {
+  stop("Test Failed: The dataset contains missing values.")
+}
+
+# Check if there are no empty strings in 'division', 'state', and 'party' columns
+if (all(analysis_data$division != "" & analysis_data$state != "" & analysis_data$party != "")) {
+  message("Test Passed: There are no empty strings in 'division', 'state', or 'party'.")
+} else {
+  stop("Test Failed: There are empty strings in one or more columns.")
+}
+
+# Check if the 'party' column has at least two unique values
+if (n_distinct(analysis_data$party) >= 2) {
+  message("Test Passed: The 'party' column contains at least two unique values.")
+} else {
+  stop("Test Failed: The 'party' column contains less than two unique values.")
+}
 ChatGPT 说：
 ChatGPT
 Here’s a set of tests for your simulated dataset, similar to the ones you provided. These tests use the specified columns and validate unique values, valid entries, missing data, and other conditions.
@@ -7046,3 +9136,4 @@ This code generates polling percentages for each candidate across 50 polls and s
 隐私政策
 |
 
+https://chatgpt.com/share/6728b885-9c18-8001-b157-832ceb168d50
