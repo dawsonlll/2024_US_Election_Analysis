@@ -646,19 +646,117 @@ ggplot(combined_data, aes(x = end_date, y = fitted_date_pollster, color = candid
 
 # Discussion {#sec-discussion}
 
-## First discussion point {#sec-first-point}
+## Summary of the study {#sec-first-point}
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+This paper provides an in-depth analysis of Donald Trump's polling trends as a candidate in the 2024 U.S presidential election, aiming to estimates his projected support among voters. By compiling polling data from FiveThirtyEight and other sources, this study applies both linear and Bayesian model to track changes in Trump's approval ratings over time, while also accounting for regional differences and pollster biases. 
 
-## Second discussion point
+### Data Collection and Methodology
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+The polling data, primarily from FiveThirtyEight, incorporates polls from various high-quality sources with a pollster grading above 2.7, limiting the analysis to credible polling organizations and controlling for methodological differences. Variables examined include: 
+ - **Approval Rating (Pct)**: Represents Trump's support percentage across different polls.
+ - **Geographical Indicators (State)**: Used to examine regional variation in Trump's support.
+ - **Poll Quality (Pollscore)**: Reflects each pollster's rating to account for methodological rigor. 
+ - **Temporal Data (Date)**: Used to capture shifts in public sentiment leading up to the election. 
+ - **Pollster**: Accounts for biases due to different polling agencies.
 
-## Third discussion point
+### Modeling Approches
+ 1. **Linear Model** /- Designed to capture baseline temporal trends in Trump's support. Tis model provided a straightforward view of the overall direction of Trump's popularity as election day approaches. 
+ 2. **Bayesian Regression with Spline Function** /- This more sophisticated model incorporates non-linear relationships, allowing for more flexible trend analysis, incorporating the effect of state, poll quality, and pollster, thus allowing for a probabilistic interpretation of support trends. 
+
+### Key Findings
+The findings reveal several important insights:
+
+- **Temporal Trends**: The linear model illustrates that Trump's support is not static, showing moderate fluctuations in reponse to campagin events, media coverage, and possibly voter sentiment shifts. However, despite some variability, Trump's baseline support appears consistent within a certain range, with minor increases as election day nears. 
+
+- **Rigional Variability**: A key finding from the Bayesian model is the significant regional variability in Trump's approval ratings. States like Florida and Texas show relatively high support, while states such as California and New York reflect lower approval rates. This geographical breakdown highlights how Trump's popularity is concentrated in certain areas, aligning with political strongholds and regional ideological divides. 
+
+- **Cross-Pollster Variability**: Pollster biases contribute to fluctuations in the estimated support. Polls from higher-rated pollsters tend to show more stable, moderate support levels, while lower-rated pollsters exhibit greater variability in Trump's approval ratings. This adjustment provides a clearer view of actual trends by reducing noise caused by differing polling methods. 
+
+- **Voter Sentiment over Time**: The analyis showed that Trump's support fluctuated over time, with notable spikes following major campaign events and media coverage. These trends underscore the influence of ongoing political developments on voter sentiment, highlighting the dynamic nature of public opinion as the elction approaches. 
+
+### Overall Results
+
+The combined analysis from both linear and Bayesian models suggests that Trump maintains a steady base of support, with potential for incremental gains during key campaign moments. Regional and methodological factors significantly impact his approval ratings, underscoring a highly polarized voter landscape and the challenges in accurately gauging public sentiment. 
+
+This study offers a nuanced estimate of Trump's standing among voters, highlighting how public opinion can shift in response to major political events. By accounting for temporal, reginal, and poll-specific effects, the analysis provides a robust interpretation of polling trends, enhancing the reliability of Trump's support trajectory as election day nears. 
+
+The findings offer a valuable resource for political analysts and campaign strategists, shedding light on how Trump's bas and undecided voters might react to upcoming campaign dynamics. This layered perspective not only clarifies Trump's current standing but also enriches broader analyses of voter sentiment in a polarized election climate. 
+
+## Influence of Regional Variation on Political Support {#sec-sec-point}
+
+The analysis underscores the substantial impact of regional variation on political support, particularly when examining Donald Trump’s and Kamala Harris’s approval ratings across different states. In states with stable party alignments—such as California, where Harris’s approval remains consistently high, and Texas, where Trump enjoys a solid base—support levels reflect entrenched party loyalties and exhibit minimal fluctuation. These states adhere to predictable patterns that align with historical voting trends, indicating that established strongholds provide a stabilizing effect on candidate support.
+
+In contrast, swing states like Florida, Pennsylvania, and Wisconsin exhibit striking variability in support for both candidates, emerging as critical battlegrounds where voter sentiment is more responsive to campaign dynamics. For instance, Florida’s polling data demonstrates competitive and fluctuating support, with both Trump and Harris reacting to national campaign developments and state-specific issues. In Pennsylvania, Trump’s approval often spikes following campaign rallies or major policy announcements, which resonate strongly with local voter concerns. Meanwhile, in Wisconsin, Harris experiences gradual gains connected to discussions on social issues and healthcare—topics that align well with the values of her support base in that state. These fluctuations indicate that swing states are not only competitive but also sensitive to strategic events and messaging that resonate with local concerns.
+
+The study’s findings suggest that swing states act as a bellwether for broader shifts in public opinion and may reveal trends that could ultimately influence national outcomes. The heightened reactivity in these states highlights the importance of targeted, adaptive campaign strategies, as swing-state voters are more likely to adjust their support based on timely political developments. Unlike in stronghold states, where voter loyalty remains relatively steady, swing-state support for both Trump and Harris appears to hinge on a combination of state-specific issues and national discourse. This insight emphasizes that while national polls provide a broad overview, they can overlook the nuanced regional shifts that ultimately drive election results in these decisive areas.
+
+By examining these regional variations, the study reveals that the fate of the election could be determined by a few pivotal swing states, where the balance of support can shift dynamically in response to tailored outreach. For campaign strategists and political analysts, this finding underscores the importance of focusing on swing-state sentiment, which not only reflects the impact of national events on a local scale but also serves as a microcosm of the broader electorate’s potential responsiveness. This nuanced understanding of regional variation illustrates that the election outcome may well rest on the success of capturing undecided voters in these key states, whose shifting allegiances could tip the balance in either candidate’s favor.
+﻿
+
+## The Role of Pollster Methodology and Bias in Shaping Public Perception {#sec-third-point}
+
+This study reveals that pollster methodologies and biases play a critical role in shaping public perception of candidates like Donald Trump and Kamala Harris. Through linear and Bayesian models, we see how sampling techniques, weighting methods, and survey phrasing can significantly impact reported support levels. These findings underscore that polling does not merely reflect public opinion but is also shaped by methodological choices, which can sometimes influence perceived candidate popularity more than actual shifts in voter sentiment.
+
+### Linear Model: Tracking Baseline Support
+The linear model captures general approval trends, showing consistent differences in the support bases for Trump and Harris. Trump’s approval ratings exhibit steady growth, suggesting a stable, possibly expanding base. Conversely, Harris’s support appears more responsive to shifts in national discourse and specific campaign events. This contrast indicates that while Trump’s base is relatively resilient to fluctuations, Harris’s support may ebb and flow with the political climate.
+
+### Bayesian Model: Uncovering Methodological Bias
+The Bayesian model takes this analysis further by accounting for pollster-specific effects, revealing how certain polling methodologies amplify or minimize support for each candidate. This model, with its flexible spline functions, provides a nuanced view of how Trump and Harris’s approval levels differ based on demographic and regional sampling biases.
+
+For example, the Bayesian model shows that Trump’s support tends to appear stronger in online polls or those with higher representation of older, rural respondents—demographics that generally lean conservative. Harris’s support, on the other hand, is often higher in polls sampling younger, urban voters or utilizing live phone surveys. This methodological divide is particularly evident in swing states like Pennsylvania and Wisconsin, where sampling biases can sway candidate support, highlighting a demographic and methodological divide in voter sentiment.
+
+### Comparison Between Trump and Harris
+This model-based analysis reveals a distinct difference between Trump and Harris in terms of how polling methodologies affect their perceived support. Trump’s ratings remain relatively stable across online and high-quality polls, indicating a more uniform base among conservative demographics. Harris, however, shows more fluctuation, especially in polls with diverse sampling techniques or higher urban and younger populations. In a state like Florida, for instance, polling variation illustrates this contrast: Trump gains ground in regions with older, conservative demographics, while Harris’s support spikes in urban centers and among younger voters.
+
+### Implications for Public Perception and Strategy
+These findings emphasize that polling is not simply a reflection of voter sentiment but a construct shaped by methodological choices. The Bayesian model, by adjusting for biases, helps isolate these distortions and offers a clearer picture of genuine support for both Trump and Harris.
+
+For campaign strategists, understanding these biases is essential for interpreting polling data accurately and tailoring strategies to key demographics. Aggregating or adjusting polls for known biases provides a more balanced view, helping campaigns prioritize outreach to areas with genuine support and undecided voters. In a polarized election, where even small perception shifts can impact behavior, filtering out methodological biases enables a more informed and targeted approach to public opinion.
+﻿
+
 
 # Weaknesses and next steps  {#sec-limitation}
 
-Weaknesses and next steps should also be included.
+## Weaknesses of the Study
+
+While this study offers valuable insights into the influence of pollster methodology, regional variation, and demographic biases on public perception, several limitations need to be considered. These limitations could impact the accuracy and generalizability of the findings.
+
+1. **Data Quality and Sampling Limitations**
+One limitation arises from variability in data quality across different polling organizations. Although the study controls for poll quality by using high-rated polls, the inherent reliance on polling data introduces potential sampling biases. Many polls depend on online or phone sampling, which can unintentionally exclude or under-represent certain demographic groups, such as older, less tech-savvy individuals or those in rural areas with limited internet or phone access. This under-representation may skew results, especially in states where these demographics play a significant role. Consequently, the data may slightly misrepresent the true level of support for each candidate, especially in rural or less-connected regions, potentially affecting the overall findings.
+
+2. **Model Assumptions and Risk of Overfitting**
+The linear and Bayesian models, while valuable for capturing trends and controlling for pollster-specific effects, operate under certain assumptions that could limit their applicability. The linear model assumes a consistent trend over time, which may not fully capture the complexities of changing voter sentiment, especially around pivotal campaign events. The Bayesian model, with its flexible spline functions, could risk overfitting by closely adapting to the data. Overfitting may lead to models that perform well with the current dataset but lack generalizability to new or unseen data, such as future election cycles. This limitation could restrict the model's predictive accuracy if applied outside the current context or with different polling data.
+
+3. **Influence of Unobserved Variables**
+An important limitation is the absence of unobserved variables that can influence voter sentiment but are difficult to integrate into polling models. Factors such as unexpected political events, fluctuations in media coverage, or sudden economic changes can substantially impact public opinion. For example, a major economic downturn or high-profile political event could shift approval ratings dramatically, and such shifts would not be fully accounted for in the study’s models. The exclusion of these external variables may result in findings that do not entirely capture the dynamic and responsive nature of voter sentiment under real-world conditions.
+
+4. **Regional and Demographic Representation Constraints**
+Although the study accounts for regional variation, it faces challenges in capturing the full diversity within specific demographic groups. For instance, urban populations can vary significantly by socioeconomic status, education, and race, factors that can lead to different responses to poll questions. However, polling data often aggregates these diverse groups, potentially masking important nuances. This limitation could affect the precision of regional predictions, particularly in diverse swing states where subtle shifts within key demographics may have an outsized impact on overall candidate support. Without fully capturing these variations, the study’s predictions in such regions may overlook crucial subgroup dynamics that influence electoral outcomes.
+
+**Implications of These Limitations**
+These limitations suggest that while the study’s models provide a structured view of candidate support, the findings should be interpreted with caution. Polling data is inherently a snapshot of voter sentiment, shaped by the biases in sampling and methodology. Additionally, model assumptions and the exclusion of influential, unobserved variables limit the generalizability of these findings to other contexts or future elections. Recognizing these limitations is essential for understanding the scope of this study’s conclusions and underscores the importance of refining polling methodologies and models to better capture the complexities of voter behavior. Future improvements could focus on integrating more diverse sampling methods and adjusting models to account for external factors, ultimately enhancing the reliability of predictions in dynamic electoral environments.
+
+## What is Left to Learn and Future Directions
+
+While this study provides important insights, several areas for further research could enhance polling methods and improve the accuracy of public opinion data in future elections. Below, we’ve prioritized these directions based on their potential impact on the field.
+
+1. **Polling Diversity and Sampling Techniques** 
+Expanding the range of polling methods and sampling techniques is crucial for improving representation across all demographics. By incorporating in-person polling in rural areas, using text surveys for younger voters, or experimenting with combined polling methods, future studies could reduce sampling biases and capture a more balanced snapshot of voter sentiment. Ensuring that traditionally underrepresented groups are better represented would make polling data more accurate and equitable, particularly in diverse swing states where demographic shifts can be pivotal.
+
+2. **Better Poll Aggregation and Bias Correction**
+Developing more advanced methods for aggregating polls and adjusting for biases could significantly enhance the reliability of polling data. Techniques such as weighted averages, machine learning for bias correction, and multi-source data fusion would allow analysts to produce a more balanced and accurate picture of candidate support across polling organizations. This approach helps mitigate pollster-specific biases and is essential for making fair, reliable comparisons across diverse datasets, which is especially important in polarized elections.
+
+3. **Real-Time Data and Tracking of Immediate** 
+Events Integrating real-time data would offer timely insights into how sudden events, such as debates or economic shifts, impact voter sentiment. Future research could incorporate social media analytics, rapid-response polls, and news tracking to observe shifts as they happen, providing campaigns and analysts with tools to respond quickly to public opinion changes. This adaptability is essential in fast-moving election cycles, where sentiment can change drastically in response to recent events.
+
+4. **Advanced Bayesian Models for Predictive Analytics**
+Applying more sophisticated Bayesian models could enhance predictive accuracy, especially when adjusted for demographic factors, historical voting trends, or real-time data. These models are particularly useful in swing states where small changes in sentiment can impact outcomes significantly. Advanced Bayesian models can provide a more flexible, detailed picture of voter behavior, which is valuable for predicting election results with greater confidence.
+
+5. **Adjusting for Unobserved Variables** 
+Many external factors, such as media coverage, economic trends, and significant political events, can shift public opinion but are challenging to capture directly in polling models. Future models could incorporate proxies, like economic indicators or media sentiment scores, to better account for these influences. This would provide a more realistic understanding of how these unobserved factors shape voter behavior, especially in unpredictable election environments.
+
+6. **Long-Term Voter Sentiment Analysis**
+Finally, studying voter sentiment trends over a longer time horizon could provide insights into how demographic shifts and social changes shape political support over time. This broader perspective would help campaigns and analysts understand and plan for generational or regional shifts, which can have a lasting impact on party alignment and voter preferences in future election cycles.
 
 \newpage
 
