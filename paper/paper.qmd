@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/dawsonlll/2024_US_Election_Analysis"
 date: Nov 04, 2024
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "The 2024 U.S. presidential election has sparked intense interest in the shifting dynamics of candidate support, particularly for Donald Trump. This paper examines polling data from multiple sources, employing linear and Bayesian models to analyze trends in Trump’s voter support over time. We find that while support fluctuates, it shows resilience across key demographics, revealing patterns that could significantly impact his electoral prospects. These insights contribute to our understanding of voter behavior in a polarized landscape, highlighting the factors that shape electoral outcomes."
 format:
   pdf:
     toc: true
